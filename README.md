@@ -1,2 +1,2 @@
-# epiphenomena
+# brainstaves
 Composition for string quartet and EEG
