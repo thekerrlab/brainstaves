@@ -9,11 +9,11 @@
 print('Importing modules...')
 import os
 import scirisweb as sw
-import stochastic as st
+from . import stochastic as st
+from .version import __version__
 
 # Create the app
 print('Setting defaults...')
-__version__ = '0.1.0'
 port = 8185
 app = sw.ScirisApp(__name__, name="Brainstaves", server_port=port) # Set to a nonstandard port to avoid collisions
 app.data = None # Initialize the results
