@@ -49,7 +49,13 @@ def get_notes():
     notes = st.get_notes()
     return notes
 
-# Get the version
+@app.register_RPC()
+def test_notes():
+    filename = '/u/cliffk/music/brainstaves/assets/mozart-test-excerpt.musicxml'
+    with open(filename) as f:
+        output = f.read()
+    return output
+
 @app.register_RPC()
 def get_version():
     return __version__

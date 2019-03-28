@@ -9,3 +9,4 @@ Created on Tue Mar 26 17:46:22 2019
 from . import stochastic as st
 from . import server as se
 
+output = se.test_notes()

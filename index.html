@@ -7,6 +7,7 @@
 
   <script src="assets/vue"></script> <!-- Enable Vue -- https://unpkg.com/vue -->
   <script src="assets/sciris-js.js"></script> <!-- Enable Sciris -- https://unpkg.com/sciris-js/dist/sciris-js.js -->
+  <script src="assets/opensheetmusicdisplay.min.js"></script> <!-- Enable Sciris -- https://unpkg.com/sciris-js/dist/sciris-js.js -->
   <link rel="shortcut icon" href="#" />  <!-- To avoid the favicon.ico 404 -->
 
   <!-- Start Bootstrap -->
@@ -86,7 +87,7 @@
         
       </div>
 
-      <div class="section">
+      <div class="section" id="score">
         {{ notes }}
       </div>
 
@@ -114,10 +115,15 @@
         version: 'Version information unavailable',
         isrunning: 'stopped',
         notes: 'HERE IS NOTES',
+        container: {},
+        osmd: {},
       }
     },
 
     created() {
+      vm.container = document.getElementById("score");
+      vm.container.style.width = "720px";
+      vm.osmd = new OpenSheetMusicDisplay(vm.container);
       sciris.rpc('get_version')
               .then(function (response) {
                 vm.version = response.data
