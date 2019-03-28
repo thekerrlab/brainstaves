@@ -7,13 +7,27 @@
 
   <script src="assets/vue"></script> <!-- Enable Vue -- https://unpkg.com/vue -->
   <script src="assets/sciris-js.js"></script> <!-- Enable Sciris -- https://unpkg.com/sciris-js/dist/sciris-js.js -->
-  <script src="assets/opensheetmusicdisplay.min.js"></script> <!-- Enable Sciris -- https://unpkg.com/sciris-js/dist/sciris-js.js -->
+  <script src="assets/opensheetmusicdisplay.min.js"></script> <!-- Enable OSMD -->
   <link rel="shortcut icon" href="#" />  <!-- To avoid the favicon.ico 404 -->
 
   <!-- Start Bootstrap -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+
+
+<!-- Add this to <head> -->
+<link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
+<link
+  type="text/css"
+  rel="stylesheet"
+  href="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.css"
+/>
+
+<script src="//unpkg.com/@babel/polyfill@latest/dist/polyfill.min.js"></script>
+<script src="//unpkg.com/vue@latest/dist/vue.min.js"></script>
+<script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.js"></script>
+
   <link type="text/css" rel="stylesheet" href="assets/bootstrap.min.css"/> <!-- https://unpkg.com/bootstrap/dist/css/bootstrap.min.css -->
   <link type="text/css" rel="stylesheet" href="assets/bootstrap-vue.css"/>  <!-- https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css -->
   <script src="assets/polyfill.min.js"></script> <!-- https://unpkg.com/babel-polyfill@latest/dist/polyfill.min.js -->
@@ -121,9 +135,11 @@
     },
 
     created() {
-      vm.container = document.getElementById("score");
-      vm.container.style.width = "720px";
-      vm.osmd = new OpenSheetMusicDisplay(vm.container);
+      var container = document.getElementById("score");
+      // container.style.width = "720px";
+      // var osmd = new OpenSheetMusicDisplay(container);
+      // vm.container = container
+      // vm.osmd = null // osmd
       sciris.rpc('get_version')
               .then(function (response) {
                 vm.version = response.data

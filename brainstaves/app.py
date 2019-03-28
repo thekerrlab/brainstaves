@@ -9,8 +9,7 @@
 print('Importing modules...')
 import os
 import scirisweb as sw
-from . import stochastic as st
-from .version import __version__
+import brainstaves as bs
 
 # Create the app
 print('Setting defaults...')
@@ -28,7 +27,7 @@ def start():
     ''' Get new notes '''
     print('start() called')
     os.system('touch %s' % st.lockfile)
-    st.generate()
+    bs.generate()
     return 'started'
 
 @app.register_RPC()
@@ -46,7 +45,7 @@ def stop():
 def get_notes():
     ''' Get new notes '''
     print('get_notes() called')
-    notes = st.get_notes()
+    notes = bs.get_notes()
     return notes
 
 @app.register_RPC()
@@ -58,7 +57,7 @@ def test_notes():
 
 @app.register_RPC()
 def get_version():
-    return __version__
+    return bs.__version__
 
 
 # Run the server
