@@ -7,6 +7,8 @@ Generate random notes
 import os
 import pylab as pl
 
+__all__ = ['Note', 'generate', 'get_notes', 'lockfile', 'filename']
+
 lockfile = 'running.tmp'
 filename = 'notes.txt'
 

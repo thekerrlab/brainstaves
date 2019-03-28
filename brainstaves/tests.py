@@ -6,7 +6,6 @@ Created on Tue Mar 26 17:46:22 2019
 @author: cliffk
 """
 
-from . import stochastic as st
-from . import server as se
+import brainstaves as bs
 
-output = se.test_notes()
+output = bs.test_notes()

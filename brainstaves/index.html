@@ -89,7 +89,7 @@
       </div>
 
       <div class="section" id="score">
-        {{ notes }}
+        <!-- {{ notes }} -->
       </div>
 
       <p style="font-size: 0.6em; color: #fff; text-align: center;">
@@ -123,10 +123,10 @@
 
     created() {
       var container = document.getElementById("score");
-      // container.style.width = "720px";
-      // var osmd = new OpenSheetMusicDisplay(container);
-      // vm.container = container
-      // vm.osmd = null // osmd
+      container.style.width = "720px";
+      var osmd = new opensheetmusicdisplay.OpenSheetMusicDisplay(container);
+      this.container = container
+      this.osmd = osmd
       sciris.rpc('get_version')
               .then(function (response) {
                 vm.version = response.data
@@ -137,7 +137,12 @@
 
       start() {
         vm.isrunning = 'running'
+        vm.osmd.load('http://localhost:8185/assets/Saltarello_sample.musicxml')
         sciris.rpc('start')
+              .then(function (response) {
+                vm.notes = response.data
+                vm.osmd.render();
+              })
       },
 
       pause() {
