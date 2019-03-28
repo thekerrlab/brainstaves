@@ -20,7 +20,7 @@ def generate():
     while os.path.exists(lockfile):
         output = pl.rand(10)
         pl.savetxt(filename, output)
-        pl.sleep(1)
+        pl.pause(1)
     return None
 
 def get_notes():

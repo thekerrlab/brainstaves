@@ -9,13 +9,13 @@
 print('Importing modules...')
 import os
 import scirisweb as sw
-from . import stochastic as st
+import stochastic as st
 
 # Create the app
 print('Setting defaults...')
 __version__ = '0.1.0'
 port = 8185
-app = sw.ScirisApp(__name__, name="Epiphenomena", server_port=port) # Set to a nonstandard port to avoid collisions
+app = sw.ScirisApp(__name__, name="Brainstaves", server_port=port) # Set to a nonstandard port to avoid collisions
 app.data = None # Initialize the results
 
 
@@ -30,6 +30,10 @@ def start():
     os.system('touch %s' % st.lockfile)
     st.generate()
     return 'started'
+
+@app.register_RPC()
+def pause():
+    return stop()
 
 @app.register_RPC()
 def stop():

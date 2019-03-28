@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Load core scripts -->
+<head>
+  <title>Brainstaves</title>
+
+  <script src="assets/vue"></script> <!-- Enable Vue -- https://unpkg.com/vue -->
+  <script src="assets/sciris-js.js"></script> <!-- Enable Sciris -- https://unpkg.com/sciris-js/dist/sciris-js.js -->
+  <link rel="shortcut icon" href="#" />  <!-- To avoid the favicon.ico 404 -->
+
+  <!-- Start Bootstrap -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <link type="text/css" rel="stylesheet" href="assets/bootstrap.min.css"/> <!-- https://unpkg.com/bootstrap/dist/css/bootstrap.min.css -->
+  <link type="text/css" rel="stylesheet" href="assets/bootstrap-vue.css"/>  <!-- https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css -->
+  <script src="assets/polyfill.min.js"></script> <!-- https://unpkg.com/babel-polyfill@latest/dist/polyfill.min.js -->
+  <script src="assets/bootstrap-vue.js"></script> <!-- https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js -->
+  <!-- End Bootstrap -->
+
+  <style>
+    .body {
+      font-size: 0.5em;
+    }
+
+    .background {
+      background: linear-gradient(rgba(0,0,0,1.0), rgba(0,0,0,1.0));
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      min-height: 100vh;
+    }
+
+    .app {
+      justify-content: center;
+      display: flex;
+      min-width: 600px;
+    }
+
+    .main {
+      display: block;
+      /*padding: 20px;*/
+      background-color: #000;
+      /*border-radius: 15px;*/
+    }
+
+    .section {
+      padding: 20px;
+      margin: 20px;
+      border-width: 2px;
+      border-color: #333;
+      border-style: solid;
+      background-color: #fff;
+      border-radius: 15px;
+    }
+
+    .plot {
+      border-width: 2px;
+      border-color:#aaa;
+      border-style:solid;
+      padding:10px;
+      background-color: #fff;
+    }
+
+    a:link    {color: #aaf;}
+    a:visited {color: #aaf;}
+    a:hover   {color: #33f;}
+    a:active  {color: #ccf;}
+  </style>
+
+</head>
+
+
+<!-- Define the layout -->
+<body>
+<div class="background">
+  <br>
+  <div id="app" class="app">
+    <div class="main">
+        <div style="text-align:center;">
+      <h1 style='color:#fff'>B R A I N S T A V E S</h1>
+        <span><b-btn v-on:click="start()">&zigrarr;</b-btn></span>
+        <span><b-btn v-on:click="pause()">&udhar;</b-btn></span>
+        <span><b-btn v-on:click="stop()">&Cross;</b-btn></span>
+        
+      </div>
+
+      <div class="section">
+        {{ notes }}
+      </div>
+
+      <p style="font-size: 0.6em; color: #fff; text-align: center;">
+        Status: 
+        <span v-if="isrunning==='running'">&zigrarr;</span>
+        <span v-else-if="isrunning==='paused'">&udhar;</span>
+        <span v-else>&Cross;</span>
+        <i>| Version {{ version }} | Developed by Cliff Kerr | Powered by <a href="http://sciris.org">Sciris</a></i></p>
+
+    </div>
+
+  </div>
+  <br>
+</div>
+</body>
+
+<!-- Define the functionality -->
+<script>
+  var vm = new Vue({
+    el: '#app',
+
+    data() {
+      return {
+        version: 'Version information unavailable',
+        isrunning: 'stopped',
+        notes: 'HERE IS NOTES',
+      }
+    },
+
+    created() {
+      sciris.rpc('get_version')
+              .then(function (response) {
+                vm.version = response.data
+              })
+    },
+
+    methods: {
+
+      start() {
+        vm.isrunning = 'running'
+        sciris.rpc('start')
+      },
+
+      pause() {
+        vm.isrunning = 'paused'
+        sciris.rpc('pause')
+      },
+
+      stop() {
+        vm.isrunning = 'stopped'
+        sciris.rpc('stop')
+      },
+
+    }
+  })
+</script>
+
+</html>
