@@ -118,6 +118,7 @@
         notes: 'HERE IS NOTES',
         container: {},
         osmd: {},
+        doc: '',
       }
     },
 
@@ -135,19 +136,72 @@
 
     methods: {
 
+      loadMusicXML(url) {
+        console.log('HIIIII')
+        console.log(url)
+   var xhttp = new XMLHttpRequest();
+   xhttp.onreadystatechange = function () {
+     switch (xhttp.readyState) {
+        case 0 : // UNINITIALIZED
+        case 1 : // LOADING
+        case 2 : // LOADED
+        case 3 : // INTERACTIVE
+        break;
+        case 4 : // COMPLETED
+          vm.osmd
+        .load(xhttp.responseXML)
+        .then(
+          () => {
+            vm.osmd.render();
+            afterRender();
+          },
+          (err) => console.log(err)
+        );
+          break;
+        default:
+          throw("Error loading MusicXML file.");
+     }
+  }
+   xhttp.open("GET", url, true);
+   xhttp.send();
+ },
+
+
       start() {
         vm.isrunning = 'running'
-        vm.osmd.load('http://localhost:8185/assets/Saltarello_sample.musicxml')
+        // this.loadMusicXML('http://localhost:8185/assets/mozart-test-excerpt.musicxml')
+        // vm.osmd.load('http://localhost:8185/assets/Saltarello_sample.musicxml')
         sciris.rpc('start')
               .then(function (response) {
-                vm.notes = response.data
-                vm.osmd.render();
-              })
+                console.log('OKKKKK')
+                vm.notes = response
+                var doc = new DOMParser().parseFromString(response.data, "text/xml")
+                // var doc = document.implementation.createHTMLDocument('');
+                // doc.open();
+                // doc.write(response.data);
+                // doc.close();
+                vm.doc = doc
+                console.log('hsrru')
+        //         vm.osmd.load(response).then(
+        //                 function() {
+        //   //console.log("e.target.result: " + e.target.result);
+        //   openSheetMusicDisplay.render();
+        // }
+        //         vm.osmd.render();
+        //       })
+      });
       },
 
       pause() {
         vm.isrunning = 'paused'
         sciris.rpc('pause')
+        vm.osmd.load(vm.doc).then(
+        function() {
+          console.log('Sooooo')
+          vm.osmd.render();
+          console.log('???')
+        }
+      );
       },
 
       stop() {
