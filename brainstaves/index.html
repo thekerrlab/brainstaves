@@ -175,7 +175,11 @@
               .then(function (response) {
                 console.log('OKKKKK')
                 vm.notes = response
-                var doc = new DOMParser().parseFromString(response.data, "text/xml")
+                // var doc = new DOMParser().parseFromString(response.data, "text/xml")
+                var doc = response.data
+                          console.log('HIIIIIII')
+          console.log(doc)
+          console.log('BYYYYYYYE')
                 // var doc = document.implementation.createHTMLDocument('');
                 // doc.open();
                 // doc.write(response.data);
