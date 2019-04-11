@@ -70,12 +70,15 @@
   <div id="app" class="app">
     <div class="main">
       <div style="display:flex">
-        <div style="justify-content: flex-start; width:50%">
+        <div style="justify-content: flex-start; width:33%">
           <span style='color:#fff'>B R A I N S T A V E S</span>
         </div>
-        <div style="justify-content: flex-end; width:50%; text-align:right;">
+        <div style="justify-content: flex-end; width:33%; text-align: center;">
+          <span style='color:#ccc'><i>status: {{ isrunning }}</i></span>
+        </div>
+        <div style="justify-content: flex-end; width:33%; text-align:right;">
           <span><b-btn v-on:click="start()">&zigrarr;</b-btn></span>
-          <span><b-btn v-on:click="pause()">&udhar;</b-btn></span>
+          <!-- <span><b-btn v-on:click="pause()">&udhar;</b-btn></span> -->
           <span><b-btn v-on:click="stop()">&Cross;</b-btn></span>
           <br><br>
         </div>
@@ -143,23 +146,20 @@
           sciris.sleep(vm.delay).then(response => {
               console.log('  Rendering score...')
               vm.osmd.render();
-              sciris.sleep(vm.delay).then(response => {
-                if (vm.score_div.children.length>1) {
-                  console.log('  Removing old score...');
-                  vm.score_div.removeChild(vm.score_div.firstChild);
-                  // vm.score_div.removeChild(vm.score_div.lastChild);
-                } else {
-                  console.log('  Only one score, not removing');
-                }
-                  })
+              if (vm.score_div.children.length>1) {
+                console.log('  Removing old score...');
+                vm.score_div.removeChild(vm.score_div.firstChild);
+              } else {
+                console.log('  Only one score, not removing');
+              }
             })
         })
       },
 
-      pause() {
-        vm.isrunning = 'paused'
-        sciris.rpc('pause')
-      },
+      // pause() {
+      //   vm.isrunning = 'paused'
+      //   sciris.rpc('pause')
+      // },
 
       stop() {
         console.log('Stopping refresh')
