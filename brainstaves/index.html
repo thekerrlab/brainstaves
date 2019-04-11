@@ -126,13 +126,13 @@
 
       start() {
         vm.isrunning = 'running'
-        console.log('hi1')
+        console.log('Loading div...')
         vm.osmd = new opensheetmusicdisplay.OpenSheetMusicDisplay("score");
         sciris.sleep(vm.delay).then(response => {
-          console.log('hi2')
-          vm.osmd.load('/assets/mozart-test-excerpt.musicxml')
+          console.log('Loading score...')
+          vm.osmd.load('score.xml')
           sciris.sleep(vm.delay).then(response => {
-              console.log('hi3')
+              console.log('Rendering score...')
               vm.osmd.render();
             })
         })
