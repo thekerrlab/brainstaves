@@ -78,7 +78,6 @@
         </div>
         <div style="justify-content: flex-end; width:33%; text-align:right;">
           <span><b-btn v-on:click="start()">&zigrarr;</b-btn></span>
-          <!-- <span><b-btn v-on:click="pause()">&udhar;</b-btn></span> -->
           <span><b-btn v-on:click="stop()">&Cross;</b-btn></span>
           <br><br>
         </div>
@@ -87,14 +86,6 @@
       <div class="thescore" id="score">
         <!-- THE SCORE -->
       </div>
-
-<!--       <p style="font-size: 0.6em; color: #fff; text-align: center;">
-        Status: 
-        <span v-if="isrunning==='running'">&zigrarr;</span>
-        <span v-else-if="isrunning==='paused'">&udhar;</span>
-        <span v-else>&Cross;</span>
-        <i>| Version {{ version }} | Developed by Cliff Kerr | Powered by <a href="http://sciris.org">Sciris</a></i>
-      </p> -->
 
     </div>
 
@@ -138,7 +129,7 @@
         console.log('Redrawing score...')
         vm.isrunning = 'running'
         console.log('  Loading div...')
-        vm.score_div = document.getElementById(vm.div_id) // .innerHTML = "";
+        vm.score_div = document.getElementById(vm.div_id)
         vm.osmd = new opensheetmusicdisplay.OpenSheetMusicDisplay(vm.div_id);
         sciris.sleep(vm.delay).then(response => {
           console.log('  Loading score...')
@@ -155,11 +146,6 @@
             })
         })
       },
-
-      // pause() {
-      //   vm.isrunning = 'paused'
-      //   sciris.rpc('pause')
-      // },
 
       stop() {
         console.log('Stopping refresh')
