@@ -123,14 +123,12 @@
     },
 
     created() {
-      var container = document.getElementById("score");
-      container.style.width = "720px";
-      var osmd = new opensheetmusicdisplay.OpenSheetMusicDisplay(container);
-      this.container = container
-      this.osmd = osmd
       sciris.rpc('get_version')
               .then(function (response) {
                 vm.version = response.data
+                
+                // this.container = container
+                // this.osmd = osmd
               })
     },
 
@@ -148,11 +146,15 @@
         case 3 : // INTERACTIVE
         break;
         case 4 : // COMPLETED
-          vm.osmd
+
+        var container = document.getElementById("score");
+                container.style.width = "720px";
+                var osmd = new opensheetmusicdisplay.OpenSheetMusicDisplay(container);
+          osmd
         .load(xhttp.responseXML)
         .then(
           () => {
-            vm.osmd.render();
+            osmd.render();
             afterRender();
           },
           (err) => console.log(err)
@@ -169,7 +171,7 @@
 
       start() {
         vm.isrunning = 'running'
-        // this.loadMusicXML('http://localhost:8185/assets/mozart-test-excerpt.musicxml')
+        this.loadMusicXML('/assets/mozart-test-excerpt.musicxml')
         // vm.osmd.load('http://localhost:8185/assets/Saltarello_sample.musicxml')
         sciris.rpc('start')
               .then(function (response) {
