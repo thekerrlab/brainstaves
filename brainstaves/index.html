@@ -50,7 +50,7 @@
       border-color: #333;
       border-style: solid;
       background-color: #fff;
-      min-width: 90vw;
+      width: 90vw;
       min-height: 80vh;
     }
 
@@ -109,9 +109,12 @@
       return {
         version: 'Version information unavailable',
         isrunning: 'stopped',
-        osmd: {},
-        doc: '',
+        osmd: null,
         delay: 50,
+        interval: 1000,
+        timer: null,
+        div_id: 'score',
+        score_div: null,
       }
     },
 
@@ -125,15 +128,30 @@
     methods: {
 
       start() {
+        vm.timer = setInterval(this.redraw_score, this.interval);
+      },
+
+      redraw_score() {
+        console.log('Redrawing score...')
         vm.isrunning = 'running'
-        console.log('Loading div...')
-        vm.osmd = new opensheetmusicdisplay.OpenSheetMusicDisplay("score");
+        console.log('  Loading div...')
+        vm.score_div = document.getElementById(vm.div_id) // .innerHTML = "";
+        vm.osmd = new opensheetmusicdisplay.OpenSheetMusicDisplay(vm.div_id);
         sciris.sleep(vm.delay).then(response => {
-          console.log('Loading score...')
+          console.log('  Loading score...')
           vm.osmd.load('live/brainstaves-a.xml')
           sciris.sleep(vm.delay).then(response => {
-              console.log('Rendering score...')
+              console.log('  Rendering score...')
               vm.osmd.render();
+              sciris.sleep(vm.delay).then(response => {
+                if (vm.score_div.children.length>1) {
+                  console.log('  Removing old score...');
+                  vm.score_div.removeChild(vm.score_div.firstChild);
+                  // vm.score_div.removeChild(vm.score_div.lastChild);
+                } else {
+                  console.log('  Only one score, not removing');
+                }
+                  })
             })
         })
       },
@@ -144,7 +162,9 @@
       },
 
       stop() {
+        console.log('Stopping refresh')
         vm.isrunning = 'stopped'
+        clearInterval(vm.timer);
         sciris.rpc('stop')
       },
 
