@@ -42,27 +42,16 @@
 
     .main {
       display: block;
-      /*padding: 20px;*/
       background-color: #000;
-      /*border-radius: 15px;*/
     }
 
-    .section {
-      padding: 20px;
-      margin: 20px;
+    .thescore {
       border-width: 2px;
       border-color: #333;
       border-style: solid;
       background-color: #fff;
-      border-radius: 15px;
-    }
-
-    .plot {
-      border-width: 2px;
-      border-color:#aaa;
-      border-style:solid;
-      padding:10px;
-      background-color: #fff;
+      min-width: 90vw;
+      min-height: 80vh;
     }
 
     a:link    {color: #aaf;}
@@ -80,24 +69,29 @@
   <br>
   <div id="app" class="app">
     <div class="main">
-        <div style="text-align:center;">
-      <h1 style='color:#fff'>B R A I N S T A V E S</h1>
-        <span><b-btn v-on:click="start()">&zigrarr;</b-btn></span>
-        <span><b-btn v-on:click="pause()">&udhar;</b-btn></span>
-        <span><b-btn v-on:click="stop()">&Cross;</b-btn></span>
-        
+      <div style="display:flex">
+        <div style="justify-content: flex-start; width:50%">
+          <span style='color:#fff'>B R A I N S T A V E S</span>
+        </div>
+        <div style="justify-content: flex-end; width:50%; text-align:right;">
+          <span><b-btn v-on:click="start()">&zigrarr;</b-btn></span>
+          <span><b-btn v-on:click="pause()">&udhar;</b-btn></span>
+          <span><b-btn v-on:click="stop()">&Cross;</b-btn></span>
+          <br><br>
+        </div>
       </div>
 
-      <div class="section" id="score">
-        <!-- {{ notes }} -->
+      <div class="thescore" id="score">
+        <!-- THE SCORE -->
       </div>
 
-      <p style="font-size: 0.6em; color: #fff; text-align: center;">
+<!--       <p style="font-size: 0.6em; color: #fff; text-align: center;">
         Status: 
         <span v-if="isrunning==='running'">&zigrarr;</span>
         <span v-else-if="isrunning==='paused'">&udhar;</span>
         <span v-else>&Cross;</span>
-        <i>| Version {{ version }} | Developed by Cliff Kerr | Powered by <a href="http://sciris.org">Sciris</a></i></p>
+        <i>| Version {{ version }} | Developed by Cliff Kerr | Powered by <a href="http://sciris.org">Sciris</a></i>
+      </p> -->
 
     </div>
 
@@ -115,10 +109,9 @@
       return {
         version: 'Version information unavailable',
         isrunning: 'stopped',
-        notes: 'HERE IS NOTES',
-        container: {},
         osmd: {},
         doc: '',
+        delay: 50,
       }
     },
 
@@ -126,88 +119,28 @@
       sciris.rpc('get_version')
               .then(function (response) {
                 vm.version = response.data
-                
-                // this.container = container
-                // this.osmd = osmd
               })
     },
 
     methods: {
 
-      loadMusicXML(url) {
-        console.log('HIIIII')
-        console.log(url)
-   var xhttp = new XMLHttpRequest();
-   xhttp.onreadystatechange = function () {
-     switch (xhttp.readyState) {
-        case 0 : // UNINITIALIZED
-        case 1 : // LOADING
-        case 2 : // LOADED
-        case 3 : // INTERACTIVE
-        break;
-        case 4 : // COMPLETED
-
-        var container = document.getElementById("score");
-                container.style.width = "720px";
-                var osmd = new opensheetmusicdisplay.OpenSheetMusicDisplay(container);
-          osmd
-        .load(xhttp.responseXML)
-        .then(
-          () => {
-            osmd.render();
-            afterRender();
-          },
-          (err) => console.log(err)
-        );
-          break;
-        default:
-          throw("Error loading MusicXML file.");
-     }
-  }
-   xhttp.open("GET", url, true);
-   xhttp.send();
- },
-
-
       start() {
         vm.isrunning = 'running'
-        this.loadMusicXML('/assets/mozart-test-excerpt.musicxml')
-        // vm.osmd.load('http://localhost:8185/assets/Saltarello_sample.musicxml')
-        sciris.rpc('start')
-              .then(function (response) {
-                console.log('OKKKKK')
-                vm.notes = response
-                // var doc = new DOMParser().parseFromString(response.data, "text/xml")
-                var doc = response.data
-                          console.log('HIIIIIII')
-          console.log(doc)
-          console.log('BYYYYYYYE')
-                // var doc = document.implementation.createHTMLDocument('');
-                // doc.open();
-                // doc.write(response.data);
-                // doc.close();
-                vm.doc = doc
-                console.log('hsrru')
-        //         vm.osmd.load(response).then(
-        //                 function() {
-        //   //console.log("e.target.result: " + e.target.result);
-        //   openSheetMusicDisplay.render();
-        // }
-        //         vm.osmd.render();
-        //       })
-      });
+        console.log('hi1')
+        vm.osmd = new opensheetmusicdisplay.OpenSheetMusicDisplay("score");
+        sciris.sleep(vm.delay).then(response => {
+          console.log('hi2')
+          vm.osmd.load('/assets/mozart-test-excerpt.musicxml')
+          sciris.sleep(vm.delay).then(response => {
+              console.log('hi3')
+              vm.osmd.render();
+            })
+        })
       },
 
       pause() {
         vm.isrunning = 'paused'
         sciris.rpc('pause')
-        vm.osmd.load(vm.doc).then(
-        function() {
-          console.log('Sooooo')
-          vm.osmd.render();
-          console.log('???')
-        }
-      );
       },
 
       stop() {
