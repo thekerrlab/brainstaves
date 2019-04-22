@@ -67,25 +67,25 @@ def num2char(val, which='sharps'):
     output = mapping[which][num] + '%i'%octave
     return output
 
-class Instrument(object):
-    def __init__(self, which=None, nbars=None, minlen=None):
-        if which is None:
-            which = 'violin'
+class Section(object):
+    def __init__(self, instrument=None, nbars=None, minlen=None):
+        if instrument is None:
+            instrument = 'violin'
         if nbars is None:
             nbars = 16
         if minlen is None:
             minlen = 16
-        self.which = which
+        self.instrument = instrument
         self.nbars = nbars
         self.minlen = minlen
         
-        if which == 'violin':
+        if instrument == 'violin':
             self.low = 'gn2'
             self.high = 'dn5'
-        elif which == 'viola':
+        elif instrument == 'viola':
             self.low = 'cn2'
             self.high = 'gn3'
-        elif which == 'cello':
+        elif instrument == 'cello':
             self.low = 'cn1'
             self.high = 'gn2'
         
