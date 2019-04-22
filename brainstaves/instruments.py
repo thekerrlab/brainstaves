@@ -7,6 +7,7 @@ Created on Mon Apr 22 14:06:19 2019
 """
 
 import numpy as np
+import pylab as pl
 import sounddevice as sd
 import sciris as sc
 
@@ -79,7 +80,7 @@ class Section(sc.prettyobj):
         if instrument is None:
             instrument = 'violin'
         if nbars is None:
-            nbars = 16
+            nbars = 4
         if mindur is None:
             mindur = 16
         self.instrument = instrument
@@ -91,10 +92,10 @@ class Section(sc.prettyobj):
             self.high = 'dn5'
         elif instrument == 'viola':
             self.low = 'cn2'
-            self.high = 'gn3'
+            self.high = 'gn4'
         elif instrument == 'cello':
             self.low = 'cn1'
-            self.high = 'gn2'
+            self.high = 'gn3'
         
         self.npts = nbars*self.mindur
         self.arr = np.zeros(self.npts)
@@ -123,11 +124,11 @@ class Section(sc.prettyobj):
         return None
 
 
-def play(insts=None, volume=0.5, tempo=104):
+def play(insts=None, volume=1.0, tempo=120):
+    fs = 44100
     insts = sc.promotetolist(insts)
     perbar = 60*4/tempo
     pernote = perbar/insts[0].mindur
-    fs = 44100
     npts = int(pernote*fs)
     data = np.zeros(npts*insts[0].npts)
     for inst in insts:
@@ -137,7 +138,13 @@ def play(insts=None, volume=0.5, tempo=104):
             hz = hertz(inst.arr[n])
             x = np.arange(npts)
             y = np.sin(x/fs*hz*2*np.pi)
-            data[start:finish] = y
+            data[start:finish] += y
+    data = data/abs(data).max()*volume
+    
+    
+#    pl.plot(data)
+#    pl.show()
+#    import traceback; traceback.print_exc(); import pdb; pdb.set_trace()
     
     sd.play(data, fs, blocking=True)
     return None
