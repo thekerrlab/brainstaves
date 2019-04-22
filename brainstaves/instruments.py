@@ -8,6 +8,7 @@ Created on Mon Apr 22 14:06:19 2019
 
 import numpy as np
 import sounddevice as sd
+import sciris as sc
 
 def char2num(val):
     assert len(val)==3
@@ -67,17 +68,23 @@ def num2char(val, which='sharps'):
     output = mapping[which][num] + '%i'%octave
     return output
 
-class Section(object):
-    def __init__(self, instrument=None, nbars=None, minlen=None):
+def hertz(val):
+    if isinstance(val, str): val = char2num(val)
+    a0 = 27.5 # Pitch of the lowest note on the piano
+    hz = a0 * 2**(val/12.)
+    return hz
+
+class Section(sc.prettyobj):
+    def __init__(self, instrument=None, nbars=None, mindur=None):
         if instrument is None:
             instrument = 'violin'
         if nbars is None:
             nbars = 16
-        if minlen is None:
-            minlen = 16
+        if mindur is None:
+            mindur = 16
         self.instrument = instrument
         self.nbars = nbars
-        self.minlen = minlen
+        self.mindur = mindur
         
         if instrument == 'violin':
             self.low = 'gn2'
@@ -89,4 +96,48 @@ class Section(object):
             self.low = 'cn1'
             self.high = 'gn2'
         
-        self.arr = np.zeros(nbars*minlen)
+        self.npts = nbars*self.mindur
+        self.arr = np.zeros(self.npts)
+        return None
+    
+    def minmax(self):
+        return char2num(self.low), char2num(self.high)
+    
+    def uniform(self):
+        minval,maxval = self.minmax()
+        for n in range(self.npts):
+            self.arr[n] = np.random.randint(low=minval, high=maxval)
+        return None
+    
+    def brownian(self, startval=None):
+        minval,maxval = self.minmax()
+        if startval is None:
+            startval = (minval+maxval)//2
+        self.arr[0] = startval
+        for n in range(self.npts-1):
+            current = self.arr[n]
+            step = np.random.randint(-1,2)
+            if (current+step) < minval or (current+step) > maxval:
+                step = -step
+            self.arr[n+1] = current + step
+        return None
+
+
+def play(insts=None, volume=0.5, tempo=104):
+    insts = sc.promotetolist(insts)
+    perbar = 60*4/tempo
+    pernote = perbar/insts[0].mindur
+    fs = 44100
+    npts = int(pernote*fs)
+    data = np.zeros(npts*insts[0].npts)
+    for inst in insts:
+        for n in range(inst.npts):
+            start = n*npts
+            finish = start+npts
+            hz = hertz(inst.arr[n])
+            x = np.arange(npts)
+            y = np.sin(x/fs*hz*2*np.pi)
+            data[start:finish] = y
+    
+    sd.play(data, fs, blocking=True)
+    return None
