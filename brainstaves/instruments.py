@@ -126,10 +126,13 @@ class Section(sc.prettyobj):
 
 def play(insts=None, volume=1.0, tempo=120):
     fs = 44100
+    feather = 0.1
     insts = sc.promotetolist(insts)
     perbar = 60*4/tempo
     pernote = perbar/insts[0].mindur
     npts = int(pernote*fs)
+    nfeather = int(npts*feather)
+    featherarr = np.linspace(0,1,nfeather)
     data = np.zeros(npts*insts[0].npts)
     for inst in insts:
         for n in range(inst.npts):
@@ -138,13 +141,9 @@ def play(insts=None, volume=1.0, tempo=120):
             hz = hertz(inst.arr[n])
             x = np.arange(npts)
             y = np.sin(x/fs*hz*2*np.pi)
+            y[:nfeather] = y[:nfeather]*featherarr
+            y[-nfeather:] = y[-nfeather:]*(1-featherarr)
             data[start:finish] += y
     data = data/abs(data).max()*volume
-    
-    
-#    pl.plot(data)
-#    pl.show()
-#    import traceback; traceback.print_exc(); import pdb; pdb.set_trace()
-    
     sd.play(data, fs, blocking=True)
-    return None
+    return data
