@@ -1,5 +1,6 @@
 import instruments as i
 import spectrogram as s
+import sciris as sc
 
 offset = 2824
 
@@ -20,7 +21,9 @@ for inst in quartet:
 
 #fig = i.plot(quartet)
 #data = i.play(quartet)
+sc.tic()
 score = i.write(quartet)
+sc.toc()
 #ims = s.plotstft(data)
 
 
