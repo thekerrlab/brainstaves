@@ -7,7 +7,6 @@ from numpy.lib import stride_tricks
 """ short time fourier transform of audio signal """
 def stft(sig, frameSize, overlapFac=0.5, window=np.hanning):
     
-#    sig *= 10000
     frameSize = int(frameSize)
     win = window(frameSize)
     hopSize = int(frameSize - np.floor(overlapFac * frameSize))
