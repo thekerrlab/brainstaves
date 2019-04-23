@@ -85,7 +85,7 @@
 
       <!-- THE SCORE -->
       <div class="thescore" id="score">
-        <img src='live/brainstaves-test-flight4.png' style='max-width: 100vw'>
+        <img style='max-width: 100vw' name='score_img'>
       </div>
 
     </div>
@@ -129,7 +129,7 @@
       redraw_score() {
         console.log('Redrawing score...')
         vm.isrunning = 'running'
-        document.getElementById('score').innerHTML = "<img src='live/brainstaves.png#e" + Math.random() + "' style='max-width: 100vw'>"
+        document.images['score_img'].src = 'live/brainstaves.png?' + Math.random();
       },
 
       // redraw_score() {
