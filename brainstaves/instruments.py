@@ -110,7 +110,7 @@ def hertz(val):
     return hz
 
 class Section(sc.prettyobj):
-    def __init__(self, instrument=None, nbars=None, mindur=None):
+    def __init__(self, instrument=None, nbars=None, mindur=None, seed=None):
         if instrument is None:
             instrument = 'violin'
         if nbars is None:
@@ -120,6 +120,7 @@ class Section(sc.prettyobj):
         self.instrument = instrument
         self.nbars = nbars
         self.mindur = mindur
+        self.seed = seed
         
         if instrument == 'violin':
             self.low = 'gn2'
@@ -139,12 +140,16 @@ class Section(sc.prettyobj):
         return char2num(self.low), char2num(self.high)
     
     def uniform(self):
+        if self.seed:
+            pl.seed(self.seed)
         minval,maxval = self.minmax()
         for n in range(self.npts):
             self.arr[n] = np.random.randint(low=minval, high=maxval)
         return None
     
     def brownian(self, startval=None, maxstep=None):
+        if self.seed:
+            pl.seed(self.seed)
         if maxstep is None: maxstep = 1
         minval,maxval = self.minmax()
         if startval is None:
@@ -162,6 +167,8 @@ class Section(sc.prettyobj):
         return None
     
     def addrests(self, p=0.5):
+        if self.seed:
+            pl.seed(self.seed)
         randvals = pl.rand(self.npts)
         addrests = randvals>p
         self.arr[addrests] = np.nan
@@ -220,4 +227,40 @@ def plot(insts=None):
     pl.show()
     pl.pause(0.1)
     return fig
+    
+
+def write(insts=None, infile=None, outfile=None):
+    insts = sc.promotetolist(insts)
+    if infile is None:
+        infile = 'live/brainstaves-test-flight.xml'
+    if outfile is None:
+        outfile = infile
+    lines = open(infile).readlines()
+    
+    notesfound = -1
+    allnotes = []
+    for inst in insts:
+        allnotes.extend(list(inst.arr))
+    for n,note in enumerate(allnotes):
+        allnotes[n] = num2char(note)
+    for l,line in enumerate(lines):
+        if '<note' in line:
+            notesfound += 1
+            thisnote = allnotes[notesfound]
+            print('Working on note %s' % notesfound)
+        if '<step>' in line:
+            loc = line.find('>')+1
+            parts = lines[l].partition(lines[l][loc])
+            lines[l] = parts[0] + thisnote[0].upper() + parts[2]
+        if '<octave>' in line:
+            loc = line.find('>')+1
+            parts = lines[l].partition(lines[l][loc])
+            lines[l] = parts[0] + thisnote[2] + parts[2]
+        
+    output = ''.join(lines)
+    with open(outfile, 'w') as f:
+        f.write(output)
+    
+    output = ''
+    return output
     
