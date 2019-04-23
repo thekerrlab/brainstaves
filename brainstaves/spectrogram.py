@@ -1,3 +1,5 @@
+# From http://www.frank-zalkow.de/en/code-snippets/create-audio-spectrograms-with-python.html
+
 import numpy as np
 from matplotlib import pyplot as plt
 from numpy.lib import stride_tricks
