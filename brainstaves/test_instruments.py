@@ -24,7 +24,7 @@ data = i.play(quartet)
 
 #score = i.write(quartet)
 
-ims = s.plotstft(data, 44100)
+ims = s.plotstft(data)
 
 
 print('Done.')

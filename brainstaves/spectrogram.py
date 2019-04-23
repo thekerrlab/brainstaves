@@ -1,12 +1,11 @@
 import numpy as np
 from matplotlib import pyplot as plt
-import scipy.io.wavfile as wav
 from numpy.lib import stride_tricks
 
 """ short time fourier transform of audio signal """
 def stft(sig, frameSize, overlapFac=0.5, window=np.hanning):
     
-    sig *= 10000
+#    sig *= 10000
     frameSize = int(frameSize)
     win = window(frameSize)
     hopSize = int(frameSize - np.floor(overlapFac * frameSize))
@@ -19,12 +18,10 @@ def stft(sig, frameSize, overlapFac=0.5, window=np.hanning):
     # zeros at end (thus samples can be fully covered by frames)
     samples = np.append(samples, np.zeros(frameSize))
     
-#    samples = np.array(samples,dtype=int)
-    
     frames = stride_tricks.as_strided(samples, shape=(cols, frameSize), strides=(samples.strides[0]*hopSize, samples.strides[0])).copy()
     frames *= win
     
-    return np.fft.rfft(frames)    
+    return np.fft.rfft(frames)
     
 """ scale frequency axis logarithmically """    
 def logscale_spec(spec, sr=44100, factor=20.):
@@ -55,22 +52,20 @@ def logscale_spec(spec, sr=44100, factor=20.):
     return newspec, freqs
 
 """ plot spectrogram"""
-def plotstft(samples, samplerate, binsize=2**10, plotpath=None, colormap="jet"):
+def plotstft(samples, samplerate=44100, audiopath=None, binsize=2**10, plotpath=None, colormap="jet"):
+    if audiopath:
+        import scipy.io.wavfile as wav
+        samplerate, samples = wav.read(audiopath)
     s = stft(samples, binsize)
-    print(s)
     
     sshow, freq = logscale_spec(s, factor=1.0, sr=samplerate)
-    print(sshow)
     ims = 20.*np.log10(np.abs(sshow)/10e-6) # amplitude to decibel
-    print(ims)
-    
-#    plt.figure()
-#    plt.imshow(ims)
+    imstrans = np.transpose(ims)
     
     timebins, freqbins = np.shape(ims)
     
     plt.figure(figsize=(15, 7.5))
-    plt.imshow(np.transpose(ims), origin="lower", aspect="auto", cmap=colormap, interpolation="none")
+    plt.imshow(imstrans, origin="lower", aspect="auto", cmap=colormap, interpolation="none")
     plt.colorbar()
 
     plt.xlabel("time (s)")
@@ -85,4 +80,4 @@ def plotstft(samples, samplerate, binsize=2**10, plotpath=None, colormap="jet"):
     
     plt.show()
     
-    return ims
+    return imstrans
