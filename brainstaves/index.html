@@ -122,37 +122,20 @@
 
     methods: {
 
-      start() {
-        vm.timer = setInterval(this.redraw_score, this.interval);
-      },
-
       redraw_score() {
         console.log('Redrawing score...')
         vm.isrunning = 'running'
         document.images['score_img'].src = 'live/brainstaves.png?' + Math.random();
       },
 
-      // redraw_score() {
-      //   console.log('Redrawing score...')
-      //   vm.isrunning = 'running'
-      //   console.log('  Loading div...')
-      //   vm.score_div = document.getElementById(vm.div_id)
-      //   vm.osmd = new opensheetmusicdisplay.OpenSheetMusicDisplay(vm.div_id);
-      //   sciris.sleep(vm.delay).then(response => {
-      //     console.log('  Loading score...')
-      //     vm.osmd.load('live/brainstaves-test-flight.xml')
-      //     sciris.sleep(vm.delay).then(response => {
-      //         console.log('  Rendering score...')
-      //         vm.osmd.render();
-      //         if (vm.score_div.children.length>1) {
-      //           console.log('  Removing old score...');
-      //           vm.score_div.removeChild(vm.score_div.firstChild);
-      //         } else {
-      //           console.log('  Only one score, not removing');
-      //         }
-      //       })
-      //   })
-      // },
+      start() {
+        var initial_delay = 1*(1000 - new Date().getTime() % 1000);
+        console.log('Waiting ' + initial_delay + ' ms to start on the dot of the next second')
+        setTimeout(function() {
+          console.log('Launched')
+          vm.timer = setInterval(vm.redraw_score, vm.interval);
+        }, initial_delay);
+      },
 
       stop() {
         console.log('Stopping refresh')
