@@ -218,11 +218,11 @@ def plot(insts=None):
     fig = pl.figure()
     for inst in insts:
         x = np.arange(inst.npts)
-        pl.plot(x, inst.arr)
-        pl.scatter(x, inst.arr, s=100, label=inst.instrument)
+        pl.plot(x, inst.arr, lw=3)
+        pl.scatter(x, inst.arr, s=200, label=inst.instrument)
         mi,ma = inst.minmax()
         for z in np.arange(mi,ma+1):
-            pl.plot([0,inst.npts-1],[z,z], c=0.8*np.ones(3), zorder=-100)
+            pl.plot([0,inst.npts-1],[z,z], c=0.8*np.ones(3), zorder=-100, lw=2)
     pl.legend()
     pl.show()
     pl.pause(0.1)

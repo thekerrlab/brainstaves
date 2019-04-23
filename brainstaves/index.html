@@ -133,7 +133,7 @@
         vm.osmd = new opensheetmusicdisplay.OpenSheetMusicDisplay(vm.div_id);
         sciris.sleep(vm.delay).then(response => {
           console.log('  Loading score...')
-          vm.osmd.load('live/brainstaves-a.xml')
+          vm.osmd.load('live/brainstaves-test-flight.xml')
           sciris.sleep(vm.delay).then(response => {
               console.log('  Rendering score...')
               vm.osmd.render();

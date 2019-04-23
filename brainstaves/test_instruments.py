@@ -1,34 +1,30 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Apr 22 14:34:56 2019
-
-@author: cliffk
-"""
-
-import pylab as pl
 import instruments as i
+import spectrogram as s
 
-v1 = i.Section(instrument='violin', seed=1)
-v2 = i.Section(instrument='violin', seed=2)
-va = i.Section(instrument='viola', seed=3)
-vc = i.Section(instrument='cello', seed=4)
+offset = 2824
+
+v1 = i.Section(instrument='violin', seed=1+offset)
+v2 = i.Section(instrument='violin', seed=2+offset)
+va = i.Section(instrument='viola', seed=3+offset)
+vc = i.Section(instrument='cello', seed=4+offset)
 quartet = [v1,v2,va,vc]
 
 for inst in quartet:
-    inst.brownian(maxstep=4)
-    inst.diatonic()
+    inst.brownian(maxstep=1)
+#    inst.diatonic()
 #    inst.octotonic()
 
 for inst in quartet:
-    inst.addrests(p=1.0)
+    inst.addrests(p=0.8)
 
 
-fig = i.plot(quartet)
+#fig = i.plot(quartet)
 
 data = i.play(quartet)
 
-score = i.write(quartet)
+#score = i.write(quartet)
+
+ims = s.plotstft(data, 44100)
 
 
 print('Done.')
