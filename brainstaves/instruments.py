@@ -14,23 +14,23 @@ def char2num(val):
     
     octave = val[2]
     note = val[0:2]
-    mapping = {'an':0,
-               'a#':1,
-               'b$':1,
-               'bn':2,
-               'cn':3,
-               'c#':4,
-               'd$':4,
-               'dn':5,
-               'd#':6,
-               'e$':6,
-               'en':7,
-               'fn':8,
-               'f#':9,
-               'g$':9,
-               'gn':10,
-               'g#':11,
-               'a$':11}
+    mapping = {'cn':0,
+               'c#':1,
+               'd$':1,
+               'dn':2,
+               'd#':3,
+               'e$':3,
+               'en':4,
+               'fn':5,
+               'f#':6,
+               'g$':6,
+               'gn':7,
+               'g#':8,
+               'a$':8,
+               'an':9,
+               'a#':10,
+               'b$':10,
+               'bn':11,}
     output = 12*int(octave) + mapping[note]
     return output
 
@@ -43,33 +43,49 @@ def num2char(val, which='sharps'):
     num = val % 12
     mapping = dict()
     mapping['sharps'] = {
-            0:'an',
-            1:'a#',
-            2:'bn',
-            3:'cn',
-            4:'c#',
-            5:'dn',
-            6:'d#',
-            7:'en',
-            8:'fn',
-            9:'f#',
-            10:'gn',
-            11:'g#',}
+            0:'cn',
+            1:'c#',
+            2:'dn',
+            3:'d#',
+            4:'en',
+            5:'fn',
+            6:'f#',
+            7:'gn',
+            8:'g#',
+            9:'an',
+            10:'a#',
+            11:'bn',}
     mapping['flats'] = {
-            0:'an',
-            1:'b$',
-            2:'bn',
-            3:'cn',
-            4:'d$',
-            5:'dn',
-            6:'e$',
-            7:'en',
-            8:'fn',
-            9:'g$',
-            10:'gn',
-            11:'a$',}
+            0:'cn',
+            1:'d$',
+            2:'dn',
+            3:'e$',
+            4:'en',
+            5:'fn',
+            6:'g$',
+            7:'gn',
+            8:'a$',
+            9:'an',
+            10:'b$',
+            11:'bn',}
     output = mapping[which][num] + '%i'%octave
     return output
+
+
+def num2lily(num):
+    ch = num2char(num)
+    if ch == '---':
+        return 'r16' # WARNING TEMP
+    letter = ch[0]
+    if   ch[1]=='#': acci = 'is'
+    elif ch[1]=='$': acci = 'es'
+    else:            acci = ''
+    octint = int(ch[2]) - 2
+    if   octint > 0: octchar = "'"*octint
+    elif octint < 0: octchar = ","*-octint
+    else:            octchar = ''
+    lily = letter + acci + octchar + '16' # WARNING TEMP
+    return lily
 
 
 def char2dia(val):
@@ -103,13 +119,16 @@ def hertz(val):
     return hz
 
 class Section(sc.prettyobj):
-    def __init__(self, instrument=None, nbars=None, mindur=None, seed=None):
+    def __init__(self, name=None, instrument=None, nbars=None, mindur=None, seed=None):
+        if name is None:
+            name = 'v'
         if instrument is None:
             instrument = 'violin'
         if nbars is None:
             nbars = 4
         if mindur is None:
             mindur = 16
+        self.name = name
         self.instrument = instrument
         self.nbars = nbars
         self.mindur = mindur
@@ -234,30 +253,25 @@ def write(insts=None, folder=None, infile=None, outfile=None, aspng=True):
     outfilepath = os.path.join(folder,outfile)
     lines = open(infilepath).readlines()
     
-    notesfound = -1
-    allnotes = []
-    for inst in insts:
-        allnotes.extend(list(inst.arr))
-    for n,note in enumerate(allnotes):
-        allnotes[n] = num2char(note)
+    nextline = False
     for l,line in enumerate(lines):
-        if '<note' in line:
-            notesfound += 1
-            thisnote = allnotes[notesfound]
-            thisletter = thisnote[0].upper()
-            thisoctave = int(thisnote[2])
-            if thisletter not in ['A','B']:
-                thisoctave += 1
-            thisoctave = str(thisoctave)
-        if '<step>' in line:
-            loc = line.find('>')+1
-            parts = lines[l].partition(lines[l][loc])
-            lines[l] = parts[0] + thisletter + parts[2]
-        if '<octave>' in line:
-            loc = line.find('>')+1
-            parts = lines[l].partition(lines[l][loc])
-            lines[l] = parts[0] + thisoctave + parts[2]
-        
+        if line.startswith('%!!!'):
+            nextline = True
+            name = line[4:-1] # Skip starter and newline
+        else:
+            if nextline:
+                nextline = False
+                inst = None
+                for tmp in insts:
+                    if tmp.name == name:
+                        inst = tmp
+                if inst is None:
+                    errormsg = 'Could not match name %s' % name
+                    raise Exception(errormsg)
+                lilynotes = []
+                for note in inst.arr:
+                    lilynotes.append(num2lily(note))
+                lines[l] = ' '.join(lilynotes) + '\n'
     output = ''.join(lines)
     with open(outfilepath, 'w') as f:
         f.write(output)
