@@ -19,12 +19,9 @@ for inst in quartet:
 
 
 #fig = i.plot(quartet)
-
-data = i.play(quartet)
-
-#score = i.write(quartet)
-
-ims = s.plotstft(data)
+#data = i.play(quartet)
+score = i.write(quartet)
+#ims = s.plotstft(data)
 
 
 print('Done.')

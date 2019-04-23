@@ -1,11 +1,4 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Apr 22 14:06:19 2019
-
-@author: cliffk
-"""
-
+import os
 import numpy as np
 import pylab as pl
 import sounddevice as sd
@@ -229,13 +222,17 @@ def plot(insts=None):
     return fig
     
 
-def write(insts=None, infile=None, outfile=None):
+def write(insts=None, folder=None, infile=None, outfile=None, aspng=True):
     insts = sc.promotetolist(insts)
+    if folder is None:
+        folder = 'live'
     if infile is None:
-        infile = 'live/brainstaves-test-flight.xml'
+        infile = 'brainstaves.ly'
     if outfile is None:
         outfile = infile
-    lines = open(infile).readlines()
+    infilepath = os.path.join(folder,infile)
+    outfilepath = os.path.join(folder,outfile)
+    lines = open(infilepath).readlines()
     
     notesfound = -1
     allnotes = []
@@ -262,9 +259,11 @@ def write(insts=None, infile=None, outfile=None):
             lines[l] = parts[0] + thisoctave + parts[2]
         
     output = ''.join(lines)
-    with open(outfile, 'w') as f:
+    with open(outfilepath, 'w') as f:
         f.write(output)
     
-    output = ''
+    if aspng:
+        cmd = 'cd %s; lilypond -dresolution=300 --png %s' % (folder, outfile)
+        os.system(cmd)
     return output
     
