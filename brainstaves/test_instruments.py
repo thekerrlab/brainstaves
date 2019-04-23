@@ -17,8 +17,8 @@ quartet = [v1,v2,va,vc]
 
 for inst in quartet:
     inst.brownian(maxstep=4)
-    inst.diatonic()
-#    inst.octotonic()
+#    inst.diatonic()
+    inst.octotonic()
 
 for inst in quartet:
     inst.addrests(p=0.8)
