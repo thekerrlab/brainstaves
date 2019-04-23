@@ -247,15 +247,19 @@ def write(insts=None, infile=None, outfile=None):
         if '<note' in line:
             notesfound += 1
             thisnote = allnotes[notesfound]
-            print('Working on note %s' % notesfound)
+            thisletter = thisnote[0].upper()
+            thisoctave = int(thisnote[2])
+            if thisletter not in ['A','B']:
+                thisoctave += 1
+            thisoctave = str(thisoctave)
         if '<step>' in line:
             loc = line.find('>')+1
             parts = lines[l].partition(lines[l][loc])
-            lines[l] = parts[0] + thisnote[0].upper() + parts[2]
+            lines[l] = parts[0] + thisletter + parts[2]
         if '<octave>' in line:
             loc = line.find('>')+1
             parts = lines[l].partition(lines[l][loc])
-            lines[l] = parts[0] + thisnote[2] + parts[2]
+            lines[l] = parts[0] + thisoctave + parts[2]
         
     output = ''.join(lines)
     with open(outfile, 'w') as f:
