@@ -10,21 +10,24 @@ import pylab as pl
 import instruments as i
 
 v1 = i.Section(instrument='violin')
-v1.brownian()
-pl.plot(v1.arr)
-
 v2 = i.Section(instrument='violin')
-v2.brownian()
-pl.plot(v2.arr)
-
 va = i.Section(instrument='viola')
-va.brownian()
-pl.plot(va.arr)
-
 vc = i.Section(instrument='cello')
-vc.brownian()
-pl.plot(vc.arr)
+quartet = [v1,v2,va,vc]
 
-data = i.play([v1, v2, va, vc])
+for inst in quartet:
+    inst.brownian(maxstep=4)
+    inst.diatonic()
+#    inst.octotonic()
+
+for inst in quartet:
+    inst.addrests(p=0.8)
+
+
+fig = i.plot(quartet)
+
+data = i.play(quartet)
+
+
 
 print('Done.')
