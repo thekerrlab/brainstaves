@@ -1,6 +1,6 @@
-# brainstaves
+# B R A I N S T A V E S
 
-Composition for string quartet and EEG.
+Composition for string quartet and EEG headsets.
 
 ## Quick start guide
 
@@ -44,22 +44,22 @@ The procedure that works some of the time on Ubuntu 18.04 is:
 
 1. Unpair all devices (Bluetooth menu -> Remove for each MindWave Mobile)
 2. Pair devices (in same terminal):
-  1. `bluetoothctl`
-  2. `pair 00:81:F9:08:A1:72`
-  3. `pair 00:81:F9:29:BA:98`
-  4. `pair 00:81:F9:29:EF:80`
-  5. `pair C4:64:E3:EA:75:6D`
+    1. `bluetoothctl`
+    2. `pair 00:81:F9:08:A1:72`
+    3. `pair 00:81:F9:29:BA:98`
+    4. `pair 00:81:F9:29:EF:80`
+    5. `pair C4:64:E3:EA:75:6D`
 3. Connect (in 4 separate terminals since blocking):
-  1. `sudo rfcomm connect hci0 00:81:F9:08:A1:72` (not sure why this has to be different, but `/dev/rfcomm0` never works)
-  2. `sudo rfcomm connect /dev/rfcomm1 00:81:F9:29:BA:98`
-  3. `sudo rfcomm connect /dev/rfcomm2 00:81:F9:29:EF:80`
-  4. `sudo rfcomm connect /dev/rfcomm3 C4:64:E3:EA:75:6D`
+    1. `sudo rfcomm connect hci0 00:81:F9:08:A1:72` (not sure why this has to be different, but `/  dev/rfcomm0` never works)
+    2. `sudo rfcomm connect /dev/rfcomm1 00:81:F9:29:BA:98`
+    3. `sudo rfcomm connect /dev/rfcomm2 00:81:F9:29:EF:80`
+    4. `sudo rfcomm connect /dev/rfcomm3 C4:64:E3:EA:75:6D`
 4. Read (in 4 terminals, in `brainstaves/brainstaves/data`; NB, `headset.py` may require editing):
-  1. `sudo python headset.py mandhi`
-  2. `sudo python headset.py pat`
-  3. `sudo python headset.py rich`
-  4. `sudo python headset.py val`
+    1. `sudo python headset.py mandhi`
+    2. `sudo python headset.py pat`
+    3. `sudo python headset.py rich`
+    4. `sudo python headset.py val`
 5. Notes:
-  1. Some connections will probably fail at various stages. Try random permutations of things until they work.
+    1. Some connections will probably fail at various stages. Try random permutations of things until they work.
 
 The data analysis script is in `brainstaves/brainstaves/data/stats.py`.
