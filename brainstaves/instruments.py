@@ -160,7 +160,7 @@ class Section(sc.prettyobj):
         return char2num(self.low), char2num(self.high)
     
     def uniform(self):
-        if self.seed:
+        if self.seed and not np.isnan(self.seed):
             pl.seed(self.seed)
         minval,maxval = self.minmax()
         for n in range(self.npts):
@@ -168,7 +168,7 @@ class Section(sc.prettyobj):
         return None
     
     def brownian(self, startval=None, maxstep=None):
-        if self.seed:
+        if self.seed and not np.isnan(self.seed):
             pl.seed(self.seed)
         if maxstep is None: maxstep = 1
         minval,maxval = self.minmax()
@@ -187,7 +187,7 @@ class Section(sc.prettyobj):
         return None
     
     def addrests(self, p=0.5):
-        if self.seed:
+        if self.seed and not np.isnan(self.seed):
             pl.seed(self.seed)
         randvals = pl.rand(self.npts)
         addrests = randvals>p

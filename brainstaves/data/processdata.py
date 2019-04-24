@@ -9,7 +9,7 @@ Created on Wed Apr 24 12:46:15 2019
 import pylab as pl
 import sciris as sc
 
-infile = 'data-off.csv'
+infile = 'data-ck.csv'
 
 # Must match headset.py
 cols = ['attention', 'blinkStrength', 'bytesAvailable', 'delta', 'highAlpha', 'highBeta', 'lowAlpha', 'lowBeta', 'lowGamma', 'meditation', 'midGamma', 'packetsReceived', 'poorSignal', 'rawValue', 'theta']
