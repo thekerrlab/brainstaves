@@ -12,6 +12,9 @@ import sciris as sc
 # Must match headset.py
 cols = ['attention', 'blinkStrength', 'bytesAvailable', 'delta', 'highAlpha', 'highBeta', 'lowAlpha', 'lowBeta', 'lowGamma', 'meditation', 'midGamma', 'packetsReceived', 'poorSignal', 'rawValue', 'theta']
 
+keepcols = ['delta', 'theta', 'lowAlpha', 'highAlpha', 'lowBeta', 'highBeta', 'lowGamma', 'midGamma', 'rawValue'] # , 'poorSignal'
+
+
 infile = 'data.csv'
 data = []
 lines = open(infile).readlines()
@@ -22,8 +25,10 @@ data = pl.array(data)
 
 df = sc.dataframe(cols=cols, data=data)
 
-for col in cols:
-    pl.figure()
+pl.figure(figsize=(30,16))
+
+for c,col in enumerate(keepcols):
+    pl.subplot(3,3,c+1)
     pl.plot(df[col])
     pl.title(col)
 

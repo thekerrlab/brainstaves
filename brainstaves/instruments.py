@@ -75,7 +75,7 @@ def num2char(val, which='sharps'):
 def num2lily(num):
     ch = num2char(num)
     if ch == '---':
-        return 'r16' # WARNING TEMP
+        return 'r8' # WARNING TEMP
     letter = ch[0]
     if   ch[1]=='#': acci = 'is'
     elif ch[1]=='$': acci = 'es'
@@ -84,7 +84,7 @@ def num2lily(num):
     if   octint > 0: octchar = "'"*octint
     elif octint < 0: octchar = ","*-octint
     else:            octchar = ''
-    lily = letter + acci + octchar + '16' # WARNING TEMP
+    lily = letter + acci + octchar + '8' # WARNING TEMP
     return lily
 
 
@@ -148,6 +148,10 @@ class Section(sc.prettyobj):
         self.arr = np.nan+np.zeros(self.npts)
         self.score = np.zeros(0)
         return None
+    
+    @property
+    def scorepts(self):
+        return len(self.score)
     
     def cat(self):
         self.score = np.concatenate([self.score, self.arr])
@@ -213,12 +217,12 @@ def play(insts=None, volume=1.0, tempo=104, blocking=False):
     npts = int(pernote*fs)
     nfeather = int(npts*feather)
     featherarr = np.linspace(0,1,nfeather)
-    data = np.zeros(npts*insts[0].npts)
+    data = np.zeros(npts*insts[0].scorepts)
     for inst in insts:
-        for n in range(inst.npts):
+        for n in range(len(inst.score)):
             start = n*npts
             finish = start+npts
-            hz = hertz(inst.arr[n])
+            hz = hertz(inst.score[n])
             if hz>0: # nan used to represent rests
                 x = np.arange(npts)
                 y = np.sin(x/fs*hz*2*np.pi)
