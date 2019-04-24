@@ -15,6 +15,7 @@ else:
     print('Setting default')
     who = 'mandhi'
 
+print('FIX MAPPING')
 mapping = {'val': 'rfcomm0',
            'pat': 'rfcomm1',
            'rich': 'rfcomm2',
