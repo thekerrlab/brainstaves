@@ -35,10 +35,12 @@ How the rendering works is:
 
 This is hard. Assume you have 4 headsets with the following MAC addresses:
 
+```
 00:81:F9:08:A1:72
 00:81:F9:29:BA:98
 00:81:F9:29:EF:80
 C4:64:E3:EA:75:6D
+```
 
 The procedure that works some of the time on Ubuntu 18.04 is:
 
