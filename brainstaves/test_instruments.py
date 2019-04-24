@@ -10,19 +10,34 @@ va = i.Section(name='va', instrument='viola', seed=3+offset)
 vc = i.Section(name='vc', instrument='cello', seed=4+offset)
 quartet = [v1,v2,va,vc]
 
-for inst in quartet:
-    inst.brownian(maxstep=4)
-    inst.diatonic()
-    inst.octotonic()
+for p in [0.1, 0.2, 0.3, 0.5, 0.8, 1.0]:
+    for inst in quartet:
+        inst.brownian(maxstep=1)
+        inst.addrests(p=p)
+        inst.cat()
+#        inst.diatonic()
+#        inst.octotonic()
+    
+for maxstep in [1,4]:
+    for inst in quartet:
+        inst.brownian(maxstep=maxstep)
+        inst.octotonic()
+        inst.cat()
 
-for inst in quartet:
-    inst.addrests(p=1.0)
+for repeats in [1,2]:
+    for inst in quartet:
+        inst.brownian(maxstep=maxstep)
+        inst.octotonic()
+        inst.diatonic()
+        inst.addrests(p=0.7)
+        inst.cat()
+    
 
 
 #fig = i.plot(quartet)
 #data = i.play(quartet)
 sc.tic()
-score = i.write(quartet)
+score = i.write(quartet, export='pdf')
 sc.toc()
 #ims = s.plotstft(data)
 

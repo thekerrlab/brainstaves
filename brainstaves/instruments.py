@@ -127,7 +127,7 @@ class Section(sc.prettyobj):
         if nbars is None:
             nbars = 4
         if mindur is None:
-            mindur = 16
+            mindur = 8
         self.name = name
         self.instrument = instrument
         self.nbars = nbars
@@ -146,7 +146,11 @@ class Section(sc.prettyobj):
         
         self.npts = nbars*self.mindur
         self.arr = np.nan+np.zeros(self.npts)
+        self.score = np.zeros(0)
         return None
+    
+    def cat(self):
+        self.score = np.concatenate([self.score, self.arr])
     
     def minmax(self):
         return char2num(self.low), char2num(self.high)
@@ -241,7 +245,7 @@ def plot(insts=None):
     return fig
     
 
-def write(insts=None, folder=None, infile=None, outfile=None, aspng=True):
+def write(insts=None, folder=None, infile=None, outfile=None, export='png'):
     insts = sc.promotetolist(insts)
     if folder is None:
         folder = 'live'
@@ -269,15 +273,18 @@ def write(insts=None, folder=None, infile=None, outfile=None, aspng=True):
                     errormsg = 'Could not match name %s' % name
                     raise Exception(errormsg)
                 lilynotes = []
-                for note in inst.arr:
+                for note in inst.score:
                     lilynotes.append(num2lily(note))
                 lines[l] = ' '.join(lilynotes) + '\n'
     output = ''.join(lines)
     with open(outfilepath, 'w') as f:
         f.write(output)
     
-    if aspng:
+    if export=='png':
         cmd = 'cd %s; lilypond -dresolution=300 --png %s' % (folder, outfile)
+        os.system(cmd)
+    if export=='pdf':
+        cmd = 'cd %s; lilypond %s' % (folder, outfile)
         os.system(cmd)
     return output
     
