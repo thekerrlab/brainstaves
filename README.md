@@ -16,6 +16,8 @@ This repository contains a hodgepodge of different things: scores; scripts for r
 
 `python setup.py develop`
 
+Brainstaves is designed to work in Python 3. It may also work in Python 2. But probably not.
+
 You will also need LilyPond (http://lilypond.org/) to generate the scores.
 
 ### Web server usage
