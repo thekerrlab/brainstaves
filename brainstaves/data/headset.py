@@ -4,6 +4,8 @@ pair <mac>
 sudo rfcomm connect hci0 <mac>
 '''
 
+print('DEPRECATED; see stats.py instead')
+
 import sys
 import pylab as pl
 from NeuroPy import NeuroPy

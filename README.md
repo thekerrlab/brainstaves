@@ -33,7 +33,15 @@ How the rendering works is:
 
 ### Reading and analyzing data from Bluetooth
 
-This is hard. Assume you have 4 headsets with the following MAC addresses:
+This is hard. First, install NeuroPy (only works for Python 2):
+
+```
+git clone https://github.com/thekerrlab/neuropy.git
+cd neuropy
+python2 setup.py develop
+```
+
+Assuming you have 4 headsets with the following MAC addresses:
 
 ```
 00:81:F9:08:A1:72
@@ -57,10 +65,10 @@ The procedure that works some of the time on Ubuntu 18.04 is:
     3. `sudo rfcomm connect /dev/rfcomm2 00:81:F9:29:EF:80`
     4. `sudo rfcomm connect /dev/rfcomm3 C4:64:E3:EA:75:6D`
 4. Read (in 4 terminals, in `brainstaves/brainstaves/data`; NB, `headset.py` may require editing):
-    1. `sudo python headset.py mandhi`
-    2. `sudo python headset.py pat`
-    3. `sudo python headset.py rich`
-    4. `sudo python headset.py val`
+    1. `sudo python2 headset.py mandhi` (must be `sudo` to have access to `dev/rfcomm0`)
+    2. `sudo python2 headset.py pat`
+    3. `sudo python2 headset.py rich`
+    4. `sudo python2 headset.py val`
 5. Notes:
     1. Some connections will probably fail at various stages. Try random permutations of things until they work.
 
