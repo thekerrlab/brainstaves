@@ -9,13 +9,13 @@ Created on Wed Apr 24 12:46:15 2019
 import pylab as pl
 import sciris as sc
 
+infile = 'data-off.csv'
+
 # Must match headset.py
 cols = ['attention', 'blinkStrength', 'bytesAvailable', 'delta', 'highAlpha', 'highBeta', 'lowAlpha', 'lowBeta', 'lowGamma', 'meditation', 'midGamma', 'packetsReceived', 'poorSignal', 'rawValue', 'theta']
-
 keepcols = ['delta', 'theta', 'lowAlpha', 'highAlpha', 'lowBeta', 'highBeta', 'lowGamma', 'midGamma', 'rawValue'] # , 'poorSignal'
 
 
-infile = 'data.csv'
 data = []
 lines = open(infile).readlines()
 for line in lines:

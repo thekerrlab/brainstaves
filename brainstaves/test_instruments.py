@@ -45,7 +45,7 @@ for repeats in [1,2]:
 #fig = i.plot(quartet)
 data = i.play(quartet)
 sc.tic()
-score = i.write(quartet, export='pdf')
+score = i.write(quartet, export='png')
 sc.toc()
 #ims = s.plotstft(data)
 
