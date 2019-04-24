@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+'''
+Webserver that runs and refreshes Brainstaves. Some functions are deprecated.
+'''
+
 
 ##################################
 # Housekeeping

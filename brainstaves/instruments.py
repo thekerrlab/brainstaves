@@ -1,3 +1,8 @@
+'''
+The crux of Brainstaves -- Python representation of the different instrumental
+parts.
+'''
+
 import os
 import numpy as np
 import pylab as pl

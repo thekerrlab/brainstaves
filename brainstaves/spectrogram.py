@@ -1,4 +1,9 @@
-# From http://www.frank-zalkow.de/en/code-snippets/create-audio-spectrograms-with-python.html
+'''
+Generate a spectrogram representation of a recorded sound. Not an essential part
+of Brainstaves.
+
+From http://www.frank-zalkow.de/en/code-snippets/create-audio-spectrograms-with-python.html
+'''
 
 import numpy as np
 from matplotlib import pyplot as plt

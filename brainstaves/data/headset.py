@@ -1,10 +1,10 @@
 '''
+Record data from headset. Super abbreviated guide to what you need to do first:
+
 bluetoothctl
 pair <mac>
 sudo rfcomm connect hci0 <mac>
 '''
-
-print('DEPRECATED; see stats.py instead')
 
 import sys
 import pylab as pl

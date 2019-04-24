@@ -1,8 +1,8 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 """
 Generate random notes
 """
+
+print('DEPRECATED; SEE INSTRUMENTS.PY')
 
 import os
 import pylab as pl

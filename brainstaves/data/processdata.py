@@ -1,10 +1,4 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Apr 24 12:46:15 2019
-
-@author: cliffk
-"""
+print('DEPRECATED; see stats.py instead')
 
 import pylab as pl
 import sciris as sc

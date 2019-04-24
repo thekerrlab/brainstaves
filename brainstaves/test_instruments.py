@@ -1,3 +1,7 @@
+'''
+Generate test score.
+'''
+
 import instruments as i
 import spectrogram as s
 import sciris as sc

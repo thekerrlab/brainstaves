@@ -1,3 +1,7 @@
+'''
+Process statistics on prerecorded data.
+'''
+
 import pylab as pl
 import sciris as sc
 
