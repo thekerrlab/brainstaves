@@ -9,6 +9,7 @@ datadir = 'apr24'
 prefix = 'gooddata'
 whichcols = ['all','keep'][1]
 normalize = True
+dosave = True
 
 names = ['ck','mandhi','rich','val']
 data = sc.odict()
@@ -49,6 +50,9 @@ if normalize:
         print('Total for %s: %s' % (name, tot))
         for chan in allchans:
             d[chan] /= tot
+
+if dosave:
+    sc.saveobj('data-apr24.obj', dfs)
         
 def makefig():
     pl.figure(figsize=(30,16))
