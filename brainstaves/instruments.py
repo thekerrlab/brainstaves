@@ -80,7 +80,7 @@ def num2char(val, which='sharps'):
 def num2lily(num):
     ch = num2char(num)
     if ch == '---':
-        return 'r8' # WARNING TEMP
+        return 'r16' # WARNING TEMP
     letter = ch[0]
     if   ch[1]=='#': acci = 'is'
     elif ch[1]=='$': acci = 'es'
@@ -89,7 +89,7 @@ def num2lily(num):
     if   octint > 0: octchar = "'"*octint
     elif octint < 0: octchar = ","*-octint
     else:            octchar = ''
-    lily = letter + acci + octchar + '8' # WARNING TEMP
+    lily = letter + acci + octchar + '16' # WARNING TEMP
     return lily
 
 
