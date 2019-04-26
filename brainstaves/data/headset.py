@@ -17,19 +17,18 @@ else:
     print('Setting default')
     who = 'mandhi'
 
-print('FIX MAPPING')
-mapping = {'val': 'rfcomm0',
+mapping = {'mandhi': 'rfcomm0',
            'pat': 'rfcomm1',
            'rich': 'rfcomm2',
-           'mandhi': 'rfcomm1',}
+           'val': 'rfcomm3',}
 
-macs = ['00:81:F9:08:A1:72',  # Mandhira -- rfcomm3
-        '00:81:F9:29:BA:98', # Rich -- rfcomm2
-        '00:81:F9:29:EF:80', # Val -- rfcomm0
-        'C4:64:E3:EA:75:6D' # Pat -- rfcomm1
+macs = ['00:81:F9:08:A1:72',  # Mandhira -- rfcomm0
+        '00:81:F9:29:BA:98', # Pat -- rfcomm1
+        '00:81:F9:29:EF:80', # Rich -- rfcomm2
+        'C4:64:E3:EA:75:6D' # Val -- rfcomm3
         ]
 
-filename = 'newnewdata-%s.csv' % who
+filename = 'data2019apr25d-%s.csv' % who
 
 attrs = ['attention', 'blinkStrength', 'bytesAvailable', 'delta', 'highAlpha', 'highBeta', 'lowAlpha', 'lowBeta', 'lowGamma', 'meditation', 'midGamma', 'packetsReceived', 'poorSignal', 'rawValue', 'theta']
 
