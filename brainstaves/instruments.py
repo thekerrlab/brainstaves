@@ -42,7 +42,7 @@ def char2num(val):
 def num2char(val, which='sharps'):
     if isinstance(val, str):
         return val
-    if np.isnan(val):
+    if not val>=0:
         return '---'
     octave = val//12
     num = val % 12
@@ -125,16 +125,12 @@ def hertz(val):
 
 class Section(sc.prettyobj):
     def __init__(self, name=None, instrument=None, nbars=None, mindur=None, timesig=None, seed=None):
-        if name is None:
-            name = 'v'
-        if instrument is None:
-            instrument = 'violin'
-        if nbars is None:
-            nbars = 4
-        if mindur is None:
-            mindur = 8
-        if timesig is None:
-            timesig = '4/4'
+        if name       is None: name = 'v'
+        if instrument is None: instrument = 'violin'
+        if nbars      is None: nbars = 4
+        if mindur     is None: mindur = 8
+        if timesig    is None: timesig = '4/4'
+        if seed       is None: seed = np.nan
         self.name = name
         self.instrument = instrument
         self.nbars = nbars
@@ -158,7 +154,7 @@ class Section(sc.prettyobj):
     def refresh(self):
         tsig = [int(q) for q in self.timesig.split('/')]
         wholenotes = tsig[0]/tsig[1]
-        self.npts = int(self.nbars*wholenotes*self.mindur)
+        self.npts = int(round(self.nbars*wholenotes*self.mindur))
         self.arr = np.nan+np.zeros(self.npts)
         self.score = np.zeros(0)
         return None
@@ -167,59 +163,65 @@ class Section(sc.prettyobj):
     def scorepts(self):
         return len(self.score)
     
+    def resetseed(self, seed=None):
+        if seed is None: # Use supplied seed by default, otherwise use default
+            seed = self.seed
+        if seed and not np.isnan(seed):
+            pl.seed(seed)
+        return None
+        
     def cat(self):
         self.score = np.concatenate([self.score, self.arr])
+        return None
     
     def minmax(self):
         return char2num(self.low), char2num(self.high)
     
-    def uniform(self):
-        if self.seed and not np.isnan(self.seed):
-            pl.seed(self.seed)
+    def uniform(self, seed=None):
+        self.resetseed(seed)
         minval,maxval = self.minmax()
         for n in range(self.npts):
             self.arr[n] = np.random.randint(low=minval, high=maxval)
         return None
     
-    def brownian(self, startval=None, maxstep=None, seed=None, skipstart=True):
-        if not seed: # Warning, tidy logic
-            if self.seed and not np.isnan(self.seed):
-                pl.seed(self.seed)
-        else:
-            pl.seed(seed)
+    def brownian(self, startval=None, maxstep=None, seed=None, forcestep=True, skipstart=True, verbose=False):
+        self.resetseed(seed)
         if maxstep is None: maxstep = 1
         minval,maxval = self.minmax()
-        if startval is None:    startval = (minval+maxval)//2
+        if   startval is None:  startval = (minval+maxval)//2
         elif startval == 'min': startval = minval
         elif startval == 'max': startval = maxval
+        if not skipstart:
+            self.arr[0] = startval
         
-        for n in range(self.npts):
-            if not skipstart:
-                self.arr[0] = startval
-            if skipstart and n==0: current = startval
-            else:                  current = self.arr[n]
-            if maxstep == 1: step = np.random.randint(-1,2)
-            else:            step = int(round(np.random.randn()*maxstep))
+        for n in range(self.npts-1+skipstart): # If not skipping the start, 1 less point
+            if n==0: current = abs(startval)
+            else:    current = abs(self.arr[n-1])
+            step = 0
+            while forcestep and not step:
+                if maxstep == 1: step = np.random.randint(-1,2)
+                else:            step = int(round(np.random.randn()*maxstep)) # REPLACE WITH EEG
             if (current+step) < minval or (current+step) > maxval: # Bounce off the ends
                 step = -step
-            if n+skipstart<self.npts:
-                proposed = current + step
-                if proposed < minval:
-                    print('Warning, note tried to go too low (%s vs. %s), resetting' % (proposed, minval))
-                    proposed = minval
-                if proposed > maxval:
-                    print('Warning, note tried to go too high (%s vs. %s), resetting' % (proposed, maxval))
-                    proposed = maxval
-                self.arr[n+skipstart] = proposed
+            
+            proposed = current + step
+            if proposed < minval:
+                print('Warning, note tried to go too low (%s vs. %s), resetting' % (proposed, minval))
+                proposed = minval
+            if proposed > maxval:
+                print('Warning, note tried to go too high (%s vs. %s), resetting' % (proposed, maxval))
+                proposed = maxval
+            self.arr[n+1-skipstart] = proposed
+            if verbose:
+                print(f'n={n}, current={current}, step={step}, proposed={proposed}')
                     
         return None
     
-    def addrests(self, p=0.5):
-        if self.seed and not np.isnan(self.seed):
-            pl.seed(self.seed)
+    def addrests(self, p=0.5, seed=None):
+        self.resetseed(seed)
         randvals = pl.rand(self.npts)
         addrests = randvals>p
-        self.arr[addrests] = np.nan
+        self.arr[addrests] = -self.arr[addrests] # Set to negative to keep pitch information
         return None
     
     def diatonic(self):
@@ -266,11 +268,13 @@ def plot(insts=None):
     fig = pl.figure()
     for inst in insts:
         x = np.arange(inst.scorepts)
-        pl.plot(x, inst.score, lw=3)
-        pl.scatter(x, inst.score, s=200, label=inst.instrument)
+        plotscore = sc.dcp(inst.score)
+        plotscore[plotscore<0] = np.nan # Remove "rests"
+        pl.plot(x, plotscore, lw=3)
+        pl.scatter(x, plotscore, s=200, label=inst.instrument)
         mi,ma = inst.minmax()
         for z in np.arange(mi,ma+1):
-            pl.plot([0,inst.npts-1],[z,z], c=0.8*np.ones(3), zorder=-100, lw=2)
+            pl.plot([0,inst.scorepts-1],[z,z], c=0.8*np.ones(3), zorder=-100, lw=2)
     pl.legend()
     pl.show()
     pl.pause(0.1)
