@@ -220,6 +220,7 @@ class Section(sc.prettyobj):
     def addrests(self, p=0.5, seed=None):
         self.resetseed(seed)
         randvals = pl.rand(self.npts)
+        print(randvals)
         addrests = randvals>p
         self.arr[addrests] = -self.arr[addrests] # Set to negative to keep pitch information
         return None

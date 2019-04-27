@@ -11,10 +11,11 @@ doplot  = 1
 doplay  = 0
 dowrite = 1
 
-section = 'C'
-offset = 2824*4#+np.nan
+section = 'E'
+offset = 2824*6#+np.nan
 offsetdict = {'B': 2824*4,
-              'C': 2824*4}
+              'C': 2824*4, # Not a typo...
+              'E': 2824*6}
 
 v1 = i.Section(name='v1', instrument='violin', seed=1*offset)
 v2 = i.Section(name='v2', instrument='violin', seed=2*offset)
@@ -61,6 +62,26 @@ if section == 'C':
             inst.brownian(maxstep=2, startval=startval, forcestep=True, skipstart=True)
             inst.seed += 1
             inst.addrests(prob)
+            inst.cat()
+
+if section == 'E':
+    length = 6 # How many bars it's supposed to be
+    for inst in quartet:
+        inst.mindur = 8
+        inst.timesig = '4/4'
+        inst.nbars = 1
+        inst.refresh()
+    
+    probs = [0.1, 0.1, 0.2, 0.3, 0.4, 0.5]
+    count = 0
+    assert len(probs) == length
+    for inst in quartet:
+        for p,prob in enumerate(probs):
+            inst.seed += 1
+            startval = inst.score[-1] if inst.scorepts else 40
+            inst.brownian(maxstep=2, startval=startval, forcestep=True, skipstart=True)
+            inst.seed += 1
+            inst.addrests(prob, seed=p)
             inst.cat()
 
 
