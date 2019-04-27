@@ -80,7 +80,7 @@ def num2char(val, which='sharps'):
 def num2lily(num):
     ch = num2char(num)
     if ch == '---':
-        return 'r16' # WARNING TEMP
+        return 'r'
     letter = ch[0]
     if   ch[1]=='#': acci = 'is'
     elif ch[1]=='$': acci = 'es'
@@ -89,7 +89,7 @@ def num2lily(num):
     if   octint > 0: octchar = "'"*octint
     elif octint < 0: octchar = ","*-octint
     else:            octchar = ''
-    lily = letter + acci + octchar + '16' # WARNING TEMP
+    lily = letter + acci + octchar
     return lily
 
 
@@ -181,24 +181,37 @@ class Section(sc.prettyobj):
             self.arr[n] = np.random.randint(low=minval, high=maxval)
         return None
     
-    def brownian(self, startval=None, maxstep=None):
-        if self.seed and not np.isnan(self.seed):
-            pl.seed(self.seed)
+    def brownian(self, startval=None, maxstep=None, seed=None, skipstart=True):
+        if not seed: # Warning, tidy logic
+            if self.seed and not np.isnan(self.seed):
+                pl.seed(self.seed)
+        else:
+            pl.seed(seed)
         if maxstep is None: maxstep = 1
         minval,maxval = self.minmax()
         if startval is None:    startval = (minval+maxval)//2
         elif startval == 'min': startval = minval
         elif startval == 'max': startval = maxval
-        self.arr[0] = startval
-        for n in range(self.npts-1):
-            current = self.arr[n]
-            if maxstep == 1:
-                step = np.random.randint(-1,2)
-            else:
-                step = int(round(np.random.randn()*maxstep))
-            if (current+step) < minval or (current+step) > maxval:
+        
+        for n in range(self.npts):
+            if not skipstart:
+                self.arr[0] = startval
+            if skipstart and n==0: current = startval
+            else:                  current = self.arr[n]
+            if maxstep == 1: step = np.random.randint(-1,2)
+            else:            step = int(round(np.random.randn()*maxstep))
+            if (current+step) < minval or (current+step) > maxval: # Bounce off the ends
                 step = -step
-            self.arr[n+1] = current + step
+            if n+skipstart<self.npts:
+                proposed = current + step
+                if proposed < minval:
+                    print('Warning, note tried to go too low (%s vs. %s), resetting' % (proposed, minval))
+                    proposed = minval
+                if proposed > maxval:
+                    print('Warning, note tried to go too high (%s vs. %s), resetting' % (proposed, maxval))
+                    proposed = maxval
+                self.arr[n+skipstart] = proposed
+                    
         return None
     
     def addrests(self, p=0.5):
@@ -293,7 +306,9 @@ def write(insts=None, folder=None, infile=None, outfile=None, export='png'):
                     raise Exception(errormsg)
                 lilynotes = []
                 for note in inst.score:
-                    lilynotes.append(num2lily(note))
+                    lilynote = num2lily(note)
+                    lilynote += '%s' % inst.mindur
+                    lilynotes.append(lilynote)
                 lines[l] = ' '.join(lilynotes) + '\n'
     output = ''.join(lines)
     with open(outfilepath, 'w') as f:

@@ -9,7 +9,7 @@ import numpy as np
 
 doplot  = 1
 doplay  = 0
-dowrite = 0
+dowrite = 1
 
 offset = 2824*3#+np.nan
 
@@ -31,10 +31,13 @@ if section == 'A':
         inst.refresh()
     
     probs = [1/12]*4 + [2/12]*3 + [3/12]*2 + [4/12]*2 + [i/12 for i in range(5,12)] + [1]*4
+    count = 0
     assert len(probs) == length
     for prob in probs:
         for inst in quartet:
-            inst.brownian(maxstep=2, startval='min')
+            count = count+1
+            startval = inst.score[-1] if inst.scorepts else 'min'
+            inst.brownian(maxstep=2, startval=startval, seed=offset+count, skipstart=True)
             inst.addrests(prob)
             inst.cat()
 
