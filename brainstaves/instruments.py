@@ -124,7 +124,7 @@ def hertz(val):
     return hz
 
 class Section(sc.prettyobj):
-    def __init__(self, name=None, instrument=None, nbars=None, mindur=None, seed=None):
+    def __init__(self, name=None, instrument=None, nbars=None, mindur=None, timesig=None, seed=None):
         if name is None:
             name = 'v'
         if instrument is None:
@@ -133,10 +133,13 @@ class Section(sc.prettyobj):
             nbars = 4
         if mindur is None:
             mindur = 8
+        if timesig is None:
+            timesig = '4/4'
         self.name = name
         self.instrument = instrument
         self.nbars = nbars
         self.mindur = mindur
+        self.timesig = timesig
         self.seed = seed
         
         if instrument == 'violin':
@@ -149,11 +152,17 @@ class Section(sc.prettyobj):
             self.low = 'cn1'
             self.high = 'gn3'
         
-        self.npts = nbars*self.mindur
+        self.refresh()
+        return None
+    
+    def refresh(self):
+        tsig = [int(q) for q in self.timesig.split('/')]
+        wholenotes = tsig[0]/tsig[1]
+        self.npts = int(self.nbars*wholenotes*self.mindur)
         self.arr = np.nan+np.zeros(self.npts)
         self.score = np.zeros(0)
         return None
-    
+        
     @property
     def scorepts(self):
         return len(self.score)
@@ -177,8 +186,9 @@ class Section(sc.prettyobj):
             pl.seed(self.seed)
         if maxstep is None: maxstep = 1
         minval,maxval = self.minmax()
-        if startval is None:
-            startval = (minval+maxval)//2
+        if startval is None:    startval = (minval+maxval)//2
+        elif startval == 'min': startval = minval
+        elif startval == 'max': startval = maxval
         self.arr[0] = startval
         for n in range(self.npts-1):
             current = self.arr[n]
@@ -242,9 +252,9 @@ def play(insts=None, volume=1.0, tempo=104, blocking=False):
 def plot(insts=None):
     fig = pl.figure()
     for inst in insts:
-        x = np.arange(inst.npts)
-        pl.plot(x, inst.arr, lw=3)
-        pl.scatter(x, inst.arr, s=200, label=inst.instrument)
+        x = np.arange(inst.scorepts)
+        pl.plot(x, inst.score, lw=3)
+        pl.scatter(x, inst.score, s=200, label=inst.instrument)
         mi,ma = inst.minmax()
         for z in np.arange(mi,ma+1):
             pl.plot([0,inst.npts-1],[z,z], c=0.8*np.ones(3), zorder=-100, lw=2)

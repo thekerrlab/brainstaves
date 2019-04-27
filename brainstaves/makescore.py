@@ -7,21 +7,44 @@ import spectrogram as s
 import sciris as sc
 import numpy as np
 
+doplot  = 1
+doplay  = 0
+dowrite = 0
+
 offset = 2824*3#+np.nan
 
-v1 = i.Section(name='v1', instrument='violin', seed=1+offset, mindur=16)
-v2 = i.Section(name='v2', instrument='violin', seed=2+offset, mindur=16)
-va = i.Section(name='va', instrument='viola', seed=3+offset, mindur=16)
-vc = i.Section(name='vc', instrument='cello', seed=4+offset, mindur=16)
+section = 'A'
+
+v1 = i.Section(name='v1', instrument='violin', seed=1+offset)
+v2 = i.Section(name='v2', instrument='violin', seed=2+offset)
+va = i.Section(name='va', instrument='viola', seed=3+offset)
+vc = i.Section(name='vc', instrument='cello', seed=4+offset)
 quartet = [v1,v2,va,vc]
 
-for p in [1.0, 1.0]:
+
+if section == 'A':
+    length = 22 # How many bars it's supposed to be
     for inst in quartet:
-        inst.brownian(maxstep=4)
+        inst.mindur = 8
+        inst.timesig = '12/8'
+        inst.nbars = 1
+        inst.refresh()
+    
+    probs = [1/12]*4 + [2/12]*3 + [3/12]*2 + [4/12]*2 + [i/12 for i in range(5,12)] + [1]*4
+    assert len(probs) == length
+    for prob in probs:
+        for inst in quartet:
+            inst.brownian(maxstep=2, startval='min')
+            inst.addrests(prob)
+            inst.cat()
+
+
+
+
 #        if inst.name not in ['va','vc']:
 #            inst.diatonic()
-        inst.addrests(p=p)
-        inst.cat()
+#        inst.addrests(p=p)
+#        inst.cat()
 #        inst.diatonic()
 #        inst.octotonic()
     
@@ -49,12 +72,9 @@ for p in [1.0, 1.0]:
     
 
 
-#fig = i.plot(quartet)
-#data = i.play(quartet)
-sc.tic()
-score = i.write(quartet, infile='brainstaves-B.ly', export='png')
-sc.toc()
-#ims = s.plotstft(data)
+if doplot:    fig = i.plot(quartet)
+if doplay:   data = i.play(quartet)
+if dowrite: score = i.write(quartet, infile='brainstaves-A.ly', export='pdf')
 
 
 print('Done.')
