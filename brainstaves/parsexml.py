@@ -1,3 +1,17 @@
+'''
+Structure:
+    
+    data
+      part [v1,v2,va,vc]
+        measure [0,1,2,3,4, ...]
+          note [0,1,2, ...]
+            pitch
+            alter
+            accidental
+        [measure][note][pitch][accidental]
+
+'''
+
 import os
 import sciris as sc
 
