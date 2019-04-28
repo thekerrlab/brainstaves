@@ -9,15 +9,13 @@ import parsexml
 
 
 class note(sc.prettyobj):
-    def __init__(self, part, measure, note, step, octave):
+    def __init__(self, part, mname, nname, step, octave):
         self.part = part
-        self.measure = measure
-        self.note = note
         self.step = step
         self.octave = octave
         self.pname = part
-        self.mname = 'm%i' % measure
-        self.nname = 'n%i' % note
+        self.mname = mname
+        self.nname = nname
 
 def makequartet():
     v1 = instruments.Section(name='v1', instrument='violin')
@@ -40,7 +38,7 @@ nd['B'] = sc.objdict()
 
 nd.B.startstop = sc.objdict()
 nd.B.startstop['v1'] = [39,40]
-nd.B.notes = []
+nd.B.notes = xml.loadnotes(part='v1', measurerange=nd.B.startstop['v1'])
 
 length = 20 # How many bars it's supposed to be
 for inst in quartet:
@@ -61,8 +59,11 @@ for inst in quartet:
 #        inst.addrests(prob)
         inst.cat()
 
-n = note('v2',30,0,'A',4)
-nd.B.notes = [n]
+
+for n,orignote in enumerate(nd.B.notes):
+    n = note(orignote.part,orignote.mname,orignote.nname,'A',4)
+    nd.B.notes.append(n)
+
 xml.write(outfile='live/tmp.xml', data=nd.B.notes)
 
 

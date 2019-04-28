@@ -88,3 +88,22 @@ class XML(sc.prettyobj):
             f.write(output)
         
         return output
+    
+    def loadnotes(self, part=None, measurerange=None):
+        notes = []
+        assert len(measurerange)==2
+        measures = list(range(measurerange[0]-1, measurerange[1]))
+        print(measures)
+        for measure in measures:
+            mname = 'm%i' % measure
+            thismeasure = self.data[part][mname]
+            for key,note in thismeasure.items():
+                if key != 'n': # Skip the counter
+                    orignote = sc.objdict()
+                    orignote['measure'] = measure
+                    orignote['mname'] = mname
+                    orignote['part'] = part
+                    orignote['nname'] = key
+                    notes.append(orignote)
+            print(thismeasure)
+        return notes
