@@ -13,11 +13,12 @@ Webserver that runs and refreshes Brainstaves. Some functions are deprecated.
 print('Importing modules...')
 import os
 import scirisweb as sw
-import brainstaves as bs
+# import brainstaves as bs
+import sciris as bs
 
 # Create the app
 print('Setting defaults...')
-port = 8185
+port = 80
 app = sw.ScirisApp(__name__, name="Brainstaves", server_port=port) # Set to a nonstandard port to avoid collisions
 app.data = None # Initialize the results
 
