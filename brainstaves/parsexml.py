@@ -74,12 +74,14 @@ class XML(sc.prettyobj):
             thisnote = self.data[e.pname][e.mname][e.nname]
             stepline = self.lines[thisnote.step.n]
             octline = self.lines[thisnote.octave.n]
-            stepparts = stepline.partition(partchar)
-            octparts = octline.partition(partchar)
+            stepchar = stepline[thisnote.step.val.find(partchar)+1]
+            octchar = octline[thisnote.octave.val.find(partchar)+1]
+            stepparts = stepline.partition(stepchar)
+            octparts = octline.partition(octchar)
             assert len(stepparts)==3
             assert len(octparts)==3
             self.lines[thisnote.step.n] = stepparts[0] + e.step + stepparts[2]
-            self.lines[thisnote.octave.n] = octparts[0] + e.octave + octparts[2]
+            self.lines[thisnote.octave.n] = octparts[0] + str(e.octave) + octparts[2]
             
         output = ''.join(self.lines)
         with open(outfile, 'w') as f:
