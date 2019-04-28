@@ -6,56 +6,63 @@ Structure:
         measure [0,1,2,3,4, ...]
           note [0,1,2, ...]
             pitch
-            alter
-            accidental
-        [measure][note][pitch][accidental]
-
+            step
+            octave
+            alter (may be missing)
+            accidental (may be missing)
 '''
 
 import os
 import sciris as sc
 
-instnames = ['v1','v2','va','vc']
-ninsts = len(instnames)
-
 class XML(sc.prettyobj):
     
-    def __init__(self, folder=None, infile=None):
+    def __init__(self, folder=None, infile=None, instnames=None):
         if folder is None:
             folder = 'live'
         if infile is None:
             infile = 'live.xml'
-        infilepath = os.path.join(folder,infile)
-        self.lines = open(infilepath).readlines()
-        self.nlines = len(self.lines)
-        self.parts = self.partlines()
-        self.measures = self.measurelines()
+        if instnames is None:
+            instnames = ['v1','v2','va','vc']
+        self.folder = folder
+        self.infile = infile
+        self.load()
+        self.parse()
         return None
     
-    def rangepart(self, name):
-        start,stop = self.parts[name]
-        return range(start, stop)
-        
-    def partlines(self):
-        parts = sc.odict()
-        for n,name in enumerate(instnames):
-            ind = self.lines.index('  <part id="P%i">\n' % (n+1))
-            parts[name] = [ind]
-        for n,name in enumerate(instnames):
-            if n<ninsts-1:
-                parts[n].append(parts[n+1][0])
-            else:
-                parts[n].append(self.nlines)
-        return parts
+    def load(self):
+        infilepath = os.path.join(self.folder,self.infile)
+        self.lines = open(infilepath).readlines()
+        self.nlines = len(self.lines)
+        return None
     
-    def measurelines(lines, measure=None):
-        measures = sc.odict()
-        measurestr = '<measure number="%i"' % measure
-        for n,name in enumerate(instnames):
-            for l in rangepart(name):
-                if 
-            
-
-xml = XML()
-
-print('Done.')
+    def parse(self):
+        noteattrs = ['pitch', 'step', 'octave', 'alter', 'accidental']
+        self.data = sc.objdict()
+        partcount = -1
+        for l,line in enumerate(self.lines):
+            if '<part id=' in line:
+                partcount += 1
+                measurecount = -1
+                pname = instnames[partcount]
+                self.data[pname] = sc.objdict()
+                self.data[pname]['n'] = l
+            if '<measure number=' in line:
+                measurecount += 1
+                notecount = -1
+                mname = 'm%i' % measurecount
+                self.data[pname][mname] = sc.objdict()
+                self.data[pname][mname]['n'] = l
+            if '<note' in line:
+                notecount += 1
+                nname = 'n%i' % notecount
+                self.data[pname][mname][nname] = sc.objdict()
+                self.data[pname][mname][nname]['n'] = l
+                for attr in noteattrs:
+                    self.data[pname][mname][nname][attr] = sc.objdict()
+                    self.data[pname][mname][nname][attr]['val'] = None
+                    self.data[pname][mname][nname][attr]['n'] = None
+            for attr in noteattrs:
+                if '<%s' % attr in line:
+                    self.data[pname][mname][nname][attr]['val'] = line
+                    self.data[pname][mname][nname][attr]['n'] = l
