@@ -2,24 +2,17 @@
 Generate test score.
 '''
 
+import sciris as sc
 import instruments as i
 
-doplot  = 1
-doplay  = 0
-dowrite = 1
-
-section = 'F'
-offset = 2824*6#+np.nan
-offsetdict = {'B': 2824*4,
-              'C': 2824*4, # Not a typo...
-              'E': 2824*6}
-
-v1 = i.Section(name='v1', instrument='violin', seed=1*offset)
-v2 = i.Section(name='v2', instrument='violin', seed=2*offset)
-va = i.Section(name='va', instrument='viola', seed=3*offset)
-vc = i.Section(name='vc', instrument='cello', seed=4*offset)
+v1 = i.Section(name='v1', instrument='violin')
+v2 = i.Section(name='v2', instrument='violin')
+va = i.Section(name='va', instrument='viola')
+vc = i.Section(name='vc', instrument='cello')
 quartet = [v1,v2,va,vc]
+qd = {inst.name:inst for inst in quartet}
 
+nd = sc.odict() # For storing all the notes
 
 if section == 'B':
     length = 20 # How many bars it's supposed to be
