@@ -50,8 +50,8 @@
       border-color: #333;
       border-style: solid;
       background-color: #fff;
-      width: 100vw;
-      min-height: 80vh;
+      max-width: 100vw;
+      max-height: 80vh;
     }
 
     a:link    {color: #aaf;}
@@ -85,7 +85,7 @@
 
       <!-- THE SCORE -->
       <div class="thescore" id="score">
-        <img style='max-width: 100vw' name='score_img'>
+        <img style='max-width: 100vw; max-height:80vh' name='score_img'>
       </div>
 
     </div>
@@ -110,6 +110,8 @@
         timer: null,
         div_id: 'score',
         score_div: null,
+        filename: '',
+        filenumber: 1,
       }
     },
 
@@ -117,15 +119,31 @@
       sciris.rpc('get_version')
               .then(function (response) {
                 vm.version = response.data
+                vm.makefilename()
+
+                document.onkeydown = function (e) {
+                  switch (e.key) {
+                      case 'ArrowLeft':
+                          vm.backward();
+                          break;
+                      case 'ArrowRight':
+                          vm.forward();
+                  }
+                };
               })
     },
 
     methods: {
 
+      makefilename() {
+        vm.filename = 'live/live-' + ('0' + vm.filenumber).slice(-2) + '.png?' + Math.random();
+      },
+
       redraw_score() {
+        this.makefilename()
         console.log('Redrawing score...')
         vm.isrunning = 'running'
-        document.images['score_img'].src = 'live/brainstaves.png?' + Math.random();
+        document.images['score_img'].src = vm.filename
       },
 
       start() {
@@ -135,6 +153,19 @@
           console.log('Launched')
           vm.timer = setInterval(vm.redraw_score, vm.interval);
         }, initial_delay);
+      },
+
+      forward() {
+        vm.filenumber += 1
+        vm.redraw_score()
+      },
+
+      backward() {
+        vm.filenumber -= 1
+        if (vm.filenumber < 1) {
+          vm.filenumber = 1
+        }
+        vm.redraw_score()
       },
 
       stop() {
