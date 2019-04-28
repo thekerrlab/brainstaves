@@ -3,15 +3,12 @@ Generate test score.
 '''
 
 import instruments as i
-import spectrogram as s
-import sciris as sc
-import numpy as np
 
 doplot  = 1
 doplay  = 0
 dowrite = 1
 
-section = 'E'
+section = 'F'
 offset = 2824*6#+np.nan
 offsetdict = {'B': 2824*4,
               'C': 2824*4, # Not a typo...
@@ -65,55 +62,48 @@ if section == 'C':
             inst.cat()
 
 if section == 'E':
-    length = 6 # How many bars it's supposed to be
+    length = 8 # How many bars it's supposed to be
     for inst in quartet:
         inst.mindur = 8
         inst.timesig = '4/4'
         inst.nbars = 1
         inst.refresh()
     
-    probs = [0.1, 0.1, 0.2, 0.3, 0.4, 0.5]
+    probs = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.5, 0.3]
     count = 0
     assert len(probs) == length
     for inst in quartet:
         for p,prob in enumerate(probs):
             inst.seed += 1
             startval = inst.score[-1] if inst.scorepts else 40
-            inst.brownian(maxstep=2, startval=startval, forcestep=True, skipstart=True)
+            inst.brownian(maxstep=2, startval=startval, forcestep=True, skipstart=True) # Revise maxstep=2?
             inst.seed += 1
-            inst.addrests(prob, seed=p)
+            inst.addrests(prob, seed=p+100) # This makes it rhythmic unison
+            inst.cat()
+
+
+if section == 'F':
+    length = 13 # How many bars it's supposed to be
+    for inst in quartet:
+        inst.mindur = 16
+        inst.timesig = '4/4'
+        inst.nbars = 1
+        inst.refresh()
+    
+    probs = [0.4]*13
+    count = 0
+    assert len(probs) == length
+    for ii,inst in enumerate(quartet):
+        for p,prob in enumerate(probs):
+            inst.seed += 1
+            startval = 50-7*ii
+            inst.brownian(maxstep=0, startval=startval, forcestep=False, skipstart=False) # Revise maxstep=2?
+            inst.seed += 1
+            inst.addrests(prob)
             inst.cat()
 
 
 
-#        if inst.name not in ['va','vc']:
-#            inst.diatonic()
-#        inst.addrests(p=p)
-#        inst.cat()
-#        inst.diatonic()
-#        inst.octotonic()
-    
-#for maxstep in [1,2,4]:
-#    for inst in quartet:
-#        inst.brownian(maxstep=maxstep)
-#        inst.octotonic()
-#        inst.cat()
-#
-#for repeats in [1,2]:
-#    for inst in quartet:
-#        inst.brownian(maxstep=maxstep)
-#        inst.diatonic()
-#        inst.octotonic()
-#        inst.addrests(p=0.7)
-#        inst.cat()
-#
-#for repeats in [1,2]:
-#    for inst in quartet:
-#        inst.brownian(maxstep=maxstep)
-#        inst.diatonic()
-##        inst.octotonic()
-#        inst.addrests(p=1.0)
-#        inst.cat()
     
 
 
