@@ -26,6 +26,7 @@ class XML(sc.prettyobj):
             instnames = ['v1','v2','va','vc']
         self.folder = folder
         self.infile = infile
+        self.instnames = instnames
         self.load()
         self.parse()
         return None
@@ -44,7 +45,7 @@ class XML(sc.prettyobj):
             if '<part id=' in line:
                 partcount += 1
                 measurecount = -1
-                pname = instnames[partcount]
+                pname = self.instnames[partcount]
                 self.data[pname] = sc.objdict()
                 self.data[pname]['n'] = l
             if '<measure number=' in line:
@@ -66,3 +67,22 @@ class XML(sc.prettyobj):
                 if '<%s' % attr in line:
                     self.data[pname][mname][nname][attr]['val'] = line
                     self.data[pname][mname][nname][attr]['n'] = l
+    
+    def write(self, data=None, outfile=None):
+        partchar = '>'
+        for e in data:
+            thisnote = self.data[e.pname][e.mname][e.nname]
+            stepline = self.lines[thisnote.step.n]
+            octline = self.lines[thisnote.octave.n]
+            stepparts = stepline.partition(partchar)
+            octparts = octline.partition(partchar)
+            assert len(stepparts)==3
+            assert len(octparts)==3
+            self.lines[thisnote.step.n] = stepparts[0] + e.step + stepparts[2]
+            self.lines[thisnote.octave.n] = octparts[0] + e.octave + octparts[2]
+            
+        output = ''.join(self.lines)
+        with open(outfile, 'w') as f:
+            f.write(output)
+        
+        return output
