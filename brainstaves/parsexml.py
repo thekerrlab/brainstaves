@@ -17,14 +17,11 @@ import sciris as sc
 
 class XML(sc.prettyobj):
     
-    def __init__(self, folder=None, infile=None, instnames=None):
-        if folder is None:
-            folder = 'live'
+    def __init__(self, infile=None, instnames=None):
         if infile is None:
-            infile = 'live.xml'
+            infile = 'brainstaves.xml'
         if instnames is None:
             instnames = ['v1','v2','va','vc']
-        self.folder = folder
         self.infile = infile
         self.instnames = instnames
         self.load()
@@ -32,8 +29,7 @@ class XML(sc.prettyobj):
         return None
     
     def load(self):
-        infilepath = os.path.join(self.folder,self.infile)
-        self.lines = open(infilepath).readlines()
+        self.lines = open(self.infile).readlines()
         self.nlines = len(self.lines)
         return None
     
@@ -69,23 +65,25 @@ class XML(sc.prettyobj):
                     self.data[pname][mname][nname][attr]['n'] = l
     
     def write(self, data=None, outfile=None, verbose=False):
+        if outfile is None:
+            outfile = 'live/live.xml'
         if verbose: print('Working on %s notes...' % len(data))
-        for ind,e in enumerate(data):
-            thisnote = self.data[e.pname][e.mname][e.nname]
-            if thisnote['accidental'].val is not None: # Remove accidental
-                self.lines[thisnote.accidental.n] = '<!-- Accidental removed -->'
+        for ind,newnote in enumerate(data):
+            orignote = self.data[newnote.pname][newnote.mname][newnote.nname]
+            if orignote.accidental.n is not None: # Remove accidental
+                self.lines[orignote.accidental.n] = '<!-- Accidental removed -->\n'
             for attr in ['step', 'octave', 'alter']:
-                val = thisnote[attr].val
-                lineno = thisnote[attr].n
+                val = newnote[attr]
+                lineno = orignote[attr].n
                 if lineno:
-                    self.lines[lineno] = f'  <{attr}>{val}</{attr}>\n'
+                    self.lines[lineno] = f'<{attr}>{val}</{attr}>\n'
                 elif lineno is None and attr == 'alter':
-                    step = self.lines[thisnote.step.n][:-1] # Remove newline
-                    self.lines[thisnote.step.n] = step + f'  <{attr}>{val}</{attr}>\n'
+                    step = self.lines[orignote.step.n][:-1] # Remove newline
+                    self.lines[orignote.step.n] = step + f'<{attr}>{val}</{attr}>\n'
                 else:
-                    errormsg = 'Not sure why no line number for\n%s' % thisnote
+                    errormsg = 'Not sure why no line number for\n%s' % orignote
                     raise Exception(errormsg)
-            if verbose: print('%s. line %s: %s %s %s' % (ind, thisnote.n, e.step, e.alter, e.octave))
+            if verbose: print('%s. line %s: %s %s %s' % (ind, orignote.n, newnote.step, newnote.alter, newnote.octave))
             
         output = ''.join(self.lines)
         with open(outfile, 'w') as f:
