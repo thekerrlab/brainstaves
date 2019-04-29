@@ -18,7 +18,7 @@ class XML(sc.prettyobj):
     
     def __init__(self, infile=None, instnames=None):
         if infile is None:
-            infile = 'score/brainstaves.xml'
+            infile = 'score/brainstaves.mscx'
         if instnames is None:
             instnames = ['v1','v2','va','vc']
         self.infile = infile
@@ -65,7 +65,7 @@ class XML(sc.prettyobj):
     
     def write(self, data=None, outfile=None, verbose=False):
         if outfile is None:
-            outfile = 'live/live.xml'
+            outfile = 'live/live.mscx'
         if verbose: print('Working on %s notes...' % len(data))
         for ind,newnote in enumerate(data):
             orignote = self.data[newnote.pname][newnote.mname][newnote.nname]

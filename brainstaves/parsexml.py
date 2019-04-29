@@ -16,16 +16,24 @@ import sciris as sc
 
 class XML(sc.prettyobj):
     
-    def __init__(self, infile=None, instnames=None):
+    def __init__(self, which=None, infile=None, instnames=None):
+        if which is None:
+            which = 'ms'
         if infile is None:
-            infile = 'score/brainstaves.xml'
+            if   which == 'ms':  infile = 'score/brainstaves.xml'
+            elif which == 'xml': infile = 'score/brainstaves.xml'
         if instnames is None:
             instnames = ['v1','v2','va','vc']
+        self.which  = which
         self.infile = infile
         self.instnames = instnames
         self.load()
         self.parse()
         return None
+    
+    @property
+    def is_mscore(self):
+        return self.which == 'ms'
     
     def load(self):
         self.lines = open(self.infile).readlines()

@@ -4,7 +4,7 @@ Generate test score.
 
 import sciris as sc
 import instruments
-import parsexml
+import musescore
 
 sc.tic()
 
@@ -51,7 +51,7 @@ def makequartet():
 
 if 'load' in torun:
     print('Loading XML')
-    xml = parsexml.XML()
+    xml = musescore.XML()
     nd = sc.objdict() # For storing all the notes
 
 
