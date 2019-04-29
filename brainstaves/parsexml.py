@@ -68,9 +68,11 @@ class XML(sc.prettyobj):
                     self.data[pname][mname][nname][attr]['val'] = line
                     self.data[pname][mname][nname][attr]['n'] = l
     
-    def write(self, data=None, outfile=None):
+    def write(self, data=None, outfile=None, verbose=True):
         partchar = '>'
-        for e in data:
+        if verbose: print('Working on %s notes...' % len(data))
+        origlines = sc.dcp(self.lines)
+        for ind,e in enumerate(data):
             thisnote = self.data[e.pname][e.mname][e.nname]
             stepline = self.lines[thisnote.step.n]
             octline = self.lines[thisnote.octave.n]
@@ -82,8 +84,17 @@ class XML(sc.prettyobj):
             assert len(octparts)==3
             self.lines[thisnote.step.n] = stepparts[0] + e.step + stepparts[2]
             self.lines[thisnote.octave.n] = octparts[0] + str(e.octave) + octparts[2]
+            if verbose: print('%s. note %s: %s; octave %s: %s' % (ind, thisnote.step.n, e.step, thisnote.octave.n, e.octave))
             
+        print('HIIIII')
+        print(self.lines[thisnote.step.n])
+        for l1,l2 in zip(self.lines, origlines):
+            if l1 != l2:
+                print('mismatch! %s' % l1)
         output = ''.join(self.lines)
+        print('WHAT')
+        print(output.find('<step>Q'))
+        print(outfile)
         with open(outfile, 'w') as f:
             f.write(output)
         

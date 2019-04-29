@@ -6,7 +6,7 @@ import sciris as sc
 import instruments
 import parsexml
 
-
+sc.tic()
 
 class note(sc.prettyobj):
     def __init__(self, part, mname, nname, step, octave):
@@ -26,12 +26,14 @@ def makequartet():
     qd = {inst.name:inst for inst in quartet}
     return quartet,qd
 
-xml = parsexml.XML()
 
+print('Loading XML')
+xml = parsexml.XML()
 nd = sc.objdict() # For storing all the notes
 
 
-## Section B
+# Section B
+print('Creating Section B')
 quartet,qd = makequartet()
 
 nd['B'] = sc.objdict()
@@ -60,11 +62,13 @@ for inst in quartet:
         inst.cat()
 
 
+print('Creating notes')
 for n,orignote in enumerate(nd.B.notes):
-    n = note(orignote.part,orignote.mname,orignote.nname,'A',4)
-    nd.B.notes.append(n)
+    nd.B.notes[n] = note(orignote.part,orignote.mname,orignote.nname,'Q',4)
 
-xml.write(outfile='live/tmp.xml', data=nd.B.notes)
+print('Writing XML')
+xml.write(outfile='live/tmp.xml', data=nd.B.notes, verbose=True)
 
 
+sc.toc()
 print('Done.')
