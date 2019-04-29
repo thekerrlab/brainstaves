@@ -8,14 +8,25 @@ import parsexml
 
 sc.tic()
 
-class note(sc.prettyobj):
-    def __init__(self, part, mname, nname, step, octave):
-        self.part = part
-        self.step = step
-        self.octave = octave
-        self.pname = part
-        self.mname = mname
-        self.nname = nname
+class xmlnote(sc.prettyobj):
+    def __init__(self, pname, mname, nname, step, alter, octave):
+        self.pname = pname # v1
+        self.mname = mname # m12
+        self.nname = nname # n4
+        self.step = str(step).upper() # A
+        self.alter = str(alter) # s
+        if sc.isnumber(self.alter):
+            self.alter = str(self.alter)
+        if self.alter not in ['0','1','-1']:
+            mapping = {'#':'1', 'n':'0', '$':'-1'}
+            if self.alter in mapping:
+                self.alter = mapping[self.alter]
+            else:
+                errormsg = 'Not sure how to process accidental %s' % alter
+                raise Exception(errormsg)
+        self.octave = str(octave) # 4
+        return None
+
 
 def makequartet():
     v1 = instruments.Section(name='v1', instrument='violin')
@@ -64,7 +75,7 @@ for inst in quartet:
 
 print('Creating notes')
 for n,orignote in enumerate(nd.B.notes):
-    nd.B.notes[n] = note(orignote.part,orignote.mname,orignote.nname,'Q',4)
+    nd.B.notes[n] = xmlnote(orignote.part,orignote.mname,orignote.nname,'a','$','4')
 
 print('Writing XML')
 xml.write(outfile='live/tmp.xml', data=nd.B.notes, verbose=True)
