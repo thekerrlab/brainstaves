@@ -207,7 +207,7 @@
     <showMargins>0</showMargins>
     <metaTag name="arranger"></metaTag>
     <metaTag name="composer">Cliff Kerr | April 2019</metaTag>
-    <metaTag name="copyright">Copyright © </metaTag>
+    <metaTag name="copyright"></metaTag>
     <metaTag name="creationDate">2019-04-29</metaTag>
     <metaTag name="lyricist"></metaTag>
     <metaTag name="movementNumber"></metaTag>
@@ -357,7 +357,7 @@
       <trackName>VI</trackName>
       <Instrument>
         <longName>VI</longName>
-        <shortName>Vln. I</shortName>
+        <shortName>VI</shortName>
         <trackName>Violin</trackName>
         <Channel>
           <program value="40"/>
@@ -375,7 +375,7 @@
       <trackName>VII</trackName>
       <Instrument>
         <longName>VII</longName>
-        <shortName>Vln. II</shortName>
+        <shortName>VII</shortName>
         <trackName>Violin</trackName>
         <Channel>
           <program value="40"/>
@@ -393,7 +393,7 @@
       <trackName>Va</trackName>
       <Instrument>
         <longName>Va</longName>
-        <shortName>Vla.</shortName>
+        <shortName>Va</shortName>
         <trackName>Viola</trackName>
         <Channel>
           <program value="41"/>
@@ -411,7 +411,7 @@
       <trackName>Vc</trackName>
       <Instrument>
         <longName>Vc</longName>
-        <shortName>Vc.</shortName>
+        <shortName>Vc</shortName>
         <trackName>Violoncello</trackName>
         <Channel>
           <program value="42"/>
