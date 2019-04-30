@@ -39,7 +39,7 @@ def char2num(val):
     output = 12*int(octave) + mapping[note]
     return output
 
-def num2char(val, which='sharps'):
+def num2char(val, which='human'):
     if isinstance(val, str):
         return val
     if not val>=0:
@@ -47,6 +47,19 @@ def num2char(val, which='sharps'):
     octave = val//12
     num = val % 12
     mapping = dict()
+    mapping['human'] = {
+            0:'cn',
+            1:'d$',
+            2:'dn',
+            3:'e$',
+            4:'en',
+            5:'fn',
+            6:'f#',
+            7:'gn',
+            8:'g#',
+            9:'an',
+            10:'b$',
+            11:'bn',}
     mapping['sharps'] = {
             0:'cn',
             1:'c#',

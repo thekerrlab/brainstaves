@@ -33,23 +33,24 @@ class XML(sc.prettyobj):
         return None
     
     def parse(self):
-        noteattrs = ['pitch', 'step', 'octave', 'alter', 'accidental']
+        noteattrs = ['pitch', 'tpc', 'accidental']
         self.data = sc.objdict()
         partcount = -1
         for l,line in enumerate(self.lines):
-            if '<part id=' in line:
-                partcount += 1
-                measurecount = -1
-                pname = self.instnames[partcount]
-                self.data[pname] = sc.objdict()
-                self.data[pname]['n'] = l
-            if '<measure number=' in line:
+            if '<staff id=' in line.lower():
+                if '<part>' not in self.lines[l-1].lower():
+                    partcount += 1
+                    measurecount = -1
+                    pname = self.instnames[partcount]
+                    self.data[pname] = sc.objdict()
+                    self.data[pname]['n'] = l
+            if '<measure number=' in line.lower():
                 measurecount += 1
                 notecount = -1
                 mname = 'm%i' % measurecount
                 self.data[pname][mname] = sc.objdict()
                 self.data[pname][mname]['n'] = l
-            if '<note' in line:
+            if '<note' in line.lower():
                 notecount += 1
                 nname = 'n%i' % notecount
                 self.data[pname][mname][nname] = sc.objdict()
@@ -59,7 +60,7 @@ class XML(sc.prettyobj):
                     self.data[pname][mname][nname][attr]['val'] = None
                     self.data[pname][mname][nname][attr]['n'] = None
             for attr in noteattrs:
-                if '<%s' % attr in line:
+                if '<%s' % attr in line.lower():
                     self.data[pname][mname][nname][attr]['val'] = line
                     self.data[pname][mname][nname][attr]['n'] = l
     
@@ -70,19 +71,23 @@ class XML(sc.prettyobj):
         for ind,newnote in enumerate(data):
             orignote = self.data[newnote.pname][newnote.mname][newnote.nname]
             if orignote.accidental.n is not None: # Remove accidental
-                self.lines[orignote.accidental.n] = '<!-- Accidental removed -->\n'
-            for attr in ['step', 'octave', 'alter']:
+                count = -1
+                insideblock = True
+                while insideblock:
+                    count += 1
+                    l = orignote.accidental.n+count
+                    if '</accidental>' in self.lines[l].lower():
+                        insideblock = False
+                    self.lines[l] = '<!-- Accidental removed -->\n'
+            for attr in ['pitch', 'tpc']:
                 val = newnote[attr]
                 lineno = orignote[attr].n
                 if lineno:
                     self.lines[lineno] = f'<{attr}>{val}</{attr}>\n'
-                elif lineno is None and attr == 'alter':
-                    step = self.lines[orignote.step.n][:-1] # Remove newline
-                    self.lines[orignote.step.n] = step + f'<{attr}>{val}</{attr}>\n'
                 else:
                     errormsg = 'Not sure why no line number for\n%s' % orignote
                     raise Exception(errormsg)
-            if verbose: print('%s. line %s: %s %s %s' % (ind, orignote.n, newnote.step, newnote.alter, newnote.octave))
+            if verbose: print('%s. line %s: %s' % (ind, orignote.n, newnote.pitch))
             
         output = ''.join(self.lines)
         with open(outfile, 'w') as f:

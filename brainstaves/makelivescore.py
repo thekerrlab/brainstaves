@@ -15,25 +15,39 @@ torun = [
 'write',
 ]
 
+midioffset = 24
+
 #%% Function definitions
 
-def xmlnote(orignote, step, alter, octave):
+def xmlnote(orignote, num):
+    mapping = {'c$': 7,
+                'cn': 14,
+                'c#': 21,
+                'd$': 9,
+                'dn': 16,
+                'd#': 23,
+                'e$': 11,
+                'en': 18,
+                'e#': 25,
+                'f$': 6,
+                'fn': 13,
+                'f#': 20,
+                'g$': 8, 
+                'gn': 15,
+                'g#': 22,
+                'a$': 10,
+                'an': 17,
+                'a#': 24,
+                'b$': 12,
+                'bn': 19,
+                'b#': 26,}
     out = sc.objdict()
+    string = instruments.num2char(num)
     out['pname'] = orignote.part
     out['mname'] = orignote.mname
     out['nname'] = orignote.nname
-    out['step'] = str(step).upper() # A
-    out['alter'] = str(alter) # s
-    if sc.isnumber(out['alter']):
-        out['alter'] = str(out['alter'])
-    if out['alter'] not in ['0','1','-1']:
-        mapping = {'#':'1', 'n':'0', '$':'-1'}
-        if out['alter'] in mapping:
-            out['alter'] = mapping[out['alter']]
-        else:
-            errormsg = 'Not sure how to process accidental %s' % alter
-            raise Exception(errormsg)
-    out['octave'] = str(octave) # 4
+    out['pitch'] = '%i' % (num+midioffset)
+    out['tpc'] = mapping[string[:2]]
     return out
 
 
@@ -43,7 +57,7 @@ def makequartet():
     va = instruments.Section(name='va', instrument='viola')
     vc = instruments.Section(name='vc', instrument='cello')
     quartet = [v1,v2,va,vc]
-    qd = {inst.name:inst for inst in quartet}
+    qd = sc.objdict({inst.name:inst for inst in quartet})
     return quartet,qd
 
 
@@ -87,7 +101,8 @@ if 'sectionB' in torun:
 if 'create' in torun:
     print('Creating notes')
     for n,orignote in enumerate(nd.B.notes): # WARNING FIX
-        nd.B.notes[n] = xmlnote(orignote,'a','$','4')
+        print('%s. %s' % (n, instruments.num2char(qd.v1.score[n])))
+        nd.B.notes[n] = xmlnote(orignote, qd.v1.score[n])
 
 
 if 'write' in torun:
