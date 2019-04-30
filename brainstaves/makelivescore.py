@@ -11,7 +11,7 @@ sc.tic()
 torun = [
 'load',
 'sectionB',
-#'sectionC',
+'sectionC',
 'write',
 ]
 
@@ -61,6 +61,13 @@ def makequartet():
     return quartet,qd
 
 
+def appendnotes(nd, sec, part, verbose=False):
+    for n,orignote in enumerate(nd[sec][part]):
+        if verbose: print('%s. %s' % (n, instruments.num2char(qd[part].score[n])))
+        note = xmlnote(orignote, qd[part].score[n])
+        nd.notes.append(note)
+    return None
+
 #%% Main body
 
 if 'load' in torun:
@@ -75,7 +82,7 @@ if 'sectionB' in torun:
     sec = 'B'
     quartet,qd = makequartet()
     nd[sec] = sc.objdict()
-    nd.B.startstop = sc.objdict()
+    nd[sec].startstop = sc.objdict()
     
     for part,inst in qd.items():
         inst.mindur = 8
@@ -90,9 +97,6 @@ if 'sectionB' in torun:
             nd[sec].startstop[part] = [21,40]
             probs = [1/12]*4 + [2/12]*2 + [3/12]*2 + [i/12 for i in range(4,12)] + [1]*4
         
-        print(part)
-        print(probs)
-    
         nd[sec][part] = xml.loadnotes(part=part, measurerange=nd[sec].startstop[part])
         
         for prob in probs:
@@ -101,13 +105,9 @@ if 'sectionB' in torun:
             inst.brownian(maxstep=2, startval=startval, skipstart=True)
             inst.seed += 1
             inst.cat()
+        
+        appendnotes(nd, sec, part)
     
-        for n,orignote in enumerate(nd[sec][part]):
-            print('%s. %s' % (n, instruments.num2char(qd[part].score[n])))
-            note = xmlnote(orignote, qd[part].score[n])
-            nd.notes.append(note)
-
-
 if 'sectionC' in torun:
     print('Creating section C')
     sec = 'C'
@@ -116,33 +116,33 @@ if 'sectionC' in torun:
     nd[sec].startstop = sc.objdict()
     
     for part,inst in qd.items():
-        inst.mindur = 16
-        inst.timesig = '4/4'
-        inst.nbars = 1
-        inst.refresh()
-        
         if part != 'v2':
+            inst.mindur = 16
+            inst.timesig = '4/4'
+            inst.nbars = 1
+            inst.refresh()
+            
             nd[sec].startstop[part] = [43,60]
             probs = [1]*4 + [i/10 for i in range(9,2,-1)] + [0.2]*2 + [0.1]*2 + [0.05]*3
-    
-        nd.C[part] = xml.loadnotes(part=part, measurerange=nd[sec].startstop[part])
         
-        for prob in probs:
-            inst.seed += 1
-            startval = inst.score[-1] if inst.scorepts else 'min'
-            inst.brownian(maxstep=2, startval=startval, skipstart=True)
-            inst.seed += 1
-            inst.cat()
-    
-        for n,orignote in enumerate(nd.B[part]):
-            print('%s. %s' % (n, instruments.num2char(qd.v1.score[n])))
-            note = xmlnote(orignote, qd.v1.score[n])
-            nd.notes.append(note)
+            nd[sec][part] = xml.loadnotes(part=part, measurerange=nd[sec].startstop[part])
+            
+            for prob in probs:
+                inst.seed += 1
+                if inst.scorepts:  startval = inst.score[-1]
+                elif part == 'v1': startval = 'max'
+                elif part == 'vc': startval = 'min'
+                else:              startval = None
+                inst.brownian(maxstep=3, startval=startval, skipstart=True)
+                inst.seed += 1
+                inst.cat()
+        
+            appendnotes(nd, sec, part)
 
 
 if 'write' in torun:
     print('Writing XML')
-    xml.write(data=nd.notes, verbose=True)
+    xml.write(data=nd.notes)
 
 
 sc.toc()

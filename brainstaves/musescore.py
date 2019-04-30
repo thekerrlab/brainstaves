@@ -95,11 +95,10 @@ class XML(sc.prettyobj):
         
         return output
     
-    def loadnotes(self, part=None, measurerange=None):
+    def loadnotes(self, part=None, measurerange=None, verbose=False):
         notes = []
         assert len(measurerange)==2
         measures = list(range(measurerange[0]-1, measurerange[1]))
-        print(measures)
         for measure in measures:
             mname = 'm%i' % measure
             thismeasure = self.data[part][mname]
@@ -111,5 +110,5 @@ class XML(sc.prettyobj):
                     orignote['part'] = part
                     orignote['nname'] = key
                     notes.append(orignote)
-            print(thismeasure)
+            if verbose: print(thismeasure)
         return notes
