@@ -3,7 +3,7 @@ import sounddevice as sd
 import pylab as pl
 import spectrogram as s
 
-duration = 5
+duration = 60
 fs = 44100
 
 print('Recording...')

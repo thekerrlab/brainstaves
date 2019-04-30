@@ -12,8 +12,8 @@ import sciris as sc
 
 names = ['v1','v2','va','vc']
 
-which = 'kids'
-lastline = False
+which = 'quartet'
+lastline = False # ['v1','v2']
 delay = 3
 
 maps = {'quartet':
@@ -33,11 +33,12 @@ fig = None
 count = 0
 while True:
     count += 1
-    if lastline: r = -1
-    else: r = count
+    
     
     data = sc.odict()
     for name in names:
+        if lastline and name in lastline: r = -1
+        else: r = count
         infile = '../live/data-'+name+'.csv'
         tmpdata = []
         lines = open(infile).readlines()
