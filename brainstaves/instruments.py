@@ -3,6 +3,7 @@ The crux of Brainstaves -- Python representation of the different instrumental
 parts.
 '''
 
+import re
 import os
 import numpy as np
 import pylab as pl
@@ -197,7 +198,7 @@ class Section(sc.prettyobj):
             self.arr[n] = np.random.randint(low=minval, high=maxval)
         return None
     
-    def brownian(self, startval=None, maxstep=None, seed=None, forcestep=True, skipstart=True, verbose=False):
+    def brownian(self, startval=None, maxstep=None, seed=None, forcestep=True, skipstart=True, verbose=False, inst=None):
         self.resetseed(seed)
         if maxstep is None: maxstep = 1
         minval,maxval = self.minmax()
@@ -207,13 +208,21 @@ class Section(sc.prettyobj):
         if not skipstart:
             self.arr[0] = startval
         
-        for n in range(self.npts-1+skipstart): # If not skipping the start, 1 less point
+        npts = self.npts-1+skipstart
+        data = getnumbers(inst, 2*npts)
+        for n in range(npts): # If not skipping the start, 1 less point
             if n==0: current = abs(startval)
             else:    current = abs(self.arr[n-1])
             step = 0
+            count = 0
             while forcestep and not step:
-                if maxstep == 1: step = np.random.randint(-1,2)
-                else:            step = int(round(np.random.randn()*maxstep)) # REPLACE WITH EEG
+                count += 1
+                if count<10:
+                    step = int(round((data[n])*maxstep))
+                    if verbose: print('Using step %s (%s)' % (step, data[n]))
+                else:
+                    if maxstep == 1: step = np.random.randint(-1,2)
+                    else:            step = int(round(np.random.randn()*maxstep)) # REPLACE WITH EEG
             if (current+step) < minval or (current+step) > maxval: # Bounce off the ends
                 step = -step
             
@@ -249,6 +258,25 @@ class Section(sc.prettyobj):
             self.arr[n] = char2num(char2octo(val))
         return None
         
+
+def getnumbers(inst, npts, window=10):
+    if inst is None:
+        print('Not using EEG')
+        return np.random.rand(npts)
+    infile = 'live/data-'+inst+'.csv'
+    string = open(infile).read()
+    numbers = re.sub("[^0-9]", "", string)
+    rev = numbers[::-1]
+    try:
+        rev = rev[:npts*window]
+        raw = [float(r)/10. for r in rev] # Will be uniform
+        data = np.zeros(npts)
+        for pt in range(npts):
+            data[pt] = sum(raw[pt*window:(pt+1)*window])-window/2.
+    except Exception as E:
+        print('Problem: %s' % str(E))
+        data = np.random.rand(npts)
+    return data
 
 
 def play(insts=None, volume=1.0, tempo=104, blocking=False):

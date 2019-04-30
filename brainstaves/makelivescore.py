@@ -99,7 +99,7 @@ if 'sectionB' in torun:
         for repeat in repeats(ss):
             inst.seed += 1
             startval = inst.score[-1] if inst.scorepts else 'min'
-            inst.brownian(maxstep=2, startval=startval, skipstart=True)
+            inst.brownian(maxstep=2, startval=startval, skipstart=True, inst=part)
             inst.seed += 1
             inst.cat()
         
@@ -123,7 +123,7 @@ if 'sectionC' in torun:
                 elif part == 'v1': startval = 'max'
                 elif part == 'vc': startval = 'min'
                 else:              startval = None
-                inst.brownian(maxstep=3, startval=startval, skipstart=True)
+                inst.brownian(maxstep=3, startval=startval, skipstart=True, inst=part)
                 inst.seed += 1
                 inst.cat()
         
@@ -142,7 +142,7 @@ if 'sectionD' in torun:
         for repeat in repeats(ss):
             inst.seed += 1
             if inst.scorepts:  startval = inst.score[-1]
-            inst.brownian(maxstep=5, startval=startval, skipstart=True)
+            inst.brownian(maxstep=5, startval=startval, skipstart=True, inst=part)
             inst.seed += 1
             inst.cat()
     
@@ -177,12 +177,12 @@ if 'sectionG' in torun:
     for part,inst in qd.items():
         if   part == 'v1': ss = [140,141]
         elif part == 'vc': ss = [119,141]
-        else:              ss = [130,163]
+        else:              ss = [130,141]
         nd[sec][part] = xml.loadnotes(part=part, measurerange=ss)
         for repeat in repeats(ss):
             inst.seed += 1
             if inst.scorepts: startval = inst.score[-1]
-            inst.brownian(maxstep=5, startval=startval, skipstart=True)
+            inst.brownian(maxstep=5, startval=startval, skipstart=True, inst=part)
             inst.seed += 1
             inst.cat()
     
@@ -204,7 +204,7 @@ if 'sectionH' in torun:
             if inst.scorepts:         startval = inst.score[-1]
             elif part in ['v1','v2']: startval = 'max'
             elif part in ['va','vc']: startval = 'min'
-            inst.brownian(maxstep=2, startval=startval, skipstart=False)
+            inst.brownian(maxstep=2, startval=startval, skipstart=False, inst=part)
             inst.seed += 1
             inst.cat()
         
