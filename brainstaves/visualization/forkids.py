@@ -6,6 +6,7 @@ Created on Thu Apr 25 00:39:06 2019
 @author: cliffk
 """
 
+import os
 import pylab as pl
 import sciris as sc
 
@@ -98,7 +99,15 @@ while True:
         for c,chan in enumerate(allchans):
             pl.bar(c+1, d[chan][r])
         pl.ylim([0,10])
+    pl.pause(0.1)
+    print('Saving...')
+    pl.savefig('tmp.png')
+    print('Publishing...')
+    os.system('scp -r "tmp.png" cliffker@cliffkerr.com:/home3/cliffker/public_html/thekerrlab/tmp/')
     t2 = sc.toc(t1, output=True)
-    pl.pause(delay-t2)
+    z = delay-t2
+    print(z)
+    if z>0:
+        pl.pause(z)
 
 print('Done.')
