@@ -12,6 +12,11 @@ torun = [
 'load',
 'sectionB',
 'sectionC',
+'sectionD',
+'sectionE',
+'sectionF',
+'sectionG',
+'sectionH',
 'write',
 ]
 
@@ -51,11 +56,11 @@ def xmlnote(orignote, num):
     return out
 
 
-def makequartet():
-    v1 = instruments.Section(name='v1', instrument='violin')
-    v2 = instruments.Section(name='v2', instrument='violin')
-    va = instruments.Section(name='va', instrument='viola')
-    vc = instruments.Section(name='vc', instrument='cello')
+def makequartet(mindur=8, timesig='4/4', nbars=1):
+    v1 = instruments.Section(name='v1', instrument='violin', mindur=mindur, timesig=timesig, nbars=nbars)
+    v2 = instruments.Section(name='v2', instrument='violin', mindur=mindur, timesig=timesig, nbars=nbars)
+    va = instruments.Section(name='va', instrument='viola', mindur=mindur, timesig=timesig, nbars=nbars)
+    vc = instruments.Section(name='vc', instrument='cello', mindur=mindur, timesig=timesig, nbars=nbars)
     quartet = [v1,v2,va,vc]
     qd = sc.objdict([(inst.name,inst) for inst in quartet])
     return quartet,qd
@@ -67,6 +72,10 @@ def appendnotes(nd, sec, part, verbose=False):
         note = xmlnote(orignote, qd[part].score[n])
         nd.notes.append(note)
     return None
+
+
+def repeats(ss):
+    return list(range(ss[1] - ss[0] + 1))
 
 #%% Main body
 
@@ -80,26 +89,14 @@ if 'load' in torun:
 if 'sectionB' in torun:
     print('Creating section B')
     sec = 'B'
-    quartet,qd = makequartet()
+    quartet,qd = makequartet(mindur=8, timesig='12/8', nbars=1)
     nd[sec] = sc.objdict()
-    nd[sec].startstop = sc.objdict()
     
-    for part,inst in qd.items():
-        inst.mindur = 8
-        inst.timesig = '12/8'
-        inst.nbars = 1
-        inst.refresh()
-        
-        if part == 'v1':
-            nd[sec].startstop[part] = [39,40]
-            probs = [1,1]
-        else:
-            nd[sec].startstop[part] = [21,40]
-            probs = [1/12]*4 + [2/12]*2 + [3/12]*2 + [i/12 for i in range(4,12)] + [1]*4
-        
-        nd[sec][part] = xml.loadnotes(part=part, measurerange=nd[sec].startstop[part])
-        
-        for prob in probs:
+    for part,inst in qd.items():      
+        if part == 'v1': ss = [39,40]
+        else:            ss = [21,40]
+        nd[sec][part] = xml.loadnotes(part=part, measurerange=ss)
+        for repeat in repeats(ss):
             inst.seed += 1
             startval = inst.score[-1] if inst.scorepts else 'min'
             inst.brownian(maxstep=2, startval=startval, skipstart=True)
@@ -107,27 +104,20 @@ if 'sectionB' in torun:
             inst.cat()
         
         appendnotes(nd, sec, part)
-    
+
+
 if 'sectionC' in torun:
     print('Creating section C')
     sec = 'C'
-    quartet,qd = makequartet()
+    quartet,qd = makequartet(mindur=16, timesig='4/4', nbars=1)
     nd[sec] = sc.objdict()
-    nd[sec].startstop = sc.objdict()
     
     for part,inst in qd.items():
         if part != 'v2':
-            inst.mindur = 16
-            inst.timesig = '4/4'
-            inst.nbars = 1
-            inst.refresh()
+            ss = [43,60]
+            nd[sec][part] = xml.loadnotes(part=part, measurerange=ss)
             
-            nd[sec].startstop[part] = [43,60]
-            probs = [1]*4 + [i/10 for i in range(9,2,-1)] + [0.2]*2 + [0.1]*2 + [0.05]*3
-        
-            nd[sec][part] = xml.loadnotes(part=part, measurerange=nd[sec].startstop[part])
-            
-            for prob in probs:
+            for repeat in repeats(ss):
                 inst.seed += 1
                 if inst.scorepts:  startval = inst.score[-1]
                 elif part == 'v1': startval = 'max'
@@ -138,6 +128,47 @@ if 'sectionC' in torun:
                 inst.cat()
         
             appendnotes(nd, sec, part)
+
+
+if 'sectionD' in torun:
+    print('Creating section D')
+    sec = 'D'
+    quartet,qd = makequartet(mindur=8, timesig='4/4', nbars=1)
+    nd[sec] = sc.objdict()
+    
+    for part,inst in qd.items():
+        ss = [63,83]
+        nd[sec][part] = xml.loadnotes(part=part, measurerange=ss)
+        for repeat in repeats(ss):
+            inst.seed += 1
+            if inst.scorepts:  startval = inst.score[-1]
+            inst.brownian(maxstep=5, startval=startval, skipstart=True)
+            inst.seed += 1
+            inst.cat()
+    
+        appendnotes(nd, sec, part)
+
+
+if 'sectionH' in torun:
+    print('Creating section H')
+    sec = 'H'
+    quartet,qd = makequartet(mindur=8, timesig='12/8', nbars=1)
+    nd[sec] = sc.objdict()
+    
+    for part,inst in qd.items():      
+        if part == 'v1': ss = [144,145]
+        else:            ss = [144,163]
+        nd[sec][part] = xml.loadnotes(part=part, measurerange=ss)
+        for repeat in repeats(ss):
+            inst.seed += 1
+            if inst.scorepts:         startval = inst.score[-1]
+            elif part in ['v1','v2']: startval = 'max'
+            elif part in ['va','vc']: startval = 'min'
+            inst.brownian(maxstep=2, startval=startval, skipstart=False)
+            inst.seed += 1
+            inst.cat()
+        
+        appendnotes(nd, sec, part)
 
 
 if 'write' in torun:
