@@ -9,6 +9,7 @@
       </Synthesizer>
     <Division>480</Division>
     <Style>
+      <staffDistance>8</staffDistance>
       <measureSpacing>1.3</measureSpacing>
       <TextStyle>
         <halign>center</halign>
@@ -753,6 +754,11 @@
             <tpc>22</tpc>
             </Note>
           </Chord>
+        <Dynamic>
+          <subtype>ff</subtype>
+          <velocity>112</velocity>
+          <pos x="1.18844" y="7.77646"/>
+          </Dynamic>
         <endSpanner id="18"/>
         <Rest>
           <durationType>half</durationType>
@@ -1570,6 +1576,7 @@
           <text><font size="14.284"></font><font face="Times New Roman"></font><b>C</b></text>
           </RehearsalMark>
         <StaffText>
+          <pos x="3.30092" y="-6.87037"/>
           <text><font size="9.3012"></font><font face="Times New Roman"></font><b>Annoyed; angry, but under your breath (leggiero e non legato), but gradually feeling better</b></text>
           </StaffText>
         <Rest>
@@ -2986,9 +2993,6 @@
           </Chord>
         </Measure>
       <Measure number="51">
-        <LayoutBreak>
-          <subtype>line</subtype>
-          </LayoutBreak>
         <Rest>
           <durationType>eighth</durationType>
           </Rest>
@@ -3258,9 +3262,6 @@
           </Rest>
         </Measure>
       <Measure number="54">
-        <LayoutBreak>
-          <subtype>line</subtype>
-          </LayoutBreak>
         <Rest>
           <durationType>quarter</durationType>
           </Rest>
@@ -4745,6 +4746,7 @@
           <pos x="0.75" y="7.43556"/>
           </Dynamic>
         <StaffText>
+          <pos x="3.08564" y="-7.5162"/>
           <text><font size="9.3012"></font><font face="Times New Roman"></font><b>Like an echo in an empty train station, but the train is coming</b></text>
           </StaffText>
         <Rest>
@@ -5477,6 +5479,7 @@
           <pos x="0.533281" y="7.43556"/>
           </Dynamic>
         <StaffText>
+          <pos x="3.65972" y="-5.00463"/>
           <text><font size="9.3012"></font><font face="Times New Roman"></font><b>Focused, lyrical, respectful</b></text>
           </StaffText>
         <Rest>
@@ -7124,6 +7127,7 @@
           <pos x="0.658281" y="7.43556"/>
           </Dynamic>
         <StaffText>
+          <pos x="4.59258" y="-5.72222"/>
           <text><font size="9.3012"></font><font face="Times New Roman"></font><b>Still lyrical, but with the wide-eyed wonder of having just discovered the top of your head</b></text>
           </StaffText>
         <Chord>
@@ -8287,6 +8291,12 @@
           </Chord>
         </Measure>
       <Measure number="139">
+        <Dynamic>
+          <subtype>other-dynamics</subtype>
+          <velocity>112</velocity>
+          <pos x="22.4686" y="6.85733"/>
+          <text><sym>dynamicForte</sym></text>
+          </Dynamic>
         <Rest>
           <durationType>whole</durationType>
           </Rest>
@@ -8296,7 +8306,7 @@
           <durationType>eighth</durationType>
           </Rest>
         <StaffText>
-          <pos x="0" y="5.87778"/>
+          <pos x="-13.7778" y="5.08843"/>
           <text><font size="8.5261"></font><font face="Times New Roman"></font><i>pizz., gliss.</i></text>
           </StaffText>
         <Chord>
@@ -8432,15 +8442,15 @@
         <Rest>
           <durationType>half</durationType>
           </Rest>
+        <StaffText>
+          <pos x="1.65046" y="5.44723"/>
+          <text><font size="8.5261"></font><font face="Times New Roman"></font><i> gliss. down</i></text>
+          </StaffText>
         <Dynamic>
           <subtype>p</subtype>
           <velocity>49</velocity>
           <pos x="0.658281" y="7.43556"/>
           </Dynamic>
-        <StaffText>
-          <pos x="0" y="5.87778"/>
-          <text><font size="8.5261"></font><font face="Times New Roman"></font><i> gliss. down</i></text>
-          </StaffText>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
@@ -8471,13 +8481,8 @@
         <Rest>
           <durationType>half</durationType>
           </Rest>
-        <Dynamic>
-          <subtype>ff</subtype>
-          <velocity>112</velocity>
-          <pos x="0.658281" y="7.43556"/>
-          </Dynamic>
         <StaffText>
-          <pos x="0" y="5.87778"/>
+          <pos x="1.9375" y="7.2412"/>
           <text><font size="8.5261"></font><font face="Times New Roman"></font><i> gliss. up</i></text>
           </StaffText>
         <Chord>
@@ -8516,12 +8521,8 @@
         <Dynamic>
           <subtype>ff</subtype>
           <velocity>112</velocity>
-          <pos x="0.658281" y="7.43556"/>
+          <pos x="-1.99681" y="7.07676"/>
           </Dynamic>
-        <StaffText>
-          <pos x="0" y="5.87778"/>
-          <text><font size="8.5261"></font><font face="Times New Roman"></font><i> pizz.</i></text>
-          </StaffText>
         <Beam id="110">
           <StemDirection>up</StemDirection>
           </Beam>
@@ -8818,10 +8819,10 @@
         <Dynamic>
           <subtype>pp</subtype>
           <velocity>33</velocity>
-          <pos x="0.658281" y="7.43556"/>
+          <pos x="0.658281" y="5.92862"/>
           </Dynamic>
         <StaffText>
-          <pos x="0" y="5.87778"/>
+          <pos x="3.01388" y="4.15556"/>
           <text><font size="8.5261"></font><font face="Times New Roman"></font><i> arco</i></text>
           </StaffText>
         <Chord>
@@ -9238,6 +9239,7 @@
         </Measure>
       <Measure number="165">
         <StaffText>
+          <pos x="29.3495" y="-3.13889"/>
           <text><font size="9.3012"></font><font face="Times New Roman"></font><b>Smile broadly :D</b></text>
           </StaffText>
         <Chord>
@@ -9268,7 +9270,7 @@
           <pos x="0.658281" y="7.43556"/>
           </Dynamic>
         <StaffText>
-          <pos x="0" y="5.87778"/>
+          <pos x="1.86574" y="5.87778"/>
           <text><font size="8.5261"></font><font face="Times New Roman"></font><i> pizz.</i></text>
           </StaffText>
         <Chord>
@@ -9287,14 +9289,7 @@
           <durationType>quarter</durationType>
           </Rest>
         <Rest>
-          <durationType>half</durationType>
-          </Rest>
-        <Rest>
-          <durationType>eighth</durationType>
-          </Rest>
-        <Rest>
-          <dots>1</dots>
-          <durationType>quarter</durationType>
+          <durationType>whole</durationType>
           </Rest>
         <BarLine>
           <subtype>end</subtype>
@@ -9429,7 +9424,7 @@
         <Dynamic>
           <subtype>f</subtype>
           <velocity>96</velocity>
-          <pos x="0.19513" y="-1.32785"/>
+          <pos x="-0.163666" y="-3.05007"/>
           </Dynamic>
         <HairPin id="123">
           <subtype>1</subtype>
@@ -9535,7 +9530,7 @@
         <Dynamic>
           <subtype>pp</subtype>
           <velocity>33</velocity>
-          <pos x="0.896145" y="-1.95525"/>
+          <pos x="0.896145" y="-3.1034"/>
           </Dynamic>
         <HairPin id="130">
           <subtype>0</subtype>
@@ -9572,7 +9567,7 @@
         <Dynamic>
           <subtype>ff</subtype>
           <velocity>112</velocity>
-          <pos x="0.810275" y="-1.30941"/>
+          <pos x="0.810275" y="-2.3858"/>
           </Dynamic>
         <HairPin id="133">
           <subtype>1</subtype>
@@ -9667,11 +9662,6 @@
           <subtype>ff</subtype>
           <velocity>112</velocity>
           <pos x="0.965277" y="7.3638"/>
-          </Dynamic>
-        <Dynamic>
-          <subtype>ff</subtype>
-          <velocity>112</velocity>
-          <pos x="1.40372" y="-2.67284"/>
           </Dynamic>
         <endSpanner id="136"/>
         <Rest>
@@ -12721,12 +12711,6 @@
               </Accidental>
             <pitch>61</pitch>
             <tpc>21</tpc>
-            <Glissando id="162">
-              <subtype>1</subtype>
-              <diagonal>1</diagonal>
-              <lineWidth>0.15</lineWidth>
-              <anchor>3</anchor>
-              </Glissando>
             </Note>
           </Chord>
         <Chord>
@@ -12739,7 +12723,6 @@
               </Accidental>
             <pitch>60</pitch>
             <tpc>14</tpc>
-            <endSpanner id="162"/>
             </Note>
           </Chord>
         <Rest>
@@ -12841,13 +12824,13 @@
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
           <Note>
-            <Tie id="163">
+            <Tie id="162">
               </Tie>
             <pitch>65</pitch>
             <tpc>13</tpc>
             </Note>
           <Note>
-            <Tie id="164">
+            <Tie id="163">
               </Tie>
             <pitch>74</pitch>
             <tpc>16</tpc>
@@ -12863,12 +12846,12 @@
           <durationType>quarter</durationType>
           <StemDirection>up</StemDirection>
           <Note>
-            <endSpanner id="163"/>
+            <endSpanner id="162"/>
             <pitch>65</pitch>
             <tpc>13</tpc>
             </Note>
           <Note>
-            <endSpanner id="164"/>
+            <endSpanner id="163"/>
             <pitch>74</pitch>
             <tpc>16</tpc>
             </Note>
@@ -12884,7 +12867,7 @@
           <durationType>half</durationType>
           <StemDirection>down</StemDirection>
           <Note>
-            <Tie id="165">
+            <Tie id="164">
               </Tie>
             <pitch>67</pitch>
             <tpc>15</tpc>
@@ -12893,7 +12876,7 @@
             <Accidental>
               <subtype>flat</subtype>
               </Accidental>
-            <Tie id="166">
+            <Tie id="165">
               </Tie>
             <pitch>75</pitch>
             <tpc>11</tpc>
@@ -12908,12 +12891,12 @@
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
           <Note>
-            <endSpanner id="165"/>
+            <endSpanner id="164"/>
             <pitch>67</pitch>
             <tpc>15</tpc>
             </Note>
           <Note>
-            <endSpanner id="166"/>
+            <endSpanner id="165"/>
             <pitch>75</pitch>
             <tpc>11</tpc>
             </Note>
@@ -12958,7 +12941,7 @@
           <velocity>16</velocity>
           <pos x="0.658281" y="7.43556"/>
           </Dynamic>
-        <HairPin id="167">
+        <HairPin id="166">
           <subtype>0</subtype>
           <Segment>
             <subtype>1</subtype>
@@ -13018,7 +13001,7 @@
           <durationType>eighth</durationType>
           <Beam>168</Beam>
           <Note>
-            <Tie id="168">
+            <Tie id="167">
               </Tie>
             <pitch>55</pitch>
             <tpc>15</tpc>
@@ -13028,7 +13011,7 @@
               <role>1</role>
               <subtype>natural</subtype>
               </Accidental>
-            <Tie id="169">
+            <Tie id="168">
               </Tie>
             <pitch>64</pitch>
             <tpc>18</tpc>
@@ -13042,12 +13025,12 @@
           <durationType>half</durationType>
           <StemDirection>up</StemDirection>
           <Note>
-            <endSpanner id="168"/>
+            <endSpanner id="167"/>
             <pitch>55</pitch>
             <tpc>15</tpc>
             </Note>
           <Note>
-            <endSpanner id="169"/>
+            <endSpanner id="168"/>
             <pitch>64</pitch>
             <tpc>18</tpc>
             </Note>
@@ -13057,7 +13040,7 @@
           <durationType>quarter</durationType>
           <StemDirection>up</StemDirection>
           <Note>
-            <Tie id="170">
+            <Tie id="169">
               </Tie>
             <pitch>57</pitch>
             <tpc>17</tpc>
@@ -13066,7 +13049,7 @@
             <Accidental>
               <subtype>sharp</subtype>
               </Accidental>
-            <Tie id="171">
+            <Tie id="170">
               </Tie>
             <pitch>66</pitch>
             <tpc>20</tpc>
@@ -13079,12 +13062,12 @@
           <durationType>quarter</durationType>
           <StemDirection>up</StemDirection>
           <Note>
-            <endSpanner id="170"/>
+            <endSpanner id="169"/>
             <pitch>57</pitch>
             <tpc>17</tpc>
             </Note>
           <Note>
-            <endSpanner id="171"/>
+            <endSpanner id="170"/>
             <pitch>66</pitch>
             <tpc>20</tpc>
             </Note>
@@ -13128,7 +13111,7 @@
           <durationType>quarter</durationType>
           <StemDirection>up</StemDirection>
           <Note>
-            <Tie id="172">
+            <Tie id="171">
               </Tie>
             <pitch>55</pitch>
             <tpc>15</tpc>
@@ -13137,7 +13120,7 @@
             <Accidental>
               <subtype>natural</subtype>
               </Accidental>
-            <Tie id="173">
+            <Tie id="172">
               </Tie>
             <pitch>64</pitch>
             <tpc>18</tpc>
@@ -13150,12 +13133,12 @@
           <durationType>half</durationType>
           <StemDirection>up</StemDirection>
           <Note>
-            <endSpanner id="172"/>
+            <endSpanner id="171"/>
             <pitch>55</pitch>
             <tpc>15</tpc>
             </Note>
           <Note>
-            <endSpanner id="173"/>
+            <endSpanner id="172"/>
             <pitch>64</pitch>
             <tpc>18</tpc>
             </Note>
@@ -13362,7 +13345,7 @@
           <durationType>quarter</durationType>
           <StemDirection>down</StemDirection>
           <Note>
-            <Tie id="174">
+            <Tie id="173">
               </Tie>
             <pitch>69</pitch>
             <tpc>17</tpc>
@@ -13372,7 +13355,7 @@
               <role>1</role>
               <subtype>natural</subtype>
               </Accidental>
-            <Tie id="175">
+            <Tie id="174">
               </Tie>
             <pitch>77</pitch>
             <tpc>13</tpc>
@@ -13385,12 +13368,12 @@
           <durationType>half</durationType>
           <StemDirection>down</StemDirection>
           <Note>
-            <endSpanner id="174"/>
+            <endSpanner id="173"/>
             <pitch>69</pitch>
             <tpc>17</tpc>
             </Note>
           <Note>
-            <endSpanner id="175"/>
+            <endSpanner id="174"/>
             <pitch>77</pitch>
             <tpc>13</tpc>
             </Note>
@@ -13414,13 +13397,13 @@
           <durationType>eighth</durationType>
           <StemDirection>down</StemDirection>
           <Note>
-            <Tie id="176">
+            <Tie id="175">
               </Tie>
             <pitch>69</pitch>
             <tpc>17</tpc>
             </Note>
           <Note>
-            <Tie id="177">
+            <Tie id="176">
               </Tie>
             <pitch>77</pitch>
             <tpc>13</tpc>
@@ -13433,12 +13416,12 @@
           <durationType>eighth</durationType>
           <StemDirection>down</StemDirection>
           <Note>
-            <endSpanner id="176"/>
+            <endSpanner id="175"/>
             <pitch>69</pitch>
             <tpc>17</tpc>
             </Note>
           <Note>
-            <endSpanner id="177"/>
+            <endSpanner id="176"/>
             <pitch>77</pitch>
             <tpc>13</tpc>
             </Note>
@@ -13461,7 +13444,7 @@
           <velocity>112</velocity>
           <pos x="0.658281" y="7.43556"/>
           </Dynamic>
-        <endSpanner id="167"/>
+        <endSpanner id="166"/>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>half</durationType>
@@ -13493,13 +13476,13 @@
           <durationType>half</durationType>
           <StemDirection>up</StemDirection>
           <Note>
-            <Tie id="178">
+            <Tie id="177">
               </Tie>
             <pitch>60</pitch>
             <tpc>14</tpc>
             </Note>
           <Note>
-            <Tie id="179">
+            <Tie id="178">
               </Tie>
             <pitch>64</pitch>
             <tpc>18</tpc>
@@ -13512,12 +13495,12 @@
           <durationType>half</durationType>
           <StemDirection>up</StemDirection>
           <Note>
-            <endSpanner id="178"/>
+            <endSpanner id="177"/>
             <pitch>60</pitch>
             <tpc>14</tpc>
             </Note>
           <Note>
-            <endSpanner id="179"/>
+            <endSpanner id="178"/>
             <pitch>64</pitch>
             <tpc>18</tpc>
             </Note>
@@ -14614,7 +14597,7 @@
           <durationType>eighth</durationType>
           <Beam>179</Beam>
           <Note>
-            <Tie id="180">
+            <Tie id="179">
               </Tie>
             <pitch>81</pitch>
             <tpc>17</tpc>
@@ -14627,7 +14610,7 @@
           <durationType>quarter</durationType>
           <StemDirection>down</StemDirection>
           <Note>
-            <endSpanner id="180"/>
+            <endSpanner id="179"/>
             <pitch>81</pitch>
             <tpc>17</tpc>
             </Note>
@@ -14800,7 +14783,7 @@
           <durationType>quarter</durationType>
           <StemDirection>down</StemDirection>
           <Note>
-            <Tie id="181">
+            <Tie id="180">
               </Tie>
             <pitch>71</pitch>
             <tpc>19</tpc>
@@ -14816,7 +14799,7 @@
           <durationType>16th</durationType>
           <Beam>184</Beam>
           <Note>
-            <endSpanner id="181"/>
+            <endSpanner id="180"/>
             <pitch>71</pitch>
             <tpc>19</tpc>
             </Note>
@@ -14871,7 +14854,7 @@
             <Accidental>
               <subtype>sharp</subtype>
               </Accidental>
-            <Tie id="182">
+            <Tie id="181">
               </Tie>
             <pitch>90</pitch>
             <tpc>20</tpc>
@@ -14887,7 +14870,7 @@
           <durationType>16th</durationType>
           <Beam>185</Beam>
           <Note>
-            <endSpanner id="182"/>
+            <endSpanner id="181"/>
             <pitch>90</pitch>
             <tpc>20</tpc>
             </Note>
@@ -15008,7 +14991,7 @@
             <Accidental>
               <subtype>natural</subtype>
               </Accidental>
-            <Tie id="183">
+            <Tie id="182">
               </Tie>
             <pitch>65</pitch>
             <tpc>13</tpc>
@@ -15016,7 +14999,7 @@
           </Chord>
         </Measure>
       <Measure number="117">
-        <HairPin id="184">
+        <HairPin id="183">
           <subtype>0</subtype>
           <Segment>
             <subtype>0</subtype>
@@ -15038,7 +15021,7 @@
           <durationType>16th</durationType>
           <Beam>188</Beam>
           <Note>
-            <endSpanner id="183"/>
+            <endSpanner id="182"/>
             <pitch>65</pitch>
             <tpc>13</tpc>
             </Note>
@@ -15090,7 +15073,7 @@
             <tpc>13</tpc>
             </Note>
           </Chord>
-        <endSpanner id="184"/>
+        <endSpanner id="183"/>
         <Rest>
           <durationType>eighth</durationType>
           </Rest>
@@ -15128,13 +15111,13 @@
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
           <Note>
-            <Tie id="185">
+            <Tie id="184">
               </Tie>
             <pitch>72</pitch>
             <tpc>14</tpc>
             </Note>
           <Note>
-            <Tie id="186">
+            <Tie id="185">
               </Tie>
             <pitch>77</pitch>
             <tpc>13</tpc>
@@ -15149,12 +15132,12 @@
           <durationType>half</durationType>
           <StemDirection>down</StemDirection>
           <Note>
-            <endSpanner id="185"/>
+            <endSpanner id="184"/>
             <pitch>72</pitch>
             <tpc>14</tpc>
             </Note>
           <Note>
-            <endSpanner id="186"/>
+            <endSpanner id="185"/>
             <pitch>77</pitch>
             <tpc>13</tpc>
             <head>2</head>
@@ -15166,13 +15149,13 @@
           <durationType>half</durationType>
           <StemDirection>up</StemDirection>
           <Note>
-            <Tie id="187">
+            <Tie id="186">
               </Tie>
             <pitch>60</pitch>
             <tpc>14</tpc>
             </Note>
           <Note>
-            <Tie id="188">
+            <Tie id="187">
               </Tie>
             <pitch>65</pitch>
             <tpc>13</tpc>
@@ -15186,16 +15169,16 @@
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
           <Note>
-            <Tie id="189">
+            <Tie id="188">
               </Tie>
-            <endSpanner id="187"/>
+            <endSpanner id="186"/>
             <pitch>60</pitch>
             <tpc>14</tpc>
             </Note>
           <Note>
-            <Tie id="190">
+            <Tie id="189">
               </Tie>
-            <endSpanner id="188"/>
+            <endSpanner id="187"/>
             <pitch>65</pitch>
             <tpc>13</tpc>
             <head>2</head>
@@ -15208,12 +15191,12 @@
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
           <Note>
-            <endSpanner id="189"/>
+            <endSpanner id="188"/>
             <pitch>60</pitch>
             <tpc>14</tpc>
             </Note>
           <Note>
-            <endSpanner id="190"/>
+            <endSpanner id="189"/>
             <pitch>65</pitch>
             <tpc>13</tpc>
             <head>2</head>
@@ -15226,13 +15209,13 @@
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
           <Note>
-            <Tie id="191">
+            <Tie id="190">
               </Tie>
             <pitch>69</pitch>
             <tpc>17</tpc>
             </Note>
           <Note>
-            <Tie id="192">
+            <Tie id="191">
               </Tie>
             <pitch>74</pitch>
             <tpc>16</tpc>
@@ -15246,16 +15229,16 @@
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
           <Note>
-            <Tie id="193">
+            <Tie id="192">
               </Tie>
-            <endSpanner id="191"/>
+            <endSpanner id="190"/>
             <pitch>69</pitch>
             <tpc>17</tpc>
             </Note>
           <Note>
-            <Tie id="194">
+            <Tie id="193">
               </Tie>
-            <endSpanner id="192"/>
+            <endSpanner id="191"/>
             <pitch>74</pitch>
             <tpc>16</tpc>
             <head>2</head>
@@ -15268,16 +15251,16 @@
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
           <Note>
-            <Tie id="195">
+            <Tie id="194">
               </Tie>
-            <endSpanner id="193"/>
+            <endSpanner id="192"/>
             <pitch>69</pitch>
             <tpc>17</tpc>
             </Note>
           <Note>
-            <Tie id="196">
+            <Tie id="195">
               </Tie>
-            <endSpanner id="194"/>
+            <endSpanner id="193"/>
             <pitch>74</pitch>
             <tpc>16</tpc>
             <head>2</head>
@@ -15290,12 +15273,12 @@
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
           <Note>
-            <endSpanner id="195"/>
+            <endSpanner id="194"/>
             <pitch>69</pitch>
             <tpc>17</tpc>
             </Note>
           <Note>
-            <endSpanner id="196"/>
+            <endSpanner id="195"/>
             <pitch>74</pitch>
             <tpc>16</tpc>
             <head>2</head>
@@ -15313,7 +15296,7 @@
           <pos x="0.658281" y="7.43556"/>
           </Dynamic>
         <StaffText>
-          <pos x="0" y="5.87778"/>
+          <pos x="1.14815" y="5.6625"/>
           <text><font size="8.5261"></font><font face="Times New Roman"></font><i> pizz., gliss.</i></text>
           </StaffText>
         <Chord>
@@ -16154,7 +16137,7 @@
           <pos x="0.658281" y="7.43556"/>
           </Dynamic>
         <StaffText>
-          <pos x="0" y="5.87778"/>
+          <pos x="2.22453" y="5.87778"/>
           <text><font size="8.5261"></font><font face="Times New Roman"></font><i> gliss. down</i></text>
           </StaffText>
         <Chord>
@@ -16185,15 +16168,15 @@
         <Rest>
           <durationType>half</durationType>
           </Rest>
+        <StaffText>
+          <pos x="1.86574" y="5.87778"/>
+          <text><font size="8.5261"></font><font face="Times New Roman"></font><i> gliss. up</i></text>
+          </StaffText>
         <Dynamic>
           <subtype>ff</subtype>
           <velocity>112</velocity>
-          <pos x="0.658281" y="7.43556"/>
+          <pos x="0.510309" y="-3.33247"/>
           </Dynamic>
-        <StaffText>
-          <pos x="0" y="5.87778"/>
-          <text><font size="8.5261"></font><font face="Times New Roman"></font><i> gliss. up</i></text>
-          </StaffText>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
@@ -16223,12 +16206,8 @@
         <Dynamic>
           <subtype>ff</subtype>
           <velocity>112</velocity>
-          <pos x="0.329141" y="7.43556"/>
+          <pos x="-2.90002" y="7.43556"/>
           </Dynamic>
-        <StaffText>
-          <pos x="0" y="5.87778"/>
-          <text><font size="8.5261"></font><font face="Times New Roman"></font><i> pizz.</i></text>
-          </StaffText>
         <Beam id="204">
           <StemDirection>down</StemDirection>
           </Beam>
@@ -17912,7 +17891,7 @@
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
           <Note>
-            <Tie id="197">
+            <Tie id="196">
               </Tie>
             <pitch>55</pitch>
             <tpc>15</tpc>
@@ -17924,9 +17903,9 @@
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
           <Note>
-            <Tie id="198">
+            <Tie id="197">
               </Tie>
-            <endSpanner id="197"/>
+            <endSpanner id="196"/>
             <pitch>55</pitch>
             <tpc>15</tpc>
             </Note>
@@ -17942,9 +17921,9 @@
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
           <Note>
-            <Tie id="199">
+            <Tie id="198">
               </Tie>
-            <endSpanner id="198"/>
+            <endSpanner id="197"/>
             <pitch>55</pitch>
             <tpc>15</tpc>
             </Note>
@@ -17955,9 +17934,9 @@
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
           <Note>
-            <Tie id="200">
+            <Tie id="199">
               </Tie>
-            <endSpanner id="199"/>
+            <endSpanner id="198"/>
             <pitch>55</pitch>
             <tpc>15</tpc>
             </Note>
@@ -17969,7 +17948,7 @@
           <velocity>49</velocity>
           <pos x="0.658281" y="7.43556"/>
           </Dynamic>
-        <HairPin id="201">
+        <HairPin id="200">
           <subtype>0</subtype>
           <Segment>
             <subtype>0</subtype>
@@ -17987,15 +17966,15 @@
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
           <Note>
-            <Tie id="202">
+            <Tie id="201">
               </Tie>
             <pitch>53</pitch>
             <tpc>13</tpc>
             </Note>
           <Note>
-            <Tie id="203">
+            <Tie id="202">
               </Tie>
-            <endSpanner id="200"/>
+            <endSpanner id="199"/>
             <pitch>55</pitch>
             <tpc>15</tpc>
             </Note>
@@ -18006,16 +17985,16 @@
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
           <Note>
-            <Tie id="204">
+            <Tie id="203">
               </Tie>
-            <endSpanner id="202"/>
+            <endSpanner id="201"/>
             <pitch>53</pitch>
             <tpc>13</tpc>
             </Note>
           <Note>
-            <Tie id="205">
+            <Tie id="204">
               </Tie>
-            <endSpanner id="203"/>
+            <endSpanner id="202"/>
             <pitch>55</pitch>
             <tpc>15</tpc>
             </Note>
@@ -18025,23 +18004,23 @@
         <Dynamic>
           <subtype>mf</subtype>
           <velocity>80</velocity>
-          <pos x="8.54518" y="-2.28388"/>
+          <pos x="8.40177" y="-3.84847"/>
           </Dynamic>
-        <endSpanner id="201"/>
+        <endSpanner id="200"/>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
           <Note>
-            <Tie id="206">
+            <Tie id="205">
               </Tie>
-            <endSpanner id="204"/>
+            <endSpanner id="203"/>
             <pitch>53</pitch>
             <tpc>13</tpc>
             </Note>
           <Note>
-            <Tie id="207">
+            <Tie id="206">
               </Tie>
-            <endSpanner id="205"/>
+            <endSpanner id="204"/>
             <pitch>55</pitch>
             <tpc>15</tpc>
             </Note>
@@ -18053,7 +18032,7 @@
           <velocity>80</velocity>
           <pos x="0.658281" y="7.43556"/>
           </Dynamic>
-        <HairPin id="208">
+        <HairPin id="207">
           <subtype>1</subtype>
           <Segment>
             <subtype>1</subtype>
@@ -18076,16 +18055,16 @@
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
           <Note>
-            <Tie id="209">
+            <Tie id="208">
               </Tie>
-            <endSpanner id="206"/>
+            <endSpanner id="205"/>
             <pitch>53</pitch>
             <tpc>13</tpc>
             </Note>
           <Note>
-            <Tie id="210">
+            <Tie id="209">
               </Tie>
-            <endSpanner id="207"/>
+            <endSpanner id="206"/>
             <pitch>55</pitch>
             <tpc>15</tpc>
             </Note>
@@ -18096,16 +18075,16 @@
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
           <Note>
-            <Tie id="211">
+            <Tie id="210">
               </Tie>
-            <endSpanner id="209"/>
+            <endSpanner id="208"/>
             <pitch>53</pitch>
             <tpc>13</tpc>
             </Note>
           <Note>
-            <Tie id="212">
+            <Tie id="211">
               </Tie>
-            <endSpanner id="210"/>
+            <endSpanner id="209"/>
             <pitch>55</pitch>
             <tpc>15</tpc>
             </Note>
@@ -18116,33 +18095,33 @@
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
           <Note>
-            <Tie id="213">
+            <Tie id="212">
               </Tie>
-            <endSpanner id="211"/>
+            <endSpanner id="210"/>
             <pitch>53</pitch>
             <tpc>13</tpc>
             </Note>
           <Note>
-            <Tie id="214">
+            <Tie id="213">
               </Tie>
-            <endSpanner id="212"/>
+            <endSpanner id="211"/>
             <pitch>55</pitch>
             <tpc>15</tpc>
             </Note>
           </Chord>
         </Measure>
       <Measure number="11">
-        <endSpanner id="208"/>
+        <endSpanner id="207"/>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
           <Note>
-            <endSpanner id="213"/>
+            <endSpanner id="212"/>
             <pitch>53</pitch>
             <tpc>13</tpc>
             </Note>
           <Note>
-            <endSpanner id="214"/>
+            <endSpanner id="213"/>
             <pitch>55</pitch>
             <tpc>15</tpc>
             </Note>
@@ -18162,9 +18141,9 @@
         <Dynamic>
           <subtype>pp</subtype>
           <velocity>33</velocity>
-          <pos x="0.537349" y="-1.69137"/>
+          <pos x="0.537349" y="-3.05479"/>
           </Dynamic>
-        <HairPin id="215">
+        <HairPin id="214">
           <subtype>0</subtype>
           <Segment>
             <subtype>0</subtype>
@@ -18182,13 +18161,13 @@
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
           <Note>
-            <Tie id="216">
+            <Tie id="215">
               </Tie>
             <pitch>53</pitch>
             <tpc>13</tpc>
             </Note>
           <Note>
-            <Tie id="217">
+            <Tie id="216">
               </Tie>
             <pitch>55</pitch>
             <tpc>15</tpc>
@@ -18204,9 +18183,9 @@
         <Dynamic>
           <subtype>ff</subtype>
           <velocity>112</velocity>
-          <pos x="0.738516" y="-1.4761"/>
+          <pos x="0.594998" y="-2.69601"/>
           </Dynamic>
-        <HairPin id="218">
+        <HairPin id="217">
           <subtype>1</subtype>
           <Segment>
             <subtype>0</subtype>
@@ -18224,34 +18203,34 @@
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
           <Note>
-            <Tie id="219">
+            <Tie id="218">
               </Tie>
-            <endSpanner id="216"/>
+            <endSpanner id="215"/>
             <pitch>53</pitch>
             <tpc>13</tpc>
             </Note>
           <Note>
-            <Tie id="220">
+            <Tie id="219">
               </Tie>
-            <endSpanner id="217"/>
+            <endSpanner id="216"/>
             <pitch>55</pitch>
             <tpc>15</tpc>
             </Note>
           </Chord>
         </Measure>
       <Measure number="15">
-        <endSpanner id="215"/>
-        <endSpanner id="218"/>
+        <endSpanner id="214"/>
+        <endSpanner id="217"/>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
           <Note>
-            <endSpanner id="219"/>
+            <endSpanner id="218"/>
             <pitch>53</pitch>
             <tpc>13</tpc>
             </Note>
           <Note>
-            <endSpanner id="220"/>
+            <endSpanner id="219"/>
             <pitch>55</pitch>
             <tpc>15</tpc>
             </Note>
@@ -18268,7 +18247,7 @@
           <velocity>33</velocity>
           <pos x="0.658281" y="7.43556"/>
           </Dynamic>
-        <HairPin id="221">
+        <HairPin id="220">
           <subtype>0</subtype>
           <Segment>
             <subtype>0</subtype>
@@ -18295,7 +18274,12 @@
             <tpc>15</tpc>
             </Note>
           </Chord>
-        <endSpanner id="221"/>
+        <Dynamic>
+          <subtype>ff</subtype>
+          <velocity>112</velocity>
+          <pos x="1.04492" y="7.45697"/>
+          </Dynamic>
+        <endSpanner id="220"/>
         <Rest>
           <durationType>half</durationType>
           </Rest>
@@ -21817,13 +21801,13 @@
           <durationType>half</durationType>
           <StemDirection>up</StemDirection>
           <Note>
-            <Tie id="222">
+            <Tie id="221">
               </Tie>
             <pitch>53</pitch>
             <tpc>13</tpc>
             </Note>
           <Note>
-            <Tie id="223">
+            <Tie id="222">
               </Tie>
             <pitch>55</pitch>
             <tpc>15</tpc>
@@ -21839,12 +21823,12 @@
           <durationType>half</durationType>
           <StemDirection>up</StemDirection>
           <Note>
-            <endSpanner id="222"/>
+            <endSpanner id="221"/>
             <pitch>53</pitch>
             <tpc>13</tpc>
             </Note>
           <Note>
-            <endSpanner id="223"/>
+            <endSpanner id="222"/>
             <pitch>55</pitch>
             <tpc>15</tpc>
             </Note>
@@ -22609,7 +22593,7 @@
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
           <Note>
-            <Tie id="224">
+            <Tie id="223">
               </Tie>
             <pitch>52</pitch>
             <tpc>18</tpc>
@@ -22618,7 +22602,7 @@
             <Accidental>
               <subtype>sharp</subtype>
               </Accidental>
-            <Tie id="225">
+            <Tie id="224">
               </Tie>
             <pitch>61</pitch>
             <tpc>21</tpc>
@@ -22633,16 +22617,16 @@
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
           <Note>
-            <Tie id="226">
+            <Tie id="225">
               </Tie>
-            <endSpanner id="224"/>
+            <endSpanner id="223"/>
             <pitch>52</pitch>
             <tpc>18</tpc>
             </Note>
           <Note>
-            <Tie id="227">
+            <Tie id="226">
               </Tie>
-            <endSpanner id="225"/>
+            <endSpanner id="224"/>
             <pitch>61</pitch>
             <tpc>21</tpc>
             </Note>
@@ -22657,12 +22641,12 @@
           <durationType>quarter</durationType>
           <StemDirection>up</StemDirection>
           <Note>
-            <endSpanner id="226"/>
+            <endSpanner id="225"/>
             <pitch>52</pitch>
             <tpc>18</tpc>
             </Note>
           <Note>
-            <endSpanner id="227"/>
+            <endSpanner id="226"/>
             <pitch>61</pitch>
             <tpc>21</tpc>
             </Note>
@@ -22736,7 +22720,7 @@
           <velocity>16</velocity>
           <pos x="0.329141" y="7.43556"/>
           </Dynamic>
-        <HairPin id="228">
+        <HairPin id="227">
           <subtype>0</subtype>
           <Segment>
             <subtype>1</subtype>
@@ -22800,7 +22784,7 @@
           <durationType>eighth</durationType>
           <Beam>312</Beam>
           <Note>
-            <Tie id="229">
+            <Tie id="228">
               </Tie>
             <pitch>55</pitch>
             <tpc>15</tpc>
@@ -22809,7 +22793,7 @@
             <Accidental>
               <subtype>natural</subtype>
               </Accidental>
-            <Tie id="230">
+            <Tie id="229">
               </Tie>
             <pitch>64</pitch>
             <tpc>18</tpc>
@@ -22823,12 +22807,12 @@
           <durationType>half</durationType>
           <StemDirection>up</StemDirection>
           <Note>
-            <endSpanner id="229"/>
+            <endSpanner id="228"/>
             <pitch>55</pitch>
             <tpc>15</tpc>
             </Note>
           <Note>
-            <endSpanner id="230"/>
+            <endSpanner id="229"/>
             <pitch>64</pitch>
             <tpc>18</tpc>
             </Note>
@@ -22842,7 +22826,7 @@
               <role>1</role>
               <subtype>natural</subtype>
               </Accidental>
-            <Tie id="231">
+            <Tie id="230">
               </Tie>
             <pitch>52</pitch>
             <tpc>18</tpc>
@@ -22851,7 +22835,7 @@
             <Accidental>
               <subtype>sharp</subtype>
               </Accidental>
-            <Tie id="232">
+            <Tie id="231">
               </Tie>
             <pitch>61</pitch>
             <tpc>21</tpc>
@@ -22864,12 +22848,12 @@
           <durationType>quarter</durationType>
           <StemDirection>up</StemDirection>
           <Note>
-            <endSpanner id="231"/>
+            <endSpanner id="230"/>
             <pitch>52</pitch>
             <tpc>18</tpc>
             </Note>
           <Note>
-            <endSpanner id="232"/>
+            <endSpanner id="231"/>
             <pitch>61</pitch>
             <tpc>21</tpc>
             </Note>
@@ -22909,13 +22893,13 @@
           <durationType>quarter</durationType>
           <StemDirection>down</StemDirection>
           <Note>
-            <Tie id="233">
+            <Tie id="232">
               </Tie>
             <pitch>62</pitch>
             <tpc>16</tpc>
             </Note>
           <Note>
-            <Tie id="234">
+            <Tie id="233">
               </Tie>
             <pitch>71</pitch>
             <tpc>19</tpc>
@@ -22928,12 +22912,12 @@
           <durationType>half</durationType>
           <StemDirection>down</StemDirection>
           <Note>
-            <endSpanner id="233"/>
+            <endSpanner id="232"/>
             <pitch>62</pitch>
             <tpc>16</tpc>
             </Note>
           <Note>
-            <endSpanner id="234"/>
+            <endSpanner id="233"/>
             <pitch>71</pitch>
             <tpc>19</tpc>
             </Note>
@@ -23158,13 +23142,13 @@
           <durationType>quarter</durationType>
           <StemDirection>down</StemDirection>
           <Note>
-            <Tie id="235">
+            <Tie id="234">
               </Tie>
             <pitch>64</pitch>
             <tpc>18</tpc>
             </Note>
           <Note>
-            <Tie id="236">
+            <Tie id="235">
               </Tie>
             <pitch>72</pitch>
             <tpc>14</tpc>
@@ -23177,12 +23161,12 @@
           <durationType>half</durationType>
           <StemDirection>down</StemDirection>
           <Note>
-            <endSpanner id="235"/>
+            <endSpanner id="234"/>
             <pitch>64</pitch>
             <tpc>18</tpc>
             </Note>
           <Note>
-            <endSpanner id="236"/>
+            <endSpanner id="235"/>
             <pitch>72</pitch>
             <tpc>14</tpc>
             </Note>
@@ -23209,7 +23193,7 @@
           <durationType>eighth</durationType>
           <StemDirection>down</StemDirection>
           <Note>
-            <Tie id="237">
+            <Tie id="236">
               </Tie>
             <pitch>57</pitch>
             <tpc>17</tpc>
@@ -23219,7 +23203,7 @@
               <role>1</role>
               <subtype>natural</subtype>
               </Accidental>
-            <Tie id="238">
+            <Tie id="237">
               </Tie>
             <pitch>65</pitch>
             <tpc>13</tpc>
@@ -23232,12 +23216,12 @@
           <durationType>eighth</durationType>
           <StemDirection>down</StemDirection>
           <Note>
-            <endSpanner id="237"/>
+            <endSpanner id="236"/>
             <pitch>57</pitch>
             <tpc>17</tpc>
             </Note>
           <Note>
-            <endSpanner id="238"/>
+            <endSpanner id="237"/>
             <pitch>65</pitch>
             <tpc>13</tpc>
             </Note>
@@ -23267,7 +23251,7 @@
           <velocity>112</velocity>
           <pos x="0.658281" y="7.43556"/>
           </Dynamic>
-        <endSpanner id="228"/>
+        <endSpanner id="227"/>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>half</durationType>
@@ -23302,13 +23286,13 @@
           <durationType>half</durationType>
           <StemDirection>up</StemDirection>
           <Note>
-            <Tie id="239">
+            <Tie id="238">
               </Tie>
             <pitch>53</pitch>
             <tpc>13</tpc>
             </Note>
           <Note>
-            <Tie id="240">
+            <Tie id="239">
               </Tie>
             <pitch>55</pitch>
             <tpc>15</tpc>
@@ -23321,12 +23305,12 @@
           <durationType>half</durationType>
           <StemDirection>up</StemDirection>
           <Note>
-            <endSpanner id="239"/>
+            <endSpanner id="238"/>
             <pitch>53</pitch>
             <tpc>13</tpc>
             </Note>
           <Note>
-            <endSpanner id="240"/>
+            <endSpanner id="239"/>
             <pitch>55</pitch>
             <tpc>15</tpc>
             </Note>
@@ -24529,7 +24513,7 @@
           <durationType>eighth</durationType>
           <Beam>328</Beam>
           <Note>
-            <Tie id="241">
+            <Tie id="240">
               </Tie>
             <pitch>74</pitch>
             <tpc>16</tpc>
@@ -24542,7 +24526,7 @@
           <durationType>quarter</durationType>
           <StemDirection>down</StemDirection>
           <Note>
-            <endSpanner id="241"/>
+            <endSpanner id="240"/>
             <pitch>74</pitch>
             <tpc>16</tpc>
             </Note>
@@ -24718,7 +24702,7 @@
           <durationType>quarter</durationType>
           <StemDirection>down</StemDirection>
           <Note>
-            <Tie id="242">
+            <Tie id="241">
               </Tie>
             <pitch>64</pitch>
             <tpc>18</tpc>
@@ -24734,7 +24718,7 @@
           <durationType>16th</durationType>
           <Beam>333</Beam>
           <Note>
-            <endSpanner id="242"/>
+            <endSpanner id="241"/>
             <pitch>64</pitch>
             <tpc>18</tpc>
             </Note>
@@ -24791,7 +24775,7 @@
               <role>1</role>
               <subtype>natural</subtype>
               </Accidental>
-            <Tie id="243">
+            <Tie id="242">
               </Tie>
             <pitch>83</pitch>
             <tpc>19</tpc>
@@ -24807,7 +24791,7 @@
           <durationType>16th</durationType>
           <Beam>334</Beam>
           <Note>
-            <endSpanner id="243"/>
+            <endSpanner id="242"/>
             <pitch>83</pitch>
             <tpc>19</tpc>
             </Note>
@@ -25164,7 +25148,7 @@
             <Accidental>
               <subtype>sharp</subtype>
               </Accidental>
-            <Tie id="244">
+            <Tie id="243">
               </Tie>
             <pitch>66</pitch>
             <tpc>20</tpc>
@@ -25178,7 +25162,7 @@
           <durationType>16th</durationType>
           <Beam>343</Beam>
           <Note>
-            <endSpanner id="244"/>
+            <endSpanner id="243"/>
             <pitch>66</pitch>
             <tpc>20</tpc>
             </Note>
@@ -25222,7 +25206,7 @@
             <Accidental>
               <subtype>flat</subtype>
               </Accidental>
-            <Tie id="245">
+            <Tie id="244">
               </Tie>
             <pitch>70</pitch>
             <tpc>12</tpc>
@@ -25238,7 +25222,7 @@
           <durationType>16th</durationType>
           <Beam>344</Beam>
           <Note>
-            <endSpanner id="245"/>
+            <endSpanner id="244"/>
             <pitch>70</pitch>
             <tpc>12</tpc>
             </Note>
@@ -25272,7 +25256,7 @@
             <Accidental>
               <subtype>sharp</subtype>
               </Accidental>
-            <Tie id="246">
+            <Tie id="245">
               </Tie>
             <pitch>70</pitch>
             <tpc>24</tpc>
@@ -25286,7 +25270,7 @@
           <durationType>16th</durationType>
           <Beam>345</Beam>
           <Note>
-            <endSpanner id="246"/>
+            <endSpanner id="245"/>
             <pitch>70</pitch>
             <tpc>24</tpc>
             </Note>
@@ -25333,7 +25317,7 @@
             <Accidental>
               <subtype>flat</subtype>
               </Accidental>
-            <Tie id="247">
+            <Tie id="246">
               </Tie>
             <pitch>58</pitch>
             <tpc>12</tpc>
@@ -25347,7 +25331,7 @@
           <durationType>16th</durationType>
           <Beam>346</Beam>
           <Note>
-            <endSpanner id="247"/>
+            <endSpanner id="246"/>
             <pitch>58</pitch>
             <tpc>12</tpc>
             </Note>
@@ -25532,7 +25516,7 @@
             <Accidental>
               <subtype>sharp</subtype>
               </Accidental>
-            <Tie id="248">
+            <Tie id="247">
               </Tie>
             <pitch>78</pitch>
             <tpc>20</tpc>
@@ -25548,7 +25532,7 @@
           <durationType>eighth</durationType>
           <Beam>350</Beam>
           <Note>
-            <endSpanner id="248"/>
+            <endSpanner id="247"/>
             <pitch>78</pitch>
             <tpc>20</tpc>
             </Note>
@@ -25722,7 +25706,7 @@
               <role>1</role>
               <subtype>natural</subtype>
               </Accidental>
-            <Tie id="249">
+            <Tie id="248">
               </Tie>
             <pitch>72</pitch>
             <tpc>14</tpc>
@@ -25738,7 +25722,7 @@
           <durationType>16th</durationType>
           <Beam>353</Beam>
           <Note>
-            <endSpanner id="249"/>
+            <endSpanner id="248"/>
             <pitch>72</pitch>
             <tpc>14</tpc>
             </Note>
@@ -25970,7 +25954,7 @@
             <Accidental>
               <subtype>sharp</subtype>
               </Accidental>
-            <Tie id="250">
+            <Tie id="249">
               </Tie>
             <pitch>68</pitch>
             <tpc>22</tpc>
@@ -25986,7 +25970,7 @@
           <durationType>16th</durationType>
           <Beam>359</Beam>
           <Note>
-            <endSpanner id="250"/>
+            <endSpanner id="249"/>
             <pitch>68</pitch>
             <tpc>22</tpc>
             </Note>
@@ -26043,7 +26027,7 @@
           <pos x="0.658281" y="7.43556"/>
           </Dynamic>
         <StaffText>
-          <pos x="0" y="5.87778"/>
+          <pos x="1.36342" y="5.37547"/>
           <text><font size="8.5261"></font><font face="Times New Roman"></font><i> pizz., gliss.</i></text>
           </StaffText>
         <Beam id="360">
@@ -26858,7 +26842,7 @@
           <pos x="0.658281" y="7.43556"/>
           </Dynamic>
         <StaffText>
-          <pos x="0" y="5.87778"/>
+          <pos x="2.36805" y="5.80602"/>
           <text><font size="8.5261"></font><font face="Times New Roman"></font><i> gliss. up</i></text>
           </StaffText>
         <Chord>
@@ -26891,9 +26875,14 @@
           <pos x="0.658281" y="7.43556"/>
           </Dynamic>
         <StaffText>
-          <pos x="0" y="5.87778"/>
+          <pos x="1.65046" y="5.6625"/>
           <text><font size="8.5261"></font><font face="Times New Roman"></font><i> gliss. down</i></text>
           </StaffText>
+        <Dynamic>
+          <subtype>ff</subtype>
+          <velocity>112</velocity>
+          <pos x="0.43855" y="-3.77925"/>
+          </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
@@ -26923,12 +26912,8 @@
         <Dynamic>
           <subtype>ff</subtype>
           <velocity>112</velocity>
-          <pos x="0.329141" y="7.43556"/>
+          <pos x="-2.82826" y="7.43556"/>
           </Dynamic>
-        <StaffText>
-          <pos x="0" y="5.87778"/>
-          <text><font size="8.5261"></font><font face="Times New Roman"></font><i> pizz.</i></text>
-          </StaffText>
         <Beam id="375">
           <StemDirection>down</StemDirection>
           </Beam>
@@ -28565,7 +28550,7 @@
           <velocity>49</velocity>
           <pos x="0.658281" y="7.43556"/>
           </Dynamic>
-        <HairPin id="251">
+        <HairPin id="250">
           <subtype>0</subtype>
           <Segment>
             <subtype>0</subtype>
@@ -28584,7 +28569,7 @@
           <durationType>half</durationType>
           <StemDirection>up</StemDirection>
           <Note>
-            <Tie id="252">
+            <Tie id="251">
               </Tie>
             <pitch>48</pitch>
             <tpc>14</tpc>
@@ -28592,14 +28577,14 @@
           </Chord>
         </Measure>
       <Measure number="6">
-        <endSpanner id="251"/>
+        <endSpanner id="250"/>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
           <Note>
-            <Tie id="253">
+            <Tie id="252">
               </Tie>
-            <endSpanner id="252"/>
+            <endSpanner id="251"/>
             <pitch>48</pitch>
             <tpc>14</tpc>
             </Note>
@@ -28615,14 +28600,14 @@
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
           <Note>
-            <Tie id="254">
+            <Tie id="253">
               </Tie>
-            <endSpanner id="253"/>
+            <endSpanner id="252"/>
             <pitch>48</pitch>
             <tpc>14</tpc>
             </Note>
           <Note>
-            <Tie id="255">
+            <Tie id="254">
               </Tie>
             <pitch>57</pitch>
             <tpc>17</tpc>
@@ -28635,7 +28620,7 @@
           <velocity>80</velocity>
           <pos x="0.658281" y="7.43556"/>
           </Dynamic>
-        <HairPin id="256">
+        <HairPin id="255">
           <subtype>1</subtype>
           <Segment>
             <subtype>0</subtype>
@@ -28653,44 +28638,44 @@
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
           <Note>
-            <Tie id="257">
+            <Tie id="256">
               </Tie>
-            <endSpanner id="254"/>
+            <endSpanner id="253"/>
             <pitch>48</pitch>
             <tpc>14</tpc>
             </Note>
           <Note>
-            <Tie id="258">
+            <Tie id="257">
               </Tie>
-            <endSpanner id="255"/>
+            <endSpanner id="254"/>
             <pitch>57</pitch>
             <tpc>17</tpc>
             </Note>
           </Chord>
         </Measure>
       <Measure number="9">
-        <endSpanner id="256"/>
+        <endSpanner id="255"/>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
           <Note>
-            <Tie id="259">
+            <Tie id="258">
               </Tie>
-            <endSpanner id="257"/>
+            <endSpanner id="256"/>
             <pitch>48</pitch>
             <tpc>14</tpc>
             </Note>
           <Note>
-            <Tie id="260">
+            <Tie id="259">
               </Tie>
-            <endSpanner id="258"/>
+            <endSpanner id="257"/>
             <pitch>57</pitch>
             <tpc>17</tpc>
             </Note>
           </Chord>
         </Measure>
       <Measure number="10">
-        <HairPin id="261">
+        <HairPin id="260">
           <subtype>1</subtype>
           <Segment>
             <subtype>0</subtype>
@@ -28708,33 +28693,33 @@
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
           <Note>
-            <Tie id="262">
+            <Tie id="261">
               </Tie>
-            <endSpanner id="259"/>
+            <endSpanner id="258"/>
             <pitch>48</pitch>
             <tpc>14</tpc>
             </Note>
           <Note>
-            <Tie id="263">
+            <Tie id="262">
               </Tie>
-            <endSpanner id="260"/>
+            <endSpanner id="259"/>
             <pitch>57</pitch>
             <tpc>17</tpc>
             </Note>
           </Chord>
         </Measure>
       <Measure number="11">
-        <endSpanner id="261"/>
+        <endSpanner id="260"/>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
           <Note>
-            <endSpanner id="262"/>
+            <endSpanner id="261"/>
             <pitch>48</pitch>
             <tpc>14</tpc>
             </Note>
           <Note>
-            <endSpanner id="263"/>
+            <endSpanner id="262"/>
             <pitch>57</pitch>
             <tpc>17</tpc>
             </Note>
@@ -28751,7 +28736,7 @@
           <velocity>33</velocity>
           <pos x="0.658281" y="7.43556"/>
           </Dynamic>
-        <HairPin id="264">
+        <HairPin id="263">
           <subtype>0</subtype>
           <Segment>
             <subtype>0</subtype>
@@ -28769,13 +28754,13 @@
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
           <Note>
-            <Tie id="265">
+            <Tie id="264">
               </Tie>
             <pitch>48</pitch>
             <tpc>14</tpc>
             </Note>
           <Note>
-            <Tie id="266">
+            <Tie id="265">
               </Tie>
             <pitch>57</pitch>
             <tpc>17</tpc>
@@ -28788,7 +28773,7 @@
           <velocity>112</velocity>
           <pos x="0.658281" y="7.43556"/>
           </Dynamic>
-        <HairPin id="267">
+        <HairPin id="266">
           <subtype>1</subtype>
           <Segment>
             <subtype>0</subtype>
@@ -28806,34 +28791,34 @@
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
           <Note>
-            <Tie id="268">
+            <Tie id="267">
               </Tie>
-            <endSpanner id="265"/>
+            <endSpanner id="264"/>
             <pitch>48</pitch>
             <tpc>14</tpc>
             </Note>
           <Note>
-            <Tie id="269">
+            <Tie id="268">
               </Tie>
-            <endSpanner id="266"/>
+            <endSpanner id="265"/>
             <pitch>57</pitch>
             <tpc>17</tpc>
             </Note>
           </Chord>
         </Measure>
       <Measure number="15">
-        <endSpanner id="264"/>
-        <endSpanner id="267"/>
+        <endSpanner id="263"/>
+        <endSpanner id="266"/>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
           <Note>
-            <endSpanner id="268"/>
+            <endSpanner id="267"/>
             <pitch>48</pitch>
             <tpc>14</tpc>
             </Note>
           <Note>
-            <endSpanner id="269"/>
+            <endSpanner id="268"/>
             <pitch>57</pitch>
             <tpc>17</tpc>
             </Note>
@@ -28850,7 +28835,7 @@
           <velocity>33</velocity>
           <pos x="0.329141" y="7.43556"/>
           </Dynamic>
-        <HairPin id="270">
+        <HairPin id="269">
           <subtype>0</subtype>
           <Segment>
             <subtype>0</subtype>
@@ -28882,12 +28867,7 @@
           <velocity>112</velocity>
           <pos x="0.75" y="7.43556"/>
           </Dynamic>
-        <Dynamic>
-          <subtype>ff</subtype>
-          <velocity>112</velocity>
-          <pos x="1.40372" y="-2.86269"/>
-          </Dynamic>
-        <endSpanner id="270"/>
+        <endSpanner id="269"/>
         <Rest>
           <durationType>half</durationType>
           </Rest>
@@ -32453,13 +32433,13 @@
           <durationType>half</durationType>
           <StemDirection>down</StemDirection>
           <Note>
-            <Tie id="271">
+            <Tie id="270">
               </Tie>
             <pitch>48</pitch>
             <tpc>14</tpc>
             </Note>
           <Note>
-            <Tie id="272">
+            <Tie id="271">
               </Tie>
             <pitch>57</pitch>
             <tpc>17</tpc>
@@ -32475,12 +32455,12 @@
           <durationType>half</durationType>
           <StemDirection>down</StemDirection>
           <Note>
-            <endSpanner id="271"/>
+            <endSpanner id="270"/>
             <pitch>48</pitch>
             <tpc>14</tpc>
             </Note>
           <Note>
-            <endSpanner id="272"/>
+            <endSpanner id="271"/>
             <pitch>57</pitch>
             <tpc>17</tpc>
             </Note>
@@ -33059,13 +33039,13 @@
           <durationType>quarter</durationType>
           <StemDirection>up</StemDirection>
           <Note>
-            <Tie id="273">
+            <Tie id="272">
               </Tie>
             <pitch>40</pitch>
             <tpc>18</tpc>
             </Note>
           <Note>
-            <Tie id="274">
+            <Tie id="273">
               </Tie>
             <pitch>48</pitch>
             <tpc>14</tpc>
@@ -33081,12 +33061,12 @@
           <durationType>quarter</durationType>
           <StemDirection>up</StemDirection>
           <Note>
-            <endSpanner id="273"/>
+            <endSpanner id="272"/>
             <pitch>40</pitch>
             <tpc>18</tpc>
             </Note>
           <Note>
-            <endSpanner id="274"/>
+            <endSpanner id="273"/>
             <pitch>48</pitch>
             <tpc>14</tpc>
             </Note>
@@ -33136,13 +33116,13 @@
           <durationType>half</durationType>
           <StemDirection>down</StemDirection>
           <Note>
-            <Tie id="275">
+            <Tie id="274">
               </Tie>
             <pitch>52</pitch>
             <tpc>18</tpc>
             </Note>
           <Note>
-            <Tie id="276">
+            <Tie id="275">
               </Tie>
             <pitch>60</pitch>
             <tpc>14</tpc>
@@ -33159,12 +33139,12 @@
           <durationType>half</durationType>
           <StemDirection>down</StemDirection>
           <Note>
-            <endSpanner id="275"/>
+            <endSpanner id="274"/>
             <pitch>52</pitch>
             <tpc>18</tpc>
             </Note>
           <Note>
-            <endSpanner id="276"/>
+            <endSpanner id="275"/>
             <pitch>60</pitch>
             <tpc>14</tpc>
             </Note>
@@ -33182,7 +33162,7 @@
           <velocity>16</velocity>
           <pos x="0.329141" y="7.43556"/>
           </Dynamic>
-        <HairPin id="277">
+        <HairPin id="276">
           <subtype>0</subtype>
           <Segment>
             <subtype>1</subtype>
@@ -33242,13 +33222,13 @@
           <durationType>eighth</durationType>
           <Beam>476</Beam>
           <Note>
-            <Tie id="278">
+            <Tie id="277">
               </Tie>
             <pitch>57</pitch>
             <tpc>17</tpc>
             </Note>
           <Note>
-            <Tie id="279">
+            <Tie id="278">
               </Tie>
             <pitch>65</pitch>
             <tpc>13</tpc>
@@ -33262,12 +33242,12 @@
           <durationType>half</durationType>
           <StemDirection>down</StemDirection>
           <Note>
-            <endSpanner id="278"/>
+            <endSpanner id="277"/>
             <pitch>57</pitch>
             <tpc>17</tpc>
             </Note>
           <Note>
-            <endSpanner id="279"/>
+            <endSpanner id="278"/>
             <pitch>65</pitch>
             <tpc>13</tpc>
             </Note>
@@ -33281,7 +33261,7 @@
               <role>1</role>
               <subtype>natural</subtype>
               </Accidental>
-            <Tie id="280">
+            <Tie id="279">
               </Tie>
             <pitch>52</pitch>
             <tpc>18</tpc>
@@ -33290,7 +33270,7 @@
             <Accidental>
               <subtype>sharp</subtype>
               </Accidental>
-            <Tie id="281">
+            <Tie id="280">
               </Tie>
             <pitch>61</pitch>
             <tpc>21</tpc>
@@ -33303,12 +33283,12 @@
           <durationType>quarter</durationType>
           <StemDirection>down</StemDirection>
           <Note>
-            <endSpanner id="280"/>
+            <endSpanner id="279"/>
             <pitch>52</pitch>
             <tpc>18</tpc>
             </Note>
           <Note>
-            <endSpanner id="281"/>
+            <endSpanner id="280"/>
             <pitch>61</pitch>
             <tpc>21</tpc>
             </Note>
@@ -33348,7 +33328,7 @@
           <durationType>quarter</durationType>
           <StemDirection>down</StemDirection>
           <Note>
-            <Tie id="282">
+            <Tie id="281">
               </Tie>
             <pitch>52</pitch>
             <tpc>18</tpc>
@@ -33358,7 +33338,7 @@
               <role>1</role>
               <subtype>natural</subtype>
               </Accidental>
-            <Tie id="283">
+            <Tie id="282">
               </Tie>
             <pitch>60</pitch>
             <tpc>14</tpc>
@@ -33371,12 +33351,12 @@
           <durationType>half</durationType>
           <StemDirection>down</StemDirection>
           <Note>
-            <endSpanner id="282"/>
+            <endSpanner id="281"/>
             <pitch>52</pitch>
             <tpc>18</tpc>
             </Note>
           <Note>
-            <endSpanner id="283"/>
+            <endSpanner id="282"/>
             <pitch>60</pitch>
             <tpc>14</tpc>
             </Note>
@@ -33592,13 +33572,13 @@
           <durationType>quarter</durationType>
           <StemDirection>up</StemDirection>
           <Note>
-            <Tie id="284">
+            <Tie id="283">
               </Tie>
             <pitch>40</pitch>
             <tpc>18</tpc>
             </Note>
           <Note>
-            <Tie id="285">
+            <Tie id="284">
               </Tie>
             <pitch>48</pitch>
             <tpc>14</tpc>
@@ -33611,12 +33591,12 @@
           <durationType>half</durationType>
           <StemDirection>up</StemDirection>
           <Note>
-            <endSpanner id="284"/>
+            <endSpanner id="283"/>
             <pitch>40</pitch>
             <tpc>18</tpc>
             </Note>
           <Note>
-            <endSpanner id="285"/>
+            <endSpanner id="284"/>
             <pitch>48</pitch>
             <tpc>14</tpc>
             </Note>
@@ -33643,13 +33623,13 @@
           <durationType>eighth</durationType>
           <StemDirection>up</StemDirection>
           <Note>
-            <Tie id="286">
+            <Tie id="285">
               </Tie>
             <pitch>43</pitch>
             <tpc>15</tpc>
             </Note>
           <Note>
-            <Tie id="287">
+            <Tie id="286">
               </Tie>
             <pitch>52</pitch>
             <tpc>18</tpc>
@@ -33662,12 +33642,12 @@
           <durationType>eighth</durationType>
           <StemDirection>up</StemDirection>
           <Note>
-            <endSpanner id="286"/>
+            <endSpanner id="285"/>
             <pitch>43</pitch>
             <tpc>15</tpc>
             </Note>
           <Note>
-            <endSpanner id="287"/>
+            <endSpanner id="286"/>
             <pitch>52</pitch>
             <tpc>18</tpc>
             </Note>
@@ -33694,7 +33674,7 @@
           <velocity>112</velocity>
           <pos x="0.658281" y="7.43556"/>
           </Dynamic>
-        <endSpanner id="277"/>
+        <endSpanner id="276"/>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>half</durationType>
@@ -33729,13 +33709,13 @@
           <durationType>half</durationType>
           <StemDirection>up</StemDirection>
           <Note>
-            <Tie id="288">
+            <Tie id="287">
               </Tie>
             <pitch>36</pitch>
             <tpc>14</tpc>
             </Note>
           <Note>
-            <Tie id="289">
+            <Tie id="288">
               </Tie>
             <pitch>45</pitch>
             <tpc>17</tpc>
@@ -33748,12 +33728,12 @@
           <durationType>half</durationType>
           <StemDirection>up</StemDirection>
           <Note>
-            <endSpanner id="288"/>
+            <endSpanner id="287"/>
             <pitch>36</pitch>
             <tpc>14</tpc>
             </Note>
           <Note>
-            <endSpanner id="289"/>
+            <endSpanner id="288"/>
             <pitch>45</pitch>
             <tpc>17</tpc>
             </Note>
@@ -33810,7 +33790,7 @@
           <durationType>eighth</durationType>
           <Beam>478</Beam>
           <Note>
-            <Tie id="290">
+            <Tie id="289">
               </Tie>
             <pitch>57</pitch>
             <tpc>17</tpc>
@@ -33823,7 +33803,7 @@
           <durationType>quarter</durationType>
           <StemDirection>down</StemDirection>
           <Note>
-            <endSpanner id="290"/>
+            <endSpanner id="289"/>
             <pitch>57</pitch>
             <tpc>17</tpc>
             </Note>
@@ -33996,7 +33976,7 @@
           <durationType>quarter</durationType>
           <StemDirection>up</StemDirection>
           <Note>
-            <Tie id="291">
+            <Tie id="290">
               </Tie>
             <pitch>47</pitch>
             <tpc>19</tpc>
@@ -34012,7 +33992,7 @@
           <durationType>16th</durationType>
           <Beam>483</Beam>
           <Note>
-            <endSpanner id="291"/>
+            <endSpanner id="290"/>
             <pitch>47</pitch>
             <tpc>19</tpc>
             </Note>
@@ -34067,7 +34047,7 @@
             <Accidental>
               <subtype>sharp</subtype>
               </Accidental>
-            <Tie id="292">
+            <Tie id="291">
               </Tie>
             <pitch>66</pitch>
             <tpc>20</tpc>
@@ -34083,7 +34063,7 @@
           <durationType>16th</durationType>
           <Beam>484</Beam>
           <Note>
-            <endSpanner id="292"/>
+            <endSpanner id="291"/>
             <pitch>66</pitch>
             <tpc>20</tpc>
             </Note>
@@ -34204,7 +34184,7 @@
             <Accidental>
               <subtype>natural</subtype>
               </Accidental>
-            <Tie id="293">
+            <Tie id="292">
               </Tie>
             <pitch>41</pitch>
             <tpc>13</tpc>
@@ -34220,7 +34200,7 @@
           <durationType>16th</durationType>
           <Beam>487</Beam>
           <Note>
-            <endSpanner id="293"/>
+            <endSpanner id="292"/>
             <pitch>41</pitch>
             <tpc>13</tpc>
             </Note>
@@ -34269,7 +34249,7 @@
               <role>1</role>
               <subtype>natural</subtype>
               </Accidental>
-            <Tie id="294">
+            <Tie id="293">
               </Tie>
             <pitch>53</pitch>
             <tpc>13</tpc>
@@ -34285,7 +34265,7 @@
           <durationType>16th</durationType>
           <Beam>488</Beam>
           <Note>
-            <endSpanner id="294"/>
+            <endSpanner id="293"/>
             <pitch>53</pitch>
             <tpc>13</tpc>
             </Note>
@@ -34435,7 +34415,7 @@
               <role>1</role>
               <subtype>natural</subtype>
               </Accidental>
-            <Tie id="295">
+            <Tie id="294">
               </Tie>
             <pitch>47</pitch>
             <tpc>19</tpc>
@@ -34449,7 +34429,7 @@
           <durationType>16th</durationType>
           <Beam>492</Beam>
           <Note>
-            <endSpanner id="295"/>
+            <endSpanner id="294"/>
             <pitch>47</pitch>
             <tpc>19</tpc>
             </Note>
@@ -34493,7 +34473,7 @@
             <Accidental>
               <subtype>flat</subtype>
               </Accidental>
-            <Tie id="296">
+            <Tie id="295">
               </Tie>
             <pitch>51</pitch>
             <tpc>11</tpc>
@@ -34509,7 +34489,7 @@
           <durationType>16th</durationType>
           <Beam>493</Beam>
           <Note>
-            <endSpanner id="296"/>
+            <endSpanner id="295"/>
             <pitch>51</pitch>
             <tpc>11</tpc>
             </Note>
@@ -34540,7 +34520,7 @@
             <Accidental>
               <subtype>sharp</subtype>
               </Accidental>
-            <Tie id="297">
+            <Tie id="296">
               </Tie>
             <pitch>51</pitch>
             <tpc>23</tpc>
@@ -34554,7 +34534,7 @@
           <durationType>16th</durationType>
           <Beam>494</Beam>
           <Note>
-            <endSpanner id="297"/>
+            <endSpanner id="296"/>
             <pitch>51</pitch>
             <tpc>23</tpc>
             </Note>
@@ -34601,7 +34581,7 @@
             <Accidental>
               <subtype>flat</subtype>
               </Accidental>
-            <Tie id="298">
+            <Tie id="297">
               </Tie>
             <pitch>39</pitch>
             <tpc>11</tpc>
@@ -34615,7 +34595,7 @@
           <durationType>16th</durationType>
           <Beam>495</Beam>
           <Note>
-            <endSpanner id="298"/>
+            <endSpanner id="297"/>
             <pitch>39</pitch>
             <tpc>11</tpc>
             </Note>
@@ -34791,7 +34771,7 @@
           <durationType>half</durationType>
           <StemDirection>down</StemDirection>
           <Note>
-            <Tie id="299">
+            <Tie id="298">
               </Tie>
             <pitch>59</pitch>
             <tpc>19</tpc>
@@ -34807,7 +34787,7 @@
           <durationType>eighth</durationType>
           <Beam>499</Beam>
           <Note>
-            <endSpanner id="299"/>
+            <endSpanner id="298"/>
             <pitch>59</pitch>
             <tpc>19</tpc>
             </Note>
@@ -34979,7 +34959,7 @@
               <role>1</role>
               <subtype>natural</subtype>
               </Accidental>
-            <Tie id="300">
+            <Tie id="299">
               </Tie>
             <pitch>53</pitch>
             <tpc>13</tpc>
@@ -34995,7 +34975,7 @@
           <durationType>16th</durationType>
           <Beam>502</Beam>
           <Note>
-            <endSpanner id="300"/>
+            <endSpanner id="299"/>
             <pitch>53</pitch>
             <tpc>13</tpc>
             </Note>
@@ -35223,7 +35203,7 @@
             <Accidental>
               <subtype>sharp</subtype>
               </Accidental>
-            <Tie id="301">
+            <Tie id="300">
               </Tie>
             <pitch>49</pitch>
             <tpc>21</tpc>
@@ -35231,7 +35211,7 @@
           </Chord>
         </Measure>
       <Measure number="117">
-        <HairPin id="302">
+        <HairPin id="301">
           <subtype>0</subtype>
           <Segment>
             <subtype>0</subtype>
@@ -35253,7 +35233,7 @@
           <durationType>16th</durationType>
           <Beam>508</Beam>
           <Note>
-            <endSpanner id="301"/>
+            <endSpanner id="300"/>
             <pitch>49</pitch>
             <tpc>21</tpc>
             </Note>
@@ -35298,7 +35278,7 @@
             <tpc>16</tpc>
             </Note>
           </Chord>
-        <endSpanner id="302"/>
+        <endSpanner id="301"/>
         <Rest>
           <durationType>eighth</durationType>
           </Rest>
@@ -35318,7 +35298,7 @@
           <pos x="0.658281" y="7.43556"/>
           </Dynamic>
         <StaffText>
-          <pos x="0" y="5.87778"/>
+          <pos x="1.79398" y="5.59074"/>
           <text><font size="8.5261"></font><font face="Times New Roman"></font><i> pizz., gliss.</i></text>
           </StaffText>
         <Beam id="509">
@@ -36952,7 +36932,7 @@
           <pos x="0.329141" y="7.43556"/>
           </Dynamic>
         <StaffText>
-          <pos x="0" y="5.87778"/>
+          <pos x="1.65046" y="5.87778"/>
           <text><font size="8.5261"></font><font face="Times New Roman"></font><i> gliss. up</i></text>
           </StaffText>
         <Chord>
@@ -36982,10 +36962,10 @@
         <Dynamic>
           <subtype>ff</subtype>
           <velocity>112</velocity>
-          <pos x="0.329141" y="7.43556"/>
+          <pos x="0.329141" y="8.29667"/>
           </Dynamic>
         <StaffText>
-          <pos x="0" y="5.87778"/>
+          <pos x="1.36342" y="6.81065"/>
           <text><font size="8.5261"></font><font face="Times New Roman"></font><i> gliss. down</i></text>
           </StaffText>
         <Chord>
@@ -37017,12 +36997,8 @@
         <Dynamic>
           <subtype>ff</subtype>
           <velocity>112</velocity>
-          <pos x="0.329141" y="7.43556"/>
+          <pos x="-2.54122" y="7.43556"/>
           </Dynamic>
-        <StaffText>
-          <pos x="0" y="5.87778"/>
-          <text><font size="8.5261"></font><font face="Times New Roman"></font><i> pizz.</i></text>
-          </StaffText>
         <Beam id="540">
           <StemDirection>down</StemDirection>
           </Beam>
