@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo python app.py
+sudo python brainstaves.py server_port=80
