@@ -11,7 +11,7 @@ sc.tic()
 torun = [
 'load',
 'sectionB',
-'create',
+#'sectionC',
 'write',
 ]
 
@@ -72,8 +72,9 @@ if 'load' in torun:
 
 if 'sectionB' in torun:
     print('Creating section B')
+    sec = 'B'
     quartet,qd = makequartet()
-    nd['B'] = sc.objdict()
+    nd[sec] = sc.objdict()
     nd.B.startstop = sc.objdict()
     
     for part,inst in qd.items():
@@ -83,13 +84,48 @@ if 'sectionB' in torun:
         inst.refresh()
         
         if part == 'v1':
-            nd.B.startstop[part] = [39,40]
-            probs = [1/12]*4 + [2/12]*2 + [3/12]*2 + [i/12 for i in range(4,12)] + [1]*4
-        else:
-            nd.B.startstop[part] = [21,40]
+            nd[sec].startstop[part] = [39,40]
             probs = [1,1]
+        else:
+            nd[sec].startstop[part] = [21,40]
+            probs = [1/12]*4 + [2/12]*2 + [3/12]*2 + [i/12 for i in range(4,12)] + [1]*4
+        
+        print(part)
+        print(probs)
     
-        nd.B[part] = xml.loadnotes(part=part, measurerange=nd.B.startstop[part])
+        nd[sec][part] = xml.loadnotes(part=part, measurerange=nd[sec].startstop[part])
+        
+        for prob in probs:
+            inst.seed += 1
+            startval = inst.score[-1] if inst.scorepts else 'min'
+            inst.brownian(maxstep=2, startval=startval, skipstart=True)
+            inst.seed += 1
+            inst.cat()
+    
+        for n,orignote in enumerate(nd[sec][part]):
+            print('%s. %s' % (n, instruments.num2char(qd[part].score[n])))
+            note = xmlnote(orignote, qd[part].score[n])
+            nd.notes.append(note)
+
+
+if 'sectionC' in torun:
+    print('Creating section C')
+    sec = 'C'
+    quartet,qd = makequartet()
+    nd[sec] = sc.objdict()
+    nd[sec].startstop = sc.objdict()
+    
+    for part,inst in qd.items():
+        inst.mindur = 16
+        inst.timesig = '4/4'
+        inst.nbars = 1
+        inst.refresh()
+        
+        if part != 'v2':
+            nd[sec].startstop[part] = [43,60]
+            probs = [1]*4 + [i/10 for i in range(9,2,-1)] + [0.2]*2 + [0.1]*2 + [0.05]*3
+    
+        nd.C[part] = xml.loadnotes(part=part, measurerange=nd[sec].startstop[part])
         
         for prob in probs:
             inst.seed += 1
