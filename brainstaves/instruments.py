@@ -198,7 +198,7 @@ class Section(sc.prettyobj):
             self.arr[n] = np.random.randint(low=minval, high=maxval)
         return None
     
-    def brownian(self, startval=None, maxstep=None, seed=None, forcestep=True, skipstart=True, verbose=False, inst=None):
+    def brownian(self, startval=None, maxstep=None, seed=None, forcestep=True, skipstart=True, verbose=False, inst=None, usedata=True):
         self.resetseed(seed)
         if maxstep is None: maxstep = 1
         minval,maxval = self.minmax()
@@ -209,7 +209,7 @@ class Section(sc.prettyobj):
             self.arr[0] = startval
         
         npts = self.npts-1+skipstart
-        data = getnumbers(inst, 2*npts)
+        data = getnumbers(inst, 2*npts, usedata)
         for n in range(npts): # If not skipping the start, 1 less point
             if n==0: current = abs(startval)
             else:    current = abs(self.arr[n-1])
@@ -259,10 +259,10 @@ class Section(sc.prettyobj):
         return None
         
 
-def getnumbers(inst, npts, window=10):
-    if inst is None:
-        print('Not using EEG')
-        return np.random.rand(npts)
+def getnumbers(inst, npts, usedata, window=10):
+    if inst is None or not usedata:
+        if usedata: print('Not using EEG')
+        return np.random.randn(npts)
     infile = 'live/data-'+inst+'.csv'
     string = open(infile).read()
     numbers = re.sub("[^0-9]", "", string)

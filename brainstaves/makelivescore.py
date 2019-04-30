@@ -1,7 +1,8 @@
 '''
-Generate test score.
+Generate the live score.
 '''
 
+import os
 import sciris as sc
 import instruments
 import musescore
@@ -21,6 +22,7 @@ torun = [
 ]
 
 midioffset = 24
+usedata = False
 
 #%% Function definitions
 
@@ -99,7 +101,7 @@ if 'sectionB' in torun:
         for repeat in repeats(ss):
             inst.seed += 1
             startval = inst.score[-1] if inst.scorepts else 'min'
-            inst.brownian(maxstep=2, startval=startval, skipstart=True, inst=part)
+            inst.brownian(maxstep=2, startval=startval, skipstart=True, inst=part, usedata=usedata)
             inst.seed += 1
             inst.cat()
         
@@ -123,7 +125,7 @@ if 'sectionC' in torun:
                 elif part == 'v1': startval = 'max'
                 elif part == 'vc': startval = 'min'
                 else:              startval = None
-                inst.brownian(maxstep=3, startval=startval, skipstart=True, inst=part)
+                inst.brownian(maxstep=3, startval=startval, skipstart=True, inst=part, usedata=usedata)
                 inst.seed += 1
                 inst.cat()
         
@@ -142,7 +144,7 @@ if 'sectionD' in torun:
         for repeat in repeats(ss):
             inst.seed += 1
             if inst.scorepts:  startval = inst.score[-1]
-            inst.brownian(maxstep=5, startval=startval, skipstart=True, inst=part)
+            inst.brownian(maxstep=5, startval=startval, skipstart=True, inst=part, usedata=usedata)
             inst.seed += 1
             inst.cat()
     
@@ -182,7 +184,7 @@ if 'sectionG' in torun:
         for repeat in repeats(ss):
             inst.seed += 1
             if inst.scorepts: startval = inst.score[-1]
-            inst.brownian(maxstep=5, startval=startval, skipstart=True, inst=part)
+            inst.brownian(maxstep=5, startval=startval, skipstart=True, inst=part, usedata=usedata)
             inst.seed += 1
             inst.cat()
     
@@ -204,7 +206,7 @@ if 'sectionH' in torun:
             if inst.scorepts:         startval = inst.score[-1]
             elif part in ['v1','v2']: startval = 'max'
             elif part in ['va','vc']: startval = 'min'
-            inst.brownian(maxstep=2, startval=startval, skipstart=False, inst=part)
+            inst.brownian(maxstep=2, startval=startval, skipstart=False, inst=part, usedata=usedata)
             inst.seed += 1
             inst.cat()
         
@@ -214,6 +216,7 @@ if 'sectionH' in torun:
 if 'write' in torun:
     print('Writing XML')
     xml.write(data=nd.notes)
+    os.system('mscore live/live.mscx -o live/live.png')
 
 
 sc.toc()

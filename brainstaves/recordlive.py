@@ -4,6 +4,8 @@ Record data from headset. Super abbreviated guide to what you need to do first:
 bluetoothctl
 pair <mac>
 sudo rfcomm connect hci0 <mac>
+
+sudo python recordlive.py v1
 '''
 
 import sys
@@ -26,6 +28,7 @@ macs = ['00:81:F9:08:A1:72',  # Mandhira -- rfcomm0
         '00:81:F9:29:BA:98', # Pat -- rfcomm1
         '00:81:F9:29:EF:80', # Rich -- rfcomm2
         'C4:64:E3:EA:75:6D' # Val -- rfcomm3
+        # Spare: 00:81:F9:29:B4:D4
         ]
 
 filename = 'live/data-%s.csv' % who

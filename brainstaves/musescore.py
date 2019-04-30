@@ -88,7 +88,12 @@ class XML(sc.prettyobj):
                     errormsg = 'Not sure why no line number for\n%s' % orignote
                     raise Exception(errormsg)
             if verbose: print('%s. line %s: %s' % (ind, orignote.n, newnote.pitch))
-            
+        
+        for l,line in enumerate(self.lines):
+            datestr = 'April 2019'
+            if datestr in line:
+                print('Replacing in line %s' % l)
+                self.lines[l] = line.replace(datestr, sc.getdate())
         output = ''.join(self.lines)
         with open(outfile, 'w') as f:
             f.write(output)
