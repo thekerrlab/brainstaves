@@ -272,7 +272,12 @@ def getnumbers(inst, npts, window=10):
         raw = [float(r)/10. for r in rev] # Will be uniform
         data = np.zeros(npts)
         for pt in range(npts):
-            data[pt] = sum(raw[pt*window:(pt+1)*window])-window/2.
+            thesum = sum(raw[pt*window:(pt+1)*window])
+            if thesum == 0:
+                print('Warning, sum was 0')
+                data[pt] = np.random.randn() # Give up
+            else:
+                data[pt] = thesum-window/2.
     except Exception as E:
         print('Problem: %s' % str(E))
         data = np.random.rand(npts)
