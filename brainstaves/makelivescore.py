@@ -149,6 +149,46 @@ if 'sectionD' in torun:
         appendnotes(nd, sec, part)
 
 
+if 'sectionE' in torun:
+    print('*********E NOT READY***************')
+#    sec = 'D'
+#    quartet,qd = makequartet(mindur=8, timesig='4/4', nbars=1)
+#    nd[sec] = sc.objdict()
+#    
+#    for part,inst in qd.items():
+#        ss = [63,83]
+#        nd[sec][part] = xml.loadnotes(part=part, measurerange=ss)
+#        for repeat in repeats(ss):
+#            inst.seed += 1
+#            if inst.scorepts:  startval = inst.score[-1]
+#            inst.brownian(maxstep=5, startval=startval, skipstart=True)
+#            inst.seed += 1
+#            inst.cat()
+#    
+#        appendnotes(nd, sec, part)
+
+
+if 'sectionG' in torun:
+    print('Creating section G')
+    sec = 'G'
+    quartet,qd = makequartet(mindur=8, timesig='4/4', nbars=1)
+    nd[sec] = sc.objdict()
+    
+    for part,inst in qd.items():
+        if   part == 'v1': ss = [140,141]
+        elif part == 'vc': ss = [119,141]
+        else:              ss = [130,163]
+        nd[sec][part] = xml.loadnotes(part=part, measurerange=ss)
+        for repeat in repeats(ss):
+            inst.seed += 1
+            if inst.scorepts: startval = inst.score[-1]
+            inst.brownian(maxstep=5, startval=startval, skipstart=True)
+            inst.seed += 1
+            inst.cat()
+    
+        appendnotes(nd, sec, part)
+
+
 if 'sectionH' in torun:
     print('Creating section H')
     sec = 'H'
