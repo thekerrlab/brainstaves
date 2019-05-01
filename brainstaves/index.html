@@ -89,11 +89,15 @@
           <br>
           <span><button v-on:click="location.reload()">⟳</button></span>
           <br>
+          <span><button v-on:click="stop()">■</button></span>
+          <br>
+          <span>{{filenumber}}</span>
+          <br>
           <span>{{loaded}}</span>
         </div>
 
 
-      <div v-for="index in placeholders" :id="'score'+index" class="thescore" style="display: none">
+      <div v-for="index in npages" :id="'score'+index" class="thescore" style="display: none">
         <p>hi i am {{index}}</p>
         <img style='max-width: 95vw; max-height:95vh' :name="'score_img'+index">
       </div>
@@ -123,8 +127,7 @@
         filenumber: 1,
         keypress: 'n/a',
         loaded: 'n/a',
-        placeholders: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],
-        scoredivs: ['score1','score2','score3','score4','score5','score6','score7','score8','score9','score10','score11','score12','score13','score14','score15'],
+        npages: 15,
       }
     },
 
@@ -134,6 +137,7 @@
                 vm.version = response.data
                 vm.makefilename()
                 vm.redraw_score()
+                vm.showhidediv()
                 document.onkeydown = function (e) {
                   e.stopImmediatePropagation();
                   console.log('Hi, friend! The detected key was: ' + e.key)
@@ -184,6 +188,9 @@
 
       reload_pages() {
         console.log('reload pages called')
+        let scoreims = vm.getscoreims()
+        console.log('scoreims:')
+        console.log(scoreims)
       },
 
       start() {
@@ -197,25 +204,35 @@
 
       getdivs() {
         let scoredivs = []
-        for (var p in vm.placeholders) {
-          scoredivs.push('score' + vm.placeholders[p])
+        for (var p=1; p <= vm.npages; p++) {
+          scoredivs.push('score' + p)
         }
-        console.log('hiiiiiii!')
-        console.log(scoredivs)
         return scoredivs
+      },
+
+      getscoreims() {
+        let scoreims = []
+        for (var p=1; p <= vm.npages; p++) {
+          scoreims.push('score_img' + p)
+        }
+        return scoreims
       },
 
       showhidediv() {
         let showdiv = "score" + vm.filenumber
-        for (var thisdiv in vm.scoredivs) {
-          let thediv = document.getElementById(thisdiv)
-          console.log(thisdiv)
-          console.log(thediv)
-          if (thisdiv === showdiv) {
-            console.log('Showing: ' + thisdiv)
-            thediv.setAttribute("style", "display: block")
-          } else {
-            thediv.setAttribute("style", "display: none")
+        let scoredivs = vm.getdivs()
+        for (var p=0; p < vm.npages; p++) {
+          let divname = scoredivs[p]
+          console.log(divname)
+          let thediv = document.getElementById(divname)
+          if (thediv) { // WARNING FIX, not sure why index is off?
+            if (divname === showdiv) {
+              console.log('Showing: ' + divname)
+              thediv.setAttribute("style", "display: block")
+            } else {
+              console.log('Hiding: ' + divname)
+              thediv.setAttribute("style", "display: none")
+            }
           }
         }
       },
@@ -234,7 +251,6 @@
         console.log('Stopping refresh')
         vm.isrunning = 'stopped'
         clearInterval(vm.timer);
-        sciris.rpc('stop')
       },
 
     }
