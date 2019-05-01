@@ -90,10 +90,10 @@ class XML(sc.prettyobj):
             if verbose: print('%s. line %s: %s' % (ind, orignote.n, newnote.pitch))
         
         for l,line in enumerate(self.lines):
-            datestr = 'April 2019'
-            if datestr in line:
-                print('Replacing in line %s' % l)
-                self.lines[l] = line.replace(datestr, sc.getdate())
+            if 'copyright' in line:
+                print('Adding timestamp to line %s' % l)
+                self.lines[l] = '<metaTag name="copyright">Last generated: %s</metaTag>' % sc.getdate()
+                break
         output = ''.join(self.lines)
         with open(outfile, 'w') as f:
             f.write(output)

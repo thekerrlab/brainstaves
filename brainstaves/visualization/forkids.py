@@ -13,9 +13,9 @@ import sciris as sc
 names = ['v1','v2','va','vc']
 saveupload = False
 
-which = 'kids'
-lastline = False # ['v1','v2']
-delay = 4
+which = 'quartet'
+lastline = ['v1']
+delay = 10
 
 maps = {'quartet':
             {'v1':'mandhi',
@@ -23,10 +23,10 @@ maps = {'quartet':
              'va':'rich',
              'vc':'val'},
         'kids':
-            {'v1':'dino1',
+            {'v1':'dino4',
              'v2':'dino2',
-             'va':'dino3',
-             'vc':'dino4'},
+             'va':'dino1',
+             'vc':'dino3'},
      }
 
 fig = None
@@ -34,11 +34,13 @@ fig = None
 count = 0
 while True:
     count += 1
+    rd  = sc.odict()
     
     data = sc.odict()
     for name in names:
-        if lastline and name in lastline: r = -1
-        else: r = count
+        if lastline and name in lastline: rd[name] = -1
+        else: rd[name] = count+45
+        
         infile = '../live/data-'+name+'.csv'
         tmpdata = []
         lines = open(infile).readlines()
@@ -86,6 +88,7 @@ while True:
     for n,name in enumerate(names):
         d = data[name]
         size = 0
+        r = rd[name]
         for chan in allchans:
             size += d[chan][r]
             
@@ -95,6 +98,8 @@ while True:
         pl.ylim([max(300,900/pl.log(size)), 0])
         pl.axis('off')
         pl.title('%s' % count)
+        this = [d[chan][r] for chan in allchans]
+        print('%s. %s: %s' % (r, name, ', '.join(['%0.2f'%pt for pt in this])))
         
         pl.subplot(2,4,n+5)
         for c,chan in enumerate(allchans):

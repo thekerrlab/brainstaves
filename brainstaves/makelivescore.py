@@ -1,5 +1,7 @@
 '''
 Generate the live score.
+
+Run this script to actually generate the score.
 '''
 
 import os
