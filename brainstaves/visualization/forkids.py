@@ -11,10 +11,11 @@ import pylab as pl
 import sciris as sc
 
 names = ['v1','v2','va','vc']
+saveupload = False
 
-which = 'quartet'
+which = 'kids'
 lastline = False # ['v1','v2']
-delay = 3
+delay = 4
 
 maps = {'quartet':
             {'v1':'mandhi',
@@ -33,7 +34,6 @@ fig = None
 count = 0
 while True:
     count += 1
-    
     
     data = sc.odict()
     for name in names:
@@ -100,11 +100,13 @@ while True:
         for c,chan in enumerate(allchans):
             pl.bar(c+1, d[chan][r])
         pl.ylim([0,10])
+    pl.show()
     pl.pause(0.1)
-    print('Saving...')
-    pl.savefig('tmp.png')
-    print('Publishing...')
-    os.system('scp -r "tmp.png" cliffker@cliffkerr.com:/home3/cliffker/public_html/thekerrlab/tmp/')
+    if saveupload:
+        print('Saving...')
+        pl.savefig('tmp.png')
+        print('Publishing...')
+        os.system('scp -r "tmp.png" cliffker@cliffkerr.com:/home3/cliffker/public_html/thekerrlab/tmp/')
     t2 = sc.toc(t1, output=True)
     z = delay-t2
     print(z)
