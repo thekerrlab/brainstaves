@@ -13,6 +13,7 @@ sc.tic()
 
 torun = [
 'load',
+'sectionA',
 'sectionB',
 'sectionC',
 'sectionD',
@@ -23,12 +24,18 @@ torun = [
 'write',
 ]
 
-
+statusfile = 'status.tmp'
 
 midioffset = 24
 usedata = False
 
 #%% Function definitions
+
+def writestatus(sec):
+    with open(statusfile,'w') as f:
+        f.write(sec)
+#        f.write(', '.join(secpages[sec]))
+    return None
 
 def xmlnote(orignote, num):
     mapping = {'c$': 7,
@@ -83,13 +90,40 @@ def appendnotes(nd, sec, part, verbose=False):
 def repeats(ss):
     return list(range(ss[1] - ss[0] + 1))
 
+
+def write():
+    if 'write' in torun:
+        print('Writing XML')
+        outputxml = musescore.XML()
+        outputxml.write(data=nd.notes)
+        os.system('mscore live/live.mscx -o live/live.png')
+    return None
+
+
+def process(sec):
+    write()
+    writestatus(sec)
+    print('Section %s written' % sec)
+    sc.toc()
+    print('\n'*5)
+    return None
+    
+
 #%% Main body
+    
+writestatus('n/a') # Reset status
 
 if 'load' in torun:
     print('Loading XML')
     xml = musescore.XML()
     nd = sc.objdict() # For storing all the notes
     nd.notes = []
+
+
+if 'sectionA' in torun:
+    print('Creating section A')
+    sec = 'A'
+    process(sec)
 
 
 if 'sectionB' in torun:
@@ -110,11 +144,13 @@ if 'sectionB' in torun:
             inst.cat()
         
         appendnotes(nd, sec, part)
+    process(sec)
 
 
 if 'sectionC' in torun:
     print('Creating section C')
     sec = 'C'
+    writestatus(sec)
     quartet,qd = makequartet(mindur=16, timesig='4/4', nbars=1)
     nd[sec] = sc.objdict()
     
@@ -134,6 +170,7 @@ if 'sectionC' in torun:
                 inst.cat()
         
             appendnotes(nd, sec, part)
+    process(sec)
 
 
 if 'sectionD' in torun:
@@ -153,11 +190,12 @@ if 'sectionD' in torun:
             inst.cat()
     
         appendnotes(nd, sec, part)
+    process(sec)
 
 
 if 'sectionE' in torun:
     print('*********E NOT READY***************')
-#    sec = 'D'
+    sec = 'E'
 #    quartet,qd = makequartet(mindur=8, timesig='4/4', nbars=1)
 #    nd[sec] = sc.objdict()
 #    
@@ -172,6 +210,13 @@ if 'sectionE' in torun:
 #            inst.cat()
 #    
 #        appendnotes(nd, sec, part)
+    process(sec)
+
+
+if 'sectionF' in torun:
+    print('*********F NOT READY***************')
+    sec = 'F'
+    process(sec)
 
 
 if 'sectionG' in torun:
@@ -193,6 +238,7 @@ if 'sectionG' in torun:
             inst.cat()
     
         appendnotes(nd, sec, part)
+    process(sec)
 
 
 if 'sectionH' in torun:
@@ -215,12 +261,7 @@ if 'sectionH' in torun:
             inst.cat()
         
         appendnotes(nd, sec, part)
-
-
-if 'write' in torun:
-    print('Writing XML')
-    xml.write(data=nd.notes)
-    os.system('mscore live/live.mscx -o live/live.png')
+    process(sec)
 
 
 sc.toc()

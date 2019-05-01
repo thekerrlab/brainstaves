@@ -65,6 +65,8 @@ class XML(sc.prettyobj):
                     self.data[pname][mname][nname][attr]['n'] = l
     
     def write(self, data=None, outfile=None, verbose=False):
+        accisremoved = 0
+        lines = sc.dcp(self.lines) # Don't edit the original
         if outfile is None:
             outfile = 'live/live.mscx'
         if verbose: print('Working on %s notes...' % len(data))
@@ -75,26 +77,28 @@ class XML(sc.prettyobj):
                 insideblock = True
                 while insideblock:
                     count += 1
+                    accisremoved += 1
                     l = orignote.accidental.n+count
-                    if '</accidental>' in self.lines[l].lower():
+                    if '</accidental>' in lines[l].lower():
                         insideblock = False
-                    self.lines[l] = '<!-- Accidental removed -->\n'
+                    lines[l] = '<!-- ' + lines[l][:-1] + ' -->\n'
             for attr in ['pitch', 'tpc']:
                 val = newnote[attr]
                 lineno = orignote[attr].n
                 if lineno:
-                    self.lines[lineno] = f'<{attr}>{val}</{attr}>\n'
+                    lines[lineno] = f'<{attr}>{val}</{attr}>\n'
                 else:
                     errormsg = 'Not sure why no line number for\n%s' % orignote
                     raise Exception(errormsg)
             if verbose: print('%s. line %s: %s' % (ind, orignote.n, newnote.pitch))
         
-        for l,line in enumerate(self.lines):
+        for l,line in enumerate(lines):
             if 'copyright' in line:
                 print('Adding timestamp to line %s' % l)
-                self.lines[l] = '<metaTag name="copyright">Last generated: %s</metaTag>' % sc.getdate()
+                lines[l] = '<metaTag name="copyright">Last generated: %s</metaTag>' % sc.getdate()
                 break
-        output = ''.join(self.lines)
+        print('Writing %s notes, %s lines, removing %s accidentals' % (len(data), len(lines), accisremoved))
+        output = ''.join(lines)
         with open(outfile, 'w') as f:
             f.write(output)
         

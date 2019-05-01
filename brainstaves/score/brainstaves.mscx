@@ -9,7 +9,9 @@
       </Synthesizer>
     <Division>480</Division>
     <Style>
-      <staffDistance>8</staffDistance>
+      <staffLowerBorder>4</staffLowerBorder>
+      <staffDistance>7.5</staffDistance>
+      <minSystemDistance>8</minSystemDistance>
       <measureSpacing>1.3</measureSpacing>
       <TextStyle>
         <halign>center</halign>
@@ -4480,9 +4482,6 @@
           </Rest>
         </Measure>
       <Measure number="80">
-        <LayoutBreak>
-          <subtype>page</subtype>
-          </LayoutBreak>
         <Beam id="58">
           <StemDirection>up</StemDirection>
           </Beam>

@@ -44,10 +44,9 @@
     .thescore {
       position: fixed;
       top: 0;
-      left: 0;
       background-color: #fff;
       max-width: 100vw;
-      max-height: 80vh;
+      max-height: 95vh;
     }
 
     a:link    {color: #aaf;}
@@ -80,25 +79,27 @@
       </div> -->
 
       <!-- THE SCORE -->
-      <div style="position: fixed; top: 0; left: 0; z-index: 100">
+      <div style="position: fixed; top: 5px; left: 5px; z-index: 100">
           <span><button v-on:click="start()">▶</button></span>
-          <br>
+          <br><br>
           <span><button v-on:click="forward()">→</button></span>
-          <br>
+          <br><br>
           <span><button v-on:click="backward()">←</button></span>
-          <br>
+          <br><br>
           <span><button v-on:click="location.reload()">⟳</button></span>
-          <br>
+          <br><br>
           <span><button v-on:click="stop()">■</button></span>
-          <br>
-          <span>{{filenumber}}</span>
-          <br>
-          <span>{{loaded}}</span>
+          <br><br>
+          <span>p. {{filenumber}}</span>
+          <br><br>
+          <span>§: {{loaded}}</span>
+          <br><br>
+          <span>R? {{isrunning}}</span>
         </div>
 
 
       <div v-for="index in npages" :id="'score'+index" class="thescore" style="display: none">
-        <p>hi i am {{index}}</p>
+        <!-- <p>hi i am {{index}}</p> -->
         <img style='max-width: 95vw; max-height:95vh' :name="'score_img'+index">
       </div>
 
@@ -117,17 +118,18 @@
     data() {
       return {
         version: 'Version information unavailable',
-        isrunning: 'stopped',
+        isrunning: '×',
         osmd: null,
         interval: 1000,
         timer: null,
         div_id: 'score',
         score_div: null,
-        filename: '',
+        filenames: [],
         filenumber: 1,
         keypress: 'n/a',
         loaded: 'n/a',
         npages: 15,
+        finalsec: 'H',
       }
     },
 
@@ -135,12 +137,11 @@
       sciris.rpc('get_version')
               .then(function (response) {
                 vm.version = response.data
-                vm.makefilename()
-                vm.redraw_score()
+                vm.makefilenames()
                 vm.showhidediv()
                 document.onkeydown = function (e) {
                   e.stopImmediatePropagation();
-                  console.log('Hi, friend! The detected key was: ' + e.key)
+                  // console.log('Hi, friend! The detected key was: ' + e.key)
                   vm.keypress = e.key
                   switch (e.key) {
                       case 'ArrowLeft':
@@ -174,26 +175,34 @@
 
     methods: {
 
-      makefilename() {
-        vm.filename = 'live/live-' + ('0' + vm.filenumber).slice(-2) + '.png?' + Math.random();
-      },
-
-      redraw_score() {
-        this.makefilename()
-        console.log('Redrawing score...')
-        vm.isrunning = 'running'
-        // document.images['score_img'].src = vm.filename
-        // window.scroll(0,0) // Doesn't seem necessary
+      makefilenames() {
+        vm.filenames = []
+        for (var p=0; p<vm.npages; p++) {
+          let filename = 'live/live-' + ('0' + (p+1)).slice(-2) + '.png?' + Math.random();
+          vm.filenames.push(filename)
+        }
       },
 
       reload_pages() {
-        console.log('reload pages called')
-        let scoreims = vm.getscoreims()
-        console.log('scoreims:')
-        console.log(scoreims)
+        console.log('Checking status...')
+        sciris.rpc('get_status')
+        .then(function (response) {
+          let status = response.data
+          if (status !== vm.loaded) {
+            console.log('  Reloading since ' + vm.loaded + ' != ' + status)
+            vm.loaded = status
+            vm.makefilenames()
+            let scoreims = vm.getscoreims()
+            for (var p=0; p<vm.npages; p++) {
+                document.images[scoreims[p]].src = vm.filenames[p]
+            }
+          }
+        })
+
       },
 
       start() {
+        vm.isrunning = '✓'
         var initial_delay = 1*(1000 - new Date().getTime() % 1000);
         console.log('Waiting ' + initial_delay + ' ms to start on the dot of the next second')
         setTimeout(function() {
@@ -223,14 +232,12 @@
         let scoredivs = vm.getdivs()
         for (var p=0; p < vm.npages; p++) {
           let divname = scoredivs[p]
-          console.log(divname)
           let thediv = document.getElementById(divname)
           if (thediv) { // WARNING FIX, not sure why index is off?
             if (divname === showdiv) {
               console.log('Showing: ' + divname)
               thediv.setAttribute("style", "display: block")
             } else {
-              console.log('Hiding: ' + divname)
               thediv.setAttribute("style", "display: none")
             }
           }
@@ -239,17 +246,23 @@
 
       forward() {
         vm.filenumber += 1
+        if (vm.filenumber>vm.npages) {
+          vm.filenumber = vm.npages
+        }
         vm.showhidediv()
       },
 
       backward() {
         vm.filenumber -= 1
+        if (vm.filenumber<1) {
+          vm.filenumber = 1
+        }
         vm.showhidediv()
       },
 
       stop() {
         console.log('Stopping refresh')
-        vm.isrunning = 'stopped'
+        vm.isrunning = '×'
         clearInterval(vm.timer);
       },
 

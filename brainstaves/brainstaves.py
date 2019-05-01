@@ -9,13 +9,24 @@ Webserver that runs and refreshes Brainstaves. Some functions are deprecated.
 # Housekeeping
 ##################################
 
+__version__ = '2.0.0'
+
 # Imports
 print('Importing modules...')
-import os
 import sys
 import scirisweb as sw
-# import brainstaves as bs
-import sciris as bs
+import sciris as sc
+
+secpages = sc.odict([
+        ('A',[1]),
+        ('B',[2,3]),
+        ('C',[4,5]),
+        ('D',[6,7]),
+        ('E',[8]),
+        ('F',[9,10,11]),
+        ('G',[12,13]),
+        ('H',[14,15]),
+        ])
 
 # Create the app
 print('Setting defaults...')
@@ -29,46 +40,17 @@ app.data = None # Initialize the results
 # Define the RPCs
 ##################################
 
-__all__ = ['start', 'pause', 'stop', 'get_notes', 'test_notes', 'get_version']
-
 @app.register_RPC()
-def start():
-    ''' Get new notes '''
-    print('start() called')
-    os.system('touch %s' % bs.lockfile)
-    print('NOT GENERATING')
-#    bs.generate()
-    output = test_notes()
-    return output
-
-@app.register_RPC()
-def pause():
-    return stop()
-
-@app.register_RPC()
-def stop():
-    ''' Get new notes '''
-    print('stop() called')
-    os.system('rm %s' % bs.lockfile)
-    return 'stopped'
-
-@app.register_RPC()
-def get_notes():
-    ''' Get new notes '''
-    print('get_notes() called')
-    notes = bs.get_notes()
-    return notes
-
-@app.register_RPC()
-def test_notes():
-    filename = '/u/cliffk/music/brainstaves/brainstaves/assets/mozart-test-excerpt.musicxml'
+def get_status():
+    filename = 'status.tmp'
     with open(filename) as f:
-        output = f.read()
+        output = f.read().rstrip()
     return output
+
 
 @app.register_RPC()
 def get_version():
-    return bs.__version__
+    return __version__
 
 
 # Run the server
