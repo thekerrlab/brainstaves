@@ -27,11 +27,7 @@
     }
 
     .background {
-/*      background: linear-gradient(rgba(0,0,0,1.0), rgba(0,0,0,1.0));
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      min-height: 100vh;*/
+      background-color: #f00;
     }
 
     .app {
@@ -46,12 +42,12 @@
     }
 
     .thescore {
-/*      border-width: 2px;
-      border-color: #333;
-      border-style: solid;
+      position: fixed;
+      top: 0;
+      left: 0;
       background-color: #fff;
       max-width: 100vw;
-      max-height: 80vh;*/
+      max-height: 80vh;
     }
 
     a:link    {color: #aaf;}
@@ -66,7 +62,6 @@
 <!-- Define the layout -->
 <body>
 <div class="background">
-  <br>
   <div id="app" class="app">
     <!-- <p>The last key press was: {{keypress}}</p> -->
 <!--     <div class="main">
@@ -85,19 +80,23 @@
       </div> -->
 
       <!-- THE SCORE -->
-      <div style="position: fixed; top: 0; left: 0;">
+      <div style="position: fixed; top: 0; left: 0; z-index: 100">
+          <span><button v-on:click="start()">▶</button></span>
+          <br>
           <span><button v-on:click="forward()">→</button></span>
           <br>
           <span><button v-on:click="backward()">←</button></span>
           <br>
           <span><button v-on:click="location.reload()">⟳</button></span>
           <br>
+          <span>{{loaded}}</span>
         </div>
 
-      <div class="thescore" id="score">
-        <img style='max-width: 95vw; max-height:95vh' name='score_img'>
-      </div>
 
+      <div v-for="index in placeholders" :id="'score'+index" class="thescore" style="display: none">
+        <p>hi i am {{index}}</p>
+        <img style='max-width: 95vw; max-height:95vh' :name="'score_img'+index">
+      </div>
 
     </div>
 
@@ -116,7 +115,6 @@
         version: 'Version information unavailable',
         isrunning: 'stopped',
         osmd: null,
-        delay: 100,
         interval: 1000,
         timer: null,
         div_id: 'score',
@@ -124,6 +122,9 @@
         filename: '',
         filenumber: 1,
         keypress: 'n/a',
+        loaded: 'n/a',
+        placeholders: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],
+        scoredivs: ['score1','score2','score3','score4','score5','score6','score7','score8','score9','score10','score11','score12','score13','score14','score15'],
       }
     },
 
@@ -177,8 +178,12 @@
         this.makefilename()
         console.log('Redrawing score...')
         vm.isrunning = 'running'
-        document.images['score_img'].src = vm.filename
+        // document.images['score_img'].src = vm.filename
         // window.scroll(0,0) // Doesn't seem necessary
+      },
+
+      reload_pages() {
+        console.log('reload pages called')
       },
 
       start() {
@@ -186,21 +191,43 @@
         console.log('Waiting ' + initial_delay + ' ms to start on the dot of the next second')
         setTimeout(function() {
           console.log('Launched')
-          vm.timer = setInterval(vm.redraw_score, vm.interval);
+          vm.timer = setInterval(vm.reload_pages, vm.interval);
         }, initial_delay);
+      },
+
+      getdivs() {
+        let scoredivs = []
+        for (var p in vm.placeholders) {
+          scoredivs.push('score' + vm.placeholders[p])
+        }
+        console.log('hiiiiiii!')
+        console.log(scoredivs)
+        return scoredivs
+      },
+
+      showhidediv() {
+        let showdiv = "score" + vm.filenumber
+        for (var thisdiv in vm.scoredivs) {
+          let thediv = document.getElementById(thisdiv)
+          console.log(thisdiv)
+          console.log(thediv)
+          if (thisdiv === showdiv) {
+            console.log('Showing: ' + thisdiv)
+            thediv.setAttribute("style", "display: block")
+          } else {
+            thediv.setAttribute("style", "display: none")
+          }
+        }
       },
 
       forward() {
         vm.filenumber += 1
-        vm.redraw_score()
+        vm.showhidediv()
       },
 
       backward() {
         vm.filenumber -= 1
-        if (vm.filenumber < 1) {
-          vm.filenumber = 1
-        }
-        vm.redraw_score()
+        vm.showhidediv()
       },
 
       stop() {
