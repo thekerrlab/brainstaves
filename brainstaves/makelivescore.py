@@ -24,6 +24,8 @@ torun = [
 'write',
 ]
 
+wait = False
+
 pauses = sc.odict([
         ('A',20), # 0:20
         ('B',40), # 1:00
@@ -113,12 +115,14 @@ def write():
 
 def process(sec):
     sc.fixedpause()
-    write()
+    if wait or sec == 'H':
+        write()
     writestatus(sec)
     print('Section %s written' % sec)
     sc.toc()
     print('\n'*5)
-    sc.fixedpause(pauses[sec], verbose=True)
+    if wait:
+        sc.fixedpause(pauses[sec], verbose=True)
     return None
     
 
@@ -178,6 +182,7 @@ if 'sectionC' in torun:
                 elif part == 'vc': startval = 'min'
                 else:              startval = None
                 inst.brownian(maxstep=3, startval=startval, skipstart=True, inst=part, usedata=usedata)
+                inst.octotonic()
                 inst.seed += 1
                 inst.cat()
         
@@ -269,6 +274,8 @@ if 'sectionH' in torun:
             elif part in ['v1','v2']: startval = 'max'
             elif part in ['va','vc']: startval = 'min'
             inst.brownian(maxstep=2, startval=startval, skipstart=False, inst=part, usedata=usedata)
+            inst.diatonic()
+            inst.octotonic()
             inst.seed += 1
             inst.cat()
         
