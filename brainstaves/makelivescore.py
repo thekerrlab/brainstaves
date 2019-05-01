@@ -24,6 +24,17 @@ torun = [
 'write',
 ]
 
+pauses = sc.odict([
+        ('A',20), # 0:20
+        ('B',20), # 0:40
+        ('C',20), # 1:00
+        ('D',30), # 1:30
+        ('E',30), # 2:00
+        ('F',30), # 2:30
+        ('G',30), # 3:00
+        ('H',30), # 3:30
+        ])
+
 statusfile = 'status.tmp'
 
 midioffset = 24
@@ -101,11 +112,13 @@ def write():
 
 
 def process(sec):
+    sc.fixedpause()
     write()
     writestatus(sec)
     print('Section %s written' % sec)
     sc.toc()
     print('\n'*5)
+    sc.fixedpause(pauses[sec], verbose=True)
     return None
     
 
@@ -150,7 +163,6 @@ if 'sectionB' in torun:
 if 'sectionC' in torun:
     print('Creating section C')
     sec = 'C'
-    writestatus(sec)
     quartet,qd = makequartet(mindur=16, timesig='4/4', nbars=1)
     nd[sec] = sc.objdict()
     
