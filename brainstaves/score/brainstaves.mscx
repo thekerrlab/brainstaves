@@ -9254,14 +9254,6 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="168">
-        <StaffText>
-          <pos x="72.0897" y="-3.58155"/>
-          <text><font size="9.3012"></font><font face="Times New Roman"></font>Smile broadly :D</text>
-          </StaffText>
-        <StaffText>
-          <pos x="72.0897" y="-3.58155"/>
-          <text><font size="9.3012"></font><font face="Times New Roman"></font>Smile broadly :D</text>
-          </StaffText>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -9353,6 +9345,18 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           <subtype>mp</subtype>
           <velocity>64</velocity>
           </Dynamic>
+        <StaffText>
+          <pos x="61.0824" y="-9.76909"/>
+          <text><font size="9.3012"></font><font face="Times New Roman"></font>Smile broadly :D</text>
+          </StaffText>
+        <StaffText>
+          <pos x="61.0824" y="-9.76909"/>
+          <text><font size="9.3012"></font><font face="Times New Roman"></font>Smile broadly :D</text>
+          </StaffText>
+        <StaffText>
+          <style>System</style>
+          <text>Smile broadly :D</text>
+          </StaffText>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
