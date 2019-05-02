@@ -410,7 +410,7 @@
         <height>18.3</height>
         <Text>
           <style>Composer</style>
-          <text><font size="7.8617"/><font face="Times New Roman"/>Cliff Kerr | May 2019</text>
+          <text><font size="7.8617"></font><font face="Times New Roman"></font>Cliff Kerr | May 2019</text>
           </Text>
         <Text>
           <style>Title</style>
@@ -1599,7 +1599,7 @@
           </RehearsalMark>
         <StaffText>
           <pos x="3.47958" y="-6.04446"/>
-          <text><b><font size="9.3012"/><font face="Times New Roman"/>Annoyed, angry, ugly, but gradually relaxing 
+          <text><b><font size="9.3012"></font><font face="Times New Roman"></font>Annoyed, angry, ugly, but gradually relaxing 
 (poco a poco diminuendo e normale)</b></text>
           </StaffText>
         <Rest>
@@ -3451,7 +3451,7 @@
       <Measure number="61">
         <StaffText>
           <pos x="36.7507" y="-4.34203"/>
-          <text><font size="9.3012"/><font face="Times New Roman"/>Furtively (razor-sharp onset and offset)</text>
+          <text><font size="9.3012"></font><font face="Times New Roman"></font>Furtively (razor-sharp onset and offset)</text>
           </StaffText>
         <Rest>
           <durationType>half</durationType>
@@ -4612,7 +4612,7 @@
           </Dynamic>
         <StaffText>
           <pos x="-17.581" y="-7.58796"/>
-          <text><b><font size="9.3012"/><font face="Times New Roman"/>Like an echo in an empty train station, but the 
+          <text><b><font size="9.3012"></font><font face="Times New Roman"></font>Like an echo in an empty train station, but the 
 train is coming (sternly; poco a poco crescendo)</b></text>
           </StaffText>
         <Rest>
@@ -5239,20 +5239,13 @@ train is coming (sternly; poco a poco crescendo)</b></text>
             <tpc>20</tpc>
             </Note>
           </Chord>
-        <Slur id="60">
-          <track>0</track>
-          </Slur>
-        <Slur id="61">
-          <track>0</track>
-          <up>2</up>
-          </Slur>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
-          <Slur type="start" id="60"/>
-          <Slur type="start" id="61"/>
           <StemDirection>down</StemDirection>
           <Note>
+            <Tie id="60">
+              </Tie>
             <pitch>69</pitch>
             <tpc>17</tpc>
             </Note>
@@ -5260,6 +5253,8 @@ train is coming (sternly; poco a poco crescendo)</b></text>
             <Accidental>
               <subtype>natural</subtype>
               </Accidental>
+            <Tie id="61">
+              </Tie>
             <pitch>77</pitch>
             <tpc>13</tpc>
             </Note>
@@ -5272,14 +5267,14 @@ train is coming (sternly; poco a poco crescendo)</b></text>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>half</durationType>
-          <Slur type="stop" id="60"/>
-          <Slur type="stop" id="61"/>
           <StemDirection>down</StemDirection>
           <Note>
+            <endSpanner id="60"/>
             <pitch>69</pitch>
             <tpc>17</tpc>
             </Note>
           <Note>
+            <endSpanner id="61"/>
             <pitch>77</pitch>
             <tpc>13</tpc>
             </Note>
@@ -5288,7 +5283,7 @@ train is coming (sternly; poco a poco crescendo)</b></text>
       <Measure number="99">
         <StaffText>
           <pos x="4.54183" y="-7.85057"/>
-          <text><font size="9.3012"/><font face="Times New Roman"/>Theatrically obese 
+          <text><font size="9.3012"></font><font face="Times New Roman"></font>Theatrically obese 
 block of sound</text>
           </StaffText>
         <Rest>
@@ -5347,7 +5342,7 @@ block of sound</text>
         <vspacerDown>15</vspacerDown>
         <StaffText>
           <pos x="-0.707157" y="-5.3954"/>
-          <text><i><font size="9.3012"/><font face="Times New Roman"/>arpeggiato like crazy</i></text>
+          <text><i><font size="9.3012"></font><font face="Times New Roman"></font>arpeggiato like crazy</i></text>
           </StaffText>
         <Dynamic>
           <subtype>fff</subtype>
@@ -5359,7 +5354,7 @@ block of sound</text>
           <Segment>
             <subtype>0</subtype>
             <off2 x="4.42413" y="0"/>
-            <pos x="133.871" y="9.87051"/>
+            <pos x="134.011" y="9.87051"/>
             </Segment>
           <beginText>
             <text>dim.</text>
@@ -5456,7 +5451,7 @@ block of sound</text>
           </Dynamic>
         <StaffText>
           <pos x="3.65972" y="-5.00463"/>
-          <text><b><font size="9.3012"/><font face="Times New Roman"/>Focused, lyrical; light, whimsical background accompaniment; impassioned solos</b></text>
+          <text><b><font size="9.3012"></font><font face="Times New Roman"></font>Focused, lyrical; light, whimsical background accompaniment; impassioned solos</b></text>
           </StaffText>
         <Rest>
           <durationType>quarter</durationType>
@@ -8409,14 +8404,14 @@ block of sound</text>
       <Measure number="145">
         <StaffText>
           <pos x="6.38549" y="-4.94919"/>
-          <text><font size="9.3012"/><font face="Times New Roman"/>Stare at each other</text>
+          <text><font size="9.3012"></font><font face="Times New Roman"></font>Stare at each other</text>
           </StaffText>
         <Rest>
           <durationType>half</durationType>
           </Rest>
         <StaffText>
           <pos x="1.65046" y="5.44723"/>
-          <text><i><font size="8.5261"/><font face="Times New Roman"/> gliss. down</i></text>
+          <text><i><font size="8.5261"></font><font face="Times New Roman"></font> gliss. down</i></text>
           </StaffText>
         <Dynamic>
           <subtype>p</subtype>
@@ -9249,7 +9244,7 @@ block of sound</text>
       <Measure number="168">
         <StaffText>
           <pos x="72.0897" y="-3.58155"/>
-          <text><font size="9.3012"/><font face="Times New Roman"/>Smile broadly :D</text>
+          <text><font size="9.3012"></font><font face="Times New Roman"></font>Smile broadly :D</text>
           </StaffText>
         <Chord>
           <BeamMode>no</BeamMode>
@@ -11516,7 +11511,7 @@ block of sound</text>
           </Dynamic>
         <StaffText>
           <pos x="2.31098" y="5.87778"/>
-          <text><i><font size="8.5261"/><font face="Times New Roman"/> arco, sul pont.</i></text>
+          <text><i><font size="8.5261"></font><font face="Times New Roman"></font> arco, sul pont.</i></text>
           </StaffText>
         <Slur id="151">
           <track>4</track>
@@ -13604,25 +13599,19 @@ block of sound</text>
             <tpc>18</tpc>
             </Note>
           </Chord>
-        <Slur id="191">
-          <track>4</track>
-          <up>2</up>
-          </Slur>
-        <Slur id="192">
-          <track>4</track>
-          <up>1</up>
-          </Slur>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
-          <Slur type="start" id="191"/>
-          <Slur type="start" id="192"/>
           <StemDirection>up</StemDirection>
           <Note>
+            <Tie id="191">
+              </Tie>
             <pitch>64</pitch>
             <tpc>18</tpc>
             </Note>
           <Note>
+            <Tie id="192">
+              </Tie>
             <pitch>72</pitch>
             <tpc>14</tpc>
             </Note>
@@ -13635,14 +13624,14 @@ block of sound</text>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>half</durationType>
-          <Slur type="stop" id="191"/>
-          <Slur type="stop" id="192"/>
           <StemDirection>up</StemDirection>
           <Note>
+            <endSpanner id="191"/>
             <pitch>64</pitch>
             <tpc>18</tpc>
             </Note>
           <Note>
+            <endSpanner id="192"/>
             <pitch>72</pitch>
             <tpc>14</tpc>
             </Note>
@@ -13699,7 +13688,7 @@ block of sound</text>
         <vspacerDown>10</vspacerDown>
         <StaffText>
           <pos x="-1.19182" y="-4.46413"/>
-          <text><i><font size="9.3012"/><font face="Times New Roman"/>arpeggiato like crazy</i></text>
+          <text><i><font size="9.3012"></font><font face="Times New Roman"></font>arpeggiato like crazy</i></text>
           </StaffText>
         <Dynamic>
           <subtype>fff</subtype>
@@ -13711,7 +13700,7 @@ block of sound</text>
           <Segment>
             <subtype>0</subtype>
             <off2 x="4.05895" y="0"/>
-            <pos x="134.237" y="8.74874"/>
+            <pos x="134.377" y="8.74874"/>
             </Segment>
           <beginText>
             <text>dim.</text>
@@ -23460,20 +23449,13 @@ block of sound</text>
             <tpc>21</tpc>
             </Note>
           </Chord>
-        <Slur id="264">
-          <track>8</track>
-          </Slur>
-        <Slur id="265">
-          <track>8</track>
-          <up>1</up>
-          </Slur>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
-          <Slur type="start" id="264"/>
-          <Slur type="start" id="265"/>
           <StemDirection>up</StemDirection>
           <Note>
+            <Tie id="264">
+              </Tie>
             <pitch>52</pitch>
             <tpc>18</tpc>
             </Note>
@@ -23481,6 +23463,8 @@ block of sound</text>
             <Accidental>
               <subtype>natural</subtype>
               </Accidental>
+            <Tie id="265">
+              </Tie>
             <pitch>60</pitch>
             <tpc>14</tpc>
             </Note>
@@ -23493,14 +23477,14 @@ block of sound</text>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>half</durationType>
-          <Slur type="stop" id="264"/>
-          <Slur type="stop" id="265"/>
           <StemDirection>up</StemDirection>
           <Note>
+            <endSpanner id="264"/>
             <pitch>52</pitch>
             <tpc>18</tpc>
             </Note>
           <Note>
+            <endSpanner id="265"/>
             <pitch>60</pitch>
             <tpc>14</tpc>
             </Note>
@@ -23562,7 +23546,7 @@ block of sound</text>
         <vspacerDown>10</vspacerDown>
         <StaffText>
           <pos x="-1.19182" y="-2.9109"/>
-          <text><i><font size="9.3012"/><font face="Times New Roman"/>non arpeggiato</i></text>
+          <text><i><font size="9.3012"></font><font face="Times New Roman"></font>non arpeggiato</i></text>
           </StaffText>
         <Dynamic>
           <subtype>fff</subtype>
@@ -23574,7 +23558,7 @@ block of sound</text>
           <Segment>
             <subtype>0</subtype>
             <off2 x="3.69376" y="0"/>
-            <pos x="134.343" y="7.2818"/>
+            <pos x="134.483" y="7.2818"/>
             </Segment>
           <beginText>
             <text>dim.</text>
@@ -33910,20 +33894,13 @@ block of sound</text>
             <tpc>19</tpc>
             </Note>
           </Chord>
-        <Slur id="322">
-          <track>12</track>
-          </Slur>
-        <Slur id="323">
-          <track>12</track>
-          <up>1</up>
-          </Slur>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
-          <Slur type="start" id="322"/>
-          <Slur type="start" id="323"/>
           <StemDirection>up</StemDirection>
           <Note>
+            <Tie id="322">
+              </Tie>
             <pitch>38</pitch>
             <tpc>16</tpc>
             </Note>
@@ -33931,6 +33908,8 @@ block of sound</text>
             <Accidental>
               <subtype>flat</subtype>
               </Accidental>
+            <Tie id="323">
+              </Tie>
             <pitch>46</pitch>
             <tpc>12</tpc>
             </Note>
@@ -33943,14 +33922,14 @@ block of sound</text>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>half</durationType>
-          <Slur type="stop" id="322"/>
-          <Slur type="stop" id="323"/>
           <StemDirection>up</StemDirection>
           <Note>
+            <endSpanner id="322"/>
             <pitch>38</pitch>
             <tpc>16</tpc>
             </Note>
           <Note>
+            <endSpanner id="323"/>
             <pitch>46</pitch>
             <tpc>12</tpc>
             </Note>
@@ -34006,7 +33985,7 @@ block of sound</text>
       <Measure number="101">
         <StaffText>
           <pos x="-1.65472" y="-2.99719"/>
-          <text><i><font size="9.3012"/><font face="Times New Roman"/>non arpeggiato</i></text>
+          <text><i><font size="9.3012"></font><font face="Times New Roman"></font>non arpeggiato</i></text>
           </StaffText>
         <Dynamic>
           <subtype>fff</subtype>
@@ -34018,7 +33997,7 @@ block of sound</text>
           <Segment>
             <subtype>0</subtype>
             <off2 x="4.33283" y="0"/>
-            <pos x="133.963" y="9.87051"/>
+            <pos x="134.103" y="9.87051"/>
             </Segment>
           <beginText>
             <text>dim.</text>
@@ -37262,7 +37241,7 @@ block of sound</text>
           </Dynamic>
         <StaffText>
           <pos x="2.08191" y="7.60359"/>
-          <text><i><font size="8.5261"/><font face="Times New Roman"/> gliss. top note up</i></text>
+          <text><i><font size="8.5261"></font><font face="Times New Roman"></font> gliss. top note up</i></text>
           </StaffText>
         <Chord>
           <BeamMode>no</BeamMode>
@@ -37295,7 +37274,7 @@ block of sound</text>
           </Dynamic>
         <StaffText>
           <pos x="2.14003" y="8.70904"/>
-          <text><i><font size="8.5261"/><font face="Times New Roman"/> gliss. top note down</i></text>
+          <text><i><font size="8.5261"></font><font face="Times New Roman"></font> gliss. top note down</i></text>
           </StaffText>
         <Chord>
           <BeamMode>no</BeamMode>

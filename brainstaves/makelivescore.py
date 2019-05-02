@@ -211,9 +211,39 @@ if 'sectionD' in torun:
 
 
 if 'sectionE' in torun:
-    print('*********E NOT READY***************')
     sec = 'E'
     ss = [85,98]
+    nm = sc.objdict()
+    for part in qd.keys():
+        nm[part] = sc.objdict()
+    # Intro
+    generate(nm, p='v1', m=86, n=1, t=1)
+    generate(nm, p='v1', m=88, n=1, t=0)
+    generate(nm, p='v1', m=89, n=1, t=1)
+
+    # Unison
+    for part in qd.keys():
+        generate(nm, p=part, m=91, n=1, t=0)
+        generate(nm, p=part, m=91, n=3, t=0)
+        generate(nm, p=part, m=91, n=5, t=1)
+        generate(nm, p=part, m=92, n=3, t=1)
+        generate(nm, p=part, m=93, n=3, t=0)
+        generate(nm, p=part, m=93, n=5, t=0)
+        generate(nm, p=part, m=93, n=7, t=1)
+        for n in [3,5,7]:
+            generate(nm, p=part, m=94, n=n, t=0)
+        for n in [1,3,5,7,9]:
+            generate(nm, p=part, m=95, n=n, t=0)
+        for n in [1,3,5,7,9]:
+            generate(nm, p=part, m=96, n=n, t=0)
+        generate(nm, p=part, m=96, n=11, t=1)
+        generate(nm, p=part, m=97, n=3, t=0)
+        generate(nm, p=part, m=97, n=5, t=1)
+        generate(nm, p=part, m=98, n=3, t=0)
+        generate(nm, p=part, m=98, n=5, t=1)
+
+
+
     notemapping = sc.odict([
             ('v1', sc.odict([
                     ('m86n1',('random',0)),
