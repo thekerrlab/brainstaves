@@ -100,7 +100,6 @@
 
 
       <div v-for="index in npages" :id="'score'+index" class="thescore" style="display: none">
-        <!-- <p>hi i am {{index}}</p> -->
         <img style='max-width: 100vw; max-height:100vh' :name="'score_img'+index">
       </div>
 
@@ -128,7 +127,7 @@
         filenumber: 1,
         keypress: 'n/a',
         loaded: 'n/a',
-        npages: 13,
+        npages: 13, // No buffer, be careful!
       }
     },
 

@@ -38,7 +38,7 @@ pauses = sc.odict([
         ])
 
 statusfile = 'status.tmp'
-
+npages = 13
 midioffset = 24
 usedata = False
 
@@ -124,6 +124,10 @@ def process(sec):
     print('Section %s written' % sec)
     sc.toc()
     print('\n'*5)
+    nfiles = len(sc.getfilelist('live', pattern='live-*.png'))
+    if nfiles != npages:
+        print('WARNING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
+        print('The number of files is not correct!! %s vs %s' % (nfiles, npages))
     if wait:
         sc.fixedpause(pauses[sec], verbose=True)
     return None

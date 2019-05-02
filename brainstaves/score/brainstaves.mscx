@@ -3313,6 +3313,7 @@
           </Rest>
         </Measure>
       <Measure number="55">
+        <stretch>0.6</stretch>
         <Dynamic>
           <subtype>pp</subtype>
           <velocity>33</velocity>
@@ -3373,6 +3374,7 @@
           </Rest>
         </Measure>
       <Measure number="56">
+        <stretch>0.6</stretch>
         <Rest>
           <durationType>half</durationType>
           </Rest>
@@ -3396,6 +3398,7 @@
           </Rest>
         </Measure>
       <Measure number="57">
+        <stretch>0.6</stretch>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
@@ -3431,16 +3434,19 @@
           </Rest>
         </Measure>
       <Measure number="58">
+        <stretch>0.6</stretch>
         <Rest>
           <durationType>whole</durationType>
           </Rest>
         </Measure>
       <Measure number="59">
+        <stretch>0.6</stretch>
         <Rest>
           <durationType>whole</durationType>
           </Rest>
         </Measure>
       <Measure number="60">
+        <stretch>0.6</stretch>
         <LayoutBreak>
           <subtype>line</subtype>
           </LayoutBreak>
@@ -4695,6 +4701,7 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="89">
+        <vspacerDown>10</vspacerDown>
         <Rest>
           <durationType>half</durationType>
           </Rest>
@@ -4913,6 +4920,7 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="94">
+        <vspacerDown>10</vspacerDown>
         <LayoutBreak>
           <subtype>line</subtype>
           </LayoutBreak>
@@ -13082,6 +13090,7 @@ block of sound</text>
           </Chord>
         </Measure>
       <Measure number="89">
+        <vspacerDown>10</vspacerDown>
         <Rest>
           <durationType>whole</durationType>
           </Rest>
@@ -13288,6 +13297,7 @@ block of sound</text>
           </Chord>
         </Measure>
       <Measure number="94">
+        <vspacerDown>10</vspacerDown>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>half</durationType>
@@ -22902,6 +22912,7 @@ block of sound</text>
           </Chord>
         </Measure>
       <Measure number="89">
+        <vspacerDown>10</vspacerDown>
         <Rest>
           <durationType>whole</durationType>
           </Rest>
@@ -23110,6 +23121,7 @@ block of sound</text>
           </Chord>
         </Measure>
       <Measure number="94">
+        <vspacerDown>10</vspacerDown>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>half</durationType>
