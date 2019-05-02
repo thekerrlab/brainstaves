@@ -202,6 +202,8 @@ class Section(sc.prettyobj):
         return None
     
     def brownian(self, startval=None, maxstep=None, seed=None, forcestep=True, skipstart=True, verbose=False, inst=None, usedata=True, npts=None):
+        if not skipstart:
+            raise Exception('Sorry, not skipstart is not working!')
         self.resetseed(seed)
         if maxstep is None: maxstep = 1
         minval,maxval = self.minmax()
@@ -219,9 +221,11 @@ class Section(sc.prettyobj):
         for n in range(npts): # If not skipping the start, 1 less point
             if n==0: current = abs(startval)
             else:    current = abs(self.arr[n-1])
-            step = 0
+            step = np.nan
             count = 0
-            while forcestep and not step:
+            if np.isnan(current):
+                import traceback; traceback.print_exc(); import pdb; pdb.set_trace()
+            while np.isnan(step) or (forcestep and not step):
                 count += 1
                 if count<10:
                     step = int(round((data[n])*maxstep))

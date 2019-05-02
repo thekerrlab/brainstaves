@@ -47,7 +47,6 @@ usedata = False
 def writestatus(sec):
     with open(statusfile,'w') as f:
         f.write(sec)
-#        f.write(', '.join(secpages[sec]))
     return None
 
 def xmlnote(orignote, num):
@@ -113,6 +112,10 @@ def write():
     return None
 
 
+def begin(sec):
+    sc.colorize('blue', '\n'*5+'Creating section %s' % sec)
+    return sc.objdict()
+
 def process(sec):
     sc.fixedpause()
     if wait or sec == 'H':
@@ -138,16 +141,16 @@ if 'load' in torun:
 
 
 if 'sectionA' in torun:
-    print('Creating section A')
     sec = 'A'
+    nd[sec] = begin(sec)
     process(sec)
+    
 
 
 if 'sectionB' in torun:
-    print('Creating section B')
     sec = 'B'
+    nd[sec] = begin(sec)
     quartet,qd = makequartet(mindur=8, timesig='12/8', nbars=1)
-    nd[sec] = sc.objdict()
     
     for part,inst in qd.items():      
         if part == 'v1': ss = [39,40]
@@ -165,10 +168,9 @@ if 'sectionB' in torun:
 
 
 if 'sectionC' in torun:
-    print('Creating section C')
     sec = 'C'
+    nd[sec] = begin(sec)
     quartet,qd = makequartet(mindur=16, timesig='4/4', nbars=1)
-    nd[sec] = sc.objdict()
     
     for part,inst in qd.items():
         if part != 'v2':
@@ -191,10 +193,9 @@ if 'sectionC' in torun:
 
 
 if 'sectionD' in torun:
-    print('Creating section D')
     sec = 'D'
+    nd[sec] = begin(sec)
     quartet,qd = makequartet(mindur=8, timesig='4/4', nbars=1)
-    nd[sec] = sc.objdict()
     
     for part,inst in qd.items():
         ss = [63,83]
@@ -210,16 +211,19 @@ if 'sectionD' in torun:
     process(sec)
 
 
+
 if 'sectionE' in torun:
     sec = 'E'
+    nd[sec] = begin(sec)
     ss = [85,98]
     nm = sc.objdict()
     seq = sc.objdict()
     for part in qd.keys():
         nm[part] = sc.objdict()
         seq[part] = 0
+    quartet,qd = makequartet(mindur=8, timesig='4/4', nbars=1)
 
-    def generate(seq, nm, p, m, n, t, verbose=True):
+    def generate(seq, nm, p, m, n, t, verbose=False):
         if verbose: print('Input: %s, %s, %s, %s, %s' % (seq[:], p, m, n, t))
         genkeys = []
         np = nm[p]
@@ -253,7 +257,7 @@ if 'sectionE' in torun:
     generate(seq, nm, p='v1', m=89, n=1, t=1)
     generate(seq, nm, p='v2', m=90, n=1, t=0)
     generate(seq, nm, p='va', m=90, n=1, t=0)
-
+    
     # Unison
     for part in qd.keys():
         generate(seq, nm, p=part, m=91, n=1, t=0)
@@ -275,20 +279,50 @@ if 'sectionE' in torun:
         generate(seq, nm, p=part, m=98, n=3, t=0)
         generate(seq, nm, p=part, m=98, n=5, t=1)
 
-
-
-    quartet,qd = makequartet(mindur=8, timesig='4/4', nbars=1)
-    nd[sec] = sc.objdict()
+    startvals1 = sc.odict([
+            ('v1',instruments.char2num('en4')),
+            ('v2',instruments.char2num('en3')),
+            ('va',instruments.char2num('en2')),
+            ('vc',instruments.char2num('en1')),
+            ])
+    startvals2 = sc.odict([
+            ('v1',instruments.char2num('cn3')),
+            ('v2',instruments.char2num('cn3')),
+            ('va',instruments.char2num('cn2')),
+            ('vc',instruments.char2num('cn2')),
+            ])
     
     for part,inst in qd.items():
         nd[sec][part] = xml.loadnotes(part=part, measurerange=ss)
         assert len(nd[sec][part]) == len(nm[part])
         
-        inst.seed += 1
-        if inst.scorepts:  startval = inst.score[-1]
-        inst.brownian(maxstep=5, startval=startval, skipstart=True)
+        inst.brownian(maxstep=5, startval=startvals1[part], forcestep=True, skipstart=True, npts=3)
         inst.seed += 1
         inst.cat()
+        
+        inst.brownian(maxstep=3, startval=startvals2[part], forcestep=True, skipstart=True, npts=25)
+        inst.octotonic()
+        inst.seed += 1
+        inst.cat()
+        
+        tmpscore = sc.dcp(inst.score)
+        assert len(tmpscore) == seq[part]
+        
+        # Replace sequence numbers with notes
+        nmnotes = sc.dcp(nm[part])
+        for key in nmnotes.keys():
+            val = nmnotes[key]
+            if key.startswith('root'): # Create the random notes
+                nmnotes[key] = tmpscore[val] # e.g. map sequence number 0 to pitch 53
+            elif key.startswith('double'): # Add a 6th higher
+                nmnotes[key] = nmnotes[val] + 9
+            elif key.startswith('tied'):
+                nmnotes[key] = nmnotes[val] # e.g. nmnotes['tied0_root_m98_n5'] = nmnotes['root_m98_n5'] = 36
+            else:
+                raise Exception('Not recognized')
+
+        # Create new score via mapping
+        inst.score = sc.dcp(nmnotes[:])
     
         appendnotes(nd, sec, part)
     process(sec)
@@ -297,14 +331,14 @@ if 'sectionE' in torun:
 if 'sectionF' in torun:
     print('~~~ Section F does not use the brain ~~~')
     sec = 'F'
+    nd[sec] = begin(sec)
     process(sec)
 
 
 if 'sectionG' in torun:
-    print('Creating section G')
     sec = 'G'
+    nd[sec] = begin(sec)
     quartet,qd = makequartet(mindur=8, timesig='4/4', nbars=1)
-    nd[sec] = sc.objdict()
     
     for part,inst in qd.items():
         if   part == 'v1': ss = [143,144]
@@ -323,10 +357,9 @@ if 'sectionG' in torun:
 
 
 if 'sectionH' in torun:
-    print('Creating section H')
     sec = 'H'
+    nd[sec] = begin(sec)
     quartet,qd = makequartet(mindur=8, timesig='12/8', nbars=1)
-    nd[sec] = sc.objdict()
     
     for part,inst in qd.items():      
         if part == 'v1': ss = [147,148]
@@ -337,7 +370,7 @@ if 'sectionH' in torun:
             if inst.scorepts:         startval = inst.score[-1]
             elif part in ['v1','v2']: startval = 'max'
             elif part in ['va','vc']: startval = 'min'
-            inst.brownian(maxstep=2, startval=startval, skipstart=False, inst=part, usedata=usedata)
+            inst.brownian(maxstep=2, startval=startval, skipstart=True, inst=part, usedata=usedata)
             inst.diatonic()
             inst.octotonic()
             inst.seed += 1
