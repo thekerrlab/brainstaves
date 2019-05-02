@@ -24,7 +24,7 @@ torun = [
 'write',
 ]
 
-wait = True
+wait = False
 
 pauses = sc.odict([
         ('A',20), # 0:20
