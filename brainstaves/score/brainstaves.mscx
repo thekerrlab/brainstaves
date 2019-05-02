@@ -5302,14 +5302,6 @@ block of sound</text>
           <durationType>half</durationType>
           <StemDirection>down</StemDirection>
           <Note>
-            <pitch>55</pitch>
-            <tpc>15</tpc>
-            </Note>
-          <Note>
-            <pitch>64</pitch>
-            <tpc>18</tpc>
-            </Note>
-          <Note>
             <Tie id="62">
               </Tie>
             <pitch>71</pitch>
@@ -5329,6 +5321,7 @@ block of sound</text>
       <Measure number="100">
         <Chord>
           <BeamMode>no</BeamMode>
+          <dots>1</dots>
           <durationType>half</durationType>
           <StemDirection>down</StemDirection>
           <Note>
@@ -5343,13 +5336,13 @@ block of sound</text>
             </Note>
           </Chord>
         <Rest>
-          <durationType>half</durationType>
+          <durationType>quarter</durationType>
           </Rest>
         </Measure>
       <Measure number="101">
         <vspacerDown>15</vspacerDown>
         <StaffText>
-          <pos x="-0.707157" y="-5.3954"/>
+          <pos x="-5.7303" y="-4.89309"/>
           <text><i><font size="9.3012"></font><font face="Times New Roman"></font>arpeggiato like crazy</i></text>
           </StaffText>
         <Dynamic>
@@ -5362,7 +5355,7 @@ block of sound</text>
           <Segment>
             <subtype>0</subtype>
             <off2 x="4.42413" y="0"/>
-            <pos x="134.011" y="9.87051"/>
+            <pos x="134.103" y="9.87051"/>
             </Segment>
           <beginText>
             <text>dim.</text>
@@ -5416,6 +5409,9 @@ block of sound</text>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>half</durationType>
+          <Articulation>
+            <subtype>fermata</subtype>
+            </Articulation>
           <StemDirection>up</StemDirection>
           <Note>
             <endSpanner id="65"/>
@@ -5445,6 +5441,9 @@ block of sound</text>
           </Dynamic>
         <Rest>
           <durationType>half</durationType>
+          <Articulation>
+            <subtype>fermata</subtype>
+            </Articulation>
           </Rest>
         </Measure>
       <Measure number="103">
@@ -13667,6 +13666,7 @@ block of sound</text>
       <Measure number="100">
         <Chord>
           <BeamMode>no</BeamMode>
+          <dots>1</dots>
           <durationType>half</durationType>
           <StemDirection>up</StemDirection>
           <Note>
@@ -13681,13 +13681,13 @@ block of sound</text>
             </Note>
           </Chord>
         <Rest>
-          <durationType>half</durationType>
+          <durationType>quarter</durationType>
           </Rest>
         </Measure>
       <Measure number="101">
         <vspacerDown>10</vspacerDown>
         <StaffText>
-          <pos x="-1.19182" y="-4.46413"/>
+          <pos x="-6.07144" y="-4.17709"/>
           <text><i><font size="9.3012"></font><font face="Times New Roman"></font>arpeggiato like crazy</i></text>
           </StaffText>
         <Dynamic>
@@ -13700,7 +13700,7 @@ block of sound</text>
           <Segment>
             <subtype>0</subtype>
             <off2 x="4.05895" y="0"/>
-            <pos x="134.377" y="8.74874"/>
+            <pos x="134.469" y="8.74874"/>
             </Segment>
           <beginText>
             <text>dim.</text>
@@ -13744,6 +13744,9 @@ block of sound</text>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>half</durationType>
+          <Articulation>
+            <subtype>fermata</subtype>
+            </Articulation>
           <StemDirection>up</StemDirection>
           <Note>
             <endSpanner id="196"/>
@@ -13768,6 +13771,9 @@ block of sound</text>
           </Chord>
         <Rest>
           <durationType>half</durationType>
+          <Articulation>
+            <subtype>fermata</subtype>
+            </Articulation>
           </Rest>
         </Measure>
       <Measure number="103">
@@ -23527,6 +23533,7 @@ block of sound</text>
       <Measure number="100">
         <Chord>
           <BeamMode>no</BeamMode>
+          <dots>1</dots>
           <durationType>half</durationType>
           <StemDirection>up</StemDirection>
           <Note>
@@ -23541,7 +23548,7 @@ block of sound</text>
             </Note>
           </Chord>
         <Rest>
-          <durationType>half</durationType>
+          <durationType>quarter</durationType>
           </Rest>
         </Measure>
       <Measure number="101">
@@ -23560,7 +23567,7 @@ block of sound</text>
           <Segment>
             <subtype>0</subtype>
             <off2 x="3.69376" y="0"/>
-            <pos x="134.483" y="7.2818"/>
+            <pos x="134.575" y="7.2818"/>
             </Segment>
           <beginText>
             <text>dim.</text>
@@ -23592,6 +23599,9 @@ block of sound</text>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>half</durationType>
+          <Articulation>
+            <subtype>fermata</subtype>
+            </Articulation>
           <StemDirection>up</StemDirection>
           <Note>
             <endSpanner id="269"/>
@@ -23616,6 +23626,9 @@ block of sound</text>
           </Dynamic>
         <Rest>
           <durationType>half</durationType>
+          <Articulation>
+            <subtype>fermata</subtype>
+            </Articulation>
           </Rest>
         </Measure>
       <Measure number="103">
@@ -33938,6 +33951,7 @@ block of sound</text>
       <Measure number="100">
         <Chord>
           <BeamMode>no</BeamMode>
+          <dots>1</dots>
           <durationType>half</durationType>
           <StemDirection>up</StemDirection>
           <Note>
@@ -33952,7 +33966,7 @@ block of sound</text>
             </Note>
           </Chord>
         <Rest>
-          <durationType>half</durationType>
+          <durationType>quarter</durationType>
           </Rest>
         </Measure>
       <Measure number="101">
@@ -33970,7 +33984,7 @@ block of sound</text>
           <Segment>
             <subtype>0</subtype>
             <off2 x="4.33283" y="0"/>
-            <pos x="134.103" y="9.87051"/>
+            <pos x="134.195" y="9.87051"/>
             </Segment>
           <beginText>
             <text>dim.</text>
@@ -34002,6 +34016,9 @@ block of sound</text>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>half</durationType>
+          <Articulation>
+            <subtype>fermata</subtype>
+            </Articulation>
           <StemDirection>up</StemDirection>
           <Note>
             <endSpanner id="327"/>
@@ -34021,6 +34038,9 @@ block of sound</text>
           </Dynamic>
         <Rest>
           <durationType>half</durationType>
+          <Articulation>
+            <subtype>fermata</subtype>
+            </Articulation>
           </Rest>
         </Measure>
       <Measure number="103">

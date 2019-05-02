@@ -24,7 +24,7 @@ torun = [
 'write',
 ]
 
-wait = False
+wait = True
 
 pauses = sc.odict([
         ('A',20), # 0:20
@@ -140,6 +140,8 @@ def process(sec):
 writestatus('n/a') # Reset status
 
 if 'load' in torun:
+    print('Resetting')
+    sc.runcommand('./cleanup')
     print('Loading XML')
     xml = musescore.XML()
     nd = sc.objdict() # For storing all the notes
@@ -316,12 +318,16 @@ if 'sectionE' in torun:
         
         # Replace sequence numbers with notes
         nmnotes = sc.dcp(nm[part])
-        for key in nmnotes.keys():
+        unisonsec = False
+        for k,key in nmnotes.enumkeys():
             val = nmnotes[key]
             if key.startswith('root'): # Create the random notes
                 nmnotes[key] = tmpscore[val] # e.g. map sequence number 0 to pitch 53
+                if val>2: unisonsec = True
             elif key.startswith('double'): # Add a 6th higher
-                nmnotes[key] = nmnotes[val] + 9
+                if unisonsec: interval = 9 # 7
+                else:         interval = 9
+                nmnotes[key] = nmnotes[val] + interval
             elif key.startswith('tied'):
                 nmnotes[key] = nmnotes[val] # e.g. nmnotes['tied0_root_m98_n5'] = nmnotes['root_m98_n5'] = 36
             else:
