@@ -49,11 +49,11 @@ def get_version():
 
 # Run the server
 if __name__ == "__main__":
-    try:
+    try: # WARNING -- this try-catch doesn't work
         app.run()
     except Exception as E:
-        print('Shutting down server and removing status file...')
-        sc.runcommand('rm %s' % statusfile)
+        print('Shutting down server and removing status file and live files...')
+        sc.runcommand('rm %s live/live-*.png' % statusfile) # rm status.tmp live/live-*.png
         raise E
         
         

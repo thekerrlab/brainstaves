@@ -14,6 +14,10 @@ Structure:
 
 import sciris as sc
 
+def comment(line):
+    output = '<!-- ' + line[:-1] + ' -->\n'
+    return output
+
 class XML(sc.prettyobj):
     
     def __init__(self, infile=None, instnames=None):
@@ -81,7 +85,7 @@ class XML(sc.prettyobj):
                     l = orignote.accidental.n+count
                     if '</accidental>' in lines[l].lower():
                         insideblock = False
-                    lines[l] = '<!-- ' + lines[l][:-1] + ' -->\n'
+                    lines[l] = comment(lines[l])
             for attr in ['pitch', 'tpc']:
                 val = newnote[attr]
                 lineno = orignote[attr].n
@@ -93,10 +97,12 @@ class XML(sc.prettyobj):
             if verbose: print('%s. line %s: %s' % (ind, orignote.n, newnote.pitch))
         
         for l,line in enumerate(lines):
-            if 'copyright' in line:
+            if 'copyright' in line.lower():
                 print('Adding timestamp to line %s' % l)
                 lines[l] = '<metaTag name="copyright">Last generated: %s</metaTag>' % sc.getdate()
-                break
+            elif 'stemdirection' in line.lower():
+                lines[l] = comment(lines[l])
+                
         print('Writing %s notes, %s lines, removing %s accidentals' % (len(data), len(lines), accisremoved))
         output = ''.join(lines)
         with open(outfile, 'w') as f:

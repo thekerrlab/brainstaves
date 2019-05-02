@@ -238,8 +238,6 @@
           </System>
         <System>
           </System>
-        <System>
-          </System>
         </Page>
       <Page>
         <System>
@@ -920,9 +918,6 @@
           </Chord>
         </Measure>
       <Measure number="24">
-        <LayoutBreak>
-          <subtype>line</subtype>
-          </LayoutBreak>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -946,6 +941,9 @@
           </Chord>
         </Measure>
       <Measure number="25">
+        <LayoutBreak>
+          <subtype>line</subtype>
+          </LayoutBreak>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -969,6 +967,7 @@
           </Chord>
         </Measure>
       <Measure number="26">
+        <stretch>0.9</stretch>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -992,6 +991,7 @@
           </Chord>
         </Measure>
       <Measure number="27">
+        <stretch>0.9</stretch>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -1011,11 +1011,9 @@
           </Chord>
         </Measure>
       <Measure number="28">
-        <LayoutBreak>
-          <subtype>line</subtype>
-          </LayoutBreak>
+        <stretch>0.9</stretch>
         <StaffText>
-          <pos x="-21.8136" y="-5.02396"/>
+          <pos x="-1.45449" y="-5.29785"/>
           <text>Sweet and lyrical, like a fine stream of honey, but gradually getting louder too</text>
           </StaffText>
         <Chord>
@@ -1039,6 +1037,10 @@
           </Chord>
         </Measure>
       <Measure number="29">
+        <stretch>0.9</stretch>
+        <LayoutBreak>
+          <subtype>line</subtype>
+          </LayoutBreak>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -1058,6 +1060,7 @@
           </Chord>
         </Measure>
       <Measure number="30">
+        <stretch>0.9</stretch>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -1078,9 +1081,7 @@
           </Chord>
         </Measure>
       <Measure number="31">
-        <LayoutBreak>
-          <subtype>line</subtype>
-          </LayoutBreak>
+        <stretch>0.9</stretch>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -1098,6 +1099,9 @@
           </Chord>
         </Measure>
       <Measure number="32">
+        <LayoutBreak>
+          <subtype>line</subtype>
+          </LayoutBreak>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -1138,9 +1142,6 @@
           </Chord>
         </Measure>
       <Measure number="34">
-        <LayoutBreak>
-          <subtype>page</subtype>
-          </LayoutBreak>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -1158,6 +1159,9 @@
           </Chord>
         </Measure>
       <Measure number="35">
+        <LayoutBreak>
+          <subtype>line</subtype>
+          </LayoutBreak>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -1202,9 +1206,6 @@
           </Chord>
         </Measure>
       <Measure number="37">
-        <LayoutBreak>
-          <subtype>line</subtype>
-          </LayoutBreak>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -1228,6 +1229,9 @@
           </Chord>
         </Measure>
       <Measure number="38">
+        <LayoutBreak>
+          <subtype>line</subtype>
+          </LayoutBreak>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
@@ -1253,9 +1257,6 @@
           </Rest>
         </Measure>
       <Measure number="39">
-        <LayoutBreak>
-          <subtype>line</subtype>
-          </LayoutBreak>
         <StaffText>
           <pos x="-5.81249" y="5.80602"/>
           <text><font size="8.5261"></font><font face="Times New Roman"></font><i>pizz.</i></text>
@@ -3016,21 +3017,21 @@
           </Chord>
         </Measure>
       <Measure number="51">
+        <LayoutBreak>
+          <subtype>line</subtype>
+          </LayoutBreak>
         <Rest>
           <durationType>eighth</durationType>
           </Rest>
         <Chord>
           <BeamMode>no</BeamMode>
-          <durationType>16th</durationType>
+          <durationType>eighth</durationType>
           <StemDirection>down</StemDirection>
           <Note>
             <pitch>84</pitch>
             <tpc>14</tpc>
             </Note>
           </Chord>
-        <Rest>
-          <durationType>16th</durationType>
-          </Rest>
         <Beam id="40">
           <StemDirection>down</StemDirection>
           </Beam>
@@ -3137,7 +3138,7 @@
       <Measure number="52">
         <Chord>
           <BeamMode>no</BeamMode>
-          <durationType>16th</durationType>
+          <durationType>eighth</durationType>
           <StemDirection>down</StemDirection>
           <Note>
             <Accidental>
@@ -3148,24 +3149,18 @@
             <tpc>19</tpc>
             </Note>
           </Chord>
-        <Rest>
-          <durationType>16th</durationType>
-          </Rest>
         <Chord>
           <BeamMode>no</BeamMode>
-          <durationType>16th</durationType>
+          <durationType>eighth</durationType>
           <StemDirection>down</StemDirection>
           <Note>
             <pitch>83</pitch>
             <tpc>19</tpc>
             </Note>
           </Chord>
-        <Rest>
-          <durationType>16th</durationType>
-          </Rest>
         <Chord>
           <BeamMode>no</BeamMode>
-          <durationType>16th</durationType>
+          <durationType>eighth</durationType>
           <StemDirection>down</StemDirection>
           <Note>
             <Accidental>
@@ -3175,9 +3170,6 @@
             <tpc>12</tpc>
             </Note>
           </Chord>
-        <Rest>
-          <durationType>16th</durationType>
-          </Rest>
         <Rest>
           <durationType>16th</durationType>
           </Rest>
@@ -3195,7 +3187,7 @@
           </Rest>
         <Chord>
           <BeamMode>no</BeamMode>
-          <durationType>16th</durationType>
+          <durationType>eighth</durationType>
           <StemDirection>down</StemDirection>
           <Note>
             <Accidental>
@@ -3206,9 +3198,6 @@
             <tpc>19</tpc>
             </Note>
           </Chord>
-        <Rest>
-          <durationType>16th</durationType>
-          </Rest>
         <Rest>
           <durationType>16th</durationType>
           </Rest>
@@ -3264,7 +3253,7 @@
           </Chord>
         <Chord>
           <BeamMode>no</BeamMode>
-          <durationType>16th</durationType>
+          <durationType>eighth</durationType>
           <StemDirection>down</StemDirection>
           <Note>
             <Accidental>
@@ -3275,9 +3264,6 @@
             </Note>
           </Chord>
         <Rest>
-          <durationType>16th</durationType>
-          </Rest>
-        <Rest>
           <durationType>eighth</durationType>
           </Rest>
         <Rest>
@@ -3285,6 +3271,9 @@
           </Rest>
         </Measure>
       <Measure number="54">
+        <LayoutBreak>
+          <subtype>line</subtype>
+          </LayoutBreak>
         <Rest>
           <durationType>quarter</durationType>
           </Rest>
@@ -3293,7 +3282,7 @@
           </Rest>
         <Chord>
           <BeamMode>no</BeamMode>
-          <durationType>16th</durationType>
+          <durationType>eighth</durationType>
           <StemDirection>down</StemDirection>
           <Note>
             <Accidental>
@@ -3304,9 +3293,6 @@
             <tpc>15</tpc>
             </Note>
           </Chord>
-        <Rest>
-          <durationType>16th</durationType>
-          </Rest>
         <Rest>
           <durationType>eighth</durationType>
           </Rest>
@@ -3375,16 +3361,13 @@
           </Rest>
         <Chord>
           <BeamMode>no</BeamMode>
-          <durationType>16th</durationType>
+          <durationType>eighth</durationType>
           <StemDirection>down</StemDirection>
           <Note>
             <pitch>72</pitch>
             <tpc>14</tpc>
             </Note>
           </Chord>
-        <Rest>
-          <durationType>16th</durationType>
-          </Rest>
         <Rest>
           <durationType>quarter</durationType>
           </Rest>
@@ -3415,16 +3398,13 @@
       <Measure number="57">
         <Chord>
           <BeamMode>no</BeamMode>
-          <durationType>16th</durationType>
+          <durationType>eighth</durationType>
           <StemDirection>up</StemDirection>
           <Note>
             <pitch>60</pitch>
             <tpc>14</tpc>
             </Note>
           </Chord>
-        <Rest>
-          <durationType>16th</durationType>
-          </Rest>
         <Rest>
           <durationType>eighth</durationType>
           </Rest>
@@ -3461,13 +3441,16 @@
           </Rest>
         </Measure>
       <Measure number="60">
+        <LayoutBreak>
+          <subtype>line</subtype>
+          </LayoutBreak>
         <Rest>
           <durationType>whole</durationType>
           </Rest>
         </Measure>
       <Measure number="61">
         <StaffText>
-          <pos x="22.2346" y="-5.71148"/>
+          <pos x="36.7507" y="-4.34203"/>
           <text><font size="9.3012"/><font face="Times New Roman"/>Furtively (razor-sharp onset and offset)</text>
           </StaffText>
         <Rest>
@@ -3728,6 +3711,9 @@
         </Measure>
       <Measure number="69">
         <stretch>0.8</stretch>
+        <LayoutBreak>
+          <subtype>line</subtype>
+          </LayoutBreak>
         <Rest>
           <durationType>measure</durationType>
           <duration z="4" n="4"/>
@@ -3957,6 +3943,9 @@
         </Measure>
       <Measure number="74">
         <stretch>0.8</stretch>
+        <LayoutBreak>
+          <subtype>line</subtype>
+          </LayoutBreak>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
@@ -4221,6 +4210,9 @@
         </Measure>
       <Measure number="78">
         <stretch>0.8</stretch>
+        <LayoutBreak>
+          <subtype>line</subtype>
+          </LayoutBreak>
         <Rest>
           <durationType>eighth</durationType>
           </Rest>
@@ -4567,11 +4559,6 @@
           </LayoutBreak>
         <HairPin id="45">
           <subtype>1</subtype>
-          <Segment>
-            <subtype>0</subtype>
-            <off2 x="-8.9127" y="0"/>
-            <pos x="146.192" y="9.80579"/>
-            </Segment>
           <beginText>
             <text>dim.</text>
             </beginText>
@@ -5352,11 +5339,6 @@ block of sound</text>
             <tpc>22</tpc>
             </Note>
           </Chord>
-        <Dynamic>
-          <subtype>fff</subtype>
-          <velocity>126</velocity>
-          <pos x="4.07854" y="10.4715"/>
-          </Dynamic>
         <Rest>
           <durationType>half</durationType>
           </Rest>
@@ -5367,12 +5349,17 @@ block of sound</text>
           <pos x="-0.707157" y="-5.3954"/>
           <text><i><font size="9.3012"/><font face="Times New Roman"/>arpeggiato like crazy</i></text>
           </StaffText>
+        <Dynamic>
+          <subtype>fff</subtype>
+          <velocity>126</velocity>
+          <pos x="1.10984" y="10.2988"/>
+          </Dynamic>
         <HairPin id="64">
           <subtype>1</subtype>
           <Segment>
             <subtype>0</subtype>
-            <off2 x="7.6195" y="0"/>
-            <pos x="130.676" y="9.87051"/>
+            <off2 x="4.42413" y="0"/>
+            <pos x="133.871" y="9.87051"/>
             </Segment>
           <beginText>
             <text>dim.</text>
@@ -5588,6 +5575,9 @@ block of sound</text>
           </Chord>
         </Measure>
       <Measure number="104">
+        <LayoutBreak>
+          <subtype>line</subtype>
+          </LayoutBreak>
         <Rest>
           <durationType>eighth</durationType>
           </Rest>
@@ -5907,6 +5897,9 @@ block of sound</text>
           </Rest>
         </Measure>
       <Measure number="107">
+        <LayoutBreak>
+          <subtype>line</subtype>
+          </LayoutBreak>
         <Rest>
           <durationType>eighth</durationType>
           </Rest>
@@ -6162,6 +6155,9 @@ block of sound</text>
           </Chord>
         </Measure>
       <Measure number="110">
+        <LayoutBreak>
+          <subtype>line</subtype>
+          </LayoutBreak>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -6381,6 +6377,9 @@ block of sound</text>
           </Chord>
         </Measure>
       <Measure number="113">
+        <LayoutBreak>
+          <subtype>line</subtype>
+          </LayoutBreak>
         <Beam id="57">
           <StemDirection>down</StemDirection>
           </Beam>
@@ -6630,6 +6629,9 @@ block of sound</text>
       <Measure number="116">
         <stretch>0.9</stretch>
         <vspacerDown>10</vspacerDown>
+        <LayoutBreak>
+          <subtype>line</subtype>
+          </LayoutBreak>
         <Beam id="63">
           <StemDirection>down</StemDirection>
           </Beam>
@@ -6843,6 +6845,9 @@ block of sound</text>
       <Measure number="118">
         <stretch>1.1</stretch>
         <vspacerDown>10</vspacerDown>
+        <LayoutBreak>
+          <subtype>line</subtype>
+          </LayoutBreak>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -7154,6 +7159,9 @@ block of sound</text>
           </Chord>
         </Measure>
       <Measure number="125">
+        <LayoutBreak>
+          <subtype>line</subtype>
+          </LayoutBreak>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
@@ -7233,6 +7241,9 @@ block of sound</text>
           </Chord>
         </Measure>
       <Measure number="129">
+        <LayoutBreak>
+          <subtype>line</subtype>
+          </LayoutBreak>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>half</durationType>
@@ -7311,6 +7322,9 @@ block of sound</text>
           </Chord>
         </Measure>
       <Measure number="132">
+        <LayoutBreak>
+          <subtype>line</subtype>
+          </LayoutBreak>
         <Dynamic>
           <subtype>p</subtype>
           <velocity>49</velocity>
@@ -7589,6 +7603,9 @@ block of sound</text>
           </Chord>
         </Measure>
       <Measure number="135">
+        <LayoutBreak>
+          <subtype>line</subtype>
+          </LayoutBreak>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -7848,6 +7865,9 @@ block of sound</text>
           </Chord>
         </Measure>
       <Measure number="138">
+        <LayoutBreak>
+          <subtype>line</subtype>
+          </LayoutBreak>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -8239,6 +8259,9 @@ block of sound</text>
           </Chord>
         </Measure>
       <Measure number="142">
+        <LayoutBreak>
+          <subtype>line</subtype>
+          </LayoutBreak>
         <Dynamic>
           <subtype>other-dynamics</subtype>
           <velocity>112</velocity>
@@ -8617,6 +8640,9 @@ block of sound</text>
           </Chord>
         </Measure>
       <Measure number="148">
+        <LayoutBreak>
+          <subtype>line</subtype>
+          </LayoutBreak>
         <Beam id="95">
           <StemDirection>down</StemDirection>
           </Beam>
@@ -8828,6 +8854,9 @@ block of sound</text>
           </Chord>
         </Measure>
       <Measure number="151">
+        <LayoutBreak>
+          <subtype>line</subtype>
+          </LayoutBreak>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -8881,6 +8910,9 @@ block of sound</text>
           </Chord>
         </Measure>
       <Measure number="154">
+        <LayoutBreak>
+          <subtype>line</subtype>
+          </LayoutBreak>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -8938,6 +8970,9 @@ block of sound</text>
           </Chord>
         </Measure>
       <Measure number="157">
+        <LayoutBreak>
+          <subtype>line</subtype>
+          </LayoutBreak>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -8998,6 +9033,9 @@ block of sound</text>
           </Chord>
         </Measure>
       <Measure number="160">
+        <LayoutBreak>
+          <subtype>line</subtype>
+          </LayoutBreak>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -9137,6 +9175,9 @@ block of sound</text>
           </Chord>
         </Measure>
       <Measure number="165">
+        <LayoutBreak>
+          <subtype>line</subtype>
+          </LayoutBreak>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -11767,14 +11808,9 @@ block of sound</text>
         <HairPin id="165">
           <subtype>0</subtype>
           <Segment>
-            <subtype>1</subtype>
+            <subtype>0</subtype>
             <off2 x="0" y="0"/>
-            <pos x="52.7428" y="5.64955"/>
-            </Segment>
-          <Segment>
-            <subtype>3</subtype>
-            <off2 x="0" y="0"/>
-            <pos x="7.63979" y="6.05183"/>
+            <pos x="49.6028" y="5.64955"/>
             </Segment>
           <beginText>
             <text>cresc.</text>
@@ -12912,18 +12948,8 @@ block of sound</text>
         </Measure>
       <Measure number="83">
         <vspacerDown>10</vspacerDown>
-        <Dynamic>
-          <subtype>f</subtype>
-          <velocity>96</velocity>
-          <pos x="0.307873" y="-3.64968"/>
-          </Dynamic>
         <HairPin id="176">
           <subtype>1</subtype>
-          <Segment>
-            <subtype>0</subtype>
-            <off2 x="-8.9127" y="0"/>
-            <pos x="146.371" y="9.13994"/>
-            </Segment>
           <beginText>
             <text>dim.</text>
             </beginText>
@@ -12944,11 +12970,6 @@ block of sound</text>
             <tpc>22</tpc>
             </Note>
           </Chord>
-        <Dynamic>
-          <subtype>pp</subtype>
-          <velocity>33</velocity>
-          <pos x="1.39968" y="-3.9184"/>
-          </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
@@ -12958,11 +12979,6 @@ block of sound</text>
             <tpc>17</tpc>
             </Note>
           </Chord>
-        <Dynamic>
-          <subtype>pp</subtype>
-          <velocity>33</velocity>
-          <pos x="-1.134" y="9.33832"/>
-          </Dynamic>
         <Rest>
           <durationType>eighth</durationType>
           </Rest>
@@ -13675,11 +13691,6 @@ block of sound</text>
             <tpc>18</tpc>
             </Note>
           </Chord>
-        <Dynamic>
-          <subtype>fff</subtype>
-          <velocity>126</velocity>
-          <pos x="4.50558" y="8.76151"/>
-          </Dynamic>
         <Rest>
           <durationType>half</durationType>
           </Rest>
@@ -13690,12 +13701,17 @@ block of sound</text>
           <pos x="-1.19182" y="-4.46413"/>
           <text><i><font size="9.3012"/><font face="Times New Roman"/>arpeggiato like crazy</i></text>
           </StaffText>
+        <Dynamic>
+          <subtype>fff</subtype>
+          <velocity>126</velocity>
+          <pos x="0.744652" y="8.82768"/>
+          </Dynamic>
         <HairPin id="195">
           <subtype>1</subtype>
           <Segment>
             <subtype>0</subtype>
-            <off2 x="7.6195" y="0"/>
-            <pos x="130.676" y="8.74874"/>
+            <off2 x="4.05895" y="0"/>
+            <pos x="134.237" y="8.74874"/>
             </Segment>
           <beginText>
             <text>dim.</text>
@@ -21127,7 +21143,7 @@ block of sound</text>
           </Chord>
         <Chord>
           <BeamMode>no</BeamMode>
-          <durationType>16th</durationType>
+          <durationType>eighth</durationType>
           <StemDirection>up</StemDirection>
           <Note>
             <Accidental>
@@ -21137,9 +21153,6 @@ block of sound</text>
             <tpc>20</tpc>
             </Note>
           </Chord>
-        <Rest>
-          <durationType>16th</durationType>
-          </Rest>
         <Rest>
           <durationType>16th</durationType>
           </Rest>
@@ -21336,7 +21349,7 @@ block of sound</text>
       <Measure number="49">
         <Chord>
           <BeamMode>no</BeamMode>
-          <durationType>16th</durationType>
+          <durationType>eighth</durationType>
           <StemDirection>down</StemDirection>
           <Note>
             <Accidental>
@@ -21346,9 +21359,6 @@ block of sound</text>
             <tpc>21</tpc>
             </Note>
           </Chord>
-        <Rest>
-          <durationType>16th</durationType>
-          </Rest>
         <Rest>
           <durationType>16th</durationType>
           </Rest>
@@ -21405,19 +21415,16 @@ block of sound</text>
           </Rest>
         <Chord>
           <BeamMode>no</BeamMode>
-          <durationType>16th</durationType>
+          <durationType>eighth</durationType>
           <StemDirection>down</StemDirection>
           <Note>
             <pitch>66</pitch>
             <tpc>20</tpc>
             </Note>
           </Chord>
-        <Rest>
-          <durationType>16th</durationType>
-          </Rest>
         <Chord>
           <BeamMode>no</BeamMode>
-          <durationType>16th</durationType>
+          <durationType>eighth</durationType>
           <StemDirection>down</StemDirection>
           <Note>
             <Accidental>
@@ -21427,12 +21434,9 @@ block of sound</text>
             <tpc>11</tpc>
             </Note>
           </Chord>
-        <Rest>
-          <durationType>16th</durationType>
-          </Rest>
         <Chord>
           <BeamMode>no</BeamMode>
-          <durationType>16th</durationType>
+          <durationType>eighth</durationType>
           <StemDirection>up</StemDirection>
           <Note>
             <Accidental>
@@ -21443,9 +21447,6 @@ block of sound</text>
             <tpc>19</tpc>
             </Note>
           </Chord>
-        <Rest>
-          <durationType>16th</durationType>
-          </Rest>
         <Beam id="261">
           <StemDirection>down</StemDirection>
           </Beam>
@@ -21474,16 +21475,13 @@ block of sound</text>
       <Measure number="50">
         <Chord>
           <BeamMode>no</BeamMode>
-          <durationType>16th</durationType>
+          <durationType>eighth</durationType>
           <StemDirection>down</StemDirection>
           <Note>
             <pitch>62</pitch>
             <tpc>16</tpc>
             </Note>
           </Chord>
-        <Rest>
-          <durationType>16th</durationType>
-          </Rest>
         <Rest>
           <durationType>16th</durationType>
           </Rest>
@@ -21602,16 +21600,13 @@ block of sound</text>
       <Measure number="51">
         <Chord>
           <BeamMode>no</BeamMode>
-          <durationType>16th</durationType>
+          <durationType>eighth</durationType>
           <StemDirection>down</StemDirection>
           <Note>
             <pitch>62</pitch>
             <tpc>16</tpc>
             </Note>
           </Chord>
-        <Rest>
-          <durationType>16th</durationType>
-          </Rest>
         <Beam id="264">
           <StemDirection>up</StemDirection>
           </Beam>
@@ -21660,7 +21655,7 @@ block of sound</text>
           </Chord>
         <Chord>
           <BeamMode>no</BeamMode>
-          <durationType>16th</durationType>
+          <durationType>eighth</durationType>
           <StemDirection>down</StemDirection>
           <Note>
             <Accidental>
@@ -21671,14 +21666,11 @@ block of sound</text>
             </Note>
           </Chord>
         <Rest>
-          <durationType>16th</durationType>
-          </Rest>
-        <Rest>
           <durationType>eighth</durationType>
           </Rest>
         <Chord>
           <BeamMode>no</BeamMode>
-          <durationType>16th</durationType>
+          <durationType>eighth</durationType>
           <StemDirection>down</StemDirection>
           <Note>
             <Accidental>
@@ -21688,9 +21680,6 @@ block of sound</text>
             <tpc>14</tpc>
             </Note>
           </Chord>
-        <Rest>
-          <durationType>16th</durationType>
-          </Rest>
         <Rest>
           <durationType>16th</durationType>
           </Rest>
@@ -21731,16 +21720,13 @@ block of sound</text>
           </Rest>
         <Chord>
           <BeamMode>no</BeamMode>
-          <durationType>16th</durationType>
+          <durationType>eighth</durationType>
           <StemDirection>down</StemDirection>
           <Note>
             <pitch>62</pitch>
             <tpc>16</tpc>
             </Note>
           </Chord>
-        <Rest>
-          <durationType>16th</durationType>
-          </Rest>
         <Rest>
           <durationType>eighth</durationType>
           </Rest>
@@ -21784,7 +21770,7 @@ block of sound</text>
       <Measure number="53">
         <Chord>
           <BeamMode>no</BeamMode>
-          <durationType>16th</durationType>
+          <durationType>eighth</durationType>
           <StemDirection>up</StemDirection>
           <Note>
             <Accidental>
@@ -21794,21 +21780,15 @@ block of sound</text>
             <tpc>20</tpc>
             </Note>
           </Chord>
-        <Rest>
-          <durationType>16th</durationType>
-          </Rest>
         <Chord>
           <BeamMode>no</BeamMode>
-          <durationType>16th</durationType>
+          <durationType>eighth</durationType>
           <StemDirection>up</StemDirection>
           <Note>
             <pitch>48</pitch>
             <tpc>14</tpc>
             </Note>
           </Chord>
-        <Rest>
-          <durationType>16th</durationType>
-          </Rest>
         <Rest>
           <durationType>quarter</durationType>
           </Rest>
@@ -21832,7 +21812,7 @@ block of sound</text>
           </Rest>
         <Chord>
           <BeamMode>no</BeamMode>
-          <durationType>16th</durationType>
+          <durationType>eighth</durationType>
           <StemDirection>up</StemDirection>
           <Note>
             <Accidental>
@@ -21842,9 +21822,6 @@ block of sound</text>
             <tpc>22</tpc>
             </Note>
           </Chord>
-        <Rest>
-          <durationType>16th</durationType>
-          </Rest>
         </Measure>
       <Measure number="54">
         <Rest>
@@ -21852,19 +21829,16 @@ block of sound</text>
           </Rest>
         <Chord>
           <BeamMode>no</BeamMode>
-          <durationType>16th</durationType>
+          <durationType>eighth</durationType>
           <StemDirection>down</StemDirection>
           <Note>
             <pitch>62</pitch>
             <tpc>16</tpc>
             </Note>
           </Chord>
-        <Rest>
-          <durationType>16th</durationType>
-          </Rest>
         <Chord>
           <BeamMode>no</BeamMode>
-          <durationType>16th</durationType>
+          <durationType>eighth</durationType>
           <StemDirection>down</StemDirection>
           <Note>
             <Accidental>
@@ -21875,9 +21849,6 @@ block of sound</text>
             </Note>
           </Chord>
         <Rest>
-          <durationType>16th</durationType>
-          </Rest>
-        <Rest>
           <durationType>eighth</durationType>
           </Rest>
         <Rest>
@@ -21906,16 +21877,13 @@ block of sound</text>
           </Chord>
         <Chord>
           <BeamMode>no</BeamMode>
-          <durationType>16th</durationType>
+          <durationType>eighth</durationType>
           <StemDirection>down</StemDirection>
           <Note>
             <pitch>62</pitch>
             <tpc>16</tpc>
             </Note>
           </Chord>
-        <Rest>
-          <durationType>16th</durationType>
-          </Rest>
         <Rest>
           <durationType>eighth</durationType>
           </Rest>
@@ -21965,16 +21933,13 @@ block of sound</text>
           </Rest>
         <Chord>
           <BeamMode>no</BeamMode>
-          <durationType>16th</durationType>
+          <durationType>eighth</durationType>
           <StemDirection>down</StemDirection>
           <Note>
             <pitch>71</pitch>
             <tpc>19</tpc>
             </Note>
           </Chord>
-        <Rest>
-          <durationType>16th</durationType>
-          </Rest>
         <Rest>
           <durationType>16th</durationType>
           </Rest>
@@ -21996,7 +21961,7 @@ block of sound</text>
           </Rest>
         <Chord>
           <BeamMode>no</BeamMode>
-          <durationType>16th</durationType>
+          <durationType>eighth</durationType>
           <StemDirection>down</StemDirection>
           <Note>
             <Accidental>
@@ -22006,9 +21971,6 @@ block of sound</text>
             <tpc>11</tpc>
             </Note>
           </Chord>
-        <Rest>
-          <durationType>16th</durationType>
-          </Rest>
         <Rest>
           <durationType>eighth</durationType>
           </Rest>
@@ -22022,28 +21984,22 @@ block of sound</text>
           </Rest>
         <Chord>
           <BeamMode>no</BeamMode>
-          <durationType>16th</durationType>
+          <durationType>eighth</durationType>
           <StemDirection>down</StemDirection>
           <Note>
             <pitch>71</pitch>
             <tpc>19</tpc>
             </Note>
           </Chord>
-        <Rest>
-          <durationType>16th</durationType>
-          </Rest>
         <Chord>
           <BeamMode>no</BeamMode>
-          <durationType>16th</durationType>
+          <durationType>eighth</durationType>
           <StemDirection>down</StemDirection>
           <Note>
             <pitch>71</pitch>
             <tpc>19</tpc>
             </Note>
           </Chord>
-        <Rest>
-          <durationType>16th</durationType>
-          </Rest>
         <Rest>
           <durationType>16th</durationType>
           </Rest>
@@ -22815,22 +22771,8 @@ block of sound</text>
         </Measure>
       <Measure number="83">
         <vspacerDown>10</vspacerDown>
-        <Dynamic>
-          <subtype>f</subtype>
-          <velocity>96</velocity>
-          </Dynamic>
-        <Dynamic>
-          <subtype>f</subtype>
-          <velocity>96</velocity>
-          <pos x="0.218301" y="-4.12424"/>
-          </Dynamic>
         <HairPin id="249">
           <subtype>1</subtype>
-          <Segment>
-            <subtype>0</subtype>
-            <off2 x="-8.9127" y="0"/>
-            <pos x="146.292" y="7.48569"/>
-            </Segment>
           <beginText>
             <text>dim.</text>
             </beginText>
@@ -22851,11 +22793,6 @@ block of sound</text>
             <tpc>22</tpc>
             </Note>
           </Chord>
-        <Dynamic>
-          <subtype>pp</subtype>
-          <velocity>33</velocity>
-          <pos x="1.22054" y="8.14718"/>
-          </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
@@ -23623,21 +23560,21 @@ block of sound</text>
         </Measure>
       <Measure number="101">
         <vspacerDown>10</vspacerDown>
-        <Dynamic>
-          <subtype>fff</subtype>
-          <velocity>126</velocity>
-          <pos x="-4.00606" y="7.43556"/>
-          </Dynamic>
         <StaffText>
           <pos x="-1.19182" y="-2.9109"/>
           <text><i><font size="9.3012"/><font face="Times New Roman"/>non arpeggiato</i></text>
           </StaffText>
+        <Dynamic>
+          <subtype>fff</subtype>
+          <velocity>126</velocity>
+          <pos x="0.927245" y="7.97434"/>
+          </Dynamic>
         <HairPin id="268">
           <subtype>1</subtype>
           <Segment>
             <subtype>0</subtype>
-            <off2 x="7.6195" y="0"/>
-            <pos x="130.417" y="7.2818"/>
+            <off2 x="3.69376" y="0"/>
+            <pos x="134.343" y="7.2818"/>
             </Segment>
           <beginText>
             <text>dim.</text>
@@ -31755,16 +31692,13 @@ block of sound</text>
           </Chord>
         <Chord>
           <BeamMode>no</BeamMode>
-          <durationType>16th</durationType>
+          <durationType>eighth</durationType>
           <StemDirection>down</StemDirection>
           <Note>
             <pitch>52</pitch>
             <tpc>18</tpc>
             </Note>
           </Chord>
-        <Rest>
-          <durationType>16th</durationType>
-          </Rest>
         <Beam id="408">
           <StemDirection>down</StemDirection>
           </Beam>
@@ -31875,16 +31809,13 @@ block of sound</text>
           </Chord>
         <Chord>
           <BeamMode>no</BeamMode>
-          <durationType>16th</durationType>
+          <durationType>eighth</durationType>
           <StemDirection>down</StemDirection>
           <Note>
             <pitch>58</pitch>
             <tpc>12</tpc>
             </Note>
           </Chord>
-        <Rest>
-          <durationType>16th</durationType>
-          </Rest>
         <Beam id="411">
           <StemDirection>down</StemDirection>
           </Beam>
@@ -32013,7 +31944,7 @@ block of sound</text>
           </Chord>
         <Chord>
           <BeamMode>no</BeamMode>
-          <durationType>16th</durationType>
+          <durationType>eighth</durationType>
           <StemDirection>down</StemDirection>
           <Note>
             <Accidental>
@@ -32023,9 +31954,6 @@ block of sound</text>
             <tpc>13</tpc>
             </Note>
           </Chord>
-        <Rest>
-          <durationType>16th</durationType>
-          </Rest>
         <Beam id="414">
           <StemDirection>down</StemDirection>
           </Beam>
@@ -32255,19 +32183,16 @@ block of sound</text>
           </Rest>
         <Chord>
           <BeamMode>no</BeamMode>
-          <durationType>16th</durationType>
+          <durationType>eighth</durationType>
           <StemDirection>up</StemDirection>
           <Note>
             <pitch>45</pitch>
             <tpc>17</tpc>
             </Note>
           </Chord>
-        <Rest>
-          <durationType>16th</durationType>
-          </Rest>
         <Chord>
           <BeamMode>no</BeamMode>
-          <durationType>16th</durationType>
+          <durationType>eighth</durationType>
           <StemDirection>up</StemDirection>
           <Note>
             <Accidental>
@@ -32278,9 +32203,6 @@ block of sound</text>
             <tpc>14</tpc>
             </Note>
           </Chord>
-        <Rest>
-          <durationType>16th</durationType>
-          </Rest>
         </Measure>
       <Measure number="51">
         <Rest>
@@ -32288,19 +32210,16 @@ block of sound</text>
           </Rest>
         <Chord>
           <BeamMode>no</BeamMode>
-          <durationType>16th</durationType>
+          <durationType>eighth</durationType>
           <StemDirection>up</StemDirection>
           <Note>
             <pitch>38</pitch>
             <tpc>16</tpc>
             </Note>
           </Chord>
-        <Rest>
-          <durationType>16th</durationType>
-          </Rest>
         <Chord>
           <BeamMode>no</BeamMode>
-          <durationType>16th</durationType>
+          <durationType>eighth</durationType>
           <StemDirection>up</StemDirection>
           <Note>
             <Accidental>
@@ -32310,33 +32229,24 @@ block of sound</text>
             <tpc>21</tpc>
             </Note>
           </Chord>
-        <Rest>
-          <durationType>16th</durationType>
-          </Rest>
         <Chord>
           <BeamMode>no</BeamMode>
-          <durationType>16th</durationType>
+          <durationType>eighth</durationType>
           <StemDirection>up</StemDirection>
           <Note>
             <pitch>41</pitch>
             <tpc>13</tpc>
             </Note>
           </Chord>
-        <Rest>
-          <durationType>16th</durationType>
-          </Rest>
         <Chord>
           <BeamMode>no</BeamMode>
-          <durationType>16th</durationType>
+          <durationType>eighth</durationType>
           <StemDirection>up</StemDirection>
           <Note>
             <pitch>45</pitch>
             <tpc>17</tpc>
             </Note>
           </Chord>
-        <Rest>
-          <durationType>16th</durationType>
-          </Rest>
         <Rest>
           <durationType>16th</durationType>
           </Rest>
@@ -32401,7 +32311,7 @@ block of sound</text>
           </Chord>
         <Chord>
           <BeamMode>no</BeamMode>
-          <durationType>16th</durationType>
+          <durationType>eighth</durationType>
           <StemDirection>up</StemDirection>
           <Note>
             <Accidental>
@@ -32411,21 +32321,15 @@ block of sound</text>
             <tpc>20</tpc>
             </Note>
           </Chord>
-        <Rest>
-          <durationType>16th</durationType>
-          </Rest>
         <Chord>
           <BeamMode>no</BeamMode>
-          <durationType>16th</durationType>
+          <durationType>eighth</durationType>
           <StemDirection>up</StemDirection>
           <Note>
             <pitch>45</pitch>
             <tpc>17</tpc>
             </Note>
           </Chord>
-        <Rest>
-          <durationType>16th</durationType>
-          </Rest>
         <Beam id="422">
           <StemDirection>up</StemDirection>
           </Beam>
@@ -32467,7 +32371,7 @@ block of sound</text>
           </Rest>
         <Chord>
           <BeamMode>no</BeamMode>
-          <durationType>16th</durationType>
+          <durationType>eighth</durationType>
           <StemDirection>up</StemDirection>
           <Note>
             <Accidental>
@@ -32477,9 +32381,6 @@ block of sound</text>
             <tpc>21</tpc>
             </Note>
           </Chord>
-        <Rest>
-          <durationType>16th</durationType>
-          </Rest>
         </Measure>
       <Measure number="53">
         <Rest>
@@ -32502,31 +32403,25 @@ block of sound</text>
           </Rest>
         <Chord>
           <BeamMode>no</BeamMode>
-          <durationType>16th</durationType>
+          <durationType>eighth</durationType>
           <StemDirection>up</StemDirection>
           <Note>
             <pitch>45</pitch>
             <tpc>17</tpc>
             </Note>
           </Chord>
-        <Rest>
-          <durationType>16th</durationType>
-          </Rest>
         <Chord>
           <BeamMode>no</BeamMode>
-          <durationType>16th</durationType>
+          <durationType>eighth</durationType>
           <StemDirection>up</StemDirection>
           <Note>
             <pitch>43</pitch>
             <tpc>15</tpc>
             </Note>
           </Chord>
-        <Rest>
-          <durationType>16th</durationType>
-          </Rest>
         <Chord>
           <BeamMode>no</BeamMode>
-          <durationType>16th</durationType>
+          <durationType>eighth</durationType>
           <StemDirection>up</StemDirection>
           <Note>
             <Accidental>
@@ -32537,21 +32432,15 @@ block of sound</text>
             <tpc>13</tpc>
             </Note>
           </Chord>
-        <Rest>
-          <durationType>16th</durationType>
-          </Rest>
         <Chord>
           <BeamMode>no</BeamMode>
-          <durationType>16th</durationType>
+          <durationType>eighth</durationType>
           <StemDirection>up</StemDirection>
           <Note>
             <pitch>40</pitch>
             <tpc>18</tpc>
             </Note>
           </Chord>
-        <Rest>
-          <durationType>16th</durationType>
-          </Rest>
         <Rest>
           <durationType>quarter</durationType>
           </Rest>
@@ -32562,16 +32451,13 @@ block of sound</text>
           </Rest>
         <Chord>
           <BeamMode>no</BeamMode>
-          <durationType>16th</durationType>
+          <durationType>eighth</durationType>
           <StemDirection>up</StemDirection>
           <Note>
             <pitch>45</pitch>
             <tpc>17</tpc>
             </Note>
           </Chord>
-        <Rest>
-          <durationType>16th</durationType>
-          </Rest>
         <Rest>
           <durationType>eighth</durationType>
           </Rest>
@@ -32580,7 +32466,7 @@ block of sound</text>
           </Rest>
         <Chord>
           <BeamMode>no</BeamMode>
-          <durationType>16th</durationType>
+          <durationType>eighth</durationType>
           <StemDirection>up</StemDirection>
           <Note>
             <Accidental>
@@ -32590,9 +32476,6 @@ block of sound</text>
             <tpc>12</tpc>
             </Note>
           </Chord>
-        <Rest>
-          <durationType>16th</durationType>
-          </Rest>
         </Measure>
       <Measure number="55">
         <Dynamic>
@@ -32601,7 +32484,7 @@ block of sound</text>
           </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
-          <durationType>16th</durationType>
+          <durationType>eighth</durationType>
           <StemDirection>up</StemDirection>
           <Note>
             <Accidental>
@@ -32611,9 +32494,6 @@ block of sound</text>
             <tpc>22</tpc>
             </Note>
           </Chord>
-        <Rest>
-          <durationType>16th</durationType>
-          </Rest>
         <Rest>
           <durationType>16th</durationType>
           </Rest>
@@ -32683,7 +32563,7 @@ block of sound</text>
       <Measure number="57">
         <Chord>
           <BeamMode>no</BeamMode>
-          <durationType>16th</durationType>
+          <durationType>eighth</durationType>
           <StemDirection>up</StemDirection>
           <Note>
             <Accidental>
@@ -32693,9 +32573,6 @@ block of sound</text>
             <tpc>11</tpc>
             </Note>
           </Chord>
-        <Rest>
-          <durationType>16th</durationType>
-          </Rest>
         <Rest>
           <durationType>eighth</durationType>
           </Rest>
@@ -32763,7 +32640,7 @@ block of sound</text>
           </Rest>
         <Chord>
           <BeamMode>no</BeamMode>
-          <durationType>16th</durationType>
+          <durationType>eighth</durationType>
           <StemDirection>up</StemDirection>
           <Note>
             <Accidental>
@@ -32773,9 +32650,6 @@ block of sound</text>
             <tpc>20</tpc>
             </Note>
           </Chord>
-        <Rest>
-          <durationType>16th</durationType>
-          </Rest>
         <Rest>
           <durationType>eighth</durationType>
           </Rest>
@@ -32792,16 +32666,13 @@ block of sound</text>
           </Rest>
         <Chord>
           <BeamMode>no</BeamMode>
-          <durationType>16th</durationType>
+          <durationType>eighth</durationType>
           <StemDirection>down</StemDirection>
           <Note>
             <pitch>50</pitch>
             <tpc>16</tpc>
             </Note>
           </Chord>
-        <Rest>
-          <durationType>16th</durationType>
-          </Rest>
         <Rest>
           <durationType>quarter</durationType>
           </Rest>
@@ -33357,17 +33228,8 @@ block of sound</text>
           </Rest>
         </Measure>
       <Measure number="83">
-        <Dynamic>
-          <subtype>f</subtype>
-          <velocity>96</velocity>
-          </Dynamic>
         <HairPin id="307">
           <subtype>1</subtype>
-          <Segment>
-            <subtype>0</subtype>
-            <off2 x="-8.9127" y="0"/>
-            <pos x="146.033" y="7.73356"/>
-            </Segment>
           <beginText>
             <text>dim.</text>
             </beginText>
@@ -33388,11 +33250,6 @@ block of sound</text>
             <tpc>22</tpc>
             </Note>
           </Chord>
-        <Dynamic>
-          <subtype>pp</subtype>
-          <velocity>33</velocity>
-          <pos x="1.39968" y="8.47878"/>
-          </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
@@ -34142,11 +33999,6 @@ block of sound</text>
             <tpc>17</tpc>
             </Note>
           </Chord>
-        <Dynamic>
-          <subtype>fff</subtype>
-          <velocity>126</velocity>
-          <pos x="6.31768" y="10.0139"/>
-          </Dynamic>
         <Rest>
           <durationType>half</durationType>
           </Rest>
@@ -34156,12 +34008,17 @@ block of sound</text>
           <pos x="-1.65472" y="-2.99719"/>
           <text><i><font size="9.3012"/><font face="Times New Roman"/>non arpeggiato</i></text>
           </StaffText>
+        <Dynamic>
+          <subtype>fff</subtype>
+          <velocity>126</velocity>
+          <pos x="0.56206" y="10.1338"/>
+          </Dynamic>
         <HairPin id="326">
           <subtype>1</subtype>
           <Segment>
             <subtype>0</subtype>
-            <off2 x="7.6195" y="0"/>
-            <pos x="130.676" y="9.87051"/>
+            <off2 x="4.33283" y="0"/>
+            <pos x="133.963" y="9.87051"/>
             </Segment>
           <beginText>
             <text>dim.</text>
