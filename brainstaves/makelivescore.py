@@ -128,6 +128,8 @@ def process(sec):
     if nfiles != npages:
         print('WARNING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
         print('The number of files is not correct!! %s vs %s' % (nfiles, npages))
+    else:
+        print('Done and all tests passed!')
     if wait:
         sc.fixedpause(pauses[sec], verbose=True)
     return None
