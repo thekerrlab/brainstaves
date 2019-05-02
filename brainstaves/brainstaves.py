@@ -17,16 +17,7 @@ import sys
 import scirisweb as sw
 import sciris as sc
 
-secpages = sc.odict([
-        ('A',[1]),
-        ('B',[2,3]),
-        ('C',[4,5]),
-        ('D',[6,7]),
-        ('E',[8]),
-        ('F',[9,10,11]),
-        ('G',[12,13]),
-        ('H',[14,15]),
-        ])
+statusfile = 'status.tmp'
 
 # Create the app
 print('Setting defaults...')
@@ -42,9 +33,12 @@ app.data = None # Initialize the results
 
 @app.register_RPC()
 def get_status():
-    filename = 'status.tmp'
-    with open(filename) as f:
-        output = f.read().rstrip()
+    try:
+        with open(statusfile) as f:
+            output = f.read().rstrip()
+    except Exception as E:
+        print('Status file not found: %s' % str(E))
+        output = 'n/a'
     return output
 
 
@@ -55,4 +49,11 @@ def get_version():
 
 # Run the server
 if __name__ == "__main__":
-    app.run()
+    try:
+        app.run()
+    except Exception as E:
+        print('Shutting down server and removing status file...')
+        sc.runcommand('rm %s' % statusfile)
+        raise E
+        
+        
