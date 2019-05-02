@@ -213,6 +213,17 @@ if 'sectionD' in torun:
 if 'sectionE' in torun:
     print('*********E NOT READY***************')
     sec = 'E'
+    ss = [85,98]
+    notemapping = sc.odict([
+            ('v1', sc.odict([
+                    ('m86n1',('random',0)),
+                    ('m86n2',('m86n1','double')),
+                    ('m87n1',('m86n1','tied')),
+                    ('m87n2',('m86n2','tied')),
+                    ('m88n1',('random',0)),
+                    ('m88n2',('m88n1','double')),
+                    ])),
+            ])
 #    quartet,qd = makequartet(mindur=8, timesig='4/4', nbars=1)
 #    nd[sec] = sc.objdict()
 #    
