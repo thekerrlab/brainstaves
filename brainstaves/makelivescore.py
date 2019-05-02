@@ -231,7 +231,7 @@ if 'sectionE' in torun:
 
 
 if 'sectionF' in torun:
-    print('*********F NOT READY***************')
+    print('~~~ Section F does not use the brain ~~~')
     sec = 'F'
     process(sec)
 
@@ -243,9 +243,9 @@ if 'sectionG' in torun:
     nd[sec] = sc.objdict()
     
     for part,inst in qd.items():
-        if   part == 'v1': ss = [140,141]
-        elif part == 'vc': ss = [119,141]
-        else:              ss = [130,141]
+        if   part == 'v1': ss = [143,144]
+        elif part == 'vc': ss = [122,144]
+        else:              ss = [133,144]
         nd[sec][part] = xml.loadnotes(part=part, measurerange=ss)
         for repeat in repeats(ss):
             inst.seed += 1
@@ -265,8 +265,8 @@ if 'sectionH' in torun:
     nd[sec] = sc.objdict()
     
     for part,inst in qd.items():      
-        if part == 'v1': ss = [144,145]
-        else:            ss = [144,163]
+        if part == 'v1': ss = [147,148]
+        else:            ss = [147,166]
         nd[sec][part] = xml.loadnotes(part=part, measurerange=ss)
         for repeat in repeats(ss):
             inst.seed += 1
