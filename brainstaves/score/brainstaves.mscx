@@ -431,6 +431,7 @@
           </Text>
         </VBox>
       <Measure number="1">
+        <vspacerDown>13</vspacerDown>
         <Clef>
           <concertClefType>G</concertClefType>
           <transposingClefType>G</transposingClefType>
@@ -475,6 +476,11 @@
           </Rest>
         </Measure>
       <Measure number="6">
+        <Dynamic>
+          <subtype>p</subtype>
+          <velocity>49</velocity>
+          <pos x="0.583324" y="9.49355"/>
+          </Dynamic>
         <HairPin id="2">
           <subtype>0</subtype>
           <Segment>
@@ -518,6 +524,11 @@
           </Chord>
         </Measure>
       <Measure number="8">
+        <Dynamic>
+          <subtype>mf</subtype>
+          <velocity>80</velocity>
+          <pos x="0.312022" y="9.49355"/>
+          </Dynamic>
         <HairPin id="5">
           <subtype>1</subtype>
           <Segment>
@@ -629,9 +640,15 @@
         </Measure>
       <Measure number="13">
         <StaffText>
-          <pos x="-1.38414" y="-4.47224"/>
+          <pos x="-1.68759" y="-5.07913"/>
           <text>As if rising and falling on an ocean swell</text>
           </StaffText>
+        <Dynamic>
+          <subtype>other-dynamics</subtype>
+          <velocity>33</velocity>
+          <pos x="0.828167" y="9.19033"/>
+          <text><sym>dynamicPiano</sym><sym>dynamicPiano</sym><sym>dynamicPiano</sym></text>
+          </Dynamic>
         <HairPin id="12">
           <subtype>0</subtype>
           <Segment>
@@ -659,6 +676,11 @@
             <Accidental>
               <subtype>sharp</subtype>
               </Accidental>
+            <Symbol>
+              <name>stringsDownBow</name>
+              <font>Bravura</font>
+              <pos x="0.531032" y="-3.64136"/>
+              </Symbol>
             <Tie id="14">
               </Tie>
             <pitch>68</pitch>
@@ -667,6 +689,11 @@
           </Chord>
         </Measure>
       <Measure number="14">
+        <Dynamic>
+          <subtype>ff</subtype>
+          <velocity>112</velocity>
+          <pos x="0.742375" y="9.78567"/>
+          </Dynamic>
         <endSpanner id="12"/>
         <HairPin id="15">
           <subtype>1</subtype>
@@ -719,6 +746,7 @@
           </Chord>
         </Measure>
       <Measure number="16">
+        <vspacerDown>13</vspacerDown>
         <Rest>
           <durationType>whole</durationType>
           </Rest>
@@ -731,7 +759,7 @@
           <text><sym>dynamicPiano</sym><sym>dynamicPiano</sym><sym>dynamicPiano</sym></text>
           </Dynamic>
         <StaffText>
-          <pos x="-1.16167" y="-4"/>
+          <pos x="-1.16167" y="-5.00463"/>
           <text>Falling off the edge of a...</text>
           </StaffText>
         <HairPin id="18">
@@ -760,6 +788,11 @@
             <Accidental>
               <subtype>sharp</subtype>
               </Accidental>
+            <Symbol>
+              <name>stringsUpBow</name>
+              <font>Bravura</font>
+              <pos x="-0.0717591" y="-2.94212"/>
+              </Symbol>
             <pitch>68</pitch>
             <tpc>22</tpc>
             </Note>
@@ -1041,6 +1074,10 @@
         <LayoutBreak>
           <subtype>line</subtype>
           </LayoutBreak>
+        <Dynamic>
+          <subtype>mp</subtype>
+          <velocity>64</velocity>
+          </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -1082,6 +1119,14 @@
         </Measure>
       <Measure number="31">
         <stretch>0.9</stretch>
+        <Dynamic>
+          <subtype>mf</subtype>
+          <velocity>80</velocity>
+          </Dynamic>
+        <Dynamic>
+          <subtype>mf</subtype>
+          <velocity>80</velocity>
+          </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -1123,6 +1168,14 @@
           </Chord>
         </Measure>
       <Measure number="33">
+        <Dynamic>
+          <subtype>f</subtype>
+          <velocity>96</velocity>
+          </Dynamic>
+        <Dynamic>
+          <subtype>f</subtype>
+          <velocity>96</velocity>
+          </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -1179,6 +1232,10 @@
           </Chord>
         </Measure>
       <Measure number="36">
+        <Dynamic>
+          <subtype>ff</subtype>
+          <velocity>112</velocity>
+          </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -2351,6 +2408,10 @@
         <LayoutBreak>
           <subtype>line</subtype>
           </LayoutBreak>
+        <Dynamic>
+          <subtype>f</subtype>
+          <velocity>96</velocity>
+          </Dynamic>
         <Rest>
           <durationType>16th</durationType>
           </Rest>
@@ -2865,6 +2926,10 @@
           </Chord>
         </Measure>
       <Measure number="50">
+        <Dynamic>
+          <subtype>mf</subtype>
+          <velocity>80</velocity>
+          </Dynamic>
         <Beam id="36">
           <StemDirection>down</StemDirection>
           </Beam>
@@ -3020,6 +3085,10 @@
         <LayoutBreak>
           <subtype>line</subtype>
           </LayoutBreak>
+        <Dynamic>
+          <subtype>mp</subtype>
+          <velocity>64</velocity>
+          </Dynamic>
         <Rest>
           <durationType>eighth</durationType>
           </Rest>
@@ -3136,6 +3205,10 @@
           </Chord>
         </Measure>
       <Measure number="52">
+        <Dynamic>
+          <subtype>p</subtype>
+          <velocity>49</velocity>
+          </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
@@ -3542,7 +3615,7 @@
           <durationType>half</durationType>
           </Rest>
         <StaffText>
-          <pos x="-2.1942" y="-5.17024"/>
+          <pos x="2.84227" y="-5.17024"/>
           <text><b><font size="9.3012"></font><font face="Times New Roman"></font>Drunk; sempre glissando; lean into the glissandi (and lean for real, as if drunk); poco a poco crescendo</b></text>
           </StaffText>
         <Chord>
@@ -3727,6 +3800,10 @@
         </Measure>
       <Measure number="70">
         <stretch>0.8</stretch>
+        <Dynamic>
+          <subtype>pp</subtype>
+          <velocity>33</velocity>
+          </Dynamic>
         <Rest>
           <durationType>eighth</durationType>
           </Rest>
@@ -3952,6 +4029,10 @@
         <LayoutBreak>
           <subtype>line</subtype>
           </LayoutBreak>
+        <Dynamic>
+          <subtype>p</subtype>
+          <velocity>49</velocity>
+          </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
@@ -4087,6 +4168,10 @@
         </Measure>
       <Measure number="76">
         <stretch>0.8</stretch>
+        <Dynamic>
+          <subtype>mp</subtype>
+          <velocity>64</velocity>
+          </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
@@ -4219,6 +4304,10 @@
         <LayoutBreak>
           <subtype>line</subtype>
           </LayoutBreak>
+        <Dynamic>
+          <subtype>mf</subtype>
+          <velocity>80</velocity>
+          </Dynamic>
         <Rest>
           <durationType>eighth</durationType>
           </Rest>
@@ -4355,6 +4444,10 @@
         </Measure>
       <Measure number="80">
         <stretch>0.8</stretch>
+        <Dynamic>
+          <subtype>f</subtype>
+          <velocity>96</velocity>
+          </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
@@ -4840,6 +4933,14 @@ train is coming (sternly; poco a poco crescendo)</b></text>
             <tpc>19</tpc>
             </Note>
           </Chord>
+        <Dynamic>
+          <subtype>pp</subtype>
+          <velocity>33</velocity>
+          </Dynamic>
+        <Dynamic>
+          <subtype>pp</subtype>
+          <velocity>33</velocity>
+          </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>quarter</durationType>
@@ -4901,6 +5002,14 @@ train is coming (sternly; poco a poco crescendo)</b></text>
             <tpc>18</tpc>
             </Note>
           </Chord>
+        <Dynamic>
+          <subtype>p</subtype>
+          <velocity>49</velocity>
+          </Dynamic>
+        <Dynamic>
+          <subtype>p</subtype>
+          <velocity>49</velocity>
+          </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>quarter</durationType>
@@ -4939,6 +5048,14 @@ train is coming (sternly; poco a poco crescendo)</b></text>
             <tpc>16</tpc>
             </Note>
           </Chord>
+        <Dynamic>
+          <subtype>mp</subtype>
+          <velocity>64</velocity>
+          </Dynamic>
+        <Dynamic>
+          <subtype>mp</subtype>
+          <velocity>64</velocity>
+          </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
@@ -4990,6 +5107,14 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="95">
+        <Dynamic>
+          <subtype>mf</subtype>
+          <velocity>80</velocity>
+          </Dynamic>
+        <Dynamic>
+          <subtype>mf</subtype>
+          <velocity>80</velocity>
+          </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>quarter</durationType>
@@ -5064,6 +5189,14 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="96">
+        <Dynamic>
+          <subtype>f</subtype>
+          <velocity>96</velocity>
+          </Dynamic>
+        <Dynamic>
+          <subtype>f</subtype>
+          <velocity>96</velocity>
+          </Dynamic>
         <Beam id="44">
           <StemDirection>down</StemDirection>
           </Beam>
@@ -5292,6 +5425,11 @@ train is coming (sternly; poco a poco crescendo)</b></text>
         <Rest>
           <durationType>half</durationType>
           </Rest>
+        <Dynamic>
+          <subtype>fff</subtype>
+          <velocity>126</velocity>
+          <pos x="1.03787" y="10.1119"/>
+          </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>half</durationType>
@@ -7095,16 +7233,15 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           <placement>above</placement>
           <text><font size="14.284"></font><font face="Times New Roman"></font><b>G</b></text>
           </RehearsalMark>
-        <Dynamic>
-          <subtype>other-dynamics</subtype>
-          <velocity>33</velocity>
-          <pos x="0.658281" y="7.43556"/>
-          <text><sym>dynamicPiano</sym></text>
-          </Dynamic>
         <StaffText>
           <pos x="4.59258" y="-5.72222"/>
           <text><font size="9.3012"></font><font face="Times New Roman"></font><b>Still lyrical, but with the wide-eyed wonder of having just discovered the top of your head</b></text>
           </StaffText>
+        <Dynamic>
+          <subtype>mp</subtype>
+          <velocity>64</velocity>
+          <pos x="0.569922" y="6.40954"/>
+          </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
@@ -9287,6 +9424,7 @@ train is coming (sternly; poco a poco crescendo)</b></text>
       </Staff>
     <Staff id="2">
       <Measure number="1">
+        <vspacerDown>13</vspacerDown>
         <Clef>
           <concertClefType>G</concertClefType>
           <transposingClefType>G</transposingClefType>
@@ -9306,6 +9444,12 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           </Rest>
         </Measure>
       <Measure number="3">
+        <Dynamic>
+          <subtype>other-dynamics</subtype>
+          <velocity>33</velocity>
+          <pos x="1.16088" y="9.27478"/>
+          <text><sym>dynamicPiano</sym><sym>dynamicPiano</sym><sym>dynamicPiano</sym></text>
+          </Dynamic>
         <HairPin id="123">
           <subtype>0</subtype>
           <Segment>
@@ -9362,11 +9506,6 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="6">
-        <Dynamic>
-          <subtype>p</subtype>
-          <velocity>49</velocity>
-          <pos x="0.892062" y="-1.97368"/>
-          </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
@@ -9418,7 +9557,7 @@ train is coming (sternly; poco a poco crescendo)</b></text>
         <Dynamic>
           <subtype>mf</subtype>
           <velocity>80</velocity>
-          <pos x="0.823097" y="-2.76794"/>
+          <pos x="0.425409" y="8.93462"/>
           </Dynamic>
         <HairPin id="131">
           <subtype>1</subtype>
@@ -9524,7 +9663,7 @@ train is coming (sternly; poco a poco crescendo)</b></text>
         <Dynamic>
           <subtype>other-dynamics</subtype>
           <velocity>33</velocity>
-          <pos x="0.896145" y="-3.1034"/>
+          <pos x="0.133606" y="8.85979"/>
           <text><sym>dynamicPiano</sym><sym>dynamicPiano</sym><sym>dynamicPiano</sym></text>
           </Dynamic>
         <HairPin id="138">
@@ -9551,6 +9690,11 @@ train is coming (sternly; poco a poco crescendo)</b></text>
             <tpc>14</tpc>
             </Note>
           <Note>
+            <Symbol>
+              <name>stringsDownBow</name>
+              <font>Bravura</font>
+              <pos x="0.227585" y="-4.77929"/>
+              </Symbol>
             <Tie id="140">
               </Tie>
             <pitch>64</pitch>
@@ -9562,7 +9706,7 @@ train is coming (sternly; poco a poco crescendo)</b></text>
         <Dynamic>
           <subtype>ff</subtype>
           <velocity>112</velocity>
-          <pos x="0.810275" y="-2.3858"/>
+          <pos x="0.147037" y="9.85202"/>
           </Dynamic>
         <HairPin id="141">
           <subtype>1</subtype>
@@ -9616,6 +9760,7 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="16">
+        <vspacerDown>13</vspacerDown>
         <Rest>
           <durationType>whole</durationType>
           </Rest>
@@ -9650,6 +9795,11 @@ train is coming (sternly; poco a poco crescendo)</b></text>
             <tpc>14</tpc>
             </Note>
           <Note>
+            <Symbol>
+              <name>stringsUpBow</name>
+              <font>Bravura</font>
+              <pos x="0" y="-4.44907"/>
+              </Symbol>
             <pitch>64</pitch>
             <tpc>18</tpc>
             </Note>
@@ -9842,6 +9992,10 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           </Rest>
         </Measure>
       <Measure number="27">
+        <Dynamic>
+          <subtype>p</subtype>
+          <velocity>49</velocity>
+          </Dynamic>
         <Rest>
           <durationType>quarter</durationType>
           </Rest>
@@ -9979,6 +10133,10 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="29">
+        <Dynamic>
+          <subtype>mp</subtype>
+          <velocity>64</velocity>
+          </Dynamic>
         <Rest>
           <durationType>eighth</durationType>
           </Rest>
@@ -10106,6 +10264,10 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           </Rest>
         </Measure>
       <Measure number="31">
+        <Dynamic>
+          <subtype>mf</subtype>
+          <velocity>80</velocity>
+          </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
@@ -10289,6 +10451,10 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           </Rest>
         </Measure>
       <Measure number="33">
+        <Dynamic>
+          <subtype>f</subtype>
+          <velocity>96</velocity>
+          </Dynamic>
         <Beam id="105">
           <StemDirection>down</StemDirection>
           </Beam>
@@ -10686,6 +10852,10 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="36">
+        <Dynamic>
+          <subtype>ff</subtype>
+          <velocity>112</velocity>
+          </Dynamic>
         <Beam id="116">
           <StemDirection>up</StemDirection>
           </Beam>
@@ -11077,11 +11247,6 @@ train is coming (sternly; poco a poco crescendo)</b></text>
             <tpc>12</tpc>
             </Note>
           </Chord>
-        <Dynamic>
-          <subtype>ff</subtype>
-          <velocity>112</velocity>
-          <pos x="-0.456836" y="-2.84613"/>
-          </Dynamic>
         <Chord>
           <BeamMode>end</BeamMode>
           <durationType>eighth</durationType>
@@ -11532,6 +11697,14 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="47">
+        <Dynamic>
+          <subtype>f</subtype>
+          <velocity>96</velocity>
+          </Dynamic>
+        <Dynamic>
+          <subtype>f</subtype>
+          <velocity>96</velocity>
+          </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
@@ -11588,6 +11761,14 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="50">
+        <Dynamic>
+          <subtype>mf</subtype>
+          <velocity>80</velocity>
+          </Dynamic>
+        <Dynamic>
+          <subtype>mf</subtype>
+          <velocity>80</velocity>
+          </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
@@ -11607,6 +11788,10 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="51">
+        <Dynamic>
+          <subtype>mp</subtype>
+          <velocity>64</velocity>
+          </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
@@ -11623,6 +11808,14 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="52">
+        <Dynamic>
+          <subtype>p</subtype>
+          <velocity>49</velocity>
+          </Dynamic>
+        <Dynamic>
+          <subtype>p</subtype>
+          <velocity>49</velocity>
+          </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
@@ -11702,8 +11895,8 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           <subtype>0</subtype>
           <Segment>
             <subtype>0</subtype>
-            <off2 x="0" y="0"/>
-            <pos x="49.6028" y="5.64955"/>
+            <off2 x="-22.9734" y="0"/>
+            <pos x="15.2311" y="5.64955"/>
             </Segment>
           <beginText>
             <text>cresc.</text>
@@ -11760,6 +11953,11 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="58">
+        <Dynamic>
+          <subtype>f</subtype>
+          <velocity>96</velocity>
+          <pos x="0.408675" y="6.16576"/>
+          </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
@@ -11822,11 +12020,6 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="61">
-        <Dynamic>
-          <subtype>f</subtype>
-          <velocity>96</velocity>
-          <pos x="1.06814" y="6.66287"/>
-          </Dynamic>
         <endSpanner id="159"/>
         <Rest>
           <durationType>half</durationType>
@@ -12095,6 +12288,10 @@ train is coming (sternly; poco a poco crescendo)</b></text>
         <Rest>
           <durationType>half</durationType>
           </Rest>
+        <Dynamic>
+          <subtype>pp</subtype>
+          <velocity>33</velocity>
+          </Dynamic>
         <Rest>
           <durationType>eighth</durationType>
           </Rest>
@@ -12242,6 +12439,10 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           </Rest>
         </Measure>
       <Measure number="74">
+        <Dynamic>
+          <subtype>p</subtype>
+          <velocity>49</velocity>
+          </Dynamic>
         <Rest>
           <durationType>eighth</durationType>
           </Rest>
@@ -12366,6 +12567,10 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           </Rest>
         </Measure>
       <Measure number="76">
+        <Dynamic>
+          <subtype>mp</subtype>
+          <velocity>64</velocity>
+          </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
@@ -12500,6 +12705,10 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="78">
+        <Dynamic>
+          <subtype>mf</subtype>
+          <velocity>80</velocity>
+          </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
@@ -12637,6 +12846,10 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="80">
+        <Dynamic>
+          <subtype>f</subtype>
+          <velocity>96</velocity>
+          </Dynamic>
         <Rest>
           <durationType>eighth</durationType>
           </Rest>
@@ -13094,6 +13307,14 @@ train is coming (sternly; poco a poco crescendo)</b></text>
             <tpc>18</tpc>
             </Note>
           </Chord>
+        <Dynamic>
+          <subtype>pp</subtype>
+          <velocity>33</velocity>
+          </Dynamic>
+        <Dynamic>
+          <subtype>pp</subtype>
+          <velocity>33</velocity>
+          </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>quarter</durationType>
@@ -13165,6 +13386,14 @@ train is coming (sternly; poco a poco crescendo)</b></text>
             <tpc>11</tpc>
             </Note>
           </Chord>
+        <Dynamic>
+          <subtype>p</subtype>
+          <velocity>49</velocity>
+          </Dynamic>
+        <Dynamic>
+          <subtype>p</subtype>
+          <velocity>49</velocity>
+          </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>quarter</durationType>
@@ -13203,6 +13432,14 @@ train is coming (sternly; poco a poco crescendo)</b></text>
             <tpc>18</tpc>
             </Note>
           </Chord>
+        <Dynamic>
+          <subtype>mp</subtype>
+          <velocity>64</velocity>
+          </Dynamic>
+        <Dynamic>
+          <subtype>mp</subtype>
+          <velocity>64</velocity>
+          </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
@@ -13244,6 +13481,14 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="95">
+        <Dynamic>
+          <subtype>mf</subtype>
+          <velocity>80</velocity>
+          </Dynamic>
+        <Dynamic>
+          <subtype>mf</subtype>
+          <velocity>80</velocity>
+          </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>quarter</durationType>
@@ -13320,6 +13565,14 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="96">
+        <Dynamic>
+          <subtype>f</subtype>
+          <velocity>96</velocity>
+          </Dynamic>
+        <Dynamic>
+          <subtype>f</subtype>
+          <velocity>96</velocity>
+          </Dynamic>
         <Beam id="136">
           <StemDirection>up</StemDirection>
           </Beam>
@@ -13544,7 +13797,7 @@ train is coming (sternly; poco a poco crescendo)</b></text>
         <Dynamic>
           <subtype>fff</subtype>
           <velocity>126</velocity>
-          <pos x="1.05023" y="-7.17394"/>
+          <pos x="0.724262" y="8.40489"/>
           </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
@@ -15236,10 +15489,9 @@ train is coming (sternly; poco a poco crescendo)</b></text>
         </Measure>
       <Measure number="125">
         <Dynamic>
-          <subtype>other-dynamics</subtype>
-          <velocity>33</velocity>
-          <pos x="0.658281" y="7.43556"/>
-          <text><sym>dynamicPiano</sym></text>
+          <subtype>mp</subtype>
+          <velocity>64</velocity>
+          <pos x="0.658281" y="5.79102"/>
           </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
@@ -18104,6 +18356,7 @@ train is coming (sternly; poco a poco crescendo)</b></text>
       </Staff>
     <Staff id="3">
       <Measure number="1">
+        <vspacerDown>13</vspacerDown>
         <Clef>
           <concertClefType>C3</concertClefType>
           <transposingClefType>C3</transposingClefType>
@@ -18120,7 +18373,7 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           <text><sym>dynamicPiano</sym><sym>dynamicPiano</sym><sym>dynamicPiano</sym><sym>dynamicPiano</sym></text>
           </Dynamic>
         <StaffText>
-          <pos x="-0.287037" y="16.7384"/>
+          <pos x="47.5059" y="-36.924"/>
           <text>Bring out the melody as you build up the chord</text>
           </StaffText>
         <Chord>
@@ -18148,12 +18401,6 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="3">
-        <Dynamic>
-          <subtype>other-dynamics</subtype>
-          <velocity>33</velocity>
-          <pos x="0.854097" y="-2.28388"/>
-          <text><sym>dynamicPiano</sym><sym>dynamicPiano</sym><sym>dynamicPiano</sym></text>
-          </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
@@ -18268,11 +18515,6 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           <velocity>80</velocity>
           <pos x="0.658281" y="7.43556"/>
           </Dynamic>
-        <Dynamic>
-          <subtype>mf</subtype>
-          <velocity>80</velocity>
-          <pos x="0.823097" y="-2.76794"/>
-          </Dynamic>
         <HairPin id="233">
           <subtype>1</subtype>
           <Segment>
@@ -18380,12 +18622,6 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           <pos x="0.658281" y="7.43556"/>
           <text><sym>dynamicPiano</sym><sym>dynamicPiano</sym><sym>dynamicPiano</sym></text>
           </Dynamic>
-        <Dynamic>
-          <subtype>other-dynamics</subtype>
-          <velocity>33</velocity>
-          <pos x="0.537349" y="-3.05479"/>
-          <text><sym>dynamicPiano</sym><sym>dynamicPiano</sym><sym>dynamicPiano</sym></text>
-          </Dynamic>
         <HairPin id="240">
           <subtype>0</subtype>
           <Segment>
@@ -18410,6 +18646,11 @@ train is coming (sternly; poco a poco crescendo)</b></text>
             <tpc>13</tpc>
             </Note>
           <Note>
+            <Symbol>
+              <name>stringsDownBow</name>
+              <font>Bravura</font>
+              <pos x="-1.21379" y="-4.1724"/>
+              </Symbol>
             <Tie id="242">
               </Tie>
             <pitch>55</pitch>
@@ -18422,11 +18663,6 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           <subtype>ff</subtype>
           <velocity>112</velocity>
           <pos x="0.658281" y="7.43556"/>
-          </Dynamic>
-        <Dynamic>
-          <subtype>ff</subtype>
-          <velocity>112</velocity>
-          <pos x="0.594998" y="-2.69601"/>
           </Dynamic>
         <HairPin id="243">
           <subtype>1</subtype>
@@ -18480,6 +18716,7 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="16">
+        <vspacerDown>13</vspacerDown>
         <Rest>
           <durationType>whole</durationType>
           </Rest>
@@ -18510,6 +18747,11 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           <durationType>half</durationType>
           <StemDirection>up</StemDirection>
           <Note>
+            <Symbol>
+              <name>stringsUpBow</name>
+              <font>Bravura</font>
+              <pos x="0" y="-4.7361"/>
+              </Symbol>
             <pitch>53</pitch>
             <tpc>13</tpc>
             </Note>
@@ -18747,6 +18989,10 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           </Rest>
         </Measure>
       <Measure number="27">
+        <Dynamic>
+          <subtype>p</subtype>
+          <velocity>49</velocity>
+          </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
@@ -18843,6 +19089,10 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           </Rest>
         </Measure>
       <Measure number="29">
+        <Dynamic>
+          <subtype>mp</subtype>
+          <velocity>64</velocity>
+          </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
@@ -18933,6 +19183,10 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           </Rest>
         </Measure>
       <Measure number="31">
+        <Dynamic>
+          <subtype>mf</subtype>
+          <velocity>80</velocity>
+          </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
@@ -19089,6 +19343,10 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="33">
+        <Dynamic>
+          <subtype>f</subtype>
+          <velocity>96</velocity>
+          </Dynamic>
         <Rest>
           <dots>1</dots>
           <durationType>quarter</durationType>
@@ -19415,6 +19673,10 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="36">
+        <Dynamic>
+          <subtype>ff</subtype>
+          <velocity>112</velocity>
+          </Dynamic>
         <Beam id="217">
           <StemDirection>down</StemDirection>
           </Beam>
@@ -20921,6 +21183,10 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="47">
+        <Dynamic>
+          <subtype>f</subtype>
+          <velocity>96</velocity>
+          </Dynamic>
         <Rest>
           <durationType>16th</durationType>
           </Rest>
@@ -21380,6 +21646,10 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="50">
+        <Dynamic>
+          <subtype>mf</subtype>
+          <velocity>80</velocity>
+          </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
@@ -21505,6 +21775,10 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           </Rest>
         </Measure>
       <Measure number="51">
+        <Dynamic>
+          <subtype>mp</subtype>
+          <velocity>64</velocity>
+          </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
@@ -21604,6 +21878,10 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="52">
+        <Dynamic>
+          <subtype>p</subtype>
+          <velocity>49</velocity>
+          </Dynamic>
         <Rest>
           <durationType>eighth</durationType>
           </Rest>
@@ -22144,6 +22422,10 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           </Rest>
         </Measure>
       <Measure number="73">
+        <Dynamic>
+          <subtype>pp</subtype>
+          <velocity>33</velocity>
+          </Dynamic>
         <Rest>
           <durationType>eighth</durationType>
           </Rest>
@@ -22191,6 +22473,10 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="74">
+        <Dynamic>
+          <subtype>p</subtype>
+          <velocity>49</velocity>
+          </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
@@ -22249,6 +22535,10 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           </Rest>
         </Measure>
       <Measure number="76">
+        <Dynamic>
+          <subtype>mp</subtype>
+          <velocity>64</velocity>
+          </Dynamic>
         <Rest>
           <durationType>half</durationType>
           </Rest>
@@ -22349,6 +22639,10 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           </Rest>
         </Measure>
       <Measure number="78">
+        <Dynamic>
+          <subtype>mf</subtype>
+          <velocity>80</velocity>
+          </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
@@ -22483,6 +22777,10 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="80">
+        <Dynamic>
+          <subtype>f</subtype>
+          <velocity>96</velocity>
+          </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
@@ -22939,6 +23237,14 @@ train is coming (sternly; poco a poco crescendo)</b></text>
             <tpc>18</tpc>
             </Note>
           </Chord>
+        <Dynamic>
+          <subtype>pp</subtype>
+          <velocity>33</velocity>
+          </Dynamic>
+        <Dynamic>
+          <subtype>pp</subtype>
+          <velocity>33</velocity>
+          </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>quarter</durationType>
@@ -23010,6 +23316,14 @@ train is coming (sternly; poco a poco crescendo)</b></text>
             <tpc>22</tpc>
             </Note>
           </Chord>
+        <Dynamic>
+          <subtype>p</subtype>
+          <velocity>49</velocity>
+          </Dynamic>
+        <Dynamic>
+          <subtype>p</subtype>
+          <velocity>49</velocity>
+          </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>quarter</durationType>
@@ -23045,6 +23359,14 @@ train is coming (sternly; poco a poco crescendo)</b></text>
             <tpc>19</tpc>
             </Note>
           </Chord>
+        <Dynamic>
+          <subtype>mp</subtype>
+          <velocity>64</velocity>
+          </Dynamic>
+        <Dynamic>
+          <subtype>mp</subtype>
+          <velocity>64</velocity>
+          </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
@@ -23099,6 +23421,14 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="95">
+        <Dynamic>
+          <subtype>mf</subtype>
+          <velocity>80</velocity>
+          </Dynamic>
+        <Dynamic>
+          <subtype>mf</subtype>
+          <velocity>80</velocity>
+          </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>quarter</durationType>
@@ -23185,6 +23515,14 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="96">
+        <Dynamic>
+          <subtype>f</subtype>
+          <velocity>96</velocity>
+          </Dynamic>
+        <Dynamic>
+          <subtype>f</subtype>
+          <velocity>96</velocity>
+          </Dynamic>
         <Beam id="268">
           <StemDirection>down</StemDirection>
           </Beam>
@@ -23414,11 +23752,6 @@ train is coming (sternly; poco a poco crescendo)</b></text>
         <Rest>
           <durationType>half</durationType>
           </Rest>
-        <Dynamic>
-          <subtype>fff</subtype>
-          <velocity>126</velocity>
-          <pos x="0.724262" y="-3.91629"/>
-          </Dynamic>
         <Dynamic>
           <subtype>fff</subtype>
           <velocity>126</velocity>
@@ -28754,7 +29087,7 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           <subtype>0</subtype>
           <Segment>
             <subtype>0</subtype>
-            <off2 x="13.6342" y="0"/>
+            <off2 x="30.779" y="0"/>
             <pos x="83.3835" y="6.93056"/>
             </Segment>
           <beginText>
@@ -28794,11 +29127,6 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="7">
-        <Dynamic>
-          <subtype>mp</subtype>
-          <velocity>64</velocity>
-          <pos x="0.658281" y="7.43556"/>
-          </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
@@ -28956,6 +29284,11 @@ train is coming (sternly; poco a poco crescendo)</b></text>
             <tpc>14</tpc>
             </Note>
           <Note>
+            <Symbol>
+              <name>stringsDownBow</name>
+              <font>Bravura</font>
+              <pos x="0.151724" y="-1.36551"/>
+              </Symbol>
             <Tie id="302">
               </Tie>
             <pitch>57</pitch>
@@ -29055,6 +29388,11 @@ train is coming (sternly; poco a poco crescendo)</b></text>
             <tpc>14</tpc>
             </Note>
           <Note>
+            <Symbol>
+              <name>stringsUpBow</name>
+              <font>Bravura</font>
+              <pos x="0.0717591" y="-1.14815"/>
+              </Symbol>
             <pitch>57</pitch>
             <tpc>17</tpc>
             </Note>
@@ -29216,6 +29554,10 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="27">
+        <Dynamic>
+          <subtype>p</subtype>
+          <velocity>49</velocity>
+          </Dynamic>
         <Rest>
           <dots>1</dots>
           <durationType>half</durationType>
@@ -29312,6 +29654,10 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           </Rest>
         </Measure>
       <Measure number="29">
+        <Dynamic>
+          <subtype>mp</subtype>
+          <velocity>64</velocity>
+          </Dynamic>
         <Rest>
           <dots>1</dots>
           <durationType>quarter</durationType>
@@ -29460,6 +29806,10 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="31">
+        <Dynamic>
+          <subtype>mf</subtype>
+          <velocity>80</velocity>
+          </Dynamic>
         <Rest>
           <durationType>eighth</durationType>
           </Rest>
@@ -29622,6 +29972,10 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           </Rest>
         </Measure>
       <Measure number="33">
+        <Dynamic>
+          <subtype>f</subtype>
+          <velocity>96</velocity>
+          </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
@@ -29944,6 +30298,10 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="36">
+        <Dynamic>
+          <subtype>ff</subtype>
+          <velocity>112</velocity>
+          </Dynamic>
         <Beam id="369">
           <StemDirection>down</StemDirection>
           </Beam>
@@ -30662,11 +31020,11 @@ train is coming (sternly; poco a poco crescendo)</b></text>
             </Articulation>
           <StemDirection>down</StemDirection>
           <Note>
-            <pitch>48</pitch>
+            <pitch>36</pitch>
             <tpc>14</tpc>
             </Note>
           <Note>
-            <pitch>57</pitch>
+            <pitch>45</pitch>
             <tpc>17</tpc>
             </Note>
           </Chord>
@@ -31421,6 +31779,10 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="47">
+        <Dynamic>
+          <subtype>f</subtype>
+          <velocity>96</velocity>
+          </Dynamic>
         <Beam id="405">
           <StemDirection>up</StemDirection>
           </Beam>
@@ -31912,6 +32274,10 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="50">
+        <Dynamic>
+          <subtype>mf</subtype>
+          <velocity>80</velocity>
+          </Dynamic>
         <Beam id="417">
           <StemDirection>down</StemDirection>
           </Beam>
@@ -32070,6 +32436,10 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="51">
+        <Dynamic>
+          <subtype>mp</subtype>
+          <velocity>64</velocity>
+          </Dynamic>
         <Rest>
           <durationType>quarter</durationType>
           </Rest>
@@ -32147,6 +32517,10 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           </Rest>
         </Measure>
       <Measure number="52">
+        <Dynamic>
+          <subtype>p</subtype>
+          <velocity>49</velocity>
+          </Dynamic>
         <Rest>
           <durationType>eighth</durationType>
           </Rest>
@@ -32745,6 +33119,10 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           </Rest>
         </Measure>
       <Measure number="74">
+        <Dynamic>
+          <subtype>p</subtype>
+          <velocity>49</velocity>
+          </Dynamic>
         <Rest>
           <durationType>half</durationType>
           </Rest>
@@ -32800,6 +33178,10 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="76">
+        <Dynamic>
+          <subtype>mp</subtype>
+          <velocity>64</velocity>
+          </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
@@ -32858,6 +33240,10 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           </Rest>
         </Measure>
       <Measure number="78">
+        <Dynamic>
+          <subtype>mf</subtype>
+          <velocity>80</velocity>
+          </Dynamic>
         <Rest>
           <durationType>half</durationType>
           </Rest>
@@ -32958,6 +33344,10 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           </Rest>
         </Measure>
       <Measure number="80">
+        <Dynamic>
+          <subtype>f</subtype>
+          <velocity>96</velocity>
+          </Dynamic>
         <Rest>
           <durationType>quarter</durationType>
           </Rest>
@@ -33358,6 +33748,14 @@ train is coming (sternly; poco a poco crescendo)</b></text>
             <tpc>13</tpc>
             </Note>
           </Chord>
+        <Dynamic>
+          <subtype>pp</subtype>
+          <velocity>33</velocity>
+          </Dynamic>
+        <Dynamic>
+          <subtype>pp</subtype>
+          <velocity>33</velocity>
+          </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>quarter</durationType>
@@ -33429,6 +33827,14 @@ train is coming (sternly; poco a poco crescendo)</b></text>
             <tpc>12</tpc>
             </Note>
           </Chord>
+        <Dynamic>
+          <subtype>p</subtype>
+          <velocity>49</velocity>
+          </Dynamic>
+        <Dynamic>
+          <subtype>p</subtype>
+          <velocity>49</velocity>
+          </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>quarter</durationType>
@@ -33467,6 +33873,14 @@ train is coming (sternly; poco a poco crescendo)</b></text>
             <tpc>14</tpc>
             </Note>
           </Chord>
+        <Dynamic>
+          <subtype>mp</subtype>
+          <velocity>64</velocity>
+          </Dynamic>
+        <Dynamic>
+          <subtype>mp</subtype>
+          <velocity>64</velocity>
+          </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
@@ -33518,6 +33932,14 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="95">
+        <Dynamic>
+          <subtype>mf</subtype>
+          <velocity>80</velocity>
+          </Dynamic>
+        <Dynamic>
+          <subtype>mf</subtype>
+          <velocity>80</velocity>
+          </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>quarter</durationType>
@@ -33596,6 +34018,14 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="96">
+        <Dynamic>
+          <subtype>f</subtype>
+          <velocity>96</velocity>
+          </Dynamic>
+        <Dynamic>
+          <subtype>f</subtype>
+          <velocity>96</velocity>
+          </Dynamic>
         <Beam id="426">
           <StemDirection>up</StemDirection>
           </Beam>
@@ -33823,7 +34253,7 @@ train is coming (sternly; poco a poco crescendo)</b></text>
         <Dynamic>
           <subtype>fff</subtype>
           <velocity>126</velocity>
-          <pos x="0.626925" y="10.8817"/>
+          <pos x="0.626925" y="10.0865"/>
           </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
@@ -33935,6 +34365,34 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           <velocity>80</velocity>
           <pos x="0.658281" y="7.43556"/>
           </Dynamic>
+        <HairPin id="333">
+          <subtype>0</subtype>
+          <Segment>
+            <subtype>0</subtype>
+            <off2 x="-48.8626" y="0"/>
+            <pos x="14.7363" y="7.0582"/>
+            </Segment>
+          <beginText>
+            <text>cresc.</text>
+            </beginText>
+          <continueText>
+            <text>(cresc.)</text>
+            </continueText>
+          </HairPin>
+        <HairPin id="334">
+          <subtype>1</subtype>
+          <Segment>
+            <subtype>0</subtype>
+            <off2 x="-45.77" y="0"/>
+            <pos x="37.2679" y="7.14656"/>
+            </Segment>
+          <beginText>
+            <text>dim.</text>
+            </beginText>
+          <continueText>
+            <text>(dim.)</text>
+            </continueText>
+          </HairPin>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -33977,7 +34435,7 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           <durationType>eighth</durationType>
           <Beam>427</Beam>
           <Note>
-            <Tie id="333">
+            <Tie id="335">
               </Tie>
             <pitch>57</pitch>
             <tpc>17</tpc>
@@ -33985,12 +34443,14 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="104">
+        <endSpanner id="333"/>
+        <endSpanner id="334"/>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>quarter</durationType>
           <StemDirection>down</StemDirection>
           <Note>
-            <endSpanner id="333"/>
+            <endSpanner id="335"/>
             <pitch>57</pitch>
             <tpc>17</tpc>
             </Note>
@@ -34166,7 +34626,7 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           <durationType>quarter</durationType>
           <StemDirection>up</StemDirection>
           <Note>
-            <Tie id="334">
+            <Tie id="336">
               </Tie>
             <pitch>47</pitch>
             <tpc>19</tpc>
@@ -34182,7 +34642,7 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           <durationType>16th</durationType>
           <Beam>432</Beam>
           <Note>
-            <endSpanner id="334"/>
+            <endSpanner id="336"/>
             <pitch>47</pitch>
             <tpc>19</tpc>
             </Note>
@@ -34237,7 +34697,7 @@ train is coming (sternly; poco a poco crescendo)</b></text>
             <Accidental>
               <subtype>sharp</subtype>
               </Accidental>
-            <Tie id="335">
+            <Tie id="337">
               </Tie>
             <pitch>66</pitch>
             <tpc>20</tpc>
@@ -34253,7 +34713,7 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           <durationType>16th</durationType>
           <Beam>433</Beam>
           <Note>
-            <endSpanner id="335"/>
+            <endSpanner id="337"/>
             <pitch>66</pitch>
             <tpc>20</tpc>
             </Note>
@@ -34371,7 +34831,7 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           <durationType>quarter</durationType>
           <StemDirection>up</StemDirection>
           <Note>
-            <Tie id="336">
+            <Tie id="338">
               </Tie>
             <pitch>41</pitch>
             <tpc>13</tpc>
@@ -34387,7 +34847,7 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           <durationType>16th</durationType>
           <Beam>436</Beam>
           <Note>
-            <endSpanner id="336"/>
+            <endSpanner id="338"/>
             <pitch>41</pitch>
             <tpc>13</tpc>
             </Note>
@@ -34436,7 +34896,7 @@ train is coming (sternly; poco a poco crescendo)</b></text>
               <role>1</role>
               <subtype>natural</subtype>
               </Accidental>
-            <Tie id="337">
+            <Tie id="339">
               </Tie>
             <pitch>53</pitch>
             <tpc>13</tpc>
@@ -34452,7 +34912,7 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           <durationType>16th</durationType>
           <Beam>437</Beam>
           <Note>
-            <endSpanner id="337"/>
+            <endSpanner id="339"/>
             <pitch>53</pitch>
             <tpc>13</tpc>
             </Note>
@@ -34602,7 +35062,7 @@ train is coming (sternly; poco a poco crescendo)</b></text>
               <role>1</role>
               <subtype>natural</subtype>
               </Accidental>
-            <Tie id="338">
+            <Tie id="340">
               </Tie>
             <pitch>47</pitch>
             <tpc>19</tpc>
@@ -34616,7 +35076,7 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           <durationType>16th</durationType>
           <Beam>441</Beam>
           <Note>
-            <endSpanner id="338"/>
+            <endSpanner id="340"/>
             <pitch>47</pitch>
             <tpc>19</tpc>
             </Note>
@@ -34660,7 +35120,7 @@ train is coming (sternly; poco a poco crescendo)</b></text>
             <Accidental>
               <subtype>flat</subtype>
               </Accidental>
-            <Tie id="339">
+            <Tie id="341">
               </Tie>
             <pitch>51</pitch>
             <tpc>11</tpc>
@@ -34676,7 +35136,7 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           <durationType>16th</durationType>
           <Beam>442</Beam>
           <Note>
-            <endSpanner id="339"/>
+            <endSpanner id="341"/>
             <pitch>51</pitch>
             <tpc>11</tpc>
             </Note>
@@ -34707,7 +35167,7 @@ train is coming (sternly; poco a poco crescendo)</b></text>
             <Accidental>
               <subtype>sharp</subtype>
               </Accidental>
-            <Tie id="340">
+            <Tie id="342">
               </Tie>
             <pitch>51</pitch>
             <tpc>23</tpc>
@@ -34721,7 +35181,7 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           <durationType>16th</durationType>
           <Beam>443</Beam>
           <Note>
-            <endSpanner id="340"/>
+            <endSpanner id="342"/>
             <pitch>51</pitch>
             <tpc>23</tpc>
             </Note>
@@ -34768,7 +35228,7 @@ train is coming (sternly; poco a poco crescendo)</b></text>
             <Accidental>
               <subtype>flat</subtype>
               </Accidental>
-            <Tie id="341">
+            <Tie id="343">
               </Tie>
             <pitch>39</pitch>
             <tpc>11</tpc>
@@ -34782,7 +35242,7 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           <durationType>16th</durationType>
           <Beam>444</Beam>
           <Note>
-            <endSpanner id="341"/>
+            <endSpanner id="343"/>
             <pitch>39</pitch>
             <tpc>11</tpc>
             </Note>
@@ -34955,7 +35415,7 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           <durationType>half</durationType>
           <StemDirection>down</StemDirection>
           <Note>
-            <Tie id="342">
+            <Tie id="344">
               </Tie>
             <pitch>59</pitch>
             <tpc>19</tpc>
@@ -34971,7 +35431,7 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           <durationType>eighth</durationType>
           <Beam>448</Beam>
           <Note>
-            <endSpanner id="342"/>
+            <endSpanner id="344"/>
             <pitch>59</pitch>
             <tpc>19</tpc>
             </Note>
@@ -35143,7 +35603,7 @@ train is coming (sternly; poco a poco crescendo)</b></text>
               <role>1</role>
               <subtype>natural</subtype>
               </Accidental>
-            <Tie id="343">
+            <Tie id="345">
               </Tie>
             <pitch>53</pitch>
             <tpc>13</tpc>
@@ -35159,7 +35619,7 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           <durationType>16th</durationType>
           <Beam>451</Beam>
           <Note>
-            <endSpanner id="343"/>
+            <endSpanner id="345"/>
             <pitch>53</pitch>
             <tpc>13</tpc>
             </Note>
@@ -35387,7 +35847,7 @@ train is coming (sternly; poco a poco crescendo)</b></text>
             <Accidental>
               <subtype>sharp</subtype>
               </Accidental>
-            <Tie id="344">
+            <Tie id="346">
               </Tie>
             <pitch>49</pitch>
             <tpc>21</tpc>
@@ -35395,7 +35855,7 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="120">
-        <HairPin id="345">
+        <HairPin id="347">
           <subtype>0</subtype>
           <Segment>
             <subtype>0</subtype>
@@ -35417,7 +35877,7 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           <durationType>16th</durationType>
           <Beam>457</Beam>
           <Note>
-            <endSpanner id="344"/>
+            <endSpanner id="346"/>
             <pitch>49</pitch>
             <tpc>21</tpc>
             </Note>
@@ -35465,7 +35925,7 @@ train is coming (sternly; poco a poco crescendo)</b></text>
             <tpc>9</tpc>
             </Note>
           </Chord>
-        <endSpanner id="345"/>
+        <endSpanner id="347"/>
         <Rest>
           <durationType>eighth</durationType>
           </Rest>
@@ -38760,7 +39220,7 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           <velocity>16</velocity>
           <pos x="0.720638" y="9.39836"/>
           </Dynamic>
-        <HairPin id="346">
+        <HairPin id="348">
           <subtype>0</subtype>
           <Segment>
             <subtype>0</subtype>
@@ -38780,13 +39240,13 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           <durationType>whole</durationType>
           <StemDirection>up</StemDirection>
           <Note>
-            <Tie id="347">
+            <Tie id="349">
               </Tie>
             <pitch>36</pitch>
             <tpc>14</tpc>
             </Note>
           <Note>
-            <Tie id="348">
+            <Tie id="350">
               </Tie>
             <pitch>47</pitch>
             <tpc>19</tpc>
@@ -38800,16 +39260,16 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           <durationType>whole</durationType>
           <StemDirection>up</StemDirection>
           <Note>
-            <Tie id="349">
+            <Tie id="351">
               </Tie>
-            <endSpanner id="347"/>
+            <endSpanner id="349"/>
             <pitch>36</pitch>
             <tpc>14</tpc>
             </Note>
           <Note>
-            <Tie id="350">
+            <Tie id="352">
               </Tie>
-            <endSpanner id="348"/>
+            <endSpanner id="350"/>
             <pitch>47</pitch>
             <tpc>19</tpc>
             </Note>
@@ -38822,12 +39282,12 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           <durationType>whole</durationType>
           <StemDirection>up</StemDirection>
           <Note>
-            <endSpanner id="349"/>
+            <endSpanner id="351"/>
             <pitch>36</pitch>
             <tpc>14</tpc>
             </Note>
           <Note>
-            <endSpanner id="350"/>
+            <endSpanner id="352"/>
             <pitch>47</pitch>
             <tpc>19</tpc>
             </Note>
@@ -38844,7 +39304,7 @@ train is coming (sternly; poco a poco crescendo)</b></text>
           <velocity>112</velocity>
           <pos x="1.02859" y="-3.63561"/>
           </Dynamic>
-        <endSpanner id="346"/>
+        <endSpanner id="348"/>
         <Rest>
           <durationType>measure</durationType>
           <duration z="3" n="2"/>
