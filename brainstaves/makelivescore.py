@@ -214,60 +214,83 @@ if 'sectionE' in torun:
     sec = 'E'
     ss = [85,98]
     nm = sc.objdict()
+    seq = sc.objdict()
     for part in qd.keys():
         nm[part] = sc.objdict()
+        seq[part] = 0
+
+    def generate(seq, nm, p, m, n, t, verbose=True):
+        if verbose: print('Input: %s, %s, %s, %s, %s' % (seq[:], p, m, n, t))
+        genkeys = []
+        np = nm[p]
+        basekey = 'm%i_n%i' % (m, n)
+        rootkey = 'root_' + basekey
+        doublekey = 'double_' + basekey
+        np[rootkey] = seq[p]
+        np[doublekey] = rootkey
+        genkeys.extend([rootkey, doublekey])
+        for tind in range(t):
+            for rd in ['root_','double_']:
+                tiedkey = ('tied%i_' % tind) + rd + basekey
+                np[tiedkey] = rd + basekey
+                genkeys.append(tiedkey)
+        seq[p] += 1
+        if verbose: print('Output: %s' % genkeys)
+        return None
+
     # Intro
-    generate(nm, p='v1', m=86, n=1, t=1)
-    generate(nm, p='v1', m=88, n=1, t=0)
-    generate(nm, p='v1', m=89, n=1, t=1)
+    generate(seq, nm, p='va', m=85, n=1, t=2)
+    generate(seq, nm, p='v2', m=86, n=1, t=1)
+    generate(seq, nm, p='v1', m=86, n=1, t=1)
+    generate(seq, nm, p='vc', m=86, n=1, t=1)
+
+    generate(seq, nm, p='v2', m=87, n=1, t=1)
+    generate(seq, nm, p='va', m=88, n=1, t=0)
+    generate(seq, nm, p='vc', m=88, n=1, t=0)
+    generate(seq, nm, p='v1', m=88, n=1, t=0)
+
+    generate(seq, nm, p='vc', m=89, n=1, t=1)
+    generate(seq, nm, p='v1', m=89, n=1, t=1)
+    generate(seq, nm, p='v2', m=90, n=1, t=0)
+    generate(seq, nm, p='va', m=90, n=1, t=0)
 
     # Unison
     for part in qd.keys():
-        generate(nm, p=part, m=91, n=1, t=0)
-        generate(nm, p=part, m=91, n=3, t=0)
-        generate(nm, p=part, m=91, n=5, t=1)
-        generate(nm, p=part, m=92, n=3, t=1)
-        generate(nm, p=part, m=93, n=3, t=0)
-        generate(nm, p=part, m=93, n=5, t=0)
-        generate(nm, p=part, m=93, n=7, t=1)
+        generate(seq, nm, p=part, m=91, n=1, t=0)
+        generate(seq, nm, p=part, m=91, n=3, t=0)
+        generate(seq, nm, p=part, m=91, n=5, t=1)
+        generate(seq, nm, p=part, m=92, n=3, t=1)
+        generate(seq, nm, p=part, m=93, n=3, t=0)
+        generate(seq, nm, p=part, m=93, n=5, t=0)
+        generate(seq, nm, p=part, m=93, n=7, t=1)
         for n in [3,5,7]:
-            generate(nm, p=part, m=94, n=n, t=0)
+            generate(seq, nm, p=part, m=94, n=n, t=0)
         for n in [1,3,5,7,9]:
-            generate(nm, p=part, m=95, n=n, t=0)
+            generate(seq, nm, p=part, m=95, n=n, t=0)
         for n in [1,3,5,7,9]:
-            generate(nm, p=part, m=96, n=n, t=0)
-        generate(nm, p=part, m=96, n=11, t=1)
-        generate(nm, p=part, m=97, n=3, t=0)
-        generate(nm, p=part, m=97, n=5, t=1)
-        generate(nm, p=part, m=98, n=3, t=0)
-        generate(nm, p=part, m=98, n=5, t=1)
+            generate(seq, nm, p=part, m=96, n=n, t=0)
+        generate(seq, nm, p=part, m=96, n=11, t=1)
+        generate(seq, nm, p=part, m=97, n=3, t=0)
+        generate(seq, nm, p=part, m=97, n=5, t=1)
+        generate(seq, nm, p=part, m=98, n=3, t=0)
+        generate(seq, nm, p=part, m=98, n=5, t=1)
 
 
 
-    notemapping = sc.odict([
-            ('v1', sc.odict([
-                    ('m86n1',('random',0)),
-                    ('m86n2',('m86n1','double')),
-                    ('m87n1',('m86n1','tied')),
-                    ('m87n2',('m86n2','tied')),
-                    ('m88n1',('random',0)),
-                    ('m88n2',('m88n1','double')),
-                    ])),
-            ])
-#    quartet,qd = makequartet(mindur=8, timesig='4/4', nbars=1)
-#    nd[sec] = sc.objdict()
-#    
-#    for part,inst in qd.items():
-#        ss = [63,83]
-#        nd[sec][part] = xml.loadnotes(part=part, measurerange=ss)
-#        for repeat in repeats(ss):
-#            inst.seed += 1
-#            if inst.scorepts:  startval = inst.score[-1]
-#            inst.brownian(maxstep=5, startval=startval, skipstart=True)
-#            inst.seed += 1
-#            inst.cat()
-#    
-#        appendnotes(nd, sec, part)
+    quartet,qd = makequartet(mindur=8, timesig='4/4', nbars=1)
+    nd[sec] = sc.objdict()
+    
+    for part,inst in qd.items():
+        nd[sec][part] = xml.loadnotes(part=part, measurerange=ss)
+        assert len(nd[sec][part]) == len(nm[part])
+        
+        inst.seed += 1
+        if inst.scorepts:  startval = inst.score[-1]
+        inst.brownian(maxstep=5, startval=startval, skipstart=True)
+        inst.seed += 1
+        inst.cat()
+    
+        appendnotes(nd, sec, part)
     process(sec)
 
 

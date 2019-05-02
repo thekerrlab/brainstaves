@@ -165,12 +165,15 @@ class Section(sc.prettyobj):
         self.refresh()
         return None
     
-    def refresh(self):
-        tsig = [int(q) for q in self.timesig.split('/')]
-        wholenotes = tsig[0]/tsig[1]
-        self.npts = int(round(self.nbars*wholenotes*self.mindur))
+    def refresh(self, npts=None, resetscore=True):
+        if npts is None: # Calculate npts from bars and beats
+            tsig = [int(q) for q in self.timesig.split('/')]
+            wholenotes = tsig[0]/tsig[1]
+            npts = int(round(self.nbars*wholenotes*self.mindur))
+        self.npts = npts
         self.arr = np.nan+np.zeros(self.npts)
-        self.score = np.zeros(0)
+        if resetscore:
+            self.score = np.zeros(0)
         return None
         
     @property
@@ -198,7 +201,7 @@ class Section(sc.prettyobj):
             self.arr[n] = np.random.randint(low=minval, high=maxval)
         return None
     
-    def brownian(self, startval=None, maxstep=None, seed=None, forcestep=True, skipstart=True, verbose=False, inst=None, usedata=True):
+    def brownian(self, startval=None, maxstep=None, seed=None, forcestep=True, skipstart=True, verbose=False, inst=None, usedata=True, npts=None):
         self.resetseed(seed)
         if maxstep is None: maxstep = 1
         minval,maxval = self.minmax()
@@ -208,6 +211,9 @@ class Section(sc.prettyobj):
         if not skipstart:
             self.arr[0] = startval
         
+        if npts is not None: # Manually reset npts
+            self.refresh(npts=npts, resetscore=False)
+            
         npts = self.npts-1+skipstart
         data = getnumbers(inst, 2*npts, usedata)
         for n in range(npts): # If not skipping the start, 1 less point
