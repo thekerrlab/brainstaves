@@ -8617,9 +8617,6 @@ block of sound</text>
           </Chord>
         </Measure>
       <Measure number="148">
-        <LayoutBreak>
-          <subtype>line</subtype>
-          </LayoutBreak>
         <Beam id="95">
           <StemDirection>down</StemDirection>
           </Beam>
@@ -8831,9 +8828,6 @@ block of sound</text>
           </Chord>
         </Measure>
       <Measure number="151">
-        <LayoutBreak>
-          <subtype>line</subtype>
-          </LayoutBreak>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -8887,9 +8881,6 @@ block of sound</text>
           </Chord>
         </Measure>
       <Measure number="154">
-        <LayoutBreak>
-          <subtype>line</subtype>
-          </LayoutBreak>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -8947,9 +8938,6 @@ block of sound</text>
           </Chord>
         </Measure>
       <Measure number="157">
-        <LayoutBreak>
-          <subtype>page</subtype>
-          </LayoutBreak>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -9010,9 +8998,6 @@ block of sound</text>
           </Chord>
         </Measure>
       <Measure number="160">
-        <LayoutBreak>
-          <subtype>line</subtype>
-          </LayoutBreak>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -9152,9 +9137,6 @@ block of sound</text>
           </Chord>
         </Measure>
       <Measure number="165">
-        <LayoutBreak>
-          <subtype>line</subtype>
-          </LayoutBreak>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -9225,7 +9207,7 @@ block of sound</text>
         </Measure>
       <Measure number="168">
         <StaffText>
-          <pos x="73.1061" y="-3.39448"/>
+          <pos x="72.0897" y="-3.58155"/>
           <text><font size="9.3012"/><font face="Times New Roman"/>Smile broadly :D</text>
           </StaffText>
         <Chord>
@@ -9284,10 +9266,6 @@ block of sound</text>
           </Chord>
         </Measure>
       <Measure number="170">
-        <StaffText>
-          <pos x="68.821" y="-3.39448"/>
-          <text><font size="9.3012"></font><font face="Times New Roman"></font>Smile broadly :D</text>
-          </StaffText>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -9311,10 +9289,6 @@ block of sound</text>
           </Chord>
         </Measure>
       <Measure number="171">
-        <StaffText>
-          <pos x="68.821" y="-3.39448"/>
-          <text><font size="9.3012"></font><font face="Times New Roman"></font>Smile broadly :D</text>
-          </StaffText>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -9334,10 +9308,6 @@ block of sound</text>
           </Chord>
         </Measure>
       <Measure number="172">
-        <Dynamic>
-          <subtype>ff</subtype>
-          <velocity>112</velocity>
-          </Dynamic>
         <endSpanner id="124"/>
         <Rest>
           <dots>1</dots>
@@ -9352,6 +9322,10 @@ block of sound</text>
           <velocity>49</velocity>
           <pos x="0.658281" y="7.43556"/>
           </Dynamic>
+        <StaffText>
+          <pos x="58.5583" y="-6.51231"/>
+          <text><font size="9.3012"></font><font face="Times New Roman"></font>Smile broadly :D</text>
+          </StaffText>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
@@ -18191,6 +18165,12 @@ block of sound</text>
         <Dynamic>
           <subtype>ff</subtype>
           <velocity>112</velocity>
+          <pos x="0.93707" y="8"/>
+          </Dynamic>
+        <Dynamic>
+          <subtype>ff</subtype>
+          <velocity>112</velocity>
+          <pos x="1.40273" y="-3.58283"/>
           </Dynamic>
         <endSpanner id="217"/>
         <Rest>
@@ -28922,10 +28902,6 @@ block of sound</text>
           </Chord>
         </Measure>
       <Measure number="172">
-        <Dynamic>
-          <subtype>ff</subtype>
-          <velocity>112</velocity>
-          </Dynamic>
         <endSpanner id="281"/>
         <Rest>
           <durationType>measure</durationType>
@@ -39075,14 +39051,14 @@ block of sound</text>
         <Dynamic>
           <subtype>ppp</subtype>
           <velocity>16</velocity>
-          <pos x="0.658281" y="9.62887"/>
+          <pos x="0.720638" y="7.94524"/>
           </Dynamic>
         <HairPin id="342">
           <subtype>0</subtype>
           <Segment>
             <subtype>0</subtype>
             <off2 x="-5.31876" y="0"/>
-            <pos x="84.7521" y="9.26184"/>
+            <pos x="85.3757" y="7.70293"/>
             </Segment>
           <beginText>
             <text>cresc.</text>
@@ -39099,8 +39075,8 @@ block of sound</text>
           <Note>
             <Tie id="343">
               </Tie>
-            <pitch>36</pitch>
-            <tpc>14</tpc>
+            <pitch>43</pitch>
+            <tpc>15</tpc>
             </Note>
           <Note>
             <Tie id="344">
@@ -39120,8 +39096,8 @@ block of sound</text>
             <Tie id="345">
               </Tie>
             <endSpanner id="343"/>
-            <pitch>36</pitch>
-            <tpc>14</tpc>
+            <pitch>43</pitch>
+            <tpc>15</tpc>
             </Note>
           <Note>
             <Tie id="346">
@@ -39140,8 +39116,8 @@ block of sound</text>
           <StemDirection>up</StemDirection>
           <Note>
             <endSpanner id="345"/>
-            <pitch>36</pitch>
-            <tpc>14</tpc>
+            <pitch>43</pitch>
+            <tpc>15</tpc>
             </Note>
           <Note>
             <endSpanner id="346"/>
@@ -39154,7 +39130,12 @@ block of sound</text>
         <Dynamic>
           <subtype>ff</subtype>
           <velocity>112</velocity>
-          <pos x="0.151639" y="10.2272"/>
+          <pos x="1.08699" y="8.79303"/>
+          </Dynamic>
+        <Dynamic>
+          <subtype>ff</subtype>
+          <velocity>112</velocity>
+          <pos x="1.02859" y="-3.63561"/>
           </Dynamic>
         <endSpanner id="342"/>
         <Rest>
