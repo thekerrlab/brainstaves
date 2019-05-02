@@ -24,10 +24,11 @@
   <style>
     .body {
       font-size: 0.5em;
+      /*background-color: #ff0;*/
     }
 
     .background {
-      background-color: #f00;
+      /*background-color: #f00;*/
     }
 
     .app {
@@ -38,15 +39,15 @@
 
     .main {
       display: block;
-      background-color: #000;
+      /*background-color: #000;*/
     }
 
     .thescore {
       position: fixed;
       top: 0;
-      background-color: #fff;
+      /*background-color: #fff;*/
       max-width: 100vw;
-      max-height: 95vh;
+      max-height: 100vh;
     }
 
     a:link    {color: #aaf;}
@@ -80,27 +81,27 @@
 
       <!-- THE SCORE -->
       <div style="position: fixed; top: 5px; left: 5px; z-index: 100">
-          <span><button v-on:click="start()">▶</button></span>
-          <br><br>
-          <span><button v-on:click="forward()">→</button></span>
-          <br><br>
-          <span><button v-on:click="backward()">←</button></span>
-          <br><br>
-          <span><button v-on:click="location.reload()">⟳</button></span>
-          <br><br>
-          <span><button v-on:click="stop()">■</button></span>
-          <br><br>
-          <span>p. {{filenumber}}</span>
-          <br><br>
-          <span>§: {{loaded}}</span>
-          <br><br>
-          <span>R? {{isrunning}}</span>
+        <span><button v-on:click="start()">▶</button></span>
+        <br><br>
+        <span><button v-on:click="forward()">→</button></span>
+        <br><br>
+        <span><button v-on:click="backward()">←</button></span>
+        <br><br>
+        <span><button v-on:click="location.reload()">⟳</button></span>
+        <br><br>
+        <span><button v-on:click="stop()">■</button></span>
+        <br><br>
+        <div style="font-size: 0.8em; font-family: 'serif'; background-color: #eee; padding:3px;">
+          <span>p:{{filenumber}}</span><br>
+          <span>§:{{loaded}}</span><br>
+          <span>R:{{isrunning}}</span>
         </div>
+      </div>
 
 
       <div v-for="index in npages" :id="'score'+index" class="thescore" style="display: none">
         <!-- <p>hi i am {{index}}</p> -->
-        <img style='max-width: 95vw; max-height:95vh' :name="'score_img'+index">
+        <img style='max-width: 100vw; max-height:100vh' :name="'score_img'+index">
       </div>
 
     </div>
