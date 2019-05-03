@@ -29,7 +29,7 @@ for name in names:
     ims[name] = pl.imread('%s.png'%name)
     
 pl.figure(figsize=(20,10))
-for r in range(30):
+while True:
     print(r)
     t1 = sc.tic()
     pl.clf()
