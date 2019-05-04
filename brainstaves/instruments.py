@@ -131,6 +131,25 @@ def char2octo(val):
     else:               output = val
     return output
 
+def char2blues(val):
+    note = val[0:2]
+    mapping = {
+            'cn':'cn',
+            'd$':'cn',
+            'dn':'cn',
+            'e$':'e$',
+            'en':'en',
+            'fn':'en',
+            'f#':'f#',
+            'gn':'gn',
+            'g#':'gn',
+            'an':'gn',
+            'b$':'b$',
+            'bn':'b$',}
+    if note in mapping: output = mapping[note]+val[2]
+    else:               raise Exception('Note %s not found in blues scale!' % note)
+    return output
+
 def hertz(val):
     val = char2num(val)
     a0 = 27.5 # Pitch of the lowest note on the piano
@@ -266,6 +285,12 @@ class Section(sc.prettyobj):
         for n in range(self.npts):
             val = num2char(self.arr[n])
             self.arr[n] = char2num(char2octo(val))
+        return None
+    
+    def blues(self):
+        for n in range(self.npts):
+            val = num2char(self.arr[n])
+            self.arr[n] = char2num(char2blues(val))
         return None
         
 
