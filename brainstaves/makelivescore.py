@@ -207,6 +207,10 @@ if 'sectionD' in torun:
     
     for part,inst in qd.items():
         ss = [63,83]
+        if   part == 'v1': ss = [63,83]
+        elif part == 'v2': ss = [65,83]
+        elif part == 'va': ss = [64,83]
+        elif part == 'vc': ss = [64,83]
         nd[sec][part] = xml.loadnotes(part=part, measurerange=ss)
         for repeat in repeats(ss):
             inst.seed += 1
@@ -280,7 +284,7 @@ if 'sectionE' in torun:
         for n in [1,3,5,7,9]:
             generate(seq, nm, p=part, m=98, n=n, t=0)
         for n in [1,3,5,7,9]:
-            generate(seq, nm, p=part, m=98, n=n, t=0)
+            generate(seq, nm, p=part, m=99, n=n, t=0)
         generate(seq, nm, p=part, m=99, n=11, t=1)
         generate(seq, nm, p=part, m=100, n=3, t=0)
         generate(seq, nm, p=part, m=100, n=5, t=1)
