@@ -22,7 +22,7 @@ class XML(sc.prettyobj):
     
     def __init__(self, infile=None, instnames=None):
         if infile is None:
-            infile = 'score/brainstaves-alt.mscx'
+            infile = 'score/brainstaves.mscx'
         if instnames is None:
             instnames = ['v1','v2','va','vc']
         self.infile = infile

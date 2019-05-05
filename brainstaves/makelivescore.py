@@ -24,7 +24,7 @@ torun = [
 'write',
 ]
 
-wait = False
+wait = False # Whether or not to pause between generating sections
 
 pauses = sc.odict([
         ('A',20), # 0:20
@@ -37,7 +37,7 @@ pauses = sc.odict([
         ('H',0),  # 4:00
         ])
 
-statusfile = 'status.tmp'
+statusfile = 'status.tmp' # WARNING, replace with status.obj
 npages = 13
 midioffset = 24
 usedata = False
@@ -223,7 +223,7 @@ if 'sectionD' in torun:
 if 'sectionE' in torun:
     sec = 'E'
     nd[sec] = begin(sec)
-    ss = [85,98]
+    ss = [85,101]
     nm = sc.objdict()
     seq = sc.objdict()
     for part in qd.keys():
@@ -254,38 +254,38 @@ if 'sectionE' in torun:
     generate(seq, nm, p='va', m=85, n=1, t=2)
     generate(seq, nm, p='v2', m=86, n=1, t=1)
     generate(seq, nm, p='v1', m=86, n=1, t=1)
-    generate(seq, nm, p='vc', m=86, n=1, t=1)
+    generate(seq, nm, p='vc', m=87, n=1, t=0)
 
-    generate(seq, nm, p='v2', m=87, n=1, t=1)
-    generate(seq, nm, p='va', m=88, n=1, t=0)
-    generate(seq, nm, p='vc', m=88, n=1, t=0)
-    generate(seq, nm, p='v1', m=88, n=1, t=0)
-
+    generate(seq, nm, p='v2', m=88, n=1, t=2)
+    generate(seq, nm, p='va', m=89, n=1, t=1)
     generate(seq, nm, p='vc', m=89, n=1, t=1)
-    generate(seq, nm, p='v1', m=89, n=1, t=1)
-    generate(seq, nm, p='v2', m=90, n=1, t=0)
-    generate(seq, nm, p='va', m=90, n=1, t=0)
+    generate(seq, nm, p='v1', m=90, n=1, t=0)
+
+    generate(seq, nm, p='vc', m=91, n=1, t=2)
+    generate(seq, nm, p='v1', m=91, n=1, t=2)
+    generate(seq, nm, p='va', m=92, n=1, t=1)
+    generate(seq, nm, p='v2', m=93, n=1, t=0)
     
     # Unison
     for part in qd.keys():
-        generate(seq, nm, p=part, m=91, n=1, t=0)
-        generate(seq, nm, p=part, m=91, n=3, t=0)
-        generate(seq, nm, p=part, m=91, n=5, t=1)
-        generate(seq, nm, p=part, m=92, n=3, t=1)
-        generate(seq, nm, p=part, m=93, n=3, t=0)
-        generate(seq, nm, p=part, m=93, n=5, t=0)
-        generate(seq, nm, p=part, m=93, n=7, t=1)
+        generate(seq, nm, p=part, m=94, n=1, t=0)
+        generate(seq, nm, p=part, m=94, n=3, t=0)
+        generate(seq, nm, p=part, m=94, n=5, t=1)
+        generate(seq, nm, p=part, m=95, n=3, t=1)
+        generate(seq, nm, p=part, m=96, n=3, t=0)
+        generate(seq, nm, p=part, m=96, n=5, t=0)
+        generate(seq, nm, p=part, m=96, n=7, t=1)
         for n in [3,5,7]:
-            generate(seq, nm, p=part, m=94, n=n, t=0)
+            generate(seq, nm, p=part, m=97, n=n, t=0)
         for n in [1,3,5,7,9]:
-            generate(seq, nm, p=part, m=95, n=n, t=0)
+            generate(seq, nm, p=part, m=98, n=n, t=0)
         for n in [1,3,5,7,9]:
-            generate(seq, nm, p=part, m=96, n=n, t=0)
-        generate(seq, nm, p=part, m=96, n=11, t=1)
-        generate(seq, nm, p=part, m=97, n=3, t=0)
-        generate(seq, nm, p=part, m=97, n=5, t=1)
-        generate(seq, nm, p=part, m=98, n=3, t=0)
-        generate(seq, nm, p=part, m=98, n=5, t=1)
+            generate(seq, nm, p=part, m=98, n=n, t=0)
+        generate(seq, nm, p=part, m=99, n=11, t=1)
+        generate(seq, nm, p=part, m=100, n=3, t=0)
+        generate(seq, nm, p=part, m=100, n=5, t=1)
+        generate(seq, nm, p=part, m=101, n=3, t=0)
+        generate(seq, nm, p=part, m=101, n=5, t=1)
 
     startvals1 = sc.odict([
             ('v1',instruments.char2num('en4')),
@@ -341,9 +341,22 @@ if 'sectionE' in torun:
 
 
 if 'sectionF' in torun:
-    print('~~~ Section F does not use the brain ~~~')
     sec = 'F'
     nd[sec] = begin(sec)
+    quartet,qd = makequartet(mindur=8, timesig='4/4', nbars=1)
+    
+    for part,inst in qd.items():
+        if part == 'va':
+            ss = [106,118]
+            nd[sec][part] = xml.loadnotes(part=part, measurerange=ss)
+            for repeat in repeats(ss):
+                inst.seed += 1
+                if inst.scorepts: startval = inst.score[-1]
+                inst.brownian(maxstep=3, startval=startval, skipstart=True, inst=part, usedata=usedata)
+                inst.seed += 1
+                inst.cat()
+        
+            appendnotes(nd, sec, part)
     process(sec)
 
 
@@ -353,9 +366,9 @@ if 'sectionG' in torun:
     quartet,qd = makequartet(mindur=8, timesig='4/4', nbars=1)
     
     for part,inst in qd.items():
-        if   part == 'v1': ss = [143,144]
-        elif part == 'vc': ss = [122,144]
-        else:              ss = [133,144]
+        if   part == 'v2': ss = [146,147]
+        elif part == 'vc': ss = [125,147]
+        else:              ss = [136,147]
         nd[sec][part] = xml.loadnotes(part=part, measurerange=ss)
         for repeat in repeats(ss):
             inst.seed += 1
@@ -374,8 +387,8 @@ if 'sectionH' in torun:
     quartet,qd = makequartet(mindur=8, timesig='12/8', nbars=1)
     
     for part,inst in qd.items():      
-        if part == 'v1': ss = [147,148]
-        else:            ss = [147,166]
+        if part == 'v1': ss = [150,151]
+        else:            ss = [150,169]
         nd[sec][part] = xml.loadnotes(part=part, measurerange=ss)
         for repeat in repeats(ss):
             inst.seed += 1
