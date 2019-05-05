@@ -8624,19 +8624,24 @@ poco crescendo)</b></text>
         <Rest>
           <durationType>half</durationType>
           </Rest>
+        <Dynamic>
+          <subtype>ff</subtype>
+          <velocity>112</velocity>
+          <pos x="0.783319" y="7.1317"/>
+          </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
           <StemDirection>up</StemDirection>
           <Note>
-            <pitch>59</pitch>
+            <pitch>71</pitch>
             <tpc>19</tpc>
             </Note>
           <Note>
             <Accidental>
               <subtype>sharp</subtype>
               </Accidental>
-            <pitch>68</pitch>
+            <pitch>80</pitch>
             <tpc>22</tpc>
             </Note>
           </Chord>
@@ -16885,11 +16890,6 @@ poco crescendo)</b></text>
         <Rest>
           <durationType>half</durationType>
           </Rest>
-        <Dynamic>
-          <subtype>ff</subtype>
-          <velocity>112</velocity>
-          <pos x="0.424019" y="-2.46957"/>
-          </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
@@ -23595,9 +23595,12 @@ poco crescendo)</b></text>
           </Rest>
         </Measure>
       <Measure number="92">
+        <Rest>
+          <durationType>half</durationType>
+          </Rest>
         <Chord>
           <BeamMode>no</BeamMode>
-          <durationType>whole</durationType>
+          <durationType>half</durationType>
           <StemDirection>up</StemDirection>
           <Note>
             <Tie id="270">
@@ -38161,18 +38164,18 @@ poco crescendo)</b></text>
         <Dynamic>
           <subtype>p</subtype>
           <velocity>49</velocity>
-          <pos x="0.658282" y="9.42024"/>
+          <pos x="0.658282" y="6.36287"/>
           </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
           <StemDirection>up</StemDirection>
           <Note>
-            <pitch>36</pitch>
+            <pitch>48</pitch>
             <tpc>14</tpc>
             </Note>
           <Note>
-            <pitch>45</pitch>
+            <pitch>57</pitch>
             <tpc>17</tpc>
             </Note>
           </Chord>
