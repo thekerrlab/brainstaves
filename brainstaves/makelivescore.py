@@ -24,6 +24,7 @@ torun = [
 'write',
 ]
 
+version = 'versionB'
 wait = False # Whether or not to pause between generating sections
 
 pauses = sc.odict([
@@ -36,6 +37,9 @@ pauses = sc.odict([
         ('G',30), # 3:30
         ('H',0),  # 4:00
         ])
+
+infiles = {'versionA':'score/brainstaves.mscx',
+           'versionB':'score/brainstaves-B.mscx',}
 
 statusfile = 'status.tmp' # WARNING, replace with status.obj
 npages = 13
@@ -106,7 +110,7 @@ def repeats(ss):
 def write():
     if 'write' in torun:
         print('Writing XML')
-        outputxml = musescore.XML()
+        outputxml = musescore.XML(infile=infiles[version])
         outputxml.write(data=nd.notes)
         os.system('mscore live/live.mscx -o live/live.png')
     return None
@@ -349,9 +353,16 @@ if 'sectionF' in torun:
     nd[sec] = begin(sec)
     quartet,qd = makequartet(mindur=8, timesig='4/4', nbars=1)
     
+    parttosub = {
+            'versionA':'va', 
+            'versionB':'v1'}
+    ssparts = {
+            'versionA':[106,118], 
+            'versionB':[106,110]}
+    
     for part,inst in qd.items():
-        if part == 'va':
-            ss = [106,118]
+        if part == parttosub[version]:
+            ss = ssparts[version]
             nd[sec][part] = xml.loadnotes(part=part, measurerange=ss)
             for repeat in repeats(ss):
                 inst.seed += 1
