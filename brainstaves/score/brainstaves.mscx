@@ -431,6 +431,7 @@
           </Text>
         </VBox>
       <Measure number="1">
+        <stretch>0.7</stretch>
         <vspacerDown>13</vspacerDown>
         <Clef>
           <concertClefType>G</concertClefType>
@@ -456,26 +457,31 @@
           </Rest>
         </Measure>
       <Measure number="2">
+        <stretch>0.7</stretch>
         <Rest>
           <durationType>whole</durationType>
           </Rest>
         </Measure>
       <Measure number="3">
+        <stretch>0.7</stretch>
         <Rest>
           <durationType>whole</durationType>
           </Rest>
         </Measure>
       <Measure number="4">
+        <stretch>0.7</stretch>
         <Rest>
           <durationType>whole</durationType>
           </Rest>
         </Measure>
       <Measure number="5">
+        <stretch>0.7</stretch>
         <Rest>
           <durationType>whole</durationType>
           </Rest>
         </Measure>
       <Measure number="6">
+        <stretch>0.7</stretch>
         <Dynamic>
           <subtype>p</subtype>
           <velocity>49</velocity>
@@ -510,6 +516,7 @@
           </Chord>
         </Measure>
       <Measure number="7">
+        <stretch>0.7</stretch>
         <endSpanner id="2"/>
         <Chord>
           <BeamMode>no</BeamMode>
@@ -524,6 +531,7 @@
           </Chord>
         </Measure>
       <Measure number="8">
+        <stretch>0.7</stretch>
         <Dynamic>
           <subtype>mf</subtype>
           <velocity>80</velocity>
@@ -574,6 +582,7 @@
           </Chord>
         </Measure>
       <Measure number="9">
+        <stretch>0.7</stretch>
         <LayoutBreak>
           <subtype>line</subtype>
           </LayoutBreak>
@@ -597,6 +606,7 @@
           </Chord>
         </Measure>
       <Measure number="10">
+        <stretch>0.7</stretch>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
@@ -617,6 +627,7 @@
           </Chord>
         </Measure>
       <Measure number="11">
+        <stretch>0.7</stretch>
         <endSpanner id="5"/>
         <Chord>
           <BeamMode>no</BeamMode>
@@ -634,11 +645,13 @@
           </Chord>
         </Measure>
       <Measure number="12">
+        <stretch>0.7</stretch>
         <Rest>
           <durationType>whole</durationType>
           </Rest>
         </Measure>
       <Measure number="13">
+        <stretch>0.7</stretch>
         <StaffText>
           <pos x="-1.68759" y="-5.07913"/>
           <text>As if rising and falling on an ocean swell</text>
@@ -689,6 +702,7 @@
           </Chord>
         </Measure>
       <Measure number="14">
+        <stretch>0.7</stretch>
         <Dynamic>
           <subtype>ff</subtype>
           <velocity>112</velocity>
@@ -729,6 +743,7 @@
           </Chord>
         </Measure>
       <Measure number="15">
+        <stretch>0.7</stretch>
         <endSpanner id="15"/>
         <Chord>
           <BeamMode>no</BeamMode>
@@ -746,12 +761,14 @@
           </Chord>
         </Measure>
       <Measure number="16">
+        <stretch>0.7</stretch>
         <vspacerDown>13</vspacerDown>
         <Rest>
           <durationType>whole</durationType>
           </Rest>
         </Measure>
       <Measure number="17">
+        <stretch>0.7</stretch>
         <Dynamic>
           <subtype>other-dynamics</subtype>
           <velocity>33</velocity>
@@ -809,6 +826,7 @@
           </Rest>
         </Measure>
       <Measure number="18">
+        <stretch>0.7</stretch>
         <LayoutBreak>
           <subtype>page</subtype>
           </LayoutBreak>
@@ -817,6 +835,7 @@
           </Rest>
         </Measure>
       <Measure number="19">
+        <stretch>0.7</stretch>
         <TimeSig>
           <sigN>12</sigN>
           <sigD>8</sigD>
@@ -859,6 +878,7 @@
           </Chord>
         </Measure>
       <Measure number="20">
+        <stretch>0.7</stretch>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -882,6 +902,7 @@
           </Chord>
         </Measure>
       <Measure number="21">
+        <stretch>0.7</stretch>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -905,6 +926,7 @@
           </Chord>
         </Measure>
       <Measure number="22">
+        <stretch>0.7</stretch>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -928,6 +950,7 @@
           </Chord>
         </Measure>
       <Measure number="23">
+        <stretch>0.7</stretch>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -951,6 +974,7 @@
           </Chord>
         </Measure>
       <Measure number="24">
+        <stretch>0.7</stretch>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -974,6 +998,7 @@
           </Chord>
         </Measure>
       <Measure number="25">
+        <stretch>0.7</stretch>
         <LayoutBreak>
           <subtype>line</subtype>
           </LayoutBreak>
@@ -1000,7 +1025,7 @@
           </Chord>
         </Measure>
       <Measure number="26">
-        <stretch>0.9</stretch>
+        <stretch>0.6</stretch>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -1024,7 +1049,7 @@
           </Chord>
         </Measure>
       <Measure number="27">
-        <stretch>0.9</stretch>
+        <stretch>0.6</stretch>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -1044,7 +1069,7 @@
           </Chord>
         </Measure>
       <Measure number="28">
-        <stretch>0.9</stretch>
+        <stretch>0.6</stretch>
         <StaffText>
           <pos x="-1.45449" y="-5.29785"/>
           <text>Sweet and lyrical, like a fine stream of honey, but gradually getting louder too</text>
@@ -1070,7 +1095,7 @@
           </Chord>
         </Measure>
       <Measure number="29">
-        <stretch>0.9</stretch>
+        <stretch>0.6</stretch>
         <LayoutBreak>
           <subtype>line</subtype>
           </LayoutBreak>
@@ -1097,7 +1122,7 @@
           </Chord>
         </Measure>
       <Measure number="30">
-        <stretch>0.9</stretch>
+        <stretch>0.6</stretch>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -1118,7 +1143,7 @@
           </Chord>
         </Measure>
       <Measure number="31">
-        <stretch>0.9</stretch>
+        <stretch>0.6</stretch>
         <Dynamic>
           <subtype>mf</subtype>
           <velocity>80</velocity>
@@ -1144,6 +1169,7 @@
           </Chord>
         </Measure>
       <Measure number="32">
+        <stretch>0.7</stretch>
         <LayoutBreak>
           <subtype>line</subtype>
           </LayoutBreak>
@@ -1168,6 +1194,7 @@
           </Chord>
         </Measure>
       <Measure number="33">
+        <stretch>0.7</stretch>
         <Dynamic>
           <subtype>f</subtype>
           <velocity>96</velocity>
@@ -1195,6 +1222,7 @@
           </Chord>
         </Measure>
       <Measure number="34">
+        <stretch>0.7</stretch>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -1212,6 +1240,7 @@
           </Chord>
         </Measure>
       <Measure number="35">
+        <stretch>0.7</stretch>
         <LayoutBreak>
           <subtype>line</subtype>
           </LayoutBreak>
@@ -1232,6 +1261,7 @@
           </Chord>
         </Measure>
       <Measure number="36">
+        <stretch>0.7</stretch>
         <Dynamic>
           <subtype>ff</subtype>
           <velocity>112</velocity>
@@ -1263,6 +1293,7 @@
           </Chord>
         </Measure>
       <Measure number="37">
+        <stretch>0.7</stretch>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -1286,6 +1317,7 @@
           </Chord>
         </Measure>
       <Measure number="38">
+        <stretch>0.7</stretch>
         <LayoutBreak>
           <subtype>line</subtype>
           </LayoutBreak>
@@ -1314,6 +1346,7 @@
           </Rest>
         </Measure>
       <Measure number="39">
+        <stretch>0.7</stretch>
         <StaffText>
           <pos x="-5.81249" y="5.80602"/>
           <text><font size="8.5261"></font><font face="Times New Roman"></font><i>pizz.</i></text>
@@ -1466,6 +1499,7 @@
           </Chord>
         </Measure>
       <Measure number="40">
+        <stretch>0.7</stretch>
         <Beam id="5">
           <StemDirection>up</StemDirection>
           </Beam>
@@ -1606,6 +1640,7 @@
           </Chord>
         </Measure>
       <Measure number="41">
+        <stretch>0.7</stretch>
         <LayoutBreak>
           <subtype>page</subtype>
           </LayoutBreak>
@@ -1650,6 +1685,7 @@
           </Rest>
         </Measure>
       <Measure number="42">
+        <stretch>0.7</stretch>
         <RehearsalMark>
           <placement>above</placement>
           <text><font size="14.284"></font><font face="Times New Roman"></font><b>C</b></text>
@@ -1693,6 +1729,7 @@
           </Rest>
         </Measure>
       <Measure number="43">
+        <stretch>0.7</stretch>
         <LayoutBreak>
           <subtype>line</subtype>
           </LayoutBreak>
@@ -1901,6 +1938,7 @@
           </Chord>
         </Measure>
       <Measure number="44">
+        <stretch>0.7</stretch>
         <Beam id="13">
           <StemDirection>down</StemDirection>
           </Beam>
@@ -2075,6 +2113,7 @@
           </Chord>
         </Measure>
       <Measure number="45">
+        <stretch>0.7</stretch>
         <LayoutBreak>
           <subtype>line</subtype>
           </LayoutBreak>
@@ -2265,6 +2304,7 @@
           </Chord>
         </Measure>
       <Measure number="46">
+        <stretch>0.7</stretch>
         <Beam id="21">
           <StemDirection>down</StemDirection>
           </Beam>
@@ -2444,6 +2484,7 @@
           </Chord>
         </Measure>
       <Measure number="47">
+        <stretch>0.7</stretch>
         <LayoutBreak>
           <subtype>line</subtype>
           </LayoutBreak>
@@ -2635,6 +2676,7 @@
           </Chord>
         </Measure>
       <Measure number="48">
+        <stretch>0.7</stretch>
         <Beam id="28">
           <StemDirection>down</StemDirection>
           </Beam>
@@ -2808,6 +2850,7 @@
           </Chord>
         </Measure>
       <Measure number="49">
+        <stretch>0.7</stretch>
         <LayoutBreak>
           <subtype>page</subtype>
           </LayoutBreak>
@@ -2965,6 +3008,7 @@
           </Chord>
         </Measure>
       <Measure number="50">
+        <stretch>0.7</stretch>
         <Dynamic>
           <subtype>mf</subtype>
           <velocity>80</velocity>
@@ -3121,6 +3165,7 @@
           </Chord>
         </Measure>
       <Measure number="51">
+        <stretch>0.7</stretch>
         <LayoutBreak>
           <subtype>line</subtype>
           </LayoutBreak>
@@ -3244,6 +3289,7 @@
           </Chord>
         </Measure>
       <Measure number="52">
+        <stretch>0.7</stretch>
         <Dynamic>
           <subtype>p</subtype>
           <velocity>49</velocity>
@@ -3327,6 +3373,7 @@
           </Chord>
         </Measure>
       <Measure number="53">
+        <stretch>0.7</stretch>
         <Rest>
           <durationType>eighth</durationType>
           </Rest>
@@ -3383,6 +3430,7 @@
           </Rest>
         </Measure>
       <Measure number="54">
+        <stretch>0.7</stretch>
         <LayoutBreak>
           <subtype>line</subtype>
           </LayoutBreak>
@@ -3425,7 +3473,7 @@
           </Rest>
         </Measure>
       <Measure number="55">
-        <stretch>0.6</stretch>
+        <stretch>0.3</stretch>
         <Dynamic>
           <subtype>pp</subtype>
           <velocity>33</velocity>
@@ -3486,7 +3534,7 @@
           </Rest>
         </Measure>
       <Measure number="56">
-        <stretch>0.6</stretch>
+        <stretch>0.3</stretch>
         <StaffText>
           <pos x="-2.71501" y="-4.08507"/>
           <text>Gradually start doing more and more of a glissando in a random direction on each (separate) note</text>
@@ -3514,7 +3562,7 @@
           </Rest>
         </Measure>
       <Measure number="57">
-        <stretch>0.6</stretch>
+        <stretch>0.3</stretch>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
@@ -3550,19 +3598,19 @@
           </Rest>
         </Measure>
       <Measure number="58">
-        <stretch>0.6</stretch>
+        <stretch>0.3</stretch>
         <Rest>
           <durationType>whole</durationType>
           </Rest>
         </Measure>
       <Measure number="59">
-        <stretch>0.6</stretch>
+        <stretch>0.3</stretch>
         <Rest>
           <durationType>whole</durationType>
           </Rest>
         </Measure>
       <Measure number="60">
-        <stretch>0.6</stretch>
+        <stretch>0.3</stretch>
         <LayoutBreak>
           <subtype>line</subtype>
           </LayoutBreak>
@@ -3571,6 +3619,7 @@
           </Rest>
         </Measure>
       <Measure number="61">
+        <stretch>0.7</stretch>
         <StaffText>
           <pos x="37.0112" y="-7.55469"/>
           <text><font size="9.3012"></font><font face="Times New Roman"></font>Furtively (razor-sharp onset and offset)</text>
@@ -3611,6 +3660,7 @@
           </Chord>
         </Measure>
       <Measure number="62">
+        <stretch>0.7</stretch>
         <LayoutBreak>
           <subtype>page</subtype>
           </LayoutBreak>
@@ -3643,7 +3693,7 @@
           </Rest>
         </Measure>
       <Measure number="63">
-        <stretch>0.8</stretch>
+        <stretch>0.5</stretch>
         <RehearsalMark>
           <placement>above</placement>
           <text><font size="14.284"></font><font face="Times New Roman"></font><b>D</b></text>
@@ -3690,7 +3740,7 @@
           </Rest>
         </Measure>
       <Measure number="64">
-        <stretch>0.8</stretch>
+        <stretch>0.5</stretch>
         <Rest>
           <durationType>quarter</durationType>
           </Rest>
@@ -3726,7 +3776,7 @@
           </Rest>
         </Measure>
       <Measure number="65">
-        <stretch>0.8</stretch>
+        <stretch>0.5</stretch>
         <Rest>
           <durationType>half</durationType>
           </Rest>
@@ -3747,7 +3797,7 @@
           </Chord>
         </Measure>
       <Measure number="66">
-        <stretch>0.8</stretch>
+        <stretch>0.5</stretch>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
@@ -3790,7 +3840,7 @@
           </Chord>
         </Measure>
       <Measure number="67">
-        <stretch>0.8</stretch>
+        <stretch>0.5</stretch>
         <Rest>
           <durationType>half</durationType>
           </Rest>
@@ -3811,7 +3861,7 @@
           </Chord>
         </Measure>
       <Measure number="68">
-        <stretch>0.8</stretch>
+        <stretch>0.5</stretch>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
@@ -3832,7 +3882,7 @@
           </Rest>
         </Measure>
       <Measure number="69">
-        <stretch>0.8</stretch>
+        <stretch>0.5</stretch>
         <LayoutBreak>
           <subtype>line</subtype>
           </LayoutBreak>
@@ -3842,7 +3892,7 @@
           </Rest>
         </Measure>
       <Measure number="70">
-        <stretch>0.8</stretch>
+        <stretch>0.5</stretch>
         <Dynamic>
           <subtype>pp</subtype>
           <velocity>33</velocity>
@@ -3910,7 +3960,7 @@
           </Chord>
         </Measure>
       <Measure number="71">
-        <stretch>0.8</stretch>
+        <stretch>0.5</stretch>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
@@ -3972,7 +4022,7 @@
           </Rest>
         </Measure>
       <Measure number="72">
-        <stretch>0.8</stretch>
+        <stretch>0.5</stretch>
         <Rest>
           <durationType>half</durationType>
           </Rest>
@@ -4000,7 +4050,7 @@
           </Chord>
         </Measure>
       <Measure number="73">
-        <stretch>0.8</stretch>
+        <stretch>0.5</stretch>
         <Rest>
           <durationType>eighth</durationType>
           </Rest>
@@ -4068,7 +4118,7 @@
           </Rest>
         </Measure>
       <Measure number="74">
-        <stretch>0.8</stretch>
+        <stretch>0.5</stretch>
         <LayoutBreak>
           <subtype>line</subtype>
           </LayoutBreak>
@@ -4146,7 +4196,7 @@
           </Chord>
         </Measure>
       <Measure number="75">
-        <stretch>0.8</stretch>
+        <stretch>0.5</stretch>
         <Rest>
           <durationType>eighth</durationType>
           </Rest>
@@ -4210,7 +4260,7 @@
           </Chord>
         </Measure>
       <Measure number="76">
-        <stretch>0.8</stretch>
+        <stretch>0.5</stretch>
         <Dynamic>
           <subtype>mp</subtype>
           <velocity>64</velocity>
@@ -4275,7 +4325,7 @@
           </Rest>
         </Measure>
       <Measure number="77">
-        <stretch>0.8</stretch>
+        <stretch>0.5</stretch>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
@@ -4343,7 +4393,7 @@
           </Chord>
         </Measure>
       <Measure number="78">
-        <stretch>0.8</stretch>
+        <stretch>0.5</stretch>
         <LayoutBreak>
           <subtype>line</subtype>
           </LayoutBreak>
@@ -4418,7 +4468,7 @@
           </Chord>
         </Measure>
       <Measure number="79">
-        <stretch>0.8</stretch>
+        <stretch>0.5</stretch>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
@@ -4486,7 +4536,7 @@
           </Rest>
         </Measure>
       <Measure number="80">
-        <stretch>0.8</stretch>
+        <stretch>0.5</stretch>
         <Dynamic>
           <subtype>f</subtype>
           <velocity>96</velocity>
@@ -4558,7 +4608,7 @@
           </Chord>
         </Measure>
       <Measure number="81">
-        <stretch>0.8</stretch>
+        <stretch>0.5</stretch>
         <Rest>
           <durationType>eighth</durationType>
           </Rest>
@@ -4626,7 +4676,7 @@
           </Chord>
         </Measure>
       <Measure number="82">
-        <stretch>0.8</stretch>
+        <stretch>0.5</stretch>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
@@ -4694,7 +4744,6 @@
           </Rest>
         </Measure>
       <Measure number="83">
-        <stretch>1.3</stretch>
         <vspacerDown>10</vspacerDown>
         <LayoutBreak>
           <subtype>page</subtype>
@@ -4735,6 +4784,7 @@
           </Rest>
         </Measure>
       <Measure number="84">
+        <stretch>0.7</stretch>
         <endSpanner id="49"/>
         <Rest>
           <durationType>measure</durationType>
@@ -4742,6 +4792,7 @@
           </Rest>
         </Measure>
       <Measure number="85">
+        <stretch>0.7</stretch>
         <RehearsalMark>
           <pos x="-19.4453" y="-6.22844"/>
           <placement>above</placement>
@@ -4763,6 +4814,7 @@ poco crescendo)</b></text>
           </Rest>
         </Measure>
       <Measure number="86">
+        <stretch>0.7</stretch>
         <Rest>
           <durationType>half</durationType>
           </Rest>
@@ -4788,6 +4840,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="87">
+        <stretch>0.7</stretch>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -4812,6 +4865,7 @@ poco crescendo)</b></text>
           </Rest>
         </Measure>
       <Measure number="88">
+        <stretch>0.7</stretch>
         <Rest>
           <durationType>half</durationType>
           </Rest>
@@ -4820,6 +4874,7 @@ poco crescendo)</b></text>
           </Rest>
         </Measure>
       <Measure number="89">
+        <stretch>0.7</stretch>
         <vspacerDown>10</vspacerDown>
         <Rest>
           <durationType>measure</durationType>
@@ -4827,6 +4882,7 @@ poco crescendo)</b></text>
           </Rest>
         </Measure>
       <Measure number="90">
+        <stretch>0.7</stretch>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -4852,6 +4908,7 @@ poco crescendo)</b></text>
           </Rest>
         </Measure>
       <Measure number="91">
+        <stretch>0.7</stretch>
         <Rest>
           <durationType>half</durationType>
           </Rest>
@@ -4883,6 +4940,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="92">
+        <stretch>0.7</stretch>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
@@ -4907,6 +4965,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="93">
+        <stretch>0.7</stretch>
         <LayoutBreak>
           <subtype>line</subtype>
           </LayoutBreak>
@@ -4936,6 +4995,7 @@ poco crescendo)</b></text>
           </Rest>
         </Measure>
       <Measure number="94">
+        <stretch>0.7</stretch>
         <Dynamic>
           <subtype>ppp</subtype>
           <velocity>16</velocity>
@@ -5037,6 +5097,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="95">
+        <stretch>0.7</stretch>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -5080,6 +5141,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="96">
+        <stretch>0.7</stretch>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>quarter</durationType>
@@ -5152,6 +5214,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="97">
+        <stretch>0.7</stretch>
         <vspacerDown>10</vspacerDown>
         <LayoutBreak>
           <subtype>line</subtype>
@@ -5236,6 +5299,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="98">
+        <stretch>0.7</stretch>
         <Dynamic>
           <subtype>mf</subtype>
           <velocity>80</velocity>
@@ -5321,6 +5385,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="99">
+        <stretch>0.7</stretch>
         <Dynamic>
           <subtype>f</subtype>
           <velocity>96</velocity>
@@ -5426,6 +5491,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="100">
+        <stretch>0.7</stretch>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>half</durationType>
@@ -5481,6 +5547,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="101">
+        <stretch>0.7</stretch>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
@@ -5554,6 +5621,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="102">
+        <stretch>0.7</stretch>
         <Rest>
           <durationType>half</durationType>
           </Rest>
@@ -5600,6 +5668,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="103">
+        <stretch>0.7</stretch>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
@@ -5635,6 +5704,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="104">
+        <stretch>0.7</stretch>
         <vspacerDown>15</vspacerDown>
         <HairPin id="78">
           <subtype>1</subtype>
@@ -5689,6 +5759,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="105">
+        <stretch>0.7</stretch>
         <LayoutBreak>
           <subtype>page</subtype>
           </LayoutBreak>
@@ -5728,6 +5799,7 @@ poco crescendo)</b></text>
           </Rest>
         </Measure>
       <Measure number="106">
+        <stretch>0.7</stretch>
         <RehearsalMark>
           <placement>above</placement>
           <text><font size="14.284"></font><font face="Times New Roman"></font><b>F</b></text>
@@ -5858,6 +5930,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="107">
+        <stretch>0.7</stretch>
         <LayoutBreak>
           <subtype>line</subtype>
           </LayoutBreak>
@@ -5952,6 +6025,7 @@ poco crescendo)</b></text>
           </Rest>
         </Measure>
       <Measure number="108">
+        <stretch>0.7</stretch>
         <Rest>
           <durationType>eighth</durationType>
           </Rest>
@@ -6082,6 +6156,7 @@ poco crescendo)</b></text>
           </Rest>
         </Measure>
       <Measure number="109">
+        <stretch>0.7</stretch>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
@@ -6180,6 +6255,7 @@ poco crescendo)</b></text>
           </Rest>
         </Measure>
       <Measure number="110">
+        <stretch>0.7</stretch>
         <LayoutBreak>
           <subtype>line</subtype>
           </LayoutBreak>
@@ -6284,7 +6360,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="111">
-        <stretch>0.9</stretch>
+        <stretch>0.6</stretch>
         <Dynamic>
           <subtype>mf</subtype>
           <velocity>80</velocity>
@@ -6340,7 +6416,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="112">
-        <stretch>0.9</stretch>
+        <stretch>0.6</stretch>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>quarter</durationType>
@@ -6438,6 +6514,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="113">
+        <stretch>0.7</stretch>
         <LayoutBreak>
           <subtype>line</subtype>
           </LayoutBreak>
@@ -6530,6 +6607,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="114">
+        <stretch>0.7</stretch>
         <Beam id="55">
           <StemDirection>down</StemDirection>
           </Beam>
@@ -6601,6 +6679,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="115">
+        <stretch>0.7</stretch>
         <Beam id="56">
           <StemDirection>down</StemDirection>
           </Beam>
@@ -6660,6 +6739,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="116">
+        <stretch>0.7</stretch>
         <LayoutBreak>
           <subtype>line</subtype>
           </LayoutBreak>
@@ -6738,6 +6818,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="117">
+        <stretch>0.7</stretch>
         <Beam id="59">
           <StemDirection>up</StemDirection>
           </Beam>
@@ -6803,6 +6884,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="118">
+        <stretch>0.7</stretch>
         <Beam id="60">
           <StemDirection>down</StemDirection>
           </Beam>
@@ -6907,7 +6989,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="119">
-        <stretch>0.9</stretch>
+        <stretch>0.6</stretch>
         <vspacerDown>10</vspacerDown>
         <LayoutBreak>
           <subtype>line</subtype>
@@ -7032,6 +7114,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="120">
+        <stretch>0.7</stretch>
         <Beam id="65">
           <StemDirection>down</StemDirection>
           </Beam>
@@ -7123,7 +7206,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="121">
-        <stretch>1.1</stretch>
+        <stretch>0.8</stretch>
         <vspacerDown>10</vspacerDown>
         <LayoutBreak>
           <subtype>line</subtype>
@@ -7188,6 +7271,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="122">
+        <stretch>0.7</stretch>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -7276,13 +7360,13 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="123">
-        <stretch>0.6</stretch>
+        <stretch>0.3</stretch>
         <HairPin id="92">
           <subtype>0</subtype>
           <Segment>
             <subtype>0</subtype>
             <off2 x="0" y="0"/>
-            <pos x="74.1316" y="6.5"/>
+            <pos x="79.5504" y="6.5"/>
             </Segment>
           <beginText>
             <text>cresc.</text>
@@ -7351,7 +7435,7 @@ poco crescendo)</b></text>
           </Rest>
         </Measure>
       <Measure number="124">
-        <stretch>0.6</stretch>
+        <stretch>0.3</stretch>
         <vspacerDown>10</vspacerDown>
         <LayoutBreak>
           <subtype>page</subtype>
@@ -7361,6 +7445,7 @@ poco crescendo)</b></text>
           </Rest>
         </Measure>
       <Measure number="125">
+        <stretch>0.7</stretch>
         <RehearsalMark>
           <placement>above</placement>
           <text><font size="14.284"></font><font face="Times New Roman"></font><b>G</b></text>
@@ -7394,6 +7479,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="126">
+        <stretch>0.7</stretch>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
@@ -7414,6 +7500,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="127">
+        <stretch>0.7</stretch>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
@@ -7435,6 +7522,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="128">
+        <stretch>0.7</stretch>
         <LayoutBreak>
           <subtype>line</subtype>
           </LayoutBreak>
@@ -7456,6 +7544,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="129">
+        <stretch>0.7</stretch>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
@@ -7475,6 +7564,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="130">
+        <stretch>0.7</stretch>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
@@ -7495,6 +7585,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="131">
+        <stretch>0.7</stretch>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
@@ -7517,6 +7608,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="132">
+        <stretch>0.7</stretch>
         <LayoutBreak>
           <subtype>line</subtype>
           </LayoutBreak>
@@ -7554,6 +7646,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="133">
+        <stretch>0.7</stretch>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
@@ -7580,6 +7673,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="134">
+        <stretch>0.7</stretch>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
@@ -7602,6 +7696,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="135">
+        <stretch>0.7</stretch>
         <LayoutBreak>
           <subtype>line</subtype>
           </LayoutBreak>
@@ -7623,6 +7718,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="136">
+        <stretch>0.7</stretch>
         <Rest>
           <durationType>eighth</durationType>
           </Rest>
@@ -7700,6 +7796,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="137">
+        <stretch>0.7</stretch>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
@@ -7766,6 +7863,7 @@ poco crescendo)</b></text>
           </Rest>
         </Measure>
       <Measure number="138">
+        <stretch>0.7</stretch>
         <LayoutBreak>
           <subtype>line</subtype>
           </LayoutBreak>
@@ -7849,6 +7947,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="139">
+        <stretch>0.7</stretch>
         <Rest>
           <durationType>eighth</durationType>
           </Rest>
@@ -7921,6 +8020,7 @@ poco crescendo)</b></text>
           </Rest>
         </Measure>
       <Measure number="140">
+        <stretch>0.7</stretch>
         <Beam id="76">
           <StemDirection>up</StemDirection>
           </Beam>
@@ -8001,6 +8101,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="141">
+        <stretch>0.7</stretch>
         <LayoutBreak>
           <subtype>line</subtype>
           </LayoutBreak>
@@ -8072,6 +8173,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="142">
+        <stretch>0.7</stretch>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
@@ -8137,6 +8239,7 @@ poco crescendo)</b></text>
           </Rest>
         </Measure>
       <Measure number="143">
+        <stretch>0.7</stretch>
         <Beam id="80">
           <StemDirection>up</StemDirection>
           </Beam>
@@ -8214,6 +8317,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="144">
+        <stretch>0.7</stretch>
         <Rest>
           <durationType>eighth</durationType>
           </Rest>
@@ -8286,6 +8390,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="145">
+        <stretch>0.7</stretch>
         <LayoutBreak>
           <subtype>line</subtype>
           </LayoutBreak>
@@ -8361,6 +8466,7 @@ poco crescendo)</b></text>
           </Rest>
         </Measure>
       <Measure number="146">
+        <stretch>0.7</stretch>
         <Beam id="84">
           <StemDirection>down</StemDirection>
           </Beam>
@@ -8417,6 +8523,7 @@ poco crescendo)</b></text>
           </Rest>
         </Measure>
       <Measure number="147">
+        <stretch>0.7</stretch>
         <Beam id="85">
           <StemDirection>down</StemDirection>
           </Beam>
@@ -8473,6 +8580,7 @@ poco crescendo)</b></text>
           </Rest>
         </Measure>
       <Measure number="148">
+        <stretch>0.7</stretch>
         <StaffText>
           <pos x="6.38549" y="-4.94919"/>
           <text><font size="9.3012"></font><font face="Times New Roman"></font>Stare at each other</text>
@@ -8509,6 +8617,7 @@ poco crescendo)</b></text>
           </Rest>
         </Measure>
       <Measure number="149">
+        <stretch>0.7</stretch>
         <LayoutBreak>
           <subtype>page</subtype>
           </LayoutBreak>
@@ -8539,6 +8648,7 @@ poco crescendo)</b></text>
           </Rest>
         </Measure>
       <Measure number="150">
+        <stretch>0.7</stretch>
         <TimeSig>
           <sigN>12</sigN>
           <sigD>8</sigD>
@@ -8698,6 +8808,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="151">
+        <stretch>0.7</stretch>
         <LayoutBreak>
           <subtype>line</subtype>
           </LayoutBreak>
@@ -8847,6 +8958,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="152">
+        <stretch>0.7</stretch>
         <Ottava id="106">
           <subtype>8va</subtype>
           <Segment>
@@ -8890,6 +9002,7 @@ poco crescendo)</b></text>
           </Rest>
         </Measure>
       <Measure number="153">
+        <stretch>0.7</stretch>
         <Dynamic>
           <subtype>f</subtype>
           <velocity>96</velocity>
@@ -8916,6 +9029,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="154">
+        <stretch>0.7</stretch>
         <LayoutBreak>
           <subtype>line</subtype>
           </LayoutBreak>
@@ -8931,6 +9045,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="155">
+        <stretch>0.7</stretch>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -8942,6 +9057,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="156">
+        <stretch>0.7</stretch>
         <Dynamic>
           <subtype>mf</subtype>
           <velocity>80</velocity>
@@ -8957,6 +9073,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="157">
+        <stretch>0.7</stretch>
         <LayoutBreak>
           <subtype>line</subtype>
           </LayoutBreak>
@@ -8973,6 +9090,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="158">
+        <stretch>0.7</stretch>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -8985,6 +9103,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="159">
+        <stretch>0.7</stretch>
         <Dynamic>
           <subtype>mp</subtype>
           <velocity>64</velocity>
@@ -9000,6 +9119,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="160">
+        <stretch>0.7</stretch>
         <LayoutBreak>
           <subtype>line</subtype>
           </LayoutBreak>
@@ -9014,6 +9134,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="161">
+        <stretch>0.7</stretch>
         <Dynamic>
           <subtype>p</subtype>
           <velocity>49</velocity>
@@ -9031,6 +9152,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="162">
+        <stretch>0.7</stretch>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -9043,6 +9165,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="163">
+        <stretch>0.7</stretch>
         <LayoutBreak>
           <subtype>line</subtype>
           </LayoutBreak>
@@ -9059,6 +9182,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="164">
+        <stretch>0.7</stretch>
         <Dynamic>
           <subtype>pp</subtype>
           <velocity>33</velocity>
@@ -9091,6 +9215,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="165">
+        <stretch>0.7</stretch>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -9105,6 +9230,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="166">
+        <stretch>0.7</stretch>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -9119,6 +9245,10 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="167">
+        <stretch>0.7</stretch>
+        <LayoutBreak>
+          <subtype>line</subtype>
+          </LayoutBreak>
         <Dynamic>
           <subtype>f</subtype>
           <velocity>96</velocity>
@@ -9138,6 +9268,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="168">
+        <stretch>0.7</stretch>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -9152,6 +9283,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="169">
+        <stretch>0.7</stretch>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -9166,6 +9298,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="170">
+        <stretch>0.7</stretch>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -9180,6 +9313,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="171">
+        <stretch>0.7</stretch>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -9194,6 +9328,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="172">
+        <stretch>0.8</stretch>
         <HairPin id="120">
           <subtype>0</subtype>
           <beginText>
@@ -9226,6 +9361,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="173">
+        <stretch>0.8</stretch>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -9240,6 +9376,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="174">
+        <stretch>0.8</stretch>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -9252,6 +9389,7 @@ poco crescendo)</b></text>
           </Chord>
         </Measure>
       <Measure number="175">
+        <stretch>0.8</stretch>
         <endSpanner id="106"/>
         <endSpanner id="120"/>
         <endSpanner id="121"/>
@@ -15371,7 +15509,7 @@ poco crescendo)</b></text>
           <Segment>
             <subtype>0</subtype>
             <off2 x="0" y="0"/>
-            <pos x="74.1316" y="6.5"/>
+            <pos x="79.5504" y="6.5"/>
             </Segment>
           <beginText>
             <text>cresc.</text>
@@ -18504,7 +18642,7 @@ poco crescendo)</b></text>
           <Segment>
             <subtype>0</subtype>
             <off2 x="-5.45173" y="0"/>
-            <pos x="84.5859" y="7.56648"/>
+            <pos x="97.9283" y="7.56648"/>
             </Segment>
           <beginText>
             <text>cresc.</text>
@@ -29150,7 +29288,7 @@ poco crescendo)</b></text>
           <Segment>
             <subtype>0</subtype>
             <off2 x="-5.38525" y="0"/>
-            <pos x="84.5859" y="7.5"/>
+            <pos x="97.9283" y="7.5"/>
             </Segment>
           <beginText>
             <text>cresc.</text>
@@ -36307,7 +36445,7 @@ poco crescendo)</b></text>
           <Segment>
             <subtype>0</subtype>
             <off2 x="0" y="0"/>
-            <pos x="74.1316" y="7.3629"/>
+            <pos x="79.5504" y="7.3629"/>
             </Segment>
           <beginText>
             <text>cresc.</text>
@@ -39707,7 +39845,7 @@ poco crescendo)</b></text>
           <Segment>
             <subtype>0</subtype>
             <off2 x="-5.31876" y="0"/>
-            <pos x="85.4795" y="9.15605"/>
+            <pos x="98.8219" y="9.15605"/>
             </Segment>
           <beginText>
             <text>cresc.</text>
