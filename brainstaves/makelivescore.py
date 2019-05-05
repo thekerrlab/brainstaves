@@ -147,7 +147,7 @@ if 'load' in torun:
     print('Resetting')
     sc.runcommand('./cleanup')
     print('Loading XML')
-    xml = musescore.XML()
+    xml = musescore.XML(infile=infiles[version])
     nd = sc.objdict() # For storing all the notes
     nd.notes = []
 
@@ -172,6 +172,7 @@ if 'sectionB' in torun:
             inst.seed += 1
             startval = inst.score[-1] if inst.scorepts else 'min'
             inst.brownian(maxstep=2, startval=startval, skipstart=True, inst=part, usedata=usedata)
+            if version == 'versionB': inst.blues()
             inst.seed += 1
             inst.cat()
         
@@ -196,7 +197,8 @@ if 'sectionC' in torun:
                 elif part == 'vc': startval = 'min'
                 else:              startval = None
                 inst.brownian(maxstep=3, startval=startval, skipstart=True, inst=part, usedata=usedata)
-                inst.octotonic()
+                if version == 'versionA': inst.octotonic()
+                if version == 'versionB': inst.blues()
                 inst.seed += 1
                 inst.cat()
         
@@ -220,6 +222,7 @@ if 'sectionD' in torun:
             inst.seed += 1
             if inst.scorepts:  startval = inst.score[-1]
             inst.brownian(maxstep=5, startval=startval, skipstart=True, inst=part, usedata=usedata)
+            if version == 'versionB': inst.blues()
             inst.seed += 1
             inst.cat()
     
@@ -313,11 +316,13 @@ if 'sectionE' in torun:
         assert len(nd[sec][part]) == len(nm[part])
         
         inst.brownian(maxstep=5, startval=startvals1[part], forcestep=True, skipstart=True, npts=3)
+        if version == 'versionB': inst.blues()
         inst.seed += 1
         inst.cat()
         
         inst.brownian(maxstep=3, startval=startvals2[part], forcestep=True, skipstart=True, npts=25)
-        inst.octotonic()
+        if version == 'versionA': inst.octotonic()
+        if version == 'versionB': inst.blues()
         inst.seed += 1
         inst.cat()
         
@@ -368,6 +373,7 @@ if 'sectionF' in torun:
                 inst.seed += 1
                 if inst.scorepts: startval = inst.score[-1]
                 inst.brownian(maxstep=3, startval=startval, skipstart=True, inst=part, usedata=usedata)
+                if version == 'versionB': inst.blues()
                 inst.seed += 1
                 inst.cat()
         
@@ -389,6 +395,7 @@ if 'sectionG' in torun:
             inst.seed += 1
             if inst.scorepts: startval = inst.score[-1]
             inst.brownian(maxstep=5, startval=startval, skipstart=True, inst=part, usedata=usedata)
+            if version == 'versionB': inst.blues()
             inst.seed += 1
             inst.cat()
     
@@ -411,8 +418,11 @@ if 'sectionH' in torun:
             elif part in ['v1','v2']: startval = 'max'
             elif part in ['va','vc']: startval = 'min'
             inst.brownian(maxstep=2, startval=startval, skipstart=True, inst=part, usedata=usedata)
-            inst.diatonic()
-            inst.octotonic()
+            if version == 'versionA': 
+                inst.diatonic()
+                inst.octotonic()
+            if version == 'versionB':
+                inst.blues()
             inst.seed += 1
             inst.cat()
         

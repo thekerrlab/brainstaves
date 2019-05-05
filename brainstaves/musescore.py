@@ -32,6 +32,7 @@ class XML(sc.prettyobj):
         return None
     
     def load(self):
+        print('Loading %s...' % self.infile)
         self.lines = open(self.infile).readlines()
         self.nlines = len(self.lines)
         return None
