@@ -10,9 +10,11 @@ Created on Sat May  4 23:43:32 2019
 
 print('Setting up...')
 
+fullscreen = True
 dobegin = True
 showfaces = True
 shownotes = True
+showwaves = True
 
 import pylab as pl
 import matplotlib.font_manager as mfm
@@ -69,7 +71,8 @@ d = sc.objdict({
 print('Creating black figure...')
 fig = pl.figure(figsize=(16,9), facecolor=(0,0,0))
 fig.canvas.window().statusBar().setVisible(False) 
-#pl.get_current_fig_manager().full_screen_toggle()
+if fullscreen:
+    pl.get_current_fig_manager().full_screen_toggle()
 
 if dobegin:
     pl.pause(1)
@@ -111,7 +114,31 @@ if dobegin:
                 pitch += pl.randn()*0.01
                 mainax.text(0.02+n/51, ypos[inst]+pitch, d.note, fontproperties=prop, fontsize=60)
         
+    
+    if showwaves:
+        npts = int(1e3)
+        x = pl.linspace(0,5*2*pl.pi,npts)
         
+        for i,inst in enumerate(insts):
+            y = pl.zeros(npts)
+            
+            fa = sc.odict()
+            tmp = 1
+            fa['delta'] = [1, pl.exp(abs(pl.randn()*tmp))]
+            fa['theta'] = [7, pl.exp(abs(pl.randn()*tmp))]
+            fa['alpha'] = [12, pl.exp(abs(pl.randn()*tmp))]
+            fa['beta'] = [20, pl.exp(abs(pl.randn()*tmp))]
+            fa['gamma'] = [35, pl.exp(abs(pl.randn()*tmp))]
+            
+            for freq,pow in fa.values():
+                y += pl.sin(x*freq)*pow
+            
+            newx = sc.dcp(x)
+            newy = sc.dcp(y)
+            newx /= newx.max()
+            newy /= 300
+            newy += ypos[inst]+0.1
+            mainax.plot(newx,newy, c=colors[i])
     
 
 
