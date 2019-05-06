@@ -98,20 +98,13 @@ def makequartet(mindur=8, timesig='4/4', nbars=1):
     return quartet,qd
 
 
-def appendnotes(nd, sec, part, useties=False, verbose=True):
+def appendnotes(nd, sec, part, useties=False, verbose=False):
     nextnotetied = False
     for n,orignote in enumerate(nd[sec][part]):
-        if nextnotetied and useties:
-            print('USING TIES')
-            notetouse = n-1
-        else:
-            print('NOT USING TIES')
-            notetouse = n
-        if orignote.tie.val is not None:
-            print('Tie found! %s' % orignote.tie)
-            nextnotetied = True
-        else:
-            nextnotetied = False
+        if nextnotetied and useties: notetouse = n-1
+        else:                        notetouse = n
+        if orignote.tie.val is not None: nextnotetied = True # Has to come after using the tie!
+        else:                            nextnotetied = False
         if verbose: print('%s. %s' % (n, instruments.num2char(qd[part].score[notetouse])))
         note = xmlnote(orignote, qd[part].score[notetouse])
         nd.notes.append(note)
@@ -138,20 +131,23 @@ def begin(sec):
     sc.colorize('blue', '\n'*5+'Creating section %s' % sec)
     return sc.objdict()
 
+
 def process(sec):
     sc.fixedpause()
-    if wait or sec == 'H':
+    dowrite = (wait or sec == 'H')
+    if dowrite:
         write()
     writestatus(sec)
     print('Section %s written' % sec)
     sc.toc()
     print('\n'*5)
     nfiles = len(sc.getfilelist('live', pattern='live-*.png'))
-    if nfiles != npages:
-        print('WARNING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
-        print('The number of files is not correct!! %s vs %s' % (nfiles, npages))
-    else:
-        print('Done and all tests passed!')
+    if dowrite:
+        if nfiles != npages:
+            print('WARNING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
+            print('The number of files is not correct!! %s vs %s' % (nfiles, npages))
+        else:
+            print('Done and all tests passed!')
     if wait:
         sc.fixedpause(pauses[sec], verbose=True)
     return None
@@ -438,6 +434,25 @@ if 'sectionG' in torun:
             inst.cat()
     
         appendnotes(nd, sec, part)
+    
+    # Melodic part
+    if version == 'versionA':
+        print('Keeping prewritten melody for version A')
+    elif version == 'versionB':
+        for part,inst in qd.items():
+            if part in ['v2','va']:
+                if   part == 'v2': ss = [135,144]
+                elif part == 'va': ss = [125,135]
+                nd[sec][part] = xml.loadnotes(part=part, measurerange=ss)
+                for repeat in repeats(ss):
+                    inst.seed += 1
+                    if inst.scorepts: startval = inst.score[-1]
+                    inst.brownian(maxstep=3, startval=startval, skipstart=True, inst=part, usedata=usedata)
+                    if version == 'versionB': inst.blues()
+                    inst.seed += 1
+                    inst.cat()
+                appendnotes(nd, sec, part, useties=True)
+    
     process(sec)
 
 
