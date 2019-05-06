@@ -38,7 +38,7 @@ class XML(sc.prettyobj):
         return None
     
     def parse(self):
-        noteattrs = ['pitch', 'tpc', 'accidental']
+        noteattrs = ['pitch', 'tpc', 'accidental', 'tie']
         self.data = sc.objdict()
         partcount = -1
         for l,line in enumerate(self.lines):
@@ -119,12 +119,18 @@ class XML(sc.prettyobj):
             mname = 'm%i' % measure
             thismeasure = self.data[part][mname]
             for key,note in thismeasure.items():
-                if key != 'n': # Skip the counter
+#                print('HIIIII')
+#                print(key)
+#                print(note)
+                if key != 'n': # Skip the measure note counter
                     orignote = sc.objdict()
                     orignote['measure'] = measure
                     orignote['mname'] = mname
                     orignote['part'] = part
                     orignote['nname'] = key
+                    orignote['pitch'] = note.pitch
+                    orignote['tpc'] = note.tpc
+                    orignote['tie'] = note.tie
                     notes.append(orignote)
             if verbose: print(thismeasure)
         return notes

@@ -26,6 +26,8 @@ torun = [
 
 version = 'versionB'
 wait = False # Whether or not to pause between generating sections
+makepng = False
+makepdf = True
 
 pauses = sc.odict([
         ('A',20), # 0:20
@@ -39,7 +41,8 @@ pauses = sc.odict([
         ])
 
 infiles = {'versionA':'score/brainstaves.mscx',
-           'versionB':'score/brainstaves-B.mscx',}
+           'versionB':'score/brainstaves-B.mscx',
+           'versionC':'score/brainstaves-B.mscx',}
 
 statusfile = 'status.tmp' # WARNING, replace with status.obj
 npages = 13
@@ -95,10 +98,22 @@ def makequartet(mindur=8, timesig='4/4', nbars=1):
     return quartet,qd
 
 
-def appendnotes(nd, sec, part, verbose=False):
+def appendnotes(nd, sec, part, useties=False, verbose=True):
+    nextnotetied = False
     for n,orignote in enumerate(nd[sec][part]):
-        if verbose: print('%s. %s' % (n, instruments.num2char(qd[part].score[n])))
-        note = xmlnote(orignote, qd[part].score[n])
+        if nextnotetied and useties:
+            print('USING TIES')
+            notetouse = n-1
+        else:
+            print('NOT USING TIES')
+            notetouse = n
+        if orignote.tie.val is not None:
+            print('Tie found! %s' % orignote.tie)
+            nextnotetied = True
+        else:
+            nextnotetied = False
+        if verbose: print('%s. %s' % (n, instruments.num2char(qd[part].score[notetouse])))
+        note = xmlnote(orignote, qd[part].score[notetouse])
         nd.notes.append(note)
     return None
 
@@ -112,7 +127,10 @@ def write():
         print('Writing XML')
         outputxml = musescore.XML(infile=infiles[version])
         outputxml.write(data=nd.notes)
-        os.system('mscore live/live.mscx -o live/live.png')
+        if makepng:
+            os.system('mscore live/live.mscx -o live/live.png')
+        if makepdf:
+            os.system('mscore live/live.mscx -o live/live.pdf')
     return None
 
 
@@ -378,6 +396,26 @@ if 'sectionF' in torun:
                 inst.cat()
         
             appendnotes(nd, sec, part)
+    
+    # Melodic part
+    if version == 'versionA':
+        print('Keeping prewritten melody for version A')
+    elif version == 'versionB':
+        for part,inst in qd.items():
+            if   part == 'v1': ss = [111,124]
+            elif part == 'v2': ss = [117,124]
+            elif part == 'va': ss = [119,124]
+            elif part == 'vc': ss = [106,124]
+            nd[sec][part] = xml.loadnotes(part=part, measurerange=ss)
+            for repeat in repeats(ss):
+                inst.seed += 1
+                if inst.scorepts: startval = inst.score[-1]
+                inst.brownian(maxstep=3, startval=startval, skipstart=True, inst=part, usedata=usedata)
+                if version == 'versionB': inst.blues()
+                inst.seed += 1
+                inst.cat()
+            appendnotes(nd, sec, part, useties=True)
+    
     process(sec)
 
 
