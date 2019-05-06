@@ -15,7 +15,7 @@ saveupload = False
 
 which = 'quartet'
 lastline = ['v1']
-delay = 10
+delay = 1
 
 maps = {'quartet':
             {'v1':'mandhi',
@@ -41,7 +41,7 @@ while True:
         if lastline and name in lastline: rd[name] = -1
         else: rd[name] = count+45
         
-        infile = '../live/data-'+name+'.csv'
+        infile = 'data-'+name+'.csv'
         tmpdata = []
         lines = open(infile).readlines()
         for line in lines:

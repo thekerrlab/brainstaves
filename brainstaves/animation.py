@@ -10,7 +10,7 @@ Created on Sat May  4 23:43:32 2019
 
 print('Setting up...')
 
-fullscreen = True
+fullscreen = False
 dobegin = True
 showfaces = True
 shownotes = True
@@ -19,6 +19,7 @@ showwaves = True
 import pylab as pl
 import matplotlib.font_manager as mfm
 import sciris as sc
+import matplotlib.animation as animation
 
 files = sc.odict([
         ('v1','mandhi.png'),
@@ -116,12 +117,20 @@ if dobegin:
         
     
     if showwaves:
-        npts = int(1e3)
-        x = pl.linspace(0,5*2*pl.pi,npts)
+        
+        print('Starting waves...')
+        
+        npts = int(2e3)
+        x = pl.linspace(0,20*2*pl.pi,npts)
+        y = pl.zeros(npts)
+        lines = sc.odict()
+        ydatas = sc.odict()
+        for i,inst in enumerate(insts):
+            line, = mainax.plot(x,y, c=colors[i])
+            lines[inst] = line
         
         for i,inst in enumerate(insts):
-            y = pl.zeros(npts)
-            
+            y *= 0
             fa = sc.odict()
             tmp = 1
             fa['delta'] = [1, pl.exp(abs(pl.randn()*tmp))]
@@ -133,13 +142,42 @@ if dobegin:
             for freq,pow in fa.values():
                 y += pl.sin(x*freq)*pow
             
-            newx = sc.dcp(x)
             newy = sc.dcp(y)
-            newx /= newx.max()
             newy /= 300
             newy += ypos[inst]+0.1
-            mainax.plot(newx,newy, c=colors[i])
-    
+            ydatas[inst] = newy
+        
+#        def init():  # only required for blitting to give a clean slate.
+#            for i,inst in enumerate(insts):
+#                line = lines[inst]
+#                line.set_ydata([pl.nan] * len(x))
+#            return line,
+#        
+#        
+#        def animate(r):
+#            for i,inst in enumerate(insts):
+#                line = lines[inst]
+#                thisy = sc.dcp(ydatas[inst]).tolist()
+#                thisy = thisy[r*1:] + thisy[:1*r]
+#                line.set_ydata(thisy)  # update the data.
+#            return line,
+#        
+#        ani = animation.FuncAnimation(fig, animate, init_func=init, interval=50, blit=True, save_count=500)
+        
+        
+#        for r in range(200):
+#            for i,inst in enumerate(insts):
+#                print(r,i)
+#                sc.tic()
+#                
+#                sc.toc()
+#                
+#                sc.toc()
+#                lines[i].set_ydata(thisy)
+#                sc.toc()
+#                pl.pause(0.001)
+#                sc.toc()
+        
 
 
 print('Done.')

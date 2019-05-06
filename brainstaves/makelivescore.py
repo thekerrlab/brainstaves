@@ -24,9 +24,9 @@ torun = [
 'write',
 ]
 
-version = 'versionB'
+version = 'versionA'
 wait = False # Whether or not to pause between generating sections
-makepng = False
+makepng = True
 makepdf = True
 
 pauses = sc.odict([
