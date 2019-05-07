@@ -848,7 +848,7 @@
       <Measure number="17">
         <stretch>0.7</stretch>
         <StaffText>
-          <pos x="-9.95149" y="-5.36531"/>
+          <pos x="-1.39855" y="-6.85277"/>
           <text>Falling off the edge of a...</text>
           </StaffText>
         <HairPin id="24">
@@ -29597,7 +29597,7 @@ gliss.</text>
       </Staff>
     <Staff id="4">
       <Measure number="1">
-        <vspacerDown>18</vspacerDown>
+        <vspacerDown>22</vspacerDown>
         <Clef>
           <concertClefType>F</concertClefType>
           <transposingClefType>F</transposingClefType>
@@ -29635,6 +29635,10 @@ gliss.</text>
           <velocity>49</velocity>
           <pos x="0.658281" y="7.43556"/>
           </Dynamic>
+        <StaffText>
+          <pos x="-11.0468" y="8.23598"/>
+          <text>Bring out the melody as you build up the chord</text>
+          </StaffText>
         <HairPin id="324">
           <subtype>0</subtype>
           <Segment>
@@ -40113,6 +40117,10 @@ the strings, and then bow the air for a bit</text>
         <StaffText>
           <pos x="-1.28348" y="9.12006"/>
           <text>arco</text>
+          </StaffText>
+        <StaffText>
+          <pos x="-0.596017" y="12.8808"/>
+          <text>Chord should enter inaudibly under VI</text>
           </StaffText>
         <HairPin id="411">
           <subtype>0</subtype>

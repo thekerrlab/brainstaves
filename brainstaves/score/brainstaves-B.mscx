@@ -432,6 +432,7 @@
       <VBox>
         <height>18.3</height>
         <Text>
+          <pos x="0" y="-3.25308"/>
           <style>Composer</style>
           <text><font size="7.8617"></font><font face="Times New Roman"></font>Cliff Kerr | May 2019</text>
           </Text>
@@ -440,13 +441,14 @@
           <text><font size="7.8617"></font><font face="Times New Roman"></font><i>to the Ligeti Quartet</i></text>
           </Text>
         <Text>
-          <pos x="-0.0717591" y="11.9093"/>
+          <pos x="-0.0717591" y="9.03893"/>
           <style>Subtitle</style>
           <xoffset>0</xoffset>
           <yoffset>12.375</yoffset>
           <text><font face="Times New Roman"></font>for string quartet and EEG</text>
           </Text>
         <Text>
+          <pos x="0" y="3.61667"/>
           <style>Subtitle</style>
           <xoffset>0</xoffset>
           <yoffset>7.75</yoffset>
@@ -589,6 +591,11 @@
             <tpc>12</tpc>
             </Note>
           <Note>
+            <Symbol>
+              <name>stringsDownBow</name>
+              <font>Bravura</font>
+              <pos x="-0.115695" y="-4.4235"/>
+              </Symbol>
             <Tie id="7">
               </Tie>
             <pitch>67</pitch>
@@ -686,11 +693,7 @@
       <Measure number="13">
         <stretch>0.7</stretch>
         <StaffText>
-          <pos x="-1.68759" y="-5.07913"/>
-          <text>As if rising and falling on an ocean swell</text>
-          </StaffText>
-        <StaffText>
-          <pos x="-1.68759" y="-5.07913"/>
+          <pos x="-1.68759" y="-6.51431"/>
           <text>As if rising and falling on an ocean swell</text>
           </StaffText>
         <Dynamic>
@@ -725,6 +728,11 @@
             <tpc>12</tpc>
             </Note>
           <Note>
+            <Symbol>
+              <name>stringsDownBow</name>
+              <font>Bravura</font>
+              <pos x="0.180821" y="-4.07562"/>
+              </Symbol>
             <Tie id="16">
               </Tie>
             <pitch>67</pitch>
@@ -752,6 +760,11 @@
             <tpc>12</tpc>
             </Note>
           <Note>
+            <Symbol>
+              <name>stringsUpBow</name>
+              <font>Bravura</font>
+              <pos x="8.89902" y="-3.86455"/>
+              </Symbol>
             <Tie id="18">
               </Tie>
             <endSpanner id="16"/>
@@ -829,6 +842,11 @@
             <tpc>12</tpc>
             </Note>
           <Note>
+            <Symbol>
+              <name>stringsDownBow</name>
+              <font>Bravura</font>
+              <pos x="0.180821" y="-4.17131"/>
+              </Symbol>
             <Tie id="24">
               </Tie>
             <endSpanner id="21"/>
@@ -9411,6 +9429,11 @@ onto the string until there is a crazy arpeggiato</text>
             <tpc>15</tpc>
             </Note>
           <Note>
+            <Symbol>
+              <name>stringsDownBow</name>
+              <font>Bravura</font>
+              <pos x="-0.115695" y="-4.4235"/>
+              </Symbol>
             <Tie id="141">
               </Tie>
             <endSpanner id="138"/>
@@ -9532,6 +9555,11 @@ onto the string until there is a crazy arpeggiato</text>
             <Accidental>
               <subtype>flat</subtype>
               </Accidental>
+            <Symbol>
+              <name>stringsDownBow</name>
+              <font>Bravura</font>
+              <pos x="0.372179" y="-4.55402"/>
+              </Symbol>
             <Tie id="150">
               </Tie>
             <pitch>63</pitch>
@@ -9558,6 +9586,11 @@ onto the string until there is a crazy arpeggiato</text>
             <tpc>15</tpc>
             </Note>
           <Note>
+            <Symbol>
+              <name>stringsUpBow</name>
+              <font>Bravura</font>
+              <pos x="8.89902" y="-5.39541"/>
+              </Symbol>
             <Tie id="152">
               </Tie>
             <endSpanner id="150"/>
@@ -9633,6 +9666,11 @@ onto the string until there is a crazy arpeggiato</text>
             <tpc>15</tpc>
             </Note>
           <Note>
+            <Symbol>
+              <name>stringsDownBow</name>
+              <font>Bravura</font>
+              <pos x="0.180821" y="-5.22377"/>
+              </Symbol>
             <Tie id="158">
               </Tie>
             <endSpanner id="155"/>
@@ -18633,6 +18671,11 @@ gliss.</text>
             <tpc>20</tpc>
             </Note>
           <Note>
+            <Symbol>
+              <name>stringsDownBow</name>
+              <font>Bravura</font>
+              <pos x="-0.0200161" y="-2.70128"/>
+              </Symbol>
             <Tie id="251">
               </Tie>
             <endSpanner id="248"/>
@@ -18754,6 +18797,11 @@ gliss.</text>
             <tpc>20</tpc>
             </Note>
           <Note>
+            <Symbol>
+              <name>stringsDownBow</name>
+              <font>Bravura</font>
+              <pos x="0.180821" y="-3.11884"/>
+              </Symbol>
             <Tie id="260">
               </Tie>
             <pitch>60</pitch>
@@ -18780,6 +18828,11 @@ gliss.</text>
             <tpc>20</tpc>
             </Note>
           <Note>
+            <Symbol>
+              <name>stringsUpBow</name>
+              <font>Bravura</font>
+              <pos x="8.89902" y="-3.86455"/>
+              </Symbol>
             <Tie id="262">
               </Tie>
             <endSpanner id="260"/>
@@ -18855,6 +18908,11 @@ gliss.</text>
             <tpc>20</tpc>
             </Note>
           <Note>
+            <Symbol>
+              <name>stringsDownBow</name>
+              <font>Bravura</font>
+              <pos x="0.180821" y="-3.11884"/>
+              </Symbol>
             <Tie id="268">
               </Tie>
             <endSpanner id="265"/>
@@ -29622,6 +29680,7 @@ gliss.</text>
       </Staff>
     <Staff id="4">
       <Measure number="1">
+        <vspacerDown>22</vspacerDown>
         <Clef>
           <concertClefType>F</concertClefType>
           <transposingClefType>F</transposingClefType>
@@ -29713,6 +29772,10 @@ gliss.</text>
           </Chord>
         </Measure>
       <Measure number="6">
+        <StaffText>
+          <pos x="-22.911" y="8.23598"/>
+          <text>Bring out the melody as you build up the chord</text>
+          </StaffText>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
@@ -29790,6 +29853,11 @@ gliss.</text>
             <tpc>14</tpc>
             </Note>
           <Note>
+            <Symbol>
+              <name>stringsDownBow</name>
+              <font>Bravura</font>
+              <pos x="-0.0200161" y="-2.70128"/>
+              </Symbol>
             <Tie id="338">
               </Tie>
             <endSpanner id="335"/>
@@ -29908,6 +29976,11 @@ gliss.</text>
             <tpc>14</tpc>
             </Note>
           <Note>
+            <Symbol>
+              <name>stringsDownBow</name>
+              <font>Bravura</font>
+              <pos x="0.180821" y="-3.11884"/>
+              </Symbol>
             <Tie id="347">
               </Tie>
             <pitch>52</pitch>
@@ -29934,6 +30007,11 @@ gliss.</text>
             <tpc>14</tpc>
             </Note>
           <Note>
+            <Symbol>
+              <name>stringsUpBow</name>
+              <font>Bravura</font>
+              <pos x="8.89902" y="-3.86455"/>
+              </Symbol>
             <Tie id="349">
               </Tie>
             <endSpanner id="347"/>
@@ -30008,6 +30086,11 @@ gliss.</text>
             <tpc>14</tpc>
             </Note>
           <Note>
+            <Symbol>
+              <name>stringsDownBow</name>
+              <font>Bravura</font>
+              <pos x="0.180821" y="-3.11884"/>
+              </Symbol>
             <Tie id="355">
               </Tie>
             <endSpanner id="352"/>
