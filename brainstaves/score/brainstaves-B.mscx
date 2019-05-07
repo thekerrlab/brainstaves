@@ -890,6 +890,7 @@
           <showCourtesySig>1</showCourtesySig>
           </TimeSig>
         <RehearsalMark>
+          <pos x="-5.74073" y="-5.10493"/>
           <placement>above</placement>
           <text><font size="14.284"></font><font face="Times New Roman"></font><b>B</b></text>
           </RehearsalMark>
@@ -902,7 +903,7 @@
         <Tempo>
           <tempo>2.6</tempo>
           <followText>1</followText>
-          <pos x="2.70315" y="-2.85185"/>
+          <pos x="-2.27215" y="-5.43518"/>
           <text>Evolving from sweet to insane (poco a poco crescendo e agitato,  <sym>unicodeNoteQuarterUp</sym><sym>space</sym><sym>unicodeAugmentationDot</sym> = <sym>unicodeNoteQuarterUp</sym>,  <sym>unicodeNoteQuarterUp</sym><sym>space</sym><sym>unicodeAugmentationDot</sym> = 104)</text>
           </Tempo>
         <Chord>
@@ -1074,6 +1075,7 @@
         </Measure>
       <Measure number="26">
         <stretch>0.6</stretch>
+        <vspacerDown>9</vspacerDown>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -1119,7 +1121,7 @@
       <Measure number="28">
         <stretch>0.6</stretch>
         <StaffText>
-          <pos x="-70.9966" y="-4.25139"/>
+          <pos x="-73.7713" y="-4.25139"/>
           <text>VI: sweet and lyrical, like a fine stream of honey, but gradually getting louder too</text>
           </StaffText>
         <Chord>
@@ -1174,6 +1176,7 @@
         </Measure>
       <Measure number="30">
         <stretch>0.6</stretch>
+        <vspacerDown>9</vspacerDown>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -1255,6 +1258,7 @@
         </Measure>
       <Measure number="33">
         <stretch>0.7</stretch>
+        <vspacerDown>9</vspacerDown>
         <Dynamic>
           <subtype>f</subtype>
           <velocity>96</velocity>
@@ -9848,6 +9852,7 @@ onto the string until there is a crazy arpeggiato</text>
           </Rest>
         </Measure>
       <Measure number="26">
+        <vspacerDown>9</vspacerDown>
         <Rest>
           <BeamMode>auto</BeamMode>
           <dots>1</dots>
@@ -10070,6 +10075,7 @@ onto the string until there is a crazy arpeggiato</text>
           </Rest>
         </Measure>
       <Measure number="30">
+        <vspacerDown>9</vspacerDown>
         <Rest>
           <BeamMode>auto</BeamMode>
           <dots>1</dots>
@@ -10145,6 +10151,7 @@ onto the string until there is a crazy arpeggiato</text>
         <Dynamic>
           <subtype>mf</subtype>
           <velocity>80</velocity>
+          <pos x="0.658281" y="8.4"/>
           </Dynamic>
         <Chord>
           <durationType>eighth</durationType>
@@ -10310,9 +10317,11 @@ onto the string until there is a crazy arpeggiato</text>
           </Rest>
         </Measure>
       <Measure number="33">
+        <vspacerDown>9</vspacerDown>
         <Dynamic>
           <subtype>f</subtype>
           <velocity>96</velocity>
+          <pos x="0.329141" y="8.7"/>
           </Dynamic>
         <Beam id="81">
           <StemDirection>down</StemDirection>
@@ -19105,6 +19114,7 @@ gliss.</text>
           </Rest>
         </Measure>
       <Measure number="26">
+        <vspacerDown>9</vspacerDown>
         <Rest>
           <BeamMode>auto</BeamMode>
           <durationType>eighth</durationType>
@@ -19281,6 +19291,7 @@ gliss.</text>
           </Rest>
         </Measure>
       <Measure number="30">
+        <vspacerDown>9</vspacerDown>
         <Rest>
           <BeamMode>auto</BeamMode>
           <dots>1</dots>
@@ -19331,6 +19342,7 @@ gliss.</text>
         <Dynamic>
           <subtype>mf</subtype>
           <velocity>80</velocity>
+          <pos x="0.658281" y="8.2"/>
           </Dynamic>
         <Chord>
           <durationType>eighth</durationType>
@@ -19472,6 +19484,7 @@ gliss.</text>
           </Chord>
         </Measure>
       <Measure number="33">
+        <vspacerDown>9</vspacerDown>
         <Dynamic>
           <subtype>f</subtype>
           <velocity>96</velocity>
@@ -30522,6 +30535,7 @@ gliss.</text>
         <Dynamic>
           <subtype>mf</subtype>
           <velocity>80</velocity>
+          <pos x="0.505937" y="9.3"/>
           </Dynamic>
         <Rest>
           <BeamMode>auto</BeamMode>
@@ -30680,6 +30694,7 @@ gliss.</text>
         <Dynamic>
           <subtype>f</subtype>
           <velocity>96</velocity>
+          <pos x="0.658281" y="9.4"/>
           </Dynamic>
         <Chord>
           <durationType>eighth</durationType>

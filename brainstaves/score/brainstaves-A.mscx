@@ -1090,6 +1090,7 @@
         </Measure>
       <Measure number="26">
         <stretch>0.6</stretch>
+        <vspacerDown>9</vspacerDown>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -1187,6 +1188,7 @@
         </Measure>
       <Measure number="30">
         <stretch>0.6</stretch>
+        <vspacerDown>9</vspacerDown>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -1259,6 +1261,7 @@
         </Measure>
       <Measure number="33">
         <stretch>0.7</stretch>
+        <vspacerDown>9</vspacerDown>
         <Dynamic>
           <subtype>f</subtype>
           <velocity>96</velocity>
@@ -10029,6 +10032,7 @@ gliss.</text>
           </Rest>
         </Measure>
       <Measure number="19">
+        <vspacerDown>9</vspacerDown>
         <TimeSig>
           <sigN>12</sigN>
           <sigD>8</sigD>
@@ -10168,6 +10172,7 @@ gliss.</text>
           </Rest>
         </Measure>
       <Measure number="26">
+        <vspacerDown>9</vspacerDown>
         <Rest>
           <dots>1</dots>
           <durationType>quarter</durationType>
@@ -10386,6 +10391,7 @@ gliss.</text>
           </Rest>
         </Measure>
       <Measure number="30">
+        <vspacerDown>9</vspacerDown>
         <Rest>
           <dots>1</dots>
           <durationType>quarter</durationType>
@@ -10460,6 +10466,7 @@ gliss.</text>
         <Dynamic>
           <subtype>mf</subtype>
           <velocity>80</velocity>
+          <pos x="0.658281" y="8.4"/>
           </Dynamic>
         <Chord>
           <durationType>eighth</durationType>
@@ -10628,6 +10635,7 @@ gliss.</text>
           </Rest>
         </Measure>
       <Measure number="33">
+        <vspacerDown>9</vspacerDown>
         <Dynamic>
           <subtype>f</subtype>
           <velocity>96</velocity>
@@ -19234,6 +19242,7 @@ gliss.</text>
           </Rest>
         </Measure>
       <Measure number="19">
+        <vspacerDown>9</vspacerDown>
         <TimeSig>
           <sigN>12</sigN>
           <sigD>8</sigD>
@@ -19387,6 +19396,7 @@ gliss.</text>
           </Rest>
         </Measure>
       <Measure number="26">
+        <vspacerDown>9</vspacerDown>
         <Rest>
           <BeamMode>auto</BeamMode>
           <durationType>eighth</durationType>
@@ -19559,6 +19569,7 @@ gliss.</text>
           </Rest>
         </Measure>
       <Measure number="30">
+        <vspacerDown>9</vspacerDown>
         <Rest>
           <dots>1</dots>
           <durationType>quarter</durationType>
@@ -19751,6 +19762,7 @@ gliss.</text>
           </Chord>
         </Measure>
       <Measure number="33">
+        <vspacerDown>9</vspacerDown>
         <Dynamic>
           <subtype>f</subtype>
           <velocity>96</velocity>
@@ -30394,6 +30406,7 @@ gliss.</text>
         <Dynamic>
           <subtype>mf</subtype>
           <velocity>80</velocity>
+          <pos x="0.505937" y="8.87768"/>
           </Dynamic>
         <Rest>
           <BeamMode>auto</BeamMode>
@@ -30552,6 +30565,7 @@ gliss.</text>
         <Dynamic>
           <subtype>f</subtype>
           <velocity>96</velocity>
+          <pos x="0.658281" y="9.26776"/>
           </Dynamic>
         <Chord>
           <durationType>eighth</durationType>
