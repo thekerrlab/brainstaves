@@ -432,6 +432,7 @@
       <VBox>
         <height>18.3</height>
         <Text>
+          <pos x="0" y="-2.88197"/>
           <style>Composer</style>
           <text><font size="7.8617"></font><font face="Times New Roman"></font>Cliff Kerr | May 2019</text>
           </Text>
@@ -440,13 +441,14 @@
           <text><font size="7.8617"></font><font face="Times New Roman"></font><i>to the Ligeti Quartet</i></text>
           </Text>
         <Text>
-          <pos x="-0.0717591" y="11.9093"/>
+          <pos x="-0.0717591" y="9.30623"/>
           <style>Subtitle</style>
           <xoffset>0</xoffset>
           <yoffset>12.375</yoffset>
           <text><font face="Times New Roman"></font>for string quartet and EEG</text>
           </Text>
         <Text>
+          <pos x="0" y="3.50397"/>
           <style>Subtitle</style>
           <xoffset>0</xoffset>
           <yoffset>7.75</yoffset>
@@ -560,6 +562,11 @@
           <velocity>80</velocity>
           <pos x="0.312022" y="9.49355"/>
           </Dynamic>
+        <Symbol>
+          <name>stringsDownBow</name>
+          <font>Bravura</font>
+          <pos x="-0.307053" y="-1.45746"/>
+          </Symbol>
         <HairPin id="5">
           <subtype>1</subtype>
           <Segment>
@@ -694,7 +701,7 @@
       <Measure number="13">
         <stretch>0.7</stretch>
         <StaffText>
-          <pos x="-1.68759" y="-5.07913"/>
+          <pos x="-1.68759" y="-5.94742"/>
           <text>As if rising and falling on an ocean swell</text>
           </StaffText>
         <Dynamic>
@@ -703,6 +710,11 @@
           <pos x="0.828167" y="9.19033"/>
           <text><sym>dynamicPiano</sym><sym>dynamicPiano</sym><sym>dynamicPiano</sym></text>
           </Dynamic>
+        <Symbol>
+          <name>stringsDownBow</name>
+          <font>Bravura</font>
+          <pos x="-0.201894" y="-0.631185"/>
+          </Symbol>
         <HairPin id="14">
           <subtype>0</subtype>
           <Segment>
@@ -820,6 +832,11 @@
             <tpc>19</tpc>
             </Note>
           <Note>
+            <Symbol>
+              <name>stringsUpBow</name>
+              <font>Bravura</font>
+              <pos x="4.0194" y="-4.34294"/>
+              </Symbol>
             <Tie id="23">
               </Tie>
             <endSpanner id="21"/>
@@ -831,7 +848,7 @@
       <Measure number="17">
         <stretch>0.7</stretch>
         <StaffText>
-          <pos x="-10.4538" y="-4.21716"/>
+          <pos x="-9.95149" y="-5.36531"/>
           <text>Falling off the edge of a...</text>
           </StaffText>
         <HairPin id="24">
@@ -1309,6 +1326,7 @@
         </Measure>
       <Measure number="36">
         <stretch>0.7</stretch>
+        <vspacerDown>12</vspacerDown>
         <Dynamic>
           <subtype>ff</subtype>
           <velocity>112</velocity>
@@ -1392,8 +1410,9 @@
         </Measure>
       <Measure number="39">
         <stretch>0.7</stretch>
+        <vspacerDown>12</vspacerDown>
         <StaffText>
-          <pos x="-5.81249" y="5.80602"/>
+          <pos x="-1.59155" y="7.78728"/>
           <text>pizz.</text>
           </StaffText>
         <Beam id="1">
@@ -1738,19 +1757,19 @@
           </RehearsalMark>
         <StaffText>
           <pos x="2.11778" y="-8.39698"/>
-          <text><b>Strong, fat, angry, but gradually relaxing (legatissimo, poco a poco diminuendo e sul pont.)</b></text>
+          <text><b>Strong, fat, angry, but gradually relaxing (poco a poco diminuendo e sul pont.)</b></text>
           </StaffText>
         <Rest>
           <durationType>half</durationType>
           </Rest>
         <StaffText>
-          <pos x="-1.29166" y="7.4097"/>
+          <pos x="-0.948473" y="6.92924"/>
           <text>arco</text>
           </StaffText>
         <Dynamic>
           <subtype>ff</subtype>
           <velocity>112</velocity>
-          <pos x="-4.55244" y="9.63296"/>
+          <pos x="-3.04242" y="9.63296"/>
           </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
@@ -1784,6 +1803,10 @@
         <LayoutBreak>
           <subtype>line</subtype>
           </LayoutBreak>
+        <StaffText>
+          <pos x="-1.09645" y="4.429"/>
+          <text><i>sempre</i></text>
+          </StaffText>
         <Beam id="9">
           <StemDirection>down</StemDirection>
           </Beam>
@@ -1799,6 +1822,11 @@
             <tpc>21</tpc>
             </Note>
           </Chord>
+        <Dynamic>
+          <subtype>ff</subtype>
+          <velocity>112</velocity>
+          <pos x="2.53137" y="7.30178"/>
+          </Dynamic>
         <Chord>
           <BeamMode>mid</BeamMode>
           <durationType>16th</durationType>
@@ -2338,6 +2366,11 @@
       <Measure number="46">
         <stretch>0.7</stretch>
         <vspacerDown>12</vspacerDown>
+        <Dynamic>
+          <subtype>f</subtype>
+          <velocity>96</velocity>
+          <pos x="-0.852803" y="8.61561"/>
+          </Dynamic>
         <Beam id="21">
           <StemDirection>down</StemDirection>
           </Beam>
@@ -2521,10 +2554,6 @@
         <LayoutBreak>
           <subtype>line</subtype>
           </LayoutBreak>
-        <Dynamic>
-          <subtype>f</subtype>
-          <velocity>96</velocity>
-          </Dynamic>
         <Rest>
           <BeamMode>auto</BeamMode>
           <durationType>16th</durationType>
@@ -2699,6 +2728,11 @@
       <Measure number="48">
         <stretch>0.7</stretch>
         <vspacerDown>12</vspacerDown>
+        <Dynamic>
+          <subtype>mf</subtype>
+          <velocity>80</velocity>
+          <pos x="-1.77997" y="7.97606"/>
+          </Dynamic>
         <Beam id="28">
           <StemDirection>down</StemDirection>
           </Beam>
@@ -3010,8 +3044,9 @@
         <stretch>0.7</stretch>
         <vspacerDown>10</vspacerDown>
         <Dynamic>
-          <subtype>mf</subtype>
-          <velocity>80</velocity>
+          <subtype>mp</subtype>
+          <velocity>64</velocity>
+          <pos x="-2.25448" y="7.02615"/>
           </Dynamic>
         <Beam id="34">
           <StemDirection>down</StemDirection>
@@ -3157,10 +3192,6 @@
         <LayoutBreak>
           <subtype>line</subtype>
           </LayoutBreak>
-        <Dynamic>
-          <subtype>mp</subtype>
-          <velocity>64</velocity>
-          </Dynamic>
         <Rest>
           <BeamMode>auto</BeamMode>
           <durationType>16th</durationType>
@@ -3291,9 +3322,10 @@
         <Dynamic>
           <subtype>p</subtype>
           <velocity>49</velocity>
+          <pos x="-1.80909" y="7.62813"/>
           </Dynamic>
         <StaffText>
-          <pos x="-3.76146" y="-6.95233"/>
+          <pos x="-3.37521" y="-6.69483"/>
           <text>Gradually start doing more and more of a glissando in a random direction on each (separate) note</text>
           </StaffText>
         <Chord>
@@ -3524,10 +3556,25 @@
           <subtype>pp</subtype>
           <velocity>33</velocity>
           </Dynamic>
+        <StaffText>
+          <pos x="-93.6503" y="-6.36669"/>
+          <style>System</style>
+          <text>Glissandi should be big by now</text>
+          </StaffText>
+        <StaffText>
+          <pos x="-93.6503" y="-6.36669"/>
+          <style>System</style>
+          <text>Glissandi should be big by now</text>
+          </StaffText>
         <Rest>
           <BeamMode>auto</BeamMode>
           <durationType>16th</durationType>
           </Rest>
+        <StaffText>
+          <pos x="2.85014" y="36.035"/>
+          <style>System</style>
+          <text>Big glissandi</text>
+          </StaffText>
         <Chord>
           <durationType>16th</durationType>
           <StemDirection>down</StemDirection>
@@ -3540,6 +3587,16 @@
           <BeamMode>auto</BeamMode>
           <durationType>16th</durationType>
           </Rest>
+        <StaffText>
+          <pos x="-93.6503" y="-6.36669"/>
+          <style>System</style>
+          <text>Glissandi should be big by now</text>
+          </StaffText>
+        <StaffText>
+          <pos x="-7.61562" y="-6.05888"/>
+          <style>System</style>
+          <text>Big glissandi</text>
+          </StaffText>
         <Chord>
           <durationType>16th</durationType>
           <StemDirection>down</StemDirection>
@@ -3677,12 +3734,7 @@
       <Measure number="58">
         <stretch>0.3</stretch>
         <StaffText>
-          <pos x="-93.6503" y="-6.36669"/>
-          <style>System</style>
-          <text>Glissandi should be big by now</text>
-          </StaffText>
-        <StaffText>
-          <pos x="-0.795037" y="-4.71877"/>
+          <pos x="2.12922" y="35.6821"/>
           <text>Short notes should be barely audible under VII</text>
           </StaffText>
         <Rest>
@@ -3707,7 +3759,7 @@
       <Measure number="61">
         <stretch>0.7</stretch>
         <StaffText>
-          <pos x="13.3762" y="-8.58064"/>
+          <pos x="13.3762" y="-7.37207"/>
           <text>Make eye contact with each other throughout; play furtively (razor-sharp onset and offset, sul pont.)</text>
           </StaffText>
         <Rest>
@@ -3716,7 +3768,7 @@
         <Dynamic>
           <subtype>ppp</subtype>
           <velocity>16</velocity>
-          <pos x="0.658281" y="7.43556"/>
+          <pos x="-3.33929" y="5.85513"/>
           </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
@@ -3945,7 +3997,7 @@
           <durationType>eighth</durationType>
           </Rest>
         <StaffText>
-          <pos x="-2.09459" y="4.52834"/>
+          <pos x="-4.48017" y="5.68265"/>
           <text><i>simile</i></text>
           </StaffText>
         <Chord>
@@ -4352,6 +4404,7 @@
         <Dynamic>
           <subtype>mp</subtype>
           <velocity>64</velocity>
+          <pos x="0.658281" y="9.27736"/>
           </Dynamic>
         <Chord>
           <durationType>eighth</durationType>
@@ -4476,6 +4529,7 @@
         </Measure>
       <Measure number="78">
         <stretch>0.5</stretch>
+        <vspacerDown>10</vspacerDown>
         <LayoutBreak>
           <subtype>line</subtype>
           </LayoutBreak>
@@ -5080,9 +5134,14 @@
           <velocity>16</velocity>
           </Dynamic>
         <StaffText>
-          <pos x="-1.99706" y="-4.43414"/>
+          <pos x="-1.83919" y="-7.90728"/>
           <text>Legatissimo</text>
           </StaffText>
+        <Symbol>
+          <name>stringsUpBow</name>
+          <font>Bravura</font>
+          <pos x="0.243052" y="-1.80393"/>
+          </Symbol>
         <HairPin id="63">
           <subtype>0</subtype>
           <Segment>
@@ -5111,6 +5170,11 @@
             <tpc>15</tpc>
             </Note>
           </Chord>
+        <Symbol>
+          <name>stringsUpBow</name>
+          <font>Bravura</font>
+          <pos x="-0.122367" y="-0.685763"/>
+          </Symbol>
         <endSpanner id="63"/>
         <HairPin id="64">
           <subtype>1</subtype>
@@ -5148,6 +5212,11 @@
             <tpc>22</tpc>
             </Note>
           </Chord>
+        <Symbol>
+          <name>stringsDownBow</name>
+          <font>Bravura</font>
+          <pos x="0.230356" y="-2.73409"/>
+          </Symbol>
         <endSpanner id="64"/>
         <Chord>
           <BeamMode>end</BeamMode>
@@ -5197,6 +5266,11 @@
           <subtype>pp</subtype>
           <velocity>33</velocity>
           </Dynamic>
+        <Symbol>
+          <name>stringsUpBow</name>
+          <font>Bravura</font>
+          <pos x="0.132974" y="-2.89616"/>
+          </Symbol>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>quarter</durationType>
@@ -5232,6 +5306,11 @@
             <tpc>17</tpc>
             </Note>
           </Chord>
+        <Symbol>
+          <name>stringsDownBow</name>
+          <font>Bravura</font>
+          <pos x="-0.206241" y="-3.34074"/>
+          </Symbol>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -5246,6 +5325,11 @@
             <tpc>17</tpc>
             </Note>
           </Chord>
+        <Symbol>
+          <name>stringsDownBow</name>
+          <font>Bravura</font>
+          <pos x="-0.0764225" y="-3.25103"/>
+          </Symbol>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
@@ -5270,6 +5354,11 @@
           <subtype>p</subtype>
           <velocity>49</velocity>
           </Dynamic>
+        <Symbol>
+          <name>stringsUpBow</name>
+          <font>Bravura</font>
+          <pos x="0.284593" y="-3.37005"/>
+          </Symbol>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>quarter</durationType>
@@ -5290,7 +5379,7 @@
         </Measure>
       <Measure number="97">
         <stretch>0.7</stretch>
-        <vspacerDown>10</vspacerDown>
+        <vspacerDown>13</vspacerDown>
         <LayoutBreak>
           <subtype>line</subtype>
           </LayoutBreak>
@@ -5680,7 +5769,7 @@
           <pos x="6.38234" y="7.70082"/>
           </Dynamic>
         <StaffText>
-          <pos x="-11.4586" y="-15.8998"/>
+          <pos x="-4.99445" y="-15.515"/>
           <text>Lift off the bow
 in a theatrically
 exaggerated 
@@ -5713,7 +5802,7 @@ gesture</text>
           <pos x="1.03787" y="10.1119"/>
           </Dynamic>
         <StaffText>
-          <pos x="-4.96899" y="-14.4301"/>
+          <pos x="-1.4291" y="-14.4301"/>
           <text>Everyone arpeggiato like crazy; maintain speed 
 but gradually lift the bow until it no longer touches 
 the strings, and then bow the air for a bit</text>
@@ -7303,7 +7392,7 @@ the strings, and then bow the air for a bit</text>
         </Measure>
       <Measure number="121">
         <stretch>0.8</stretch>
-        <vspacerDown>10</vspacerDown>
+        <vspacerDown>12</vspacerDown>
         <LayoutBreak>
           <subtype>line</subtype>
           </LayoutBreak>
@@ -7532,7 +7621,7 @@ the strings, and then bow the air for a bit</text>
         </Measure>
       <Measure number="124">
         <stretch>0.3</stretch>
-        <vspacerDown>10</vspacerDown>
+        <vspacerDown>12</vspacerDown>
         <LayoutBreak>
           <subtype>page</subtype>
           </LayoutBreak>
@@ -7820,7 +7909,7 @@ the strings, and then bow the air for a bit</text>
         <Dynamic>
           <subtype>f</subtype>
           <velocity>96</velocity>
-          <pos x="-3.06084" y="7.40661"/>
+          <pos x="-3.52567" y="7.68551"/>
           </Dynamic>
         <Rest>
           <BeamMode>auto</BeamMode>
@@ -7828,7 +7917,8 @@ the strings, and then bow the air for a bit</text>
           </Rest>
         <StaffText>
           <pos x="-9.03625" y="4.19643"/>
-          <text> pizz., gliss.</text>
+          <text> pizz., 
+gliss.</text>
           </StaffText>
         <Chord>
           <durationType>eighth</durationType>
@@ -8516,6 +8606,7 @@ the strings, and then bow the air for a bit</text>
         </Measure>
       <Measure number="146">
         <stretch>0.7</stretch>
+        <vspacerDown>10</vspacerDown>
         <Beam id="71">
           <StemDirection>down</StemDirection>
           </Beam>
@@ -8636,13 +8727,17 @@ the strings, and then bow the air for a bit</text>
           <pos x="6.38549" y="-4.94919"/>
           <text>Stare at each other</text>
           </StaffText>
+        <StaffText>
+          <pos x="13.4967" y="5.97804"/>
+          <text><i>sempre pizz.</i></text>
+          </StaffText>
         <Rest>
           <durationType>half</durationType>
           </Rest>
         <Dynamic>
           <subtype>p</subtype>
           <velocity>49</velocity>
-          <pos x="0.658281" y="7.43556"/>
+          <pos x="0.472973" y="8.30123"/>
           </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
@@ -8678,7 +8773,7 @@ the strings, and then bow the air for a bit</text>
         <Dynamic>
           <subtype>ff</subtype>
           <velocity>112</velocity>
-          <pos x="0.783319" y="7.1317"/>
+          <pos x="0.783319" y="6.85321"/>
           </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
@@ -8696,6 +8791,10 @@ the strings, and then bow the air for a bit</text>
             <tpc>22</tpc>
             </Note>
           </Chord>
+        <StaffText>
+          <pos x="-1.94944" y="4.63323"/>
+          <text><i>let ring</i></text>
+          </StaffText>
         <Rest>
           <durationType>eighth</durationType>
           </Rest>
@@ -8724,8 +8823,12 @@ the strings, and then bow the air for a bit</text>
           <tempo>2.6</tempo>
           <followText>1</followText>
           <pos x="0.0321461" y="-4.39249"/>
-          <text><sym>unicodeNoteQuarterUp</sym><sym>space</sym><sym>unicodeAugmentationDot</sym> = 104 Evolving from insane to sweet (poco a poco diminuendo e rallentando)</text>
+          <text><sym>unicodeNoteQuarterUp</sym><sym>space</sym><sym>unicodeAugmentationDot</sym> = 104 Evolving from insane to sweet (poco a poco diminuendo)</text>
           </Tempo>
+        <StaffText>
+          <pos x="-5.63576" y="7.37363"/>
+          <text>pizz.</text>
+          </StaffText>
         <Beam id="73">
           <StemDirection>down</StemDirection>
           </Beam>
@@ -9220,6 +9323,7 @@ the strings, and then bow the air for a bit</text>
       <Measure number="164">
         <stretch>0.7</stretch>
         <vspacerUp>18</vspacerUp>
+        <vspacerDown>10</vspacerDown>
         <Dynamic>
           <subtype>pp</subtype>
           <velocity>33</velocity>
@@ -9307,6 +9411,7 @@ the strings, and then bow the air for a bit</text>
       <Measure number="168">
         <stretch>0.7</stretch>
         <vspacerUp>18</vspacerUp>
+        <vspacerDown>12</vspacerDown>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -9435,7 +9540,7 @@ the strings, and then bow the air for a bit</text>
           <durationType>half</durationType>
           </Rest>
         <StaffText>
-          <pos x="2.36435" y="5.63965"/>
+          <pos x="-2.02075" y="8.01491"/>
           <text> pizz.</text>
           </StaffText>
         <StaffText>
@@ -9455,7 +9560,7 @@ the strings, and then bow the air for a bit</text>
           <text><font size="9.3012"></font><font face="Times New Roman"></font>Smile broadly :D</text>
           </StaffText>
         <StaffText>
-          <pos x="-2.66052" y="-4"/>
+          <pos x="-4.48765" y="-4"/>
           <style>System</style>
           <text>Smile broadly :D</text>
           </StaffText>
@@ -9621,6 +9726,11 @@ the strings, and then bow the air for a bit</text>
           <velocity>80</velocity>
           <pos x="0.425409" y="8.93462"/>
           </Dynamic>
+        <Symbol>
+          <name>stringsDownBow</name>
+          <font>Bravura</font>
+          <pos x="-0.163535" y="-1.1635"/>
+          </Symbol>
         <HairPin id="138">
           <subtype>1</subtype>
           <Segment>
@@ -9746,6 +9856,11 @@ the strings, and then bow the air for a bit</text>
           <pos x="0.133606" y="8.85979"/>
           <text><sym>dynamicPiano</sym><sym>dynamicPiano</sym><sym>dynamicPiano</sym></text>
           </Dynamic>
+        <Symbol>
+          <name>stringsDownBow</name>
+          <font>Bravura</font>
+          <pos x="-0.0583757" y="-0.408991"/>
+          </Symbol>
         <HairPin id="147">
           <subtype>0</subtype>
           <Segment>
@@ -9846,6 +9961,11 @@ the strings, and then bow the air for a bit</text>
           <pos x="1.93968" y="8.59798"/>
           <text><sym>dynamicPiano</sym><sym>dynamicPiano</sym><sym>dynamicPiano</sym></text>
           </Dynamic>
+        <Symbol>
+          <name>stringsUpBow</name>
+          <font>Bravura</font>
+          <pos x="4.0194" y="-0.624269"/>
+          </Symbol>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
@@ -9920,7 +10040,7 @@ the strings, and then bow the air for a bit</text>
           <pos x="0.75" y="7.43556"/>
           </Dynamic>
         <StaffText>
-          <pos x="3.22916" y="4.90614"/>
+          <pos x="2.48543" y="4.90614"/>
           <text> pizz.</text>
           </StaffText>
         <Rest>
@@ -10881,6 +11001,7 @@ the strings, and then bow the air for a bit</text>
           </Chord>
         </Measure>
       <Measure number="36">
+        <vspacerDown>12</vspacerDown>
         <Dynamic>
           <subtype>ff</subtype>
           <velocity>112</velocity>
@@ -11277,6 +11398,7 @@ the strings, and then bow the air for a bit</text>
           </Chord>
         </Measure>
       <Measure number="39">
+        <vspacerDown>12</vspacerDown>
         <Beam id="105">
           <StemDirection>up</StemDirection>
           </Beam>
@@ -11560,7 +11682,12 @@ the strings, and then bow the air for a bit</text>
         <Dynamic>
           <subtype>ff</subtype>
           <velocity>112</velocity>
-          <pos x="-2.60961" y="-2.84613"/>
+          <pos x="0.372515" y="-5.62486"/>
+          </Dynamic>
+        <Dynamic>
+          <subtype>ff</subtype>
+          <velocity>112</velocity>
+          <pos x="0.450161" y="9.98291"/>
           </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
@@ -11655,6 +11782,11 @@ the strings, and then bow the air for a bit</text>
           </Chord>
         </Measure>
       <Measure number="46">
+        <Dynamic>
+          <subtype>f</subtype>
+          <velocity>96</velocity>
+          <pos x="-0.66687" y="6.56061"/>
+          </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
@@ -11668,14 +11800,6 @@ the strings, and then bow the air for a bit</text>
           </Chord>
         </Measure>
       <Measure number="47">
-        <Dynamic>
-          <subtype>f</subtype>
-          <velocity>96</velocity>
-          </Dynamic>
-        <Dynamic>
-          <subtype>f</subtype>
-          <velocity>96</velocity>
-          </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
@@ -11687,6 +11811,11 @@ the strings, and then bow the air for a bit</text>
           </Chord>
         </Measure>
       <Measure number="48">
+        <Dynamic>
+          <subtype>mf</subtype>
+          <velocity>80</velocity>
+          <pos x="-1.31514" y="6.94369"/>
+          </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
@@ -11711,12 +11840,9 @@ the strings, and then bow the air for a bit</text>
         </Measure>
       <Measure number="50">
         <Dynamic>
-          <subtype>mf</subtype>
-          <velocity>80</velocity>
-          </Dynamic>
-        <Dynamic>
-          <subtype>mf</subtype>
-          <velocity>80</velocity>
+          <subtype>mp</subtype>
+          <velocity>64</velocity>
+          <pos x="-0.952945" y="6.13445"/>
           </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
@@ -11728,10 +11854,6 @@ the strings, and then bow the air for a bit</text>
           </Chord>
         </Measure>
       <Measure number="51">
-        <Dynamic>
-          <subtype>mp</subtype>
-          <velocity>64</velocity>
-          </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
@@ -11745,10 +11867,7 @@ the strings, and then bow the air for a bit</text>
         <Dynamic>
           <subtype>p</subtype>
           <velocity>49</velocity>
-          </Dynamic>
-        <Dynamic>
-          <subtype>p</subtype>
-          <velocity>49</velocity>
+          <pos x="-2.22369" y="6.69847"/>
           </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
@@ -11889,7 +12008,7 @@ the strings, and then bow the air for a bit</text>
         <Dynamic>
           <subtype>ppp</subtype>
           <velocity>16</velocity>
-          <pos x="0.658281" y="7.43556"/>
+          <pos x="-3.71115" y="7.24963"/>
           </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
@@ -12452,6 +12571,7 @@ the strings, and then bow the air for a bit</text>
         <Dynamic>
           <subtype>mp</subtype>
           <velocity>64</velocity>
+          <pos x="0.658281" y="8.3"/>
           </Dynamic>
         <Chord>
           <durationType>eighth</durationType>
@@ -12581,6 +12701,7 @@ the strings, and then bow the air for a bit</text>
           </Chord>
         </Measure>
       <Measure number="78">
+        <vspacerDown>10</vspacerDown>
         <Dynamic>
           <subtype>mf</subtype>
           <velocity>80</velocity>
@@ -13140,6 +13261,11 @@ the strings, and then bow the air for a bit</text>
           <subtype>ppp</subtype>
           <velocity>16</velocity>
           </Dynamic>
+        <Symbol>
+          <name>stringsUpBow</name>
+          <font>Bravura</font>
+          <pos x="0.0755018" y="-2.38014"/>
+          </Symbol>
         <HairPin id="183">
           <subtype>0</subtype>
           <Segment>
@@ -13171,6 +13297,11 @@ the strings, and then bow the air for a bit</text>
             <tpc>12</tpc>
             </Note>
           </Chord>
+        <Symbol>
+          <name>stringsUpBow</name>
+          <font>Bravura</font>
+          <pos x="-0.328587" y="-0.668955"/>
+          </Symbol>
         <endSpanner id="183"/>
         <HairPin id="184">
           <subtype>1</subtype>
@@ -13203,6 +13334,11 @@ the strings, and then bow the air for a bit</text>
             <tpc>20</tpc>
             </Note>
           </Chord>
+        <Symbol>
+          <name>stringsDownBow</name>
+          <font>Bravura</font>
+          <pos x="0.290921" y="-1.61176"/>
+          </Symbol>
         <endSpanner id="184"/>
         <Chord>
           <BeamMode>end</BeamMode>
@@ -13246,11 +13382,13 @@ the strings, and then bow the air for a bit</text>
         <Dynamic>
           <subtype>pp</subtype>
           <velocity>33</velocity>
+          <pos x="0.500411" y="9.18403"/>
           </Dynamic>
-        <Dynamic>
-          <subtype>pp</subtype>
-          <velocity>33</velocity>
-          </Dynamic>
+        <Symbol>
+          <name>stringsUpBow</name>
+          <font>Bravura</font>
+          <pos x="-0.108428" y="-1.60998"/>
+          </Symbol>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>quarter</durationType>
@@ -13288,6 +13426,11 @@ the strings, and then bow the air for a bit</text>
             <tpc>20</tpc>
             </Note>
           </Chord>
+        <Symbol>
+          <name>stringsDownBow</name>
+          <font>Bravura</font>
+          <pos x="-0.135592" y="-2.53733"/>
+          </Symbol>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -13306,6 +13449,11 @@ the strings, and then bow the air for a bit</text>
             <tpc>16</tpc>
             </Note>
           </Chord>
+        <Symbol>
+          <name>stringsDownBow</name>
+          <font>Bravura</font>
+          <pos x="-0.282773" y="-2.42802"/>
+          </Symbol>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
@@ -13328,11 +13476,13 @@ the strings, and then bow the air for a bit</text>
         <Dynamic>
           <subtype>p</subtype>
           <velocity>49</velocity>
+          <pos x="0.658281" y="8.94722"/>
           </Dynamic>
-        <Dynamic>
-          <subtype>p</subtype>
-          <velocity>49</velocity>
-          </Dynamic>
+        <Symbol>
+          <name>stringsUpBow</name>
+          <font>Bravura</font>
+          <pos x="-0.262307" y="-2.62065"/>
+          </Symbol>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>quarter</durationType>
@@ -13355,7 +13505,7 @@ the strings, and then bow the air for a bit</text>
           </Chord>
         </Measure>
       <Measure number="97">
-        <vspacerDown>10</vspacerDown>
+        <vspacerDown>13</vspacerDown>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>half</durationType>
@@ -15299,7 +15449,7 @@ the strings, and then bow the air for a bit</text>
           </Chord>
         </Measure>
       <Measure number="121">
-        <vspacerDown>10</vspacerDown>
+        <vspacerDown>12</vspacerDown>
         <Beam id="125">
           <StemDirection>down</StemDirection>
           </Beam>
@@ -15520,7 +15670,7 @@ the strings, and then bow the air for a bit</text>
           </Rest>
         </Measure>
       <Measure number="124">
-        <vspacerDown>10</vspacerDown>
+        <vspacerDown>12</vspacerDown>
         <Rest>
           <durationType>whole</durationType>
           </Rest>
@@ -15566,6 +15716,7 @@ the strings, and then bow the air for a bit</text>
           </Chord>
         </Measure>
       <Measure number="129">
+        <vspacerDown>10</vspacerDown>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>half</durationType>
@@ -16774,8 +16925,12 @@ gliss.</text>
         <Dynamic>
           <subtype>p</subtype>
           <velocity>49</velocity>
-          <pos x="0.658281" y="7.43556"/>
+          <pos x="0.658281" y="8.15866"/>
           </Dynamic>
+        <StaffText>
+          <pos x="2.35519" y="5.59272"/>
+          <text><i>sempre pizz.</i></text>
+          </StaffText>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
@@ -16804,6 +16959,11 @@ gliss.</text>
         <Rest>
           <durationType>half</durationType>
           </Rest>
+        <Dynamic>
+          <subtype>ff</subtype>
+          <velocity>112</velocity>
+          <pos x="0.715149" y="8.95932"/>
+          </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
@@ -16817,6 +16977,10 @@ gliss.</text>
             <tpc>18</tpc>
             </Note>
           </Chord>
+        <StaffText>
+          <pos x="-2.00509" y="6.46981"/>
+          <text><i>let ring</i></text>
+          </StaffText>
         <Rest>
           <durationType>eighth</durationType>
           </Rest>
@@ -16835,6 +16999,10 @@ gliss.</text>
           <velocity>112</velocity>
           <pos x="-2.90002" y="7.43556"/>
           </Dynamic>
+        <StaffText>
+          <pos x="-5.77837" y="7.51624"/>
+          <text>pizz.</text>
+          </StaffText>
         <Beam id="148">
           <StemDirection>down</StemDirection>
           </Beam>
@@ -18111,7 +18279,7 @@ gliss.</text>
         </Measure>
       <Measure number="161">
         <StaffText>
-          <pos x="-2.0338" y="-23.2818"/>
+          <pos x="5.64013" y="-6.28958"/>
           <text>Gradually start doing more and more of a glissando in a random direction on each pizz.</text>
           </StaffText>
         <Dynamic>
@@ -18302,15 +18470,21 @@ gliss.</text>
           </Rest>
         </Measure>
       <Measure number="164">
+        <vspacerDown>10</vspacerDown>
         <Dynamic>
           <subtype>pp</subtype>
           <velocity>33</velocity>
+          <pos x="-2.44165" y="7.34923"/>
           </Dynamic>
         <Rest>
           <BeamMode>auto</BeamMode>
           <dots>1</dots>
           <durationType>quarter</durationType>
           </Rest>
+        <StaffText>
+          <pos x="-9.98084" y="5.14503"/>
+          <text>Big glissandi</text>
+          </StaffText>
         <Rest>
           <BeamMode>auto</BeamMode>
           <durationType>quarter</durationType>
@@ -18421,6 +18595,7 @@ gliss.</text>
           </Rest>
         </Measure>
       <Measure number="168">
+        <vspacerDown>12</vspacerDown>
         <Rest>
           <BeamMode>auto</BeamMode>
           <durationType>measure</durationType>
@@ -18494,8 +18669,12 @@ gliss.</text>
           <velocity>16</velocity>
           </Dynamic>
         <StaffText>
-          <pos x="-0.744945" y="-20.4952"/>
+          <pos x="-0.317117" y="-3.66731"/>
           <text>Chord should enter inaudibly under VI</text>
+          </StaffText>
+        <StaffText>
+          <pos x="-1.28348" y="8.2644"/>
+          <text>arco</text>
           </StaffText>
         <HairPin id="232">
           <subtype>0</subtype>
@@ -18752,6 +18931,11 @@ gliss.</text>
           <velocity>80</velocity>
           <pos x="0.658281" y="7.43556"/>
           </Dynamic>
+        <Symbol>
+          <name>stringsDownBow</name>
+          <font>Bravura</font>
+          <pos x="-0.378812" y="-1.15659"/>
+          </Symbol>
         <HairPin id="248">
           <subtype>1</subtype>
           <Segment>
@@ -18877,6 +19061,11 @@ gliss.</text>
           <pos x="0.658281" y="7.43556"/>
           <text><sym>dynamicPiano</sym><sym>dynamicPiano</sym><sym>dynamicPiano</sym></text>
           </Dynamic>
+        <Symbol>
+          <name>stringsDownBow</name>
+          <font>Bravura</font>
+          <pos x="-0.130135" y="-0.258557"/>
+          </Symbol>
         <HairPin id="257">
           <subtype>0</subtype>
           <Segment>
@@ -18977,6 +19166,11 @@ gliss.</text>
           <pos x="2.03829" y="7.76969"/>
           <text><sym>dynamicPiano</sym><sym>dynamicPiano</sym><sym>dynamicPiano</sym></text>
           </Dynamic>
+        <Symbol>
+          <name>stringsUpBow</name>
+          <font>Bravura</font>
+          <pos x="3.96413" y="-1.09791"/>
+          </Symbol>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
@@ -19051,7 +19245,7 @@ gliss.</text>
           <pos x="0.75" y="7.43556"/>
           </Dynamic>
         <StaffText>
-          <pos x="3.25788" y="5.0999"/>
+          <pos x="2.32821" y="5.0999"/>
           <text> pizz.</text>
           </StaffText>
         <Rest>
@@ -19870,6 +20064,7 @@ gliss.</text>
           </Chord>
         </Measure>
       <Measure number="36">
+        <vspacerDown>12</vspacerDown>
         <Dynamic>
           <subtype>ff</subtype>
           <velocity>112</velocity>
@@ -20287,6 +20482,7 @@ gliss.</text>
           </Chord>
         </Measure>
       <Measure number="39">
+        <vspacerDown>12</vspacerDown>
         <Beam id="200">
           <StemDirection>down</StemDirection>
           </Beam>
@@ -20581,7 +20777,7 @@ gliss.</text>
         <Dynamic>
           <subtype>ff</subtype>
           <velocity>112</velocity>
-          <pos x="-2.89664" y="-3.22809"/>
+          <pos x="0.744382" y="8.77525"/>
           </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
@@ -20614,15 +20810,15 @@ gliss.</text>
         <Rest>
           <durationType>half</durationType>
           </Rest>
-        <Dynamic>
-          <subtype>ff</subtype>
-          <velocity>112</velocity>
-          <pos x="-2.89664" y="-3.22809"/>
-          </Dynamic>
         <StaffText>
           <pos x="-1.29166" y="6.62035"/>
           <text>arco</text>
           </StaffText>
+        <Dynamic>
+          <subtype>ff</subtype>
+          <velocity>112</velocity>
+          <pos x="-3.14592" y="-2.18179"/>
+          </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
@@ -20651,6 +20847,10 @@ gliss.</text>
           </Rest>
         </Measure>
       <Measure number="43">
+        <StaffText>
+          <pos x="-1.09645" y="4.429"/>
+          <text><i>sempre</i></text>
+          </StaffText>
         <Beam id="208">
           <StemDirection>down</StemDirection>
           </Beam>
@@ -20666,6 +20866,11 @@ gliss.</text>
             <tpc>20</tpc>
             </Note>
           </Chord>
+        <Dynamic>
+          <subtype>ff</subtype>
+          <velocity>112</velocity>
+          <pos x="2.80549" y="7.14462"/>
+          </Dynamic>
         <Chord>
           <BeamMode>mid</BeamMode>
           <durationType>16th</durationType>
@@ -21405,10 +21610,6 @@ gliss.</text>
           </Chord>
         </Measure>
       <Measure number="47">
-        <Dynamic>
-          <subtype>f</subtype>
-          <velocity>96</velocity>
-          </Dynamic>
         <Rest>
           <BeamMode>auto</BeamMode>
           <durationType>16th</durationType>
@@ -21549,6 +21750,11 @@ gliss.</text>
           </Chord>
         </Measure>
       <Measure number="48">
+        <Dynamic>
+          <subtype>mf</subtype>
+          <velocity>80</velocity>
+          <pos x="-3.0815" y="7.25046"/>
+          </Dynamic>
         <Beam id="226">
           <StemDirection>up</StemDirection>
           </Beam>
@@ -21840,8 +22046,9 @@ gliss.</text>
         </Measure>
       <Measure number="50">
         <Dynamic>
-          <subtype>mf</subtype>
-          <velocity>80</velocity>
+          <subtype>mp</subtype>
+          <velocity>64</velocity>
+          <pos x="-2.44041" y="7.46385"/>
           </Dynamic>
         <Chord>
           <durationType>16th</durationType>
@@ -21967,10 +22174,6 @@ gliss.</text>
           </Rest>
         </Measure>
       <Measure number="51">
-        <Dynamic>
-          <subtype>mp</subtype>
-          <velocity>64</velocity>
-          </Dynamic>
         <Chord>
           <durationType>16th</durationType>
           <StemDirection>down</StemDirection>
@@ -22077,6 +22280,7 @@ gliss.</text>
         <Dynamic>
           <subtype>p</subtype>
           <velocity>49</velocity>
+          <pos x="-2.22947" y="6.8844"/>
           </Dynamic>
         <Rest>
           <BeamMode>auto</BeamMode>
@@ -22531,7 +22735,7 @@ gliss.</text>
         <Dynamic>
           <subtype>ppp</subtype>
           <velocity>16</velocity>
-          <pos x="0.658281" y="7.43556"/>
+          <pos x="-2.87445" y="6.41293"/>
           </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
@@ -22953,6 +23157,7 @@ gliss.</text>
           </Rest>
         </Measure>
       <Measure number="78">
+        <vspacerDown>10</vspacerDown>
         <Dynamic>
           <subtype>mf</subtype>
           <velocity>80</velocity>
@@ -23085,10 +23290,6 @@ gliss.</text>
           </Chord>
         </Measure>
       <Measure number="80">
-        <Dynamic>
-          <subtype>f</subtype>
-          <velocity>96</velocity>
-          </Dynamic>
         <Chord>
           <durationType>eighth</durationType>
           <StemDirection>down</StemDirection>
@@ -23289,7 +23490,7 @@ gliss.</text>
           </Chord>
         </Measure>
       <Measure number="83">
-        <vspacerDown>10</vspacerDown>
+        <vspacerDown>11</vspacerDown>
         <endSpanner id="272"/>
         <Slur id="273">
           <track>8</track>
@@ -23530,6 +23731,11 @@ gliss.</text>
           <subtype>ppp</subtype>
           <velocity>16</velocity>
           </Dynamic>
+        <Symbol>
+          <name>stringsUpBow</name>
+          <font>Bravura</font>
+          <pos x="0.0690484" y="-2.49079"/>
+          </Symbol>
         <HairPin id="282">
           <subtype>0</subtype>
           <Segment>
@@ -23561,6 +23767,11 @@ gliss.</text>
             <tpc>22</tpc>
             </Note>
           </Chord>
+        <Symbol>
+          <name>stringsUpBow</name>
+          <font>Bravura</font>
+          <pos x="-0.341824" y="-2.4257"/>
+          </Symbol>
         <endSpanner id="282"/>
         <HairPin id="283">
           <subtype>1</subtype>
@@ -23597,6 +23808,11 @@ gliss.</text>
             <tpc>11</tpc>
             </Note>
           </Chord>
+        <Symbol>
+          <name>stringsDownBow</name>
+          <font>Bravura</font>
+          <pos x="0.403451" y="-2.58649"/>
+          </Symbol>
         <endSpanner id="283"/>
         <Chord>
           <BeamMode>end</BeamMode>
@@ -23644,6 +23860,11 @@ gliss.</text>
           <subtype>pp</subtype>
           <velocity>33</velocity>
           </Dynamic>
+        <Symbol>
+          <name>stringsUpBow</name>
+          <font>Bravura</font>
+          <pos x="0.0726231" y="-1.8929"/>
+          </Symbol>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>quarter</durationType>
@@ -23685,6 +23906,11 @@ gliss.</text>
             <tpc>21</tpc>
             </Note>
           </Chord>
+        <Symbol>
+          <name>stringsDownBow</name>
+          <font>Bravura</font>
+          <pos x="-0.490881" y="-3.44781"/>
+          </Symbol>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -23699,6 +23925,11 @@ gliss.</text>
             <tpc>16</tpc>
             </Note>
           </Chord>
+        <Symbol>
+          <name>stringsDownBow</name>
+          <font>Bravura</font>
+          <pos x="-0.040775" y="-3.27524"/>
+          </Symbol>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
@@ -23726,6 +23957,11 @@ gliss.</text>
           <subtype>p</subtype>
           <velocity>49</velocity>
           </Dynamic>
+        <Symbol>
+          <name>stringsUpBow</name>
+          <font>Bravura</font>
+          <pos x="-0.0634345" y="-3.46224"/>
+          </Symbol>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>quarter</durationType>
@@ -23745,7 +23981,7 @@ gliss.</text>
           </Chord>
         </Measure>
       <Measure number="97">
-        <vspacerDown>10</vspacerDown>
+        <vspacerDown>13</vspacerDown>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>half</durationType>
@@ -25818,6 +26054,7 @@ gliss.</text>
           </Chord>
         </Measure>
       <Measure number="125">
+        <vspacerDown>10</vspacerDown>
         <Dynamic>
           <subtype>p</subtype>
           <velocity>49</velocity>
@@ -26187,6 +26424,7 @@ gliss.</text>
           </Chord>
         </Measure>
       <Measure number="129">
+        <vspacerDown>10</vspacerDown>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -26824,17 +27062,17 @@ gliss.</text>
         </Measure>
       <Measure number="136">
         <vspacerDown>10</vspacerDown>
+        <Dynamic>
+          <subtype>f</subtype>
+          <velocity>96</velocity>
+          <pos x="-2.6965" y="6.588"/>
+          </Dynamic>
         <Rest>
           <BeamMode>auto</BeamMode>
           <durationType>quarter</durationType>
           </Rest>
-        <Dynamic>
-          <subtype>f</subtype>
-          <velocity>96</velocity>
-          <pos x="0.658281" y="7.43556"/>
-          </Dynamic>
         <StaffText>
-          <pos x="1.36342" y="5.37547"/>
+          <pos x="-14.348" y="3.98097"/>
           <text> pizz., gliss.</text>
           </StaffText>
         <Beam id="272">
@@ -27501,6 +27739,7 @@ gliss.</text>
           </Chord>
         </Measure>
       <Measure number="146">
+        <vspacerDown>10</vspacerDown>
         <Rest>
           <BeamMode>auto</BeamMode>
           <durationType>eighth</durationType>
@@ -27601,6 +27840,10 @@ gliss.</text>
           <velocity>49</velocity>
           <pos x="0.658281" y="7.43556"/>
           </Dynamic>
+        <StaffText>
+          <pos x="2.35519" y="5.09144"/>
+          <text><i>sempre pizz.</i></text>
+          </StaffText>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
@@ -27630,11 +27873,6 @@ gliss.</text>
           <velocity>112</velocity>
           <pos x="0.658281" y="7.43556"/>
           </Dynamic>
-        <Dynamic>
-          <subtype>ff</subtype>
-          <velocity>112</velocity>
-          <pos x="0.488689" y="-3.32783"/>
-          </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
@@ -27648,6 +27886,10 @@ gliss.</text>
             <tpc>15</tpc>
             </Note>
           </Chord>
+        <StaffText>
+          <pos x="-1.94944" y="4.63323"/>
+          <text><i>let ring</i></text>
+          </StaffText>
         <Rest>
           <durationType>eighth</durationType>
           </Rest>
@@ -27666,6 +27908,10 @@ gliss.</text>
           <velocity>112</velocity>
           <pos x="-2.49912" y="7.43556"/>
           </Dynamic>
+        <StaffText>
+          <pos x="-5.35054" y="7.51624"/>
+          <text>pizz.</text>
+          </StaffText>
         <Beam id="281">
           <StemDirection>up</StemDirection>
           </Beam>
@@ -29018,14 +29264,20 @@ gliss.</text>
           </Chord>
         </Measure>
       <Measure number="164">
+        <vspacerDown>10</vspacerDown>
         <Dynamic>
           <subtype>pp</subtype>
           <velocity>33</velocity>
+          <pos x="-3.37132" y="7.62813"/>
           </Dynamic>
         <Rest>
           <BeamMode>auto</BeamMode>
           <durationType>quarter</durationType>
           </Rest>
+        <StaffText>
+          <pos x="-7.84948" y="5.31195"/>
+          <text>Big glissandi</text>
+          </StaffText>
         <Chord>
           <durationType>eighth</durationType>
           <StemDirection>up</StemDirection>
@@ -29168,6 +29420,7 @@ gliss.</text>
           </Rest>
         </Measure>
       <Measure number="168">
+        <vspacerDown>12</vspacerDown>
         <Rest>
           <BeamMode>auto</BeamMode>
           <dots>1</dots>
@@ -29252,6 +29505,10 @@ gliss.</text>
           <subtype>ppp</subtype>
           <velocity>16</velocity>
           </Dynamic>
+        <StaffText>
+          <pos x="-1.28348" y="8.2644"/>
+          <text>arco</text>
+          </StaffText>
         <HairPin id="319">
           <subtype>0</subtype>
           <Segment>
@@ -29326,6 +29583,11 @@ gliss.</text>
           </Chord>
         </Measure>
       <Measure number="175">
+        <Dynamic>
+          <subtype>ff</subtype>
+          <velocity>112</velocity>
+          <pos x="0.90602" y="8.64634"/>
+          </Dynamic>
         <endSpanner id="319"/>
         <Rest>
           <durationType>measure</durationType>
@@ -29335,6 +29597,7 @@ gliss.</text>
       </Staff>
     <Staff id="4">
       <Measure number="1">
+        <vspacerDown>18</vspacerDown>
         <Clef>
           <concertClefType>F</concertClefType>
           <transposingClefType>F</transposingClefType>
@@ -29443,6 +29706,11 @@ gliss.</text>
           <velocity>80</velocity>
           <pos x="0.658281" y="7.43556"/>
           </Dynamic>
+        <Symbol>
+          <name>stringsDownBow</name>
+          <font>Bravura</font>
+          <pos x="0.123502" y="-1.43671"/>
+          </Symbol>
         <HairPin id="329">
           <subtype>1</subtype>
           <Segment>
@@ -29566,6 +29834,11 @@ gliss.</text>
           <pos x="0.658281" y="7.43556"/>
           <text><sym>dynamicPiano</sym><sym>dynamicPiano</sym><sym>dynamicPiano</sym></text>
           </Dynamic>
+        <Symbol>
+          <name>stringsDownBow</name>
+          <font>Bravura</font>
+          <pos x="-0.417171" y="-1.61506"/>
+          </Symbol>
         <endSpanner id="329"/>
         <HairPin id="338">
           <subtype>0</subtype>
@@ -29666,6 +29939,11 @@ gliss.</text>
           <pos x="1.38135" y="7.33584"/>
           <text><sym>dynamicPiano</sym><sym>dynamicPiano</sym><sym>dynamicPiano</sym></text>
           </Dynamic>
+        <Symbol>
+          <name>stringsUpBow</name>
+          <font>Bravura</font>
+          <pos x="3.56946" y="-1.83729"/>
+          </Symbol>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
@@ -31279,12 +31557,7 @@ gliss.</text>
         <Dynamic>
           <subtype>ff</subtype>
           <velocity>112</velocity>
-          <pos x="-3.79079" y="7.43556"/>
-          </Dynamic>
-        <Dynamic>
-          <subtype>ff</subtype>
-          <velocity>112</velocity>
-          <pos x="-2.78278" y="-3.10773"/>
+          <pos x="0.857544" y="11.1542"/>
           </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
@@ -31318,15 +31591,15 @@ gliss.</text>
           <velocity>112</velocity>
           <pos x="-3.79079" y="9.58833"/>
           </Dynamic>
-        <Dynamic>
-          <subtype>ff</subtype>
-          <velocity>112</velocity>
-          <pos x="-2.78278" y="-3.10773"/>
-          </Dynamic>
         <StaffText>
           <pos x="-1.29166" y="7.4097"/>
           <text>arco</text>
           </StaffText>
+        <Dynamic>
+          <subtype>ff</subtype>
+          <velocity>112</velocity>
+          <pos x="-2.87137" y="-2.69981"/>
+          </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
@@ -31351,6 +31624,10 @@ gliss.</text>
           </Rest>
         </Measure>
       <Measure number="43">
+        <StaffText>
+          <pos x="-1.57615" y="7.17014"/>
+          <text><i>sempre</i></text>
+          </StaffText>
         <Beam id="335">
           <StemDirection>up</StemDirection>
           </Beam>
@@ -31366,6 +31643,11 @@ gliss.</text>
             <tpc>20</tpc>
             </Note>
           </Chord>
+        <Dynamic>
+          <subtype>ff</subtype>
+          <velocity>112</velocity>
+          <pos x="2.18873" y="10.1041"/>
+          </Dynamic>
         <Chord>
           <BeamMode>mid</BeamMode>
           <durationType>16th</durationType>
@@ -31890,6 +32172,16 @@ gliss.</text>
           </Chord>
         </Measure>
       <Measure number="46">
+        <Dynamic>
+          <subtype>f</subtype>
+          <velocity>96</velocity>
+          <pos x="-0.759836" y="-3.14515"/>
+          </Dynamic>
+        <Dynamic>
+          <subtype>f</subtype>
+          <velocity>96</velocity>
+          <pos x="-1.03874" y="8.19679"/>
+          </Dynamic>
         <Beam id="347">
           <StemDirection>up</StemDirection>
           </Beam>
@@ -32079,10 +32371,6 @@ gliss.</text>
           </Chord>
         </Measure>
       <Measure number="47">
-        <Dynamic>
-          <subtype>f</subtype>
-          <velocity>96</velocity>
-          </Dynamic>
         <Beam id="351">
           <StemDirection>up</StemDirection>
           </Beam>
@@ -32235,6 +32523,11 @@ gliss.</text>
           </Chord>
         </Measure>
       <Measure number="48">
+        <Dynamic>
+          <subtype>mf</subtype>
+          <velocity>80</velocity>
+          <pos x="-1.77997" y="7.18537"/>
+          </Dynamic>
         <Beam id="353">
           <StemDirection>down</StemDirection>
           </Beam>
@@ -32532,8 +32825,9 @@ gliss.</text>
         </Measure>
       <Measure number="50">
         <Dynamic>
-          <subtype>mf</subtype>
-          <velocity>80</velocity>
+          <subtype>mp</subtype>
+          <velocity>64</velocity>
+          <pos x="-1.88261" y="6.28316"/>
           </Dynamic>
         <Beam id="358">
           <StemDirection>down</StemDirection>
@@ -32690,10 +32984,6 @@ gliss.</text>
           </Rest>
         </Measure>
       <Measure number="51">
-        <Dynamic>
-          <subtype>mp</subtype>
-          <velocity>64</velocity>
-          </Dynamic>
         <Rest>
           <BeamMode>auto</BeamMode>
           <durationType>quarter</durationType>
@@ -32779,10 +33069,16 @@ gliss.</text>
           </Rest>
         </Measure>
       <Measure number="52">
+        <vspacerDown>18</vspacerDown>
         <Dynamic>
           <subtype>p</subtype>
           <velocity>49</velocity>
+          <pos x="-2.52276" y="6.5557"/>
           </Dynamic>
+        <StaffText>
+          <pos x="2.16111" y="6.56658"/>
+          <text>Gradually start doing more and more of a glissando in a random direction on each (separate) note</text>
+          </StaffText>
         <Rest>
           <BeamMode>auto</BeamMode>
           <durationType>16th</durationType>
@@ -33288,8 +33584,12 @@ gliss.</text>
         <Dynamic>
           <subtype>ppp</subtype>
           <velocity>16</velocity>
-          <pos x="0.329141" y="8.32077"/>
+          <pos x="-3.66843" y="5.90364"/>
           </Dynamic>
+        <StaffText>
+          <pos x="-20.9453" y="6.33292"/>
+          <text>Make eye contact with each other throughout; play furtively (razor-sharp onset and offset, sul pont.)</text>
+          </StaffText>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>half</durationType>
@@ -33744,6 +34044,11 @@ gliss.</text>
           <subtype>f</subtype>
           <velocity>96</velocity>
           </Dynamic>
+        <Dynamic>
+          <subtype>f</subtype>
+          <velocity>96</velocity>
+          <pos x="0.350208" y="-4.36851"/>
+          </Dynamic>
         <Rest>
           <BeamMode>auto</BeamMode>
           <durationType>quarter</durationType>
@@ -33929,6 +34234,7 @@ gliss.</text>
           </Rest>
         </Measure>
       <Measure number="84">
+        <vspacerDown>15</vspacerDown>
         <Rest>
           <durationType>measure</durationType>
           <duration z="4" n="4"/>
@@ -34114,6 +34420,10 @@ gliss.</text>
           <subtype>ppp</subtype>
           <velocity>16</velocity>
           </Dynamic>
+        <StaffText>
+          <pos x="-1.60833" y="10.4078"/>
+          <text>Legatissimo</text>
+          </StaffText>
         <HairPin id="361">
           <subtype>0</subtype>
           <Segment>
@@ -34141,10 +34451,20 @@ gliss.</text>
             <Accidental>
               <subtype>sharp</subtype>
               </Accidental>
+            <Symbol>
+              <name>stringsUpBow</name>
+              <font>Bravura</font>
+              <pos x="0.0690482" y="-2.41347"/>
+              </Symbol>
             <pitch>61</pitch>
             <tpc>21</tpc>
             </Note>
           </Chord>
+        <Symbol>
+          <name>stringsUpBow</name>
+          <font>Bravura</font>
+          <pos x="-0.13483" y="-4.58984"/>
+          </Symbol>
         <endSpanner id="361"/>
         <HairPin id="362">
           <subtype>1</subtype>
@@ -34177,6 +34497,11 @@ gliss.</text>
             <tpc>11</tpc>
             </Note>
           </Chord>
+        <Symbol>
+          <name>stringsDownBow</name>
+          <font>Bravura</font>
+          <pos x="-0.060479" y="-4.58608"/>
+          </Symbol>
         <endSpanner id="362"/>
         <Chord>
           <BeamMode>end</BeamMode>
@@ -34221,6 +34546,11 @@ gliss.</text>
           <subtype>pp</subtype>
           <velocity>33</velocity>
           </Dynamic>
+        <Symbol>
+          <name>stringsUpBow</name>
+          <font>Bravura</font>
+          <pos x="-0.229129" y="-3.50354"/>
+          </Symbol>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>quarter</durationType>
@@ -34262,6 +34592,11 @@ gliss.</text>
             <tpc>21</tpc>
             </Note>
           </Chord>
+        <Symbol>
+          <name>stringsDownBow</name>
+          <font>Bravura</font>
+          <pos x="-0.135592" y="-5.22114"/>
+          </Symbol>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -34276,6 +34611,11 @@ gliss.</text>
             <tpc>15</tpc>
             </Note>
           </Chord>
+        <Symbol>
+          <name>stringsDownBow</name>
+          <font>Bravura</font>
+          <pos x="-0.431011" y="-4.81215"/>
+          </Symbol>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
@@ -34303,6 +34643,11 @@ gliss.</text>
           <subtype>p</subtype>
           <velocity>49</velocity>
           </Dynamic>
+        <Symbol>
+          <name>stringsUpBow</name>
+          <font>Bravura</font>
+          <pos x="-0.560617" y="-4.801"/>
+          </Symbol>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>quarter</durationType>
@@ -34326,7 +34671,7 @@ gliss.</text>
           </Chord>
         </Measure>
       <Measure number="97">
-        <vspacerDown>25</vspacerDown>
+        <vspacerDown>27</vspacerDown>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>half</durationType>
@@ -34651,6 +34996,13 @@ gliss.</text>
           </Chord>
         </Measure>
       <Measure number="101">
+        <StaffText>
+          <pos x="7.85688" y="8.72552"/>
+          <text>Lift off the bow
+in a theatrically
+exaggerated 
+gesture</text>
+          </StaffText>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
@@ -34733,6 +35085,12 @@ gliss.</text>
           <velocity>126</velocity>
           <pos x="0.626925" y="10.0865"/>
           </Dynamic>
+        <StaffText>
+          <pos x="-1.65996" y="12.9656"/>
+          <text>Everyone arpeggiato like crazy; maintain speed 
+but gradually lift the bow until it no longer touches 
+the strings, and then bow the air for a bit</text>
+          </StaffText>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>half</durationType>
@@ -38069,6 +38427,14 @@ gliss.</text>
           <velocity>49</velocity>
           <pos x="0.658282" y="6.36287"/>
           </Dynamic>
+        <StaffText>
+          <pos x="2.35519" y="4.20027"/>
+          <text><i>sempre pizz.</i></text>
+          </StaffText>
+        <StaffText>
+          <pos x="-4.08027" y="8.97951"/>
+          <text>Stare at each other</text>
+          </StaffText>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
@@ -38096,7 +38462,7 @@ gliss.</text>
         <Dynamic>
           <subtype>ff</subtype>
           <velocity>112</velocity>
-          <pos x="0.658282" y="10.5402"/>
+          <pos x="0.658282" y="10.3174"/>
           </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
@@ -38111,6 +38477,10 @@ gliss.</text>
             <tpc>17</tpc>
             </Note>
           </Chord>
+        <StaffText>
+          <pos x="-1.94944" y="7.74986"/>
+          <text><i>let ring</i></text>
+          </StaffText>
         <Rest>
           <durationType>eighth</durationType>
           </Rest>
@@ -38129,6 +38499,10 @@ gliss.</text>
           <velocity>112</velocity>
           <pos x="-2.21208" y="7.43556"/>
           </Dynamic>
+        <StaffText>
+          <pos x="-4.99402" y="8.08668"/>
+          <text>pizz.</text>
+          </StaffText>
         <Beam id="411">
           <StemDirection>up</StemDirection>
           </Beam>
@@ -39395,7 +39769,12 @@ gliss.</text>
         <Dynamic>
           <subtype>p</subtype>
           <velocity>49</velocity>
+          <pos x="0.533281" y="9.00492"/>
           </Dynamic>
+        <StaffText>
+          <pos x="3.81301" y="6.68308"/>
+          <text>Gradually start doing more and more of a glissando in a random direction on each pizz.</text>
+          </StaffText>
         <Rest>
           <BeamMode>auto</BeamMode>
           <dots>1</dots>
@@ -39561,6 +39940,7 @@ gliss.</text>
         <Dynamic>
           <subtype>pp</subtype>
           <velocity>33</velocity>
+          <pos x="-2.83173" y="8.46483"/>
           </Dynamic>
         <Chord>
           <durationType>eighth</durationType>
@@ -39573,6 +39953,10 @@ gliss.</text>
             <tpc>11</tpc>
             </Note>
           </Chord>
+        <StaffText>
+          <pos x="-3.78068" y="6.19788"/>
+          <text>Big glissandi</text>
+          </StaffText>
         <Rest>
           <BeamMode>auto</BeamMode>
           <durationType>quarter</durationType>
@@ -39726,6 +40110,10 @@ gliss.</text>
           <velocity>16</velocity>
           <pos x="0.720638" y="9.39836"/>
           </Dynamic>
+        <StaffText>
+          <pos x="-1.28348" y="9.12006"/>
+          <text>arco</text>
+          </StaffText>
         <HairPin id="411">
           <subtype>0</subtype>
           <Segment>
@@ -39804,11 +40192,6 @@ gliss.</text>
           <subtype>ff</subtype>
           <velocity>112</velocity>
           <pos x="1.08699" y="9.93476"/>
-          </Dynamic>
-        <Dynamic>
-          <subtype>ff</subtype>
-          <velocity>112</velocity>
-          <pos x="1.02859" y="-3.63561"/>
           </Dynamic>
         <endSpanner id="411"/>
         <Rest>
