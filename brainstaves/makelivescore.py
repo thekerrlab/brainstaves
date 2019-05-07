@@ -24,9 +24,9 @@ torun = [
 'write',
 ]
 
-version = 'versionA'
+version = 'B'
 wait = False # Whether or not to pause between generating sections
-makepng = True
+makepng = False
 makepdf = True
 
 pauses = sc.odict([
@@ -40,9 +40,9 @@ pauses = sc.odict([
         ('H',0),  # 4:00
         ])
 
-infiles = {'versionA':'score/brainstaves.mscx',
-           'versionB':'score/brainstaves-B.mscx',
-           'versionC':'score/brainstaves-B.mscx',}
+infiles = {'A':'score/brainstaves-A.mscx',
+           'B':'score/brainstaves-B.mscx',
+          }
 
 statusfile = 'status.tmp' # WARNING, replace with status.obj
 npages = 13
@@ -186,7 +186,7 @@ if 'sectionB' in torun:
             inst.seed += 1
             startval = inst.score[-1] if inst.scorepts else 'min'
             inst.brownian(maxstep=2, startval=startval, skipstart=True, inst=part, usedata=usedata)
-            if version == 'versionB': inst.blues()
+            if version == 'B': inst.blues()
             inst.seed += 1
             inst.cat()
         
@@ -211,8 +211,8 @@ if 'sectionC' in torun:
                 elif part == 'vc': startval = 'min'
                 else:              startval = None
                 inst.brownian(maxstep=3, startval=startval, skipstart=True, inst=part, usedata=usedata)
-                if version == 'versionA': inst.octotonic()
-                if version == 'versionB': inst.blues()
+                if version == 'A': inst.octotonic()
+                if version == 'B': inst.blues()
                 inst.seed += 1
                 inst.cat()
         
@@ -236,7 +236,7 @@ if 'sectionD' in torun:
             inst.seed += 1
             if inst.scorepts:  startval = inst.score[-1]
             inst.brownian(maxstep=5, startval=startval, skipstart=True, inst=part, usedata=usedata)
-            if version == 'versionB': inst.blues()
+            if version == 'B': inst.blues()
             inst.seed += 1
             inst.cat()
     
@@ -330,13 +330,13 @@ if 'sectionE' in torun:
         assert len(nd[sec][part]) == len(nm[part])
         
         inst.brownian(maxstep=5, startval=startvals1[part], forcestep=True, skipstart=True, npts=3)
-        if version == 'versionB': inst.blues()
+        if version == 'B': inst.blues()
         inst.seed += 1
         inst.cat()
         
         inst.brownian(maxstep=3, startval=startvals2[part], forcestep=True, skipstart=True, npts=25)
-        if version == 'versionA': inst.octotonic()
-        if version == 'versionB': inst.blues()
+        if version == 'A': inst.octotonic()
+        if version == 'B': inst.blues()
         inst.seed += 1
         inst.cat()
         
@@ -373,11 +373,11 @@ if 'sectionF' in torun:
     quartet,qd = makequartet(mindur=8, timesig='4/4', nbars=1)
     
     parttosub = {
-            'versionA':'va', 
-            'versionB':'v1'}
+            'A':'va', 
+            'B':'v1'}
     ssparts = {
-            'versionA':[106,118], 
-            'versionB':[106,110]}
+            'A':[106,118], 
+            'B':[106,110]}
     
     for part,inst in qd.items():
         if part == parttosub[version]:
@@ -387,16 +387,16 @@ if 'sectionF' in torun:
                 inst.seed += 1
                 if inst.scorepts: startval = inst.score[-1]
                 inst.brownian(maxstep=3, startval=startval, skipstart=True, inst=part, usedata=usedata)
-                if version == 'versionB': inst.blues()
+                if version == 'B': inst.blues()
                 inst.seed += 1
                 inst.cat()
         
             appendnotes(nd, sec, part)
     
     # Melodic part
-    if version == 'versionA':
+    if version == 'A':
         print('Keeping prewritten melody for version A')
-    elif version == 'versionB':
+    elif version == 'B':
         for part,inst in qd.items():
             if   part == 'v1': ss = [111,124]
             elif part == 'v2': ss = [117,124]
@@ -407,7 +407,7 @@ if 'sectionF' in torun:
                 inst.seed += 1
                 if inst.scorepts: startval = inst.score[-1]
                 inst.brownian(maxstep=3, startval=startval, skipstart=True, inst=part, usedata=usedata)
-                if version == 'versionB': inst.blues()
+                if version == 'B': inst.blues()
                 inst.seed += 1
                 inst.cat()
             appendnotes(nd, sec, part, useties=True)
@@ -429,16 +429,16 @@ if 'sectionG' in torun:
             inst.seed += 1
             if inst.scorepts: startval = inst.score[-1]
             inst.brownian(maxstep=5, startval=startval, skipstart=True, inst=part, usedata=usedata)
-            if version == 'versionB': inst.blues()
+            if version == 'B': inst.blues()
             inst.seed += 1
             inst.cat()
     
         appendnotes(nd, sec, part)
     
     # Melodic part
-    if version == 'versionA':
+    if version == 'A':
         print('Keeping prewritten melody for version A')
-    elif version == 'versionB':
+    elif version == 'B':
         for part,inst in qd.items():
             if part in ['v2','va']:
                 if   part == 'v2': ss = [135,144]
@@ -448,7 +448,7 @@ if 'sectionG' in torun:
                     inst.seed += 1
                     if inst.scorepts: startval = inst.score[-1]
                     inst.brownian(maxstep=3, startval=startval, skipstart=True, inst=part, usedata=usedata)
-                    if version == 'versionB': inst.blues()
+                    if version == 'B': inst.blues()
                     inst.seed += 1
                     inst.cat()
                 appendnotes(nd, sec, part, useties=True)
@@ -471,10 +471,10 @@ if 'sectionH' in torun:
             elif part in ['v1','v2']: startval = 'max'
             elif part in ['va','vc']: startval = 'min'
             inst.brownian(maxstep=2, startval=startval, skipstart=True, inst=part, usedata=usedata)
-            if version == 'versionA': 
+            if version == 'A': 
                 inst.diatonic()
                 inst.octotonic()
-            if version == 'versionB':
+            if version == 'B':
                 inst.blues()
             inst.seed += 1
             inst.cat()

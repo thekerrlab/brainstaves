@@ -2526,10 +2526,10 @@
           <velocity>96</velocity>
           </Dynamic>
         <Rest>
+          <BeamMode>auto</BeamMode>
           <durationType>16th</durationType>
           </Rest>
         <Chord>
-          <BeamMode>no</BeamMode>
           <durationType>16th</durationType>
           <StemDirection>up</StemDirection>
           <Note>
@@ -2538,10 +2538,10 @@
             </Note>
           </Chord>
         <Rest>
+          <BeamMode>auto</BeamMode>
           <durationType>16th</durationType>
           </Rest>
         <Chord>
-          <BeamMode>no</BeamMode>
           <durationType>16th</durationType>
           <StemDirection>up</StemDirection>
           <Note>
@@ -2556,7 +2556,6 @@
           <StemDirection>up</StemDirection>
           </Beam>
         <Chord>
-          <BeamMode>begin</BeamMode>
           <durationType>16th</durationType>
           <Beam>25</Beam>
           <Note>
@@ -2565,7 +2564,6 @@
             </Note>
           </Chord>
         <Chord>
-          <BeamMode>mid</BeamMode>
           <durationType>16th</durationType>
           <Beam>25</Beam>
           <Note>
@@ -2577,7 +2575,6 @@
             </Note>
           </Chord>
         <Chord>
-          <BeamMode>mid</BeamMode>
           <durationType>16th</durationType>
           <Beam>25</Beam>
           <Note>
@@ -2589,7 +2586,6 @@
             </Note>
           </Chord>
         <Chord>
-          <BeamMode>end</BeamMode>
           <durationType>16th</durationType>
           <Beam>25</Beam>
           <Note>
@@ -2604,7 +2600,6 @@
           <StemDirection>down</StemDirection>
           </Beam>
         <Chord>
-          <BeamMode>begin</BeamMode>
           <durationType>16th</durationType>
           <Beam>26</Beam>
           <Note>
@@ -2617,7 +2612,6 @@
             </Note>
           </Chord>
         <Chord>
-          <BeamMode>mid</BeamMode>
           <durationType>16th</durationType>
           <Beam>26</Beam>
           <Note>
@@ -2630,7 +2624,6 @@
             </Note>
           </Chord>
         <Chord>
-          <BeamMode>mid</BeamMode>
           <durationType>16th</durationType>
           <Beam>26</Beam>
           <Note>
@@ -2643,7 +2636,6 @@
             </Note>
           </Chord>
         <Chord>
-          <BeamMode>end</BeamMode>
           <durationType>16th</durationType>
           <Beam>26</Beam>
           <Note>
@@ -2658,7 +2650,6 @@
           <StemDirection>down</StemDirection>
           </Beam>
         <Chord>
-          <BeamMode>begin</BeamMode>
           <durationType>16th</durationType>
           <Beam>27</Beam>
           <Note>
@@ -2671,7 +2662,6 @@
             </Note>
           </Chord>
         <Chord>
-          <BeamMode>mid</BeamMode>
           <durationType>16th</durationType>
           <Beam>27</Beam>
           <Note>
@@ -2683,7 +2673,6 @@
             </Note>
           </Chord>
         <Chord>
-          <BeamMode>mid</BeamMode>
           <durationType>16th</durationType>
           <Beam>27</Beam>
           <Note>
@@ -2695,7 +2684,6 @@
             </Note>
           </Chord>
         <Chord>
-          <BeamMode>end</BeamMode>
           <durationType>16th</durationType>
           <Beam>27</Beam>
           <Note>
@@ -11815,7 +11803,7 @@ the strings, and then bow the air for a bit</text>
           <Segment>
             <subtype>0</subtype>
             <off2 x="-22.9734" y="0"/>
-            <pos x="14.127" y="5.64955"/>
+            <pos x="13.4977" y="5.64955"/>
             </Segment>
           <beginText>
             <text>cresc.</text>
@@ -16646,10 +16634,11 @@ the strings, and then bow the air for a bit</text>
           </Rest>
         </Measure>
       <Measure number="146">
+        <vspacerDown>10</vspacerDown>
         <Dynamic>
           <subtype>f</subtype>
           <velocity>96</velocity>
-          <pos x="-2.81656" y="7.50162"/>
+          <pos x="-2.59096" y="8.56629"/>
           </Dynamic>
         <Rest>
           <BeamMode>auto</BeamMode>
@@ -16657,8 +16646,8 @@ the strings, and then bow the air for a bit</text>
           </Rest>
         <StaffText>
           <pos x="-6.34554" y="4.52231"/>
-          <text><i><font size="8.5261"></font><font face="Times New Roman"></font>pizz., 
-gliss.</i></text>
+          <text>pizz., 
+gliss.</text>
           </StaffText>
         <Chord>
           <durationType>eighth</durationType>
@@ -33182,7 +33171,12 @@ gliss.</i></text>
           </Chord>
         <Rest>
           <BeamMode>auto</BeamMode>
-          <durationType>eighth</durationType>
+          <durationType>16th</durationType>
+          <Beam>363</Beam>
+          </Rest>
+        <Rest>
+          <BeamMode>auto</BeamMode>
+          <durationType>16th</durationType>
           <Beam>363</Beam>
           </Rest>
         <Rest>
@@ -33217,7 +33211,11 @@ gliss.</i></text>
           </Chord>
         <Rest>
           <BeamMode>auto</BeamMode>
-          <durationType>eighth</durationType>
+          <durationType>16th</durationType>
+          </Rest>
+        <Rest>
+          <BeamMode>auto</BeamMode>
+          <durationType>16th</durationType>
           </Rest>
         </Measure>
       <Measure number="59">
@@ -33242,7 +33240,11 @@ gliss.</i></text>
           </Rest>
         <Rest>
           <BeamMode>auto</BeamMode>
-          <durationType>eighth</durationType>
+          <durationType>16th</durationType>
+          </Rest>
+        <Rest>
+          <BeamMode>auto</BeamMode>
+          <durationType>16th</durationType>
           </Rest>
         <Rest>
           <BeamMode>auto</BeamMode>
@@ -33451,7 +33453,7 @@ gliss.</i></text>
           <durationType>eighth</durationType>
           </Rest>
         <StaffText>
-          <pos x="-1.59183" y="4.79298"/>
+          <pos x="-1.59183" y="6.31738"/>
           <text><i>simile</i></text>
           </StaffText>
         <Chord>
