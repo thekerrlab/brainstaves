@@ -105,7 +105,7 @@
         <offsetType>spatium</offsetType>
         <name>Tempo</name>
         <family>FreeSerif</family>
-        <size>10</size>
+        <size>12</size>
         <bold>1</bold>
         <sizeIsSpatiumDependent>1</sizeIsSpatiumDependent>
         <systemFlag>1</systemFlag>
@@ -128,6 +128,29 @@
         <name>Translator</name>
         <family>FreeSerif</family>
         <size>10</size>
+        </TextStyle>
+      <TextStyle>
+        <halign>left</halign>
+        <valign>top</valign>
+        <xoffset>0</xoffset>
+        <yoffset>-4</yoffset>
+        <offsetType>spatium</offsetType>
+        <name>System</name>
+        <family>FreeSerif</family>
+        <size>12</size>
+        <sizeIsSpatiumDependent>1</sizeIsSpatiumDependent>
+        <systemFlag>1</systemFlag>
+        </TextStyle>
+      <TextStyle>
+        <halign>left</halign>
+        <valign>top</valign>
+        <xoffset>0</xoffset>
+        <yoffset>-4</yoffset>
+        <offsetType>spatium</offsetType>
+        <name>Staff</name>
+        <family>FreeSerif</family>
+        <size>12</size>
+        <sizeIsSpatiumDependent>1</sizeIsSpatiumDependent>
         </TextStyle>
       <TextStyle>
         <halign>left</halign>
@@ -808,7 +831,7 @@
       <Measure number="17">
         <stretch>0.7</stretch>
         <StaffText>
-          <pos x="-1.16167" y="-5.00463"/>
+          <pos x="-10.4538" y="-4.21716"/>
           <text>Falling off the edge of a...</text>
           </StaffText>
         <HairPin id="24">
@@ -865,6 +888,7 @@
           <showCourtesySig>1</showCourtesySig>
           </TimeSig>
         <RehearsalMark>
+          <pos x="-5.19731" y="-4.25996"/>
           <placement>above</placement>
           <text><font size="14.284"></font><font face="Times New Roman"></font><b>B</b></text>
           </RehearsalMark>
@@ -877,7 +901,7 @@
         <Tempo>
           <tempo>2.6</tempo>
           <followText>1</followText>
-          <pos x="2.70315" y="-2.85185"/>
+          <pos x="-1.70669" y="-3.63932"/>
           <text>Evolving from sweet to insane (poco a poco crescendo e agitato,  <sym>unicodeNoteQuarterUp</sym><sym>space</sym><sym>unicodeAugmentationDot</sym> = <sym>unicodeNoteQuarterUp</sym>,  <sym>unicodeNoteQuarterUp</sym><sym>space</sym><sym>unicodeAugmentationDot</sym> = 104)</text>
           </Tempo>
         <Chord>
@@ -1094,7 +1118,7 @@
       <Measure number="28">
         <stretch>0.6</stretch>
         <StaffText>
-          <pos x="-1.45449" y="-5.29785"/>
+          <pos x="-74.2169" y="-5.2191"/>
           <text>VI: sweet and lyrical, like a fine stream of honey, but gradually getting louder too</text>
           </StaffText>
         <Chord>
@@ -1370,7 +1394,7 @@
         <stretch>0.7</stretch>
         <StaffText>
           <pos x="-5.81249" y="5.80602"/>
-          <text><font size="8.5261"></font><font face="Times New Roman"></font><i>pizz.</i></text>
+          <text>pizz.</text>
           </StaffText>
         <Beam id="1">
           <StemDirection>up</StemDirection>
@@ -1708,20 +1732,26 @@
       <Measure number="42">
         <stretch>0.7</stretch>
         <RehearsalMark>
+          <pos x="-1.41745" y="-5.59866"/>
           <placement>above</placement>
           <text><font size="14.284"></font><font face="Times New Roman"></font><b>C</b></text>
           </RehearsalMark>
         <StaffText>
-          <pos x="54.8784" y="-8.63322"/>
-          <text><b><font size="9.3012"></font><font face="Times New Roman"></font>Strong, fat, angry, but gradually relaxing (legatissimo, poco a poco diminuendo)</b></text>
+          <pos x="2.11778" y="-8.39698"/>
+          <text><b>Strong, fat, angry, but gradually relaxing (legatissimo, poco a poco diminuendo)</b></text>
           </StaffText>
         <Rest>
           <durationType>half</durationType>
           </Rest>
         <StaffText>
           <pos x="-1.29166" y="7.4097"/>
-          <text><i>arco</i></text>
+          <text>arco</text>
           </StaffText>
+        <Dynamic>
+          <subtype>ff</subtype>
+          <velocity>112</velocity>
+          <pos x="-4.55244" y="9.63296"/>
+          </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
@@ -3275,7 +3305,7 @@
           <velocity>49</velocity>
           </Dynamic>
         <StaffText>
-          <pos x="-3.36772" y="-5.92862"/>
+          <pos x="-3.76146" y="-6.95233"/>
           <text>Gradually start doing more and more of a glissando in a random direction on each (separate) note</text>
           </StaffText>
         <Chord>
@@ -3659,7 +3689,7 @@
       <Measure number="58">
         <stretch>0.3</stretch>
         <StaffText>
-          <pos x="-93.6503" y="-4.31926"/>
+          <pos x="-93.6503" y="-6.36669"/>
           <style>System</style>
           <text>Glissandi should be big by now</text>
           </StaffText>
@@ -3689,9 +3719,8 @@
       <Measure number="61">
         <stretch>0.7</stretch>
         <StaffText>
-          <pos x="34.2442" y="-9.6831"/>
-          <text><font size="9.3012"></font><font face="Times New Roman"></font>Make eye contact with each other throughout; 
-play furtively (razor-sharp onset and offset)</text>
+          <pos x="13.3762" y="-8.58064"/>
+          <text>Make eye contact with each other throughout; play furtively (razor-sharp onset and offset)</text>
           </StaffText>
         <Rest>
           <durationType>half</durationType>
@@ -3769,8 +3798,8 @@ play furtively (razor-sharp onset and offset)</text>
           <durationType>half</durationType>
           </Rest>
         <StaffText>
-          <pos x="-1.06502" y="-5.17024"/>
-          <text><b><font size="9.3012"></font><font face="Times New Roman"></font>Drunk; sempre glissando; lean into the glissandi (and lean for real, as if drunk); poco a poco crescendo</b></text>
+          <pos x="-1.85249" y="-6.35145"/>
+          <text><b>Drunk; sempre glissando; lean into the glissandi (and lean for real, as if drunk); poco a poco crescendo</b></text>
           </StaffText>
         <Slur id="51">
           <track>0</track>
@@ -4857,7 +4886,7 @@ play furtively (razor-sharp onset and offset)</text>
       <Measure number="85">
         <stretch>0.7</stretch>
         <RehearsalMark>
-          <pos x="-19.4453" y="-6.22844"/>
+          <pos x="-14.4055" y="-6.22844"/>
           <placement>above</placement>
           <text><font size="14.284"></font><font face="Times New Roman"></font><b>E</b></text>
           </RehearsalMark>
@@ -4867,10 +4896,9 @@ play furtively (razor-sharp onset and offset)</text>
           <pos x="0.75" y="7.43556"/>
           </Dynamic>
         <StaffText>
-          <pos x="-15.6708" y="-8.54307"/>
-          <text><b><font size="9.3012"></font><font face="Times New Roman"></font>Like an echo in an empty train station, 
-but the train is coming (sternly; poco a 
-poco crescendo)</b></text>
+          <pos x="-10.5522" y="-7.12562"/>
+          <style>Tempo</style>
+          <text>Like an echo in an empty train station, but the train is coming (sternly; poco a poco crescendo)</text>
           </StaffText>
         <Rest>
           <durationType>whole</durationType>
@@ -5664,7 +5692,7 @@ poco crescendo)</b></text>
           <pos x="6.38234" y="7.70082"/>
           </Dynamic>
         <StaffText>
-          <pos x="2.87336" y="-12.5137"/>
+          <pos x="-11.4586" y="-15.8998"/>
           <text>Lift off the bow
 in a theatrically
 exaggerated 
@@ -5697,7 +5725,7 @@ gesture</text>
           <pos x="1.03787" y="10.1119"/>
           </Dynamic>
         <StaffText>
-          <pos x="4.32318" y="-12.3039"/>
+          <pos x="-4.96899" y="-14.4301"/>
           <text>Everyone arpeggiato like crazy; maintain speed 
 but gradually lift the bow until it no longer touches 
 the strings, and then bow the air for a bit</text>
@@ -5865,6 +5893,7 @@ the strings, and then bow the air for a bit</text>
       <Measure number="106">
         <stretch>0.7</stretch>
         <RehearsalMark>
+          <pos x="-2.51991" y="-5.6774"/>
           <placement>above</placement>
           <text><font size="14.284"></font><font face="Times New Roman"></font><b>F</b></text>
           </RehearsalMark>
@@ -5874,8 +5903,9 @@ the strings, and then bow the air for a bit</text>
           <pos x="0.533281" y="7.43556"/>
           </Dynamic>
         <StaffText>
-          <pos x="3.65972" y="-5.91425"/>
-          <text><b><font size="9.3012"></font><font face="Times New Roman"></font>Focused, lyrical; light, whimsical background accompaniment; impassioned solos</b></text>
+          <pos x="0.116096" y="-6.22924"/>
+          <style>Tempo</style>
+          <text>Focused, lyrical; light, whimsical background accompaniment; impassioned solos</text>
           </StaffText>
         <Rest>
           <durationType>quarter</durationType>
@@ -7529,8 +7559,9 @@ the strings, and then bow the air for a bit</text>
           <text><font size="14.284"></font><font face="Times New Roman"></font><b>G</b></text>
           </RehearsalMark>
         <StaffText>
-          <pos x="4.59258" y="-5.72222"/>
-          <text><font size="9.3012"></font><font face="Times New Roman"></font><b>Still lyrical, but with the wide-eyed wonder of having just discovered the top of your head</b></text>
+          <pos x="2.84446" y="-4.36257"/>
+          <style>Tempo</style>
+          <text>Still lyrical, but with the wide-eyed wonder of having just discovered the top of your head</text>
           </StaffText>
         <Dynamic>
           <subtype>mp</subtype>
@@ -7797,18 +7828,19 @@ the strings, and then bow the air for a bit</text>
         </Measure>
       <Measure number="136">
         <stretch>0.7</stretch>
+        <vspacerDown>10</vspacerDown>
         <Dynamic>
           <subtype>f</subtype>
           <velocity>96</velocity>
-          <pos x="-4.03202" y="7.21237"/>
+          <pos x="-3.06084" y="7.40661"/>
           </Dynamic>
         <Rest>
           <BeamMode>auto</BeamMode>
           <durationType>eighth</durationType>
           </Rest>
         <StaffText>
-          <pos x="-9.81319" y="5.55608"/>
-          <text><font size="8.5261"></font><font face="Times New Roman"></font><i> pizz., gliss.</i></text>
+          <pos x="-9.03625" y="4.19643"/>
+          <text> pizz., gliss.</text>
           </StaffText>
         <Chord>
           <durationType>eighth</durationType>
@@ -8614,7 +8646,7 @@ the strings, and then bow the air for a bit</text>
         <stretch>0.7</stretch>
         <StaffText>
           <pos x="6.38549" y="-4.94919"/>
-          <text><font size="9.3012"></font><font face="Times New Roman"></font>Stare at each other</text>
+          <text>Stare at each other</text>
           </StaffText>
         <Rest>
           <durationType>half</durationType>
@@ -8703,9 +8735,8 @@ the strings, and then bow the air for a bit</text>
         <Tempo>
           <tempo>2.6</tempo>
           <followText>1</followText>
-          <pos x="0.0321461" y="-6.1743"/>
-          <text><sym>unicodeNoteQuarterUp</sym><sym>space</sym><sym>unicodeAugmentationDot</sym> = 104 Evolving from insane to sweet 
-(poco a poco diminuendo e rallentando)</text>
+          <pos x="0.0321461" y="-4.39249"/>
+          <text><sym>unicodeNoteQuarterUp</sym><sym>space</sym><sym>unicodeAugmentationDot</sym> = 104 Evolving from insane to sweet (poco a poco diminuendo e rallentando)</text>
           </Tempo>
         <Beam id="73">
           <StemDirection>down</StemDirection>
@@ -9021,9 +9052,9 @@ the strings, and then bow the air for a bit</text>
           <text><sym>dynamicForte</sym><sym>dynamicForte</sym></text>
           </Dynamic>
         <StaffText>
-          <pos x="2.27962" y="4.72769"/>
+          <pos x="2.27962" y="3.994"/>
           <style>System</style>
-          <text><i>arco</i></text>
+          <text>arco</text>
           </StaffText>
         <Chord>
           <BeamMode>no</BeamMode>
@@ -9169,6 +9200,7 @@ the strings, and then bow the air for a bit</text>
         </Measure>
       <Measure number="162">
         <stretch>0.7</stretch>
+        <vspacerUp>15</vspacerUp>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -9199,6 +9231,7 @@ the strings, and then bow the air for a bit</text>
         </Measure>
       <Measure number="164">
         <stretch>0.7</stretch>
+        <vspacerUp>18</vspacerUp>
         <Dynamic>
           <subtype>pp</subtype>
           <velocity>33</velocity>
@@ -9285,6 +9318,7 @@ the strings, and then bow the air for a bit</text>
         </Measure>
       <Measure number="168">
         <stretch>0.7</stretch>
+        <vspacerUp>18</vspacerUp>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -9898,8 +9932,8 @@ the strings, and then bow the air for a bit</text>
           <pos x="0.75" y="7.43556"/>
           </Dynamic>
         <StaffText>
-          <pos x="3.22916" y="5.80602"/>
-          <text><font size="8.5261"></font><font face="Times New Roman"></font><i> pizz.</i></text>
+          <pos x="3.22916" y="4.90614"/>
+          <text> pizz.</text>
           </StaffText>
         <Rest>
           <durationType>measure</durationType>
@@ -11567,14 +11601,9 @@ the strings, and then bow the air for a bit</text>
         <Rest>
           <durationType>half</durationType>
           </Rest>
-        <Dynamic>
-          <subtype>ff</subtype>
-          <velocity>112</velocity>
-          <pos x="-2.75313" y="-2.48733"/>
-          </Dynamic>
         <StaffText>
           <pos x="-1.29166" y="7.0509"/>
-          <text><i>arco</i></text>
+          <text>arco</text>
           </StaffText>
         <Chord>
           <BeamMode>no</BeamMode>
@@ -15808,6 +15837,7 @@ the strings, and then bow the air for a bit</text>
           </Chord>
         </Measure>
       <Measure number="136">
+        <vspacerDown>10</vspacerDown>
         <Beam id="131">
           <StemDirection>down</StemDirection>
           </Beam>
@@ -18092,9 +18122,8 @@ gliss.</i></text>
         </Measure>
       <Measure number="161">
         <StaffText>
-          <pos x="5.30308" y="-16.7834"/>
-          <text>Gradually start doing more and more of a 
-glissando in a random direction on each pizz.</text>
+          <pos x="-2.0338" y="-23.2818"/>
+          <text>Gradually start doing more and more of a glissando in a random direction on each pizz.</text>
           </StaffText>
         <Dynamic>
           <subtype>p</subtype>
@@ -18592,7 +18621,7 @@ glissando in a random direction on each pizz.</text>
           <text><sym>dynamicPiano</sym><sym>dynamicPiano</sym><sym>dynamicPiano</sym><sym>dynamicPiano</sym></text>
           </Dynamic>
         <StaffText>
-          <pos x="47.5059" y="-36.924"/>
+          <pos x="56.1681" y="-37.3177"/>
           <text>Bring out the melody as you build up the chord</text>
           </StaffText>
         <Chord>
@@ -19033,8 +19062,8 @@ glissando in a random direction on each pizz.</text>
           <pos x="0.75" y="7.43556"/>
           </Dynamic>
         <StaffText>
-          <pos x="2.43981" y="5.59074"/>
-          <text><font size="8.5261"></font><font face="Times New Roman"></font><i> pizz.</i></text>
+          <pos x="3.25788" y="5.0999"/>
+          <text> pizz.</text>
           </StaffText>
         <Rest>
           <durationType>measure</durationType>
@@ -20603,7 +20632,7 @@ glissando in a random direction on each pizz.</text>
           </Dynamic>
         <StaffText>
           <pos x="-1.29166" y="6.62035"/>
-          <text><i>arco</i></text>
+          <text>arco</text>
           </StaffText>
         <Chord>
           <BeamMode>no</BeamMode>
@@ -26805,6 +26834,7 @@ glissando in a random direction on each pizz.</text>
           </Chord>
         </Measure>
       <Measure number="136">
+        <vspacerDown>10</vspacerDown>
         <Rest>
           <BeamMode>auto</BeamMode>
           <durationType>quarter</durationType>
@@ -26816,7 +26846,7 @@ glissando in a random direction on each pizz.</text>
           </Dynamic>
         <StaffText>
           <pos x="1.36342" y="5.37547"/>
-          <text><font size="8.5261"></font><font face="Times New Roman"></font><i> pizz., gliss.</i></text>
+          <text> pizz., gliss.</text>
           </StaffText>
         <Beam id="272">
           <StemDirection>up</StemDirection>
@@ -29721,8 +29751,8 @@ glissando in a random direction on each pizz.</text>
           <pos x="0.75" y="7.43556"/>
           </Dynamic>
         <StaffText>
-          <pos x="2.51157" y="5.87778"/>
-          <text><font size="8.5261"></font><font face="Times New Roman"></font><i> pizz.</i></text>
+          <pos x="2.67518" y="5.22332"/>
+          <text> pizz.</text>
           </StaffText>
         <Rest>
           <durationType>measure</durationType>
@@ -31306,7 +31336,7 @@ glissando in a random direction on each pizz.</text>
           </Dynamic>
         <StaffText>
           <pos x="-1.29166" y="7.4097"/>
-          <text><i>arco</i></text>
+          <text>arco</text>
           </StaffText>
         <Chord>
           <BeamMode>no</BeamMode>
@@ -33897,10 +33927,6 @@ glissando in a random direction on each pizz.</text>
           </Rest>
         </Measure>
       <Measure number="84">
-        <StaffText>
-          <pos x="-0.913688" y="5.71832"/>
-          <text>Ossia: <i>ff</i></text>
-          </StaffText>
         <Rest>
           <durationType>measure</durationType>
           <duration z="4" n="4"/>
@@ -34086,10 +34112,6 @@ glissando in a random direction on each pizz.</text>
           <subtype>ppp</subtype>
           <velocity>16</velocity>
           </Dynamic>
-        <StaffText>
-          <pos x="-3.3225" y="11.3666"/>
-          <text>Ossia: still <i>ppp</i></text>
-          </StaffText>
         <HairPin id="361">
           <subtype>0</subtype>
           <Segment>
@@ -34709,10 +34731,6 @@ glissando in a random direction on each pizz.</text>
           <velocity>126</velocity>
           <pos x="0.626925" y="10.0865"/>
           </Dynamic>
-        <StaffText>
-          <pos x="-2.24269" y="12.4464"/>
-          <text>Ossia: <i>ppp</i></text>
-          </StaffText>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>half</durationType>
@@ -35488,7 +35506,7 @@ glissando in a random direction on each pizz.</text>
         </Measure>
       <Measure number="113">
         <StaffText>
-          <pos x="0.151965" y="6.56155"/>
+          <pos x="-1.34423" y="5.77408"/>
           <text><i>simile</i></text>
           </StaffText>
         <endSpanner id="401"/>
@@ -36530,11 +36548,11 @@ glissando in a random direction on each pizz.</text>
         <Dynamic>
           <subtype>f</subtype>
           <velocity>96</velocity>
-          <pos x="0.658281" y="7.43556"/>
+          <pos x="0.343292" y="8.61677"/>
           </Dynamic>
         <StaffText>
           <pos x="1.79398" y="5.59074"/>
-          <text><i><font size="8.5261"/><font face="Times New Roman"/> pizz., gliss., articulate each note</i></text>
+          <text> pizz., gliss., articulate each note</text>
           </StaffText>
         <Beam id="397">
           <StemDirection>up</StemDirection>
@@ -38049,10 +38067,6 @@ glissando in a random direction on each pizz.</text>
           <velocity>49</velocity>
           <pos x="0.658282" y="6.36287"/>
           </Dynamic>
-        <StaffText>
-          <pos x="-2.15963" y="11.4496"/>
-          <text>Ossia: <i>ff</i></text>
-          </StaffText>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
@@ -38082,10 +38096,6 @@ glissando in a random direction on each pizz.</text>
           <velocity>112</velocity>
           <pos x="0.658282" y="10.5402"/>
           </Dynamic>
-        <StaffText>
-          <pos x="-1.9935" y="13.1109"/>
-          <text>Ossia: <i>p</i></text>
-          </StaffText>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
