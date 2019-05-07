@@ -3356,7 +3356,7 @@
           <pos x="-1.80909" y="7.62813"/>
           </Dynamic>
         <StaffText>
-          <pos x="-3.37521" y="-6.69483"/>
+          <pos x="-3.37521" y="-7.79483"/>
           <text>Gradually start doing more and more of a glissando in a random direction on each (separate) note</text>
           </StaffText>
         <Chord>
@@ -3790,7 +3790,7 @@
       <Measure number="61">
         <stretch>0.7</stretch>
         <StaffText>
-          <pos x="13.3762" y="-7.37207"/>
+          <pos x="36.2434" y="-5.17146"/>
           <text>Make eye contact with each other throughout; play furtively (razor-sharp onset and offset, sul pont.)</text>
           </StaffText>
         <Rest>
@@ -3799,12 +3799,12 @@
         <Dynamic>
           <subtype>ppp</subtype>
           <velocity>16</velocity>
-          <pos x="-3.33929" y="5.85513"/>
+          <pos x="-3.66843" y="5.85513"/>
           </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>half</durationType>
-          <StemDirection>up</StemDirection>
+          <StemDirection>down</StemDirection>
           <Note>
             <Tie id="49">
               </Tie>
@@ -3833,7 +3833,7 @@
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>half</durationType>
-          <StemDirection>up</StemDirection>
+          <StemDirection>down</StemDirection>
           <Note>
             <endSpanner id="49"/>
             <pitch>71</pitch>
@@ -33310,14 +33310,14 @@ gliss.</text>
           </Rest>
         </Measure>
       <Measure number="52">
-        <vspacerDown>18</vspacerDown>
+        <vspacerDown>15</vspacerDown>
         <Dynamic>
           <subtype>p</subtype>
           <velocity>49</velocity>
-          <pos x="-2.52276" y="6.5557"/>
+          <pos x="-2.22276" y="9.15631"/>
           </Dynamic>
         <StaffText>
-          <pos x="2.16111" y="6.56658"/>
+          <pos x="-0.135187" y="6.96658"/>
           <text>Gradually start doing more and more of a glissando in a random direction on each (separate) note</text>
           </StaffText>
         <Rest>
@@ -33828,7 +33828,7 @@ gliss.</text>
           <pos x="-3.66843" y="5.90364"/>
           </Dynamic>
         <StaffText>
-          <pos x="-20.9453" y="6.33292"/>
+          <pos x="-0.661419" y="6.52427"/>
           <text>Make eye contact with each other throughout; play furtively (razor-sharp onset and offset, sul pont.)</text>
           </StaffText>
         <Chord>

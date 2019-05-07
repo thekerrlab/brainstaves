@@ -3053,6 +3053,7 @@
         <Dynamic>
           <subtype>mf</subtype>
           <velocity>80</velocity>
+          <pos x="-2.54122" y="7.04321"/>
           </Dynamic>
         <Beam id="34">
           <StemDirection>down</StemDirection>
@@ -3332,6 +3333,7 @@
         <Dynamic>
           <subtype>p</subtype>
           <velocity>49</velocity>
+          <pos x="-4.07209" y="7.52161"/>
           </Dynamic>
         <StaffText>
           <pos x="-3.21048" y="-6.87209"/>
@@ -3569,6 +3571,21 @@
           <subtype>pp</subtype>
           <velocity>33</velocity>
           </Dynamic>
+        <StaffText>
+          <pos x="-93.6503" y="-7.41162"/>
+          <style>System</style>
+          <text>Big glissandi</text>
+          </StaffText>
+        <StaffText>
+          <pos x="-1.89428" y="-6.16779"/>
+          <style>System</style>
+          <text>Big glissandi</text>
+          </StaffText>
+        <StaffText>
+          <pos x="-1.89428" y="-6.16779"/>
+          <style>System</style>
+          <text>Big glissandi</text>
+          </StaffText>
         <Rest>
           <BeamMode>auto</BeamMode>
           <durationType>16th</durationType>
@@ -3585,6 +3602,11 @@
           <BeamMode>auto</BeamMode>
           <durationType>16th</durationType>
           </Rest>
+        <StaffText>
+          <pos x="-1.51156" y="35.7395"/>
+          <style>System</style>
+          <text>Big glissandi</text>
+          </StaffText>
         <Chord>
           <durationType>16th</durationType>
           <StemDirection>down</StemDirection>
@@ -3722,12 +3744,7 @@
       <Measure number="58">
         <stretch>0.3</stretch>
         <StaffText>
-          <pos x="-93.6503" y="-7.41162"/>
-          <style>System</style>
-          <text>Glissandi should be big by now</text>
-          </StaffText>
-        <StaffText>
-          <pos x="-0.795037" y="-4.71877"/>
+          <pos x="0.831504" y="37.1886"/>
           <text>Short notes should be barely audible under VII</text>
           </StaffText>
         <Rest>
@@ -3752,7 +3769,7 @@
       <Measure number="61">
         <stretch>0.7</stretch>
         <StaffText>
-          <pos x="4.60363" y="-8.9755"/>
+          <pos x="11.9709" y="-6.00946"/>
           <text>Make eye contact with each other throughout; play furtively (razor-sharp onset and offset, sul pont.)</text>
           </StaffText>
         <Rest>
@@ -3761,12 +3778,12 @@
         <Dynamic>
           <subtype>f</subtype>
           <velocity>96</velocity>
-          <pos x="-1.50899" y="6.35288"/>
+          <pos x="-1.83813" y="6.35288"/>
           </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>half</durationType>
-          <StemDirection>up</StemDirection>
+          <StemDirection>down</StemDirection>
           <Note>
             <Accidental>
               <subtype>flat</subtype>
@@ -3795,7 +3812,7 @@
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>half</durationType>
-          <StemDirection>up</StemDirection>
+          <StemDirection>down</StemDirection>
           <Note>
             <endSpanner id="49"/>
             <pitch>70</pitch>
@@ -11639,10 +11656,7 @@ onto the string until there is a crazy arpeggiato</text>
         <Dynamic>
           <subtype>mf</subtype>
           <velocity>80</velocity>
-          </Dynamic>
-        <Dynamic>
-          <subtype>mf</subtype>
-          <velocity>80</velocity>
+          <pos x="-2.21208" y="7.13889"/>
           </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
@@ -11674,10 +11688,7 @@ onto the string until there is a crazy arpeggiato</text>
         <Dynamic>
           <subtype>p</subtype>
           <velocity>49</velocity>
-          </Dynamic>
-        <Dynamic>
-          <subtype>p</subtype>
-          <velocity>49</velocity>
+          <pos x="-3.35803" y="6.65049"/>
           </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
@@ -11819,7 +11830,7 @@ onto the string until there is a crazy arpeggiato</text>
         <Dynamic>
           <subtype>f</subtype>
           <velocity>96</velocity>
-          <pos x="-1.50899" y="8.17338"/>
+          <pos x="-2.27442" y="6.7382"/>
           </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
@@ -21908,6 +21919,7 @@ gliss.</text>
         <Dynamic>
           <subtype>mf</subtype>
           <velocity>80</velocity>
+          <pos x="-2.30985" y="6.95297"/>
           </Dynamic>
         <Chord>
           <durationType>16th</durationType>
@@ -22156,6 +22168,7 @@ gliss.</text>
         <Dynamic>
           <subtype>p</subtype>
           <velocity>49</velocity>
+          <pos x="-2.5049" y="6.37346"/>
           </Dynamic>
         <Rest>
           <BeamMode>auto</BeamMode>
@@ -22608,7 +22621,7 @@ gliss.</text>
         <Dynamic>
           <subtype>f</subtype>
           <velocity>96</velocity>
-          <pos x="-1.50899" y="8.17338"/>
+          <pos x="-2.46578" y="6.7382"/>
           </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
@@ -33155,6 +33168,7 @@ gliss.</text>
         <Dynamic>
           <subtype>mf</subtype>
           <velocity>80</velocity>
+          <pos x="-2.73258" y="6.94753"/>
           </Dynamic>
         <Beam id="350">
           <StemDirection>down</StemDirection>
@@ -33396,10 +33410,16 @@ gliss.</text>
           </Rest>
         </Measure>
       <Measure number="52">
+        <vspacerDown>15</vspacerDown>
         <Dynamic>
           <subtype>p</subtype>
           <velocity>49</velocity>
+          <pos x="-3.27033" y="8.7"/>
           </Dynamic>
+        <StaffText>
+          <pos x="-1.47962" y="6.52295"/>
+          <text>Gradually start doing more and more of a glissando in a random direction on each (separate) note</text>
+          </StaffText>
         <Rest>
           <BeamMode>auto</BeamMode>
           <durationType>16th</durationType>
@@ -33899,18 +33919,22 @@ gliss.</text>
           </Rest>
         </Measure>
       <Measure number="61">
+        <StaffText>
+          <pos x="12.0666" y="6.14175"/>
+          <text>Make eye contact with each other throughout; play furtively (razor-sharp onset and offset, sul pont.)</text>
+          </StaffText>
         <Rest>
           <durationType>half</durationType>
           </Rest>
         <Dynamic>
           <subtype>f</subtype>
           <velocity>96</velocity>
-          <pos x="-1.50899" y="8.17338"/>
+          <pos x="-2.328" y="6.16412"/>
           </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>half</durationType>
-          <StemDirection>down</StemDirection>
+          <StemDirection>up</StemDirection>
           <Note>
             <Tie id="356">
               </Tie>
@@ -33932,7 +33956,7 @@ gliss.</text>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>half</durationType>
-          <StemDirection>down</StemDirection>
+          <StemDirection>up</StemDirection>
           <Note>
             <endSpanner id="356"/>
             <pitch>48</pitch>
