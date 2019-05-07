@@ -6,13 +6,21 @@ Structure:
         measure [0,1,2,3,4, ...]
           note [0,1,2, ...]
             pitch
-            step
-            octave
-            alter (may be missing)
+            tpc
             accidental (may be missing)
+            tie (may be missing)
 '''
 
 import sciris as sc
+
+try:
+    correctversion = 'MuseScore2 2.1.0'
+    mscoreversion = sc.runcommand('mscore --version').lstrip().rstrip()
+    assert mscoreversion == correctversion
+except Exception as E:
+    errormsg = 'WARNING: incorrect version of MuseScore, proceed at your own risk! (%s vs. %s; %s)' % (correctversion, mscoreversion, str(E))
+    raise Exception(errormsg)
+
 
 def comment(line):
     output = '<!-- ' + line[:-1] + ' -->\n'
