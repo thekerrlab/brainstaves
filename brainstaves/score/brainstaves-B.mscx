@@ -1326,6 +1326,7 @@
         </Measure>
       <Measure number="36">
         <stretch>0.7</stretch>
+        <vspacerDown>12</vspacerDown>
         <Dynamic>
           <subtype>ff</subtype>
           <velocity>112</velocity>
@@ -1403,9 +1404,10 @@
         </Measure>
       <Measure number="39">
         <stretch>0.7</stretch>
+        <vspacerDown>12</vspacerDown>
         <StaffText>
-          <pos x="-5.81249" y="5.80602"/>
-          <text><font size="8.5261"></font><font face="Times New Roman"></font><i>pizz.</i></text>
+          <pos x="-1.45617" y="8.23746"/>
+          <text>pizz.</text>
           </StaffText>
         <Beam id="1">
           <StemDirection>up</StemDirection>
@@ -1413,6 +1415,9 @@
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>1</Beam>
           <Note>
             <Accidental>
@@ -1450,6 +1455,9 @@
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>2</Beam>
           <Note>
             <pitch>57</pitch>
@@ -1487,6 +1495,9 @@
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>3</Beam>
           <Note>
             <Accidental>
@@ -1526,6 +1537,9 @@
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>4</Beam>
           <Note>
             <Accidental>
@@ -1562,6 +1576,9 @@
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>5</Beam>
           <Note>
             <Accidental>
@@ -1598,6 +1615,9 @@
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>6</Beam>
           <Note>
             <Accidental>
@@ -1634,6 +1654,9 @@
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>7</Beam>
           <Note>
             <pitch>64</pitch>
@@ -1670,6 +1693,9 @@
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>8</Beam>
           <Note>
             <pitch>62</pitch>
@@ -1717,8 +1743,12 @@
         <Dynamic>
           <subtype>pp</subtype>
           <velocity>33</velocity>
-          <pos x="-2.94735" y="7.65611"/>
+          <pos x="0.796947" y="9.16659"/>
           </Dynamic>
+        <StaffText>
+          <pos x="3.0345" y="6.77664"/>
+          <text><i>let ring</i></text>
+          </StaffText>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
@@ -10692,16 +10722,16 @@ onto the string until there is a crazy arpeggiato</text>
           </Chord>
         </Measure>
       <Measure number="36">
-        <Dynamic>
-          <subtype>ff</subtype>
-          <velocity>112</velocity>
-          </Dynamic>
+        <vspacerDown>12</vspacerDown>
         <Beam id="91">
           <StemDirection>up</StemDirection>
           </Beam>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>91</Beam>
           <Note>
             <pitch>60</pitch>
@@ -10735,6 +10765,9 @@ onto the string until there is a crazy arpeggiato</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>92</Beam>
           <Note>
             <pitch>62</pitch>
@@ -10765,6 +10798,9 @@ onto the string until there is a crazy arpeggiato</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>93</Beam>
           <Note>
             <Accidental>
@@ -10798,6 +10834,9 @@ onto the string until there is a crazy arpeggiato</text>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <StemDirection>up</StemDirection>
           <Note>
             <pitch>65</pitch>
@@ -10827,6 +10866,9 @@ onto the string until there is a crazy arpeggiato</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>94</Beam>
           <Note>
             <Accidental>
@@ -10864,6 +10906,9 @@ onto the string until there is a crazy arpeggiato</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>95</Beam>
           <Note>
             <Accidental>
@@ -10900,6 +10945,9 @@ onto the string until there is a crazy arpeggiato</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>96</Beam>
           <Note>
             <pitch>69</pitch>
@@ -10930,6 +10978,9 @@ onto the string until there is a crazy arpeggiato</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>97</Beam>
           <Note>
             <Accidental>
@@ -10968,6 +11019,9 @@ onto the string until there is a crazy arpeggiato</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>98</Beam>
           <Note>
             <pitch>69</pitch>
@@ -11005,6 +11059,9 @@ onto the string until there is a crazy arpeggiato</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>99</Beam>
           <Note>
             <pitch>72</pitch>
@@ -11039,6 +11096,9 @@ onto the string until there is a crazy arpeggiato</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>100</Beam>
           <Note>
             <pitch>72</pitch>
@@ -11069,6 +11129,9 @@ onto the string until there is a crazy arpeggiato</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>101</Beam>
           <Note>
             <pitch>72</pitch>
@@ -11098,12 +11161,16 @@ onto the string until there is a crazy arpeggiato</text>
           </Chord>
         </Measure>
       <Measure number="39">
+        <vspacerDown>12</vspacerDown>
         <Beam id="102">
           <StemDirection>up</StemDirection>
           </Beam>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>102</Beam>
           <Note>
             <Accidental>
@@ -11138,6 +11205,9 @@ onto the string until there is a crazy arpeggiato</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>103</Beam>
           <Note>
             <pitch>72</pitch>
@@ -11171,6 +11241,9 @@ onto the string until there is a crazy arpeggiato</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>104</Beam>
           <Note>
             <Accidental>
@@ -11207,6 +11280,9 @@ onto the string until there is a crazy arpeggiato</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>105</Beam>
           <Note>
             <pitch>78</pitch>
@@ -11242,6 +11318,9 @@ onto the string until there is a crazy arpeggiato</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>106</Beam>
           <Note>
             <Accidental>
@@ -11275,6 +11354,9 @@ onto the string until there is a crazy arpeggiato</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>107</Beam>
           <Note>
             <Accidental>
@@ -11308,6 +11390,9 @@ onto the string until there is a crazy arpeggiato</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>108</Beam>
           <Note>
             <Accidental>
@@ -11341,6 +11426,9 @@ onto the string until there is a crazy arpeggiato</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>109</Beam>
           <Note>
             <Accidental>
@@ -11381,8 +11469,12 @@ onto the string until there is a crazy arpeggiato</text>
         <Dynamic>
           <subtype>pp</subtype>
           <velocity>33</velocity>
-          <pos x="-2.38462" y="7.49114"/>
+          <pos x="0.695637" y="9.68009"/>
           </Dynamic>
+        <StaffText>
+          <pos x="3.0345" y="7.28319"/>
+          <text><i>let ring</i></text>
+          </StaffText>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
@@ -19798,9 +19890,16 @@ gliss.</text>
           </Chord>
         </Measure>
       <Measure number="36">
+        <vspacerDown>12</vspacerDown>
         <Dynamic>
           <subtype>ff</subtype>
           <velocity>112</velocity>
+          <pos x="0.155106" y="9.61994"/>
+          </Dynamic>
+        <Dynamic>
+          <subtype>ff</subtype>
+          <velocity>112</velocity>
+          <pos x="0.560345" y="-5.37392"/>
           </Dynamic>
         <Beam id="185">
           <StemDirection>down</StemDirection>
@@ -19808,6 +19907,9 @@ gliss.</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>185</Beam>
           <Note>
             <pitch>62</pitch>
@@ -19841,6 +19943,9 @@ gliss.</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>186</Beam>
           <Note>
             <Accidental>
@@ -19881,6 +19986,9 @@ gliss.</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>187</Beam>
           <Note>
             <pitch>66</pitch>
@@ -19917,6 +20025,9 @@ gliss.</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>188</Beam>
           <Note>
             <pitch>59</pitch>
@@ -19949,6 +20060,9 @@ gliss.</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>189</Beam>
           <Note>
             <pitch>59</pitch>
@@ -19985,6 +20099,9 @@ gliss.</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>190</Beam>
           <Note>
             <pitch>61</pitch>
@@ -20019,6 +20136,9 @@ gliss.</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>191</Beam>
           <Note>
             <pitch>65</pitch>
@@ -20052,6 +20172,9 @@ gliss.</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>192</Beam>
           <Note>
             <Accidental>
@@ -20087,6 +20210,9 @@ gliss.</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>193</Beam>
           <Note>
             <pitch>57</pitch>
@@ -20117,6 +20243,9 @@ gliss.</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>194</Beam>
           <Note>
             <pitch>53</pitch>
@@ -20147,6 +20276,9 @@ gliss.</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>195</Beam>
           <Note>
             <Accidental>
@@ -20183,6 +20315,9 @@ gliss.</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>196</Beam>
           <Note>
             <pitch>57</pitch>
@@ -20215,12 +20350,16 @@ gliss.</text>
           </Chord>
         </Measure>
       <Measure number="39">
+        <vspacerDown>12</vspacerDown>
         <Beam id="197">
           <StemDirection>down</StemDirection>
           </Beam>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>197</Beam>
           <Note>
             <pitch>60</pitch>
@@ -20257,6 +20396,9 @@ gliss.</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>198</Beam>
           <Note>
             <pitch>63</pitch>
@@ -20290,6 +20432,9 @@ gliss.</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>199</Beam>
           <Note>
             <pitch>60</pitch>
@@ -20323,6 +20468,9 @@ gliss.</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>200</Beam>
           <Note>
             <Accidental>
@@ -20361,6 +20509,9 @@ gliss.</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>201</Beam>
           <Note>
             <Accidental>
@@ -20394,6 +20545,9 @@ gliss.</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>202</Beam>
           <Note>
             <pitch>58</pitch>
@@ -20430,6 +20584,9 @@ gliss.</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>203</Beam>
           <Note>
             <pitch>63</pitch>
@@ -20466,6 +20623,9 @@ gliss.</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>204</Beam>
           <Note>
             <Accidental>
@@ -20509,8 +20669,12 @@ gliss.</text>
         <Dynamic>
           <subtype>pp</subtype>
           <velocity>33</velocity>
-          <pos x="-2.38462" y="7.49114"/>
+          <pos x="0.755985" y="7.79507"/>
           </Dynamic>
+        <StaffText>
+          <pos x="3.0345" y="5.25699"/>
+          <text><i>let ring</i></text>
+          </StaffText>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
@@ -31000,6 +31164,7 @@ gliss.</text>
         <Dynamic>
           <subtype>ff</subtype>
           <velocity>112</velocity>
+          <pos x="0.329141" y="9.82358"/>
           </Dynamic>
         <Beam id="307">
           <StemDirection>down</StemDirection>
@@ -31007,6 +31172,9 @@ gliss.</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>307</Beam>
           <Note>
             <Accidental>
@@ -31040,6 +31208,9 @@ gliss.</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>308</Beam>
           <Note>
             <pitch>50</pitch>
@@ -31076,6 +31247,9 @@ gliss.</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>309</Beam>
           <Note>
             <pitch>50</pitch>
@@ -31106,6 +31280,9 @@ gliss.</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>310</Beam>
           <Note>
             <Accidental>
@@ -31141,6 +31318,9 @@ gliss.</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>311</Beam>
           <Note>
             <Accidental>
@@ -31177,6 +31357,9 @@ gliss.</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>312</Beam>
           <Note>
             <pitch>49</pitch>
@@ -31210,6 +31393,9 @@ gliss.</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>313</Beam>
           <Note>
             <pitch>55</pitch>
@@ -31243,6 +31429,9 @@ gliss.</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>314</Beam>
           <Note>
             <Accidental>
@@ -31278,6 +31467,9 @@ gliss.</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>315</Beam>
           <Note>
             <Accidental>
@@ -31315,6 +31507,9 @@ gliss.</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>316</Beam>
           <Note>
             <Accidental>
@@ -31348,6 +31543,9 @@ gliss.</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>317</Beam>
           <Note>
             <pitch>60</pitch>
@@ -31381,6 +31579,9 @@ gliss.</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>318</Beam>
           <Note>
             <pitch>62</pitch>
@@ -31413,6 +31614,9 @@ gliss.</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>319</Beam>
           <Note>
             <Accidental>
@@ -31451,6 +31655,9 @@ gliss.</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>320</Beam>
           <Note>
             <Accidental>
@@ -31488,6 +31695,9 @@ gliss.</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>321</Beam>
           <Note>
             <Accidental>
@@ -31521,6 +31731,9 @@ gliss.</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>322</Beam>
           <Note>
             <pitch>58</pitch>
@@ -31559,6 +31772,9 @@ gliss.</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>323</Beam>
           <Note>
             <pitch>57</pitch>
@@ -31592,6 +31808,9 @@ gliss.</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>324</Beam>
           <Note>
             <Accidental>
@@ -31628,6 +31847,9 @@ gliss.</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>325</Beam>
           <Note>
             <Accidental>
@@ -31661,6 +31883,9 @@ gliss.</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>326</Beam>
           <Note>
             <Accidental>
@@ -31704,8 +31929,12 @@ gliss.</text>
         <Dynamic>
           <subtype>pp</subtype>
           <velocity>33</velocity>
-          <pos x="-2.38462" y="7.49114"/>
+          <pos x="0.857294" y="9.61865"/>
           </Dynamic>
+        <StaffText>
+          <pos x="3.0345" y="7.48581"/>
+          <text><i>let ring</i></text>
+          </StaffText>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
