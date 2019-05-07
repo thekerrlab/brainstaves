@@ -1738,7 +1738,7 @@
           </RehearsalMark>
         <StaffText>
           <pos x="2.11778" y="-8.39698"/>
-          <text><b>Strong, fat, angry, but gradually relaxing (legatissimo, poco a poco diminuendo)</b></text>
+          <text><b>Strong, fat, angry, but gradually relaxing (legatissimo, poco a poco diminuendo e sul pont.)</b></text>
           </StaffText>
         <Rest>
           <durationType>half</durationType>
@@ -3720,7 +3720,7 @@
         <stretch>0.7</stretch>
         <StaffText>
           <pos x="13.3762" y="-8.58064"/>
-          <text>Make eye contact with each other throughout; play furtively (razor-sharp onset and offset)</text>
+          <text>Make eye contact with each other throughout; play furtively (razor-sharp onset and offset, sul pont.)</text>
           </StaffText>
         <Rest>
           <durationType>half</durationType>
@@ -9447,8 +9447,8 @@ the strings, and then bow the air for a bit</text>
           <durationType>half</durationType>
           </Rest>
         <StaffText>
-          <pos x="2.79989" y="6.29296"/>
-          <text><font size="8.5261"></font><font face="Times New Roman"></font><i> pizz.</i></text>
+          <pos x="2.36435" y="5.63965"/>
+          <text> pizz.</text>
           </StaffText>
         <StaffText>
           <pos x="58.5583" y="-6.51231"/>
