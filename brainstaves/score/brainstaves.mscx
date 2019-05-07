@@ -8713,6 +8713,9 @@ the strings, and then bow the air for a bit</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>73</Beam>
           <Note>
             <pitch>57</pitch>
@@ -8743,6 +8746,9 @@ the strings, and then bow the air for a bit</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>74</Beam>
           <Note>
             <Accidental>
@@ -8782,6 +8788,9 @@ the strings, and then bow the air for a bit</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>75</Beam>
           <Note>
             <pitch>62</pitch>
@@ -8812,6 +8821,9 @@ the strings, and then bow the air for a bit</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>76</Beam>
           <Note>
             <Accidental>
@@ -16810,6 +16822,9 @@ gliss.</i></text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>148</Beam>
           <Note>
             <pitch>81</pitch>
@@ -16840,6 +16855,9 @@ gliss.</i></text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>149</Beam>
           <Note>
             <pitch>81</pitch>
@@ -16876,6 +16894,9 @@ gliss.</i></text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>150</Beam>
           <Note>
             <pitch>81</pitch>
@@ -16906,6 +16927,9 @@ gliss.</i></text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>151</Beam>
           <Note>
             <pitch>76</pitch>
@@ -18460,7 +18484,7 @@ glissando in a random direction on each pizz.</text>
           <Segment>
             <subtype>0</subtype>
             <off2 x="-5.45173" y="0"/>
-            <pos x="95.4843" y="7.56648"/>
+            <pos x="92.8934" y="7.56648"/>
             </Segment>
           <beginText>
             <text>cresc.</text>
@@ -27629,6 +27653,9 @@ glissando in a random direction on each pizz.</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>281</Beam>
           <Note>
             <Accidental>
@@ -27662,6 +27689,9 @@ glissando in a random direction on each pizz.</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>282</Beam>
           <Note>
             <Accidental>
@@ -27701,6 +27731,9 @@ glissando in a random direction on each pizz.</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>283</Beam>
           <Note>
             <pitch>63</pitch>
@@ -27734,6 +27767,9 @@ glissando in a random direction on each pizz.</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>284</Beam>
           <Note>
             <pitch>60</pitch>
@@ -29202,7 +29238,7 @@ glissando in a random direction on each pizz.</text>
           <Segment>
             <subtype>0</subtype>
             <off2 x="-5.38525" y="0"/>
-            <pos x="95.4843" y="7.5"/>
+            <pos x="92.8934" y="7.5"/>
             </Segment>
           <beginText>
             <text>cresc.</text>
@@ -29225,8 +29261,8 @@ glissando in a random direction on each pizz.</text>
           <Note>
             <Tie id="321">
               </Tie>
-            <pitch>57</pitch>
-            <tpc>17</tpc>
+            <pitch>55</pitch>
+            <tpc>15</tpc>
             </Note>
           </Chord>
         </Measure>
@@ -29247,8 +29283,8 @@ glissando in a random direction on each pizz.</text>
             <Tie id="323">
               </Tie>
             <endSpanner id="321"/>
-            <pitch>57</pitch>
-            <tpc>17</tpc>
+            <pitch>55</pitch>
+            <tpc>15</tpc>
             </Note>
           </Chord>
         </Measure>
@@ -29265,8 +29301,8 @@ glissando in a random direction on each pizz.</text>
             </Note>
           <Note>
             <endSpanner id="323"/>
-            <pitch>57</pitch>
-            <tpc>17</tpc>
+            <pitch>55</pitch>
+            <tpc>15</tpc>
             </Note>
           </Chord>
         </Measure>
@@ -38081,16 +38117,15 @@ glissando in a random direction on each pizz.</text>
           <velocity>112</velocity>
           <pos x="-2.21208" y="7.43556"/>
           </Dynamic>
-        <StaffText>
-          <pos x="-3.987" y="9.87145"/>
-          <text>Ossia: <i>pp, poco a poco cresc.</i></text>
-          </StaffText>
         <Beam id="411">
           <StemDirection>up</StemDirection>
           </Beam>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>411</Beam>
           <Note>
             <pitch>52</pitch>
@@ -38124,6 +38159,9 @@ glissando in a random direction on each pizz.</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>412</Beam>
           <Note>
             <Accidental>
@@ -38163,6 +38201,9 @@ glissando in a random direction on each pizz.</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>413</Beam>
           <Note>
             <Accidental>
@@ -38199,6 +38240,9 @@ glissando in a random direction on each pizz.</text>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
+          <Articulation>
+            <subtype>sforzato</subtype>
+            </Articulation>
           <Beam>414</Beam>
           <Note>
             <pitch>56</pitch>
@@ -38504,10 +38548,6 @@ glissando in a random direction on each pizz.</text>
           </Chord>
         </Measure>
       <Measure number="153">
-        <StaffText>
-          <pos x="-1.66125" y="7.04732"/>
-          <text>Ossia: <i>ff</i>, then continue as written</text>
-          </StaffText>
         <Beam id="423">
           <StemDirection>down</StemDirection>
           </Beam>
@@ -39674,16 +39714,12 @@ glissando in a random direction on each pizz.</text>
           <velocity>16</velocity>
           <pos x="0.720638" y="9.39836"/>
           </Dynamic>
-        <StaffText>
-          <pos x="-2.08102" y="12.5764"/>
-          <text>Ossia: start <i>subito ff</i> and tutti dim. to <i>ppp</i></text>
-          </StaffText>
         <HairPin id="411">
           <subtype>0</subtype>
           <Segment>
             <subtype>0</subtype>
             <off2 x="-5.31876" y="0"/>
-            <pos x="96.3779" y="9.15605"/>
+            <pos x="93.787" y="9.15605"/>
             </Segment>
           <beginText>
             <text>cresc.</text>
@@ -39706,8 +39742,8 @@ glissando in a random direction on each pizz.</text>
           <Note>
             <Tie id="413">
               </Tie>
-            <pitch>47</pitch>
-            <tpc>19</tpc>
+            <pitch>43</pitch>
+            <tpc>15</tpc>
             </Note>
           </Chord>
         </Measure>
@@ -39728,8 +39764,8 @@ glissando in a random direction on each pizz.</text>
             <Tie id="415">
               </Tie>
             <endSpanner id="413"/>
-            <pitch>47</pitch>
-            <tpc>19</tpc>
+            <pitch>43</pitch>
+            <tpc>15</tpc>
             </Note>
           </Chord>
         </Measure>
@@ -39746,8 +39782,8 @@ glissando in a random direction on each pizz.</text>
             </Note>
           <Note>
             <endSpanner id="415"/>
-            <pitch>47</pitch>
-            <tpc>19</tpc>
+            <pitch>43</pitch>
+            <tpc>15</tpc>
             </Note>
           </Chord>
         </Measure>
