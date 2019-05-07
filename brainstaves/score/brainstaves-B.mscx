@@ -3769,7 +3769,7 @@
       <Measure number="61">
         <stretch>0.7</stretch>
         <StaffText>
-          <pos x="11.9709" y="-6.00946"/>
+          <pos x="36.369" y="-5.53106"/>
           <text>Make eye contact with each other throughout; play furtively (razor-sharp onset and offset, sul pont.)</text>
           </StaffText>
         <Rest>
@@ -4009,7 +4009,7 @@
           <durationType>eighth</durationType>
           </Rest>
         <StaffText>
-          <pos x="-3.2429" y="5.93727"/>
+          <pos x="-4.00833" y="5.65023"/>
           <text><i>simile</i></text>
           </StaffText>
         <Chord>
@@ -4351,6 +4351,7 @@
         </Measure>
       <Measure number="75">
         <stretch>0.5</stretch>
+        <vspacerDown>10</vspacerDown>
         <Rest>
           <BeamMode>auto</BeamMode>
           <durationType>eighth</durationType>
@@ -4413,10 +4414,6 @@
         </Measure>
       <Measure number="76">
         <stretch>0.5</stretch>
-        <Dynamic>
-          <subtype>mp</subtype>
-          <velocity>64</velocity>
-          </Dynamic>
         <Chord>
           <durationType>eighth</durationType>
           <StemDirection>up</StemDirection>
@@ -4543,10 +4540,6 @@
         <LayoutBreak>
           <subtype>line</subtype>
           </LayoutBreak>
-        <Dynamic>
-          <subtype>mf</subtype>
-          <velocity>80</velocity>
-          </Dynamic>
         <Rest>
           <BeamMode>auto</BeamMode>
           <durationType>eighth</durationType>
@@ -12325,6 +12318,7 @@ onto the string until there is a crazy arpeggiato</text>
           </Chord>
         </Measure>
       <Measure number="75">
+        <vspacerDown>10</vspacerDown>
         <Chord>
           <durationType>eighth</durationType>
           <StemDirection>down</StemDirection>
@@ -12389,6 +12383,7 @@ onto the string until there is a crazy arpeggiato</text>
         <Dynamic>
           <subtype>mp</subtype>
           <velocity>64</velocity>
+          <pos x="0.562602" y="-4.85185"/>
           </Dynamic>
         <Chord>
           <durationType>eighth</durationType>
@@ -12521,6 +12516,12 @@ onto the string until there is a crazy arpeggiato</text>
         <Dynamic>
           <subtype>mf</subtype>
           <velocity>80</velocity>
+          <pos x="0.658281" y="9.14815"/>
+          </Dynamic>
+        <Dynamic>
+          <subtype>mf</subtype>
+          <velocity>80</velocity>
+          <pos x="0.531645" y="-4.68041"/>
           </Dynamic>
         <Chord>
           <durationType>eighth</durationType>
@@ -12656,6 +12657,7 @@ onto the string until there is a crazy arpeggiato</text>
         <Dynamic>
           <subtype>f</subtype>
           <velocity>96</velocity>
+          <pos x="0.505937" y="9"/>
           </Dynamic>
         <Rest>
           <BeamMode>auto</BeamMode>
@@ -22785,7 +22787,7 @@ gliss.</text>
           <durationType>quarter</durationType>
           </Rest>
         <StaffText>
-          <pos x="-1.59183" y="6.49406"/>
+          <pos x="-1.59183" y="5.25023"/>
           <text><i>simile</i></text>
           </StaffText>
         <Chord>
@@ -22917,6 +22919,7 @@ gliss.</text>
           </Rest>
         </Measure>
       <Measure number="75">
+        <vspacerDown>10</vspacerDown>
         <Rest>
           <BeamMode>auto</BeamMode>
           <durationType>quarter</durationType>
@@ -22957,6 +22960,11 @@ gliss.</text>
         <Dynamic>
           <subtype>mp</subtype>
           <velocity>64</velocity>
+          </Dynamic>
+        <Dynamic>
+          <subtype>mp</subtype>
+          <velocity>64</velocity>
+          <pos x="0.658281" y="-4.1821"/>
           </Dynamic>
         <Rest>
           <BeamMode>auto</BeamMode>
@@ -23058,6 +23066,7 @@ gliss.</text>
         <Dynamic>
           <subtype>mf</subtype>
           <velocity>80</velocity>
+          <pos x="0.658281" y="8.8"/>
           </Dynamic>
         <Chord>
           <durationType>eighth</durationType>
@@ -23190,6 +23199,7 @@ gliss.</text>
         <Dynamic>
           <subtype>f</subtype>
           <velocity>96</velocity>
+          <pos x="0.329141" y="9.5"/>
           </Dynamic>
         <Chord>
           <durationType>eighth</durationType>
@@ -33920,7 +33930,7 @@ gliss.</text>
         </Measure>
       <Measure number="61">
         <StaffText>
-          <pos x="12.0666" y="6.14175"/>
+          <pos x="35.3165" y="3.94114"/>
           <text>Make eye contact with each other throughout; play furtively (razor-sharp onset and offset, sul pont.)</text>
           </StaffText>
         <Rest>
@@ -34152,20 +34162,16 @@ gliss.</text>
           </Rest>
         </Measure>
       <Measure number="74">
+        <Rest>
+          <durationType>measure</durationType>
+          <duration z="4" n="4"/>
+          </Rest>
+        </Measure>
+      <Measure number="75">
         <Dynamic>
           <subtype>p</subtype>
           <velocity>49</velocity>
           </Dynamic>
-        <Rest>
-          <BeamMode>auto</BeamMode>
-          <durationType>half</durationType>
-          </Rest>
-        <Rest>
-          <BeamMode>auto</BeamMode>
-          <durationType>half</durationType>
-          </Rest>
-        </Measure>
-      <Measure number="75">
         <Rest>
           <BeamMode>auto</BeamMode>
           <durationType>eighth</durationType>

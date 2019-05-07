@@ -23057,7 +23057,7 @@ gliss.</text>
           <durationType>quarter</durationType>
           </Rest>
         <StaffText>
-          <pos x="-0.454808" y="4.64138"/>
+          <pos x="-1.88999" y="5.21545"/>
           <text><i>simile</i></text>
           </StaffText>
         <Chord>
@@ -34052,20 +34052,16 @@ gliss.</text>
           </Rest>
         </Measure>
       <Measure number="74">
+        <Rest>
+          <durationType>measure</durationType>
+          <duration z="4" n="4"/>
+          </Rest>
+        </Measure>
+      <Measure number="75">
         <Dynamic>
           <subtype>p</subtype>
           <velocity>49</velocity>
           </Dynamic>
-        <Rest>
-          <BeamMode>auto</BeamMode>
-          <durationType>half</durationType>
-          </Rest>
-        <Rest>
-          <BeamMode>auto</BeamMode>
-          <durationType>half</durationType>
-          </Rest>
-        </Measure>
-      <Measure number="75">
         <Rest>
           <BeamMode>auto</BeamMode>
           <durationType>eighth</durationType>
