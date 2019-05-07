@@ -108,44 +108,99 @@ if dobegin:
             im = pl.imread('visualization/'+f)
             imaxes[inst].imshow(im)
     
-    if shownotes:
-        for inst in insts:
-            pitch = 0
-            for n in range(50):
-                pitch += pl.randn()*0.01
-                mainax.text(0.02+n/51, ypos[inst]+pitch, d.note, fontproperties=prop, fontsize=60)
-        
     
-    if showwaves:
+    fa = sc.odict()
+    tmp = 1
+    for i,inst in enumerate(insts):
+        fa[inst] = sc.odict()
+        fa[inst]['delta'] = [1, pl.exp(abs(pl.randn()*tmp))]
+        fa[inst]['theta'] = [7, pl.exp(abs(pl.randn()*tmp))]
+        fa[inst]['alpha'] = [12, pl.exp(abs(pl.randn()*tmp))]
+        fa[inst]['beta'] = [20, pl.exp(abs(pl.randn()*tmp))]
+        fa[inst]['gamma'] = [35, pl.exp(abs(pl.randn()*tmp))]
+    
+    npts = int(1e3)
+    x = pl.linspace(0,5*2*pl.pi,npts)
+    newx = sc.dcp(x)
+    newx /= newx.max()
+    
+    lines = sc.odict()
+    for i,inst in enumerate(insts):
+        line, = mainax.plot(newx,newx*0, c=colors[i])
+        lines[inst] = line
+                
+    for ind in range(200):
+        n = ind % 50
         
-        print('Starting waves...')
-        
-        npts = int(2e3)
-        x = pl.linspace(0,20*2*pl.pi,npts)
-        y = pl.zeros(npts)
-        lines = sc.odict()
-        ydatas = sc.odict()
-        for i,inst in enumerate(insts):
-            line, = mainax.plot(x,y, c=colors[i])
-            lines[inst] = line
-        
-        for i,inst in enumerate(insts):
-            y *= 0
+        if n==0:
             fa = sc.odict()
             tmp = 1
-            fa['delta'] = [1, pl.exp(abs(pl.randn()*tmp))]
-            fa['theta'] = [7, pl.exp(abs(pl.randn()*tmp))]
-            fa['alpha'] = [12, pl.exp(abs(pl.randn()*tmp))]
-            fa['beta'] = [20, pl.exp(abs(pl.randn()*tmp))]
-            fa['gamma'] = [35, pl.exp(abs(pl.randn()*tmp))]
+            for i,inst in enumerate(insts):
+                fa[inst] = sc.odict()
+                fa[inst]['delta'] = [1, pl.exp(abs(pl.randn()*tmp))]
+                fa[inst]['theta'] = [7, pl.exp(abs(pl.randn()*tmp))]
+                fa[inst]['alpha'] = [12, pl.exp(abs(pl.randn()*tmp))]
+                fa[inst]['beta'] = [20, pl.exp(abs(pl.randn()*tmp))]
+                fa[inst]['gamma'] = [35, pl.exp(abs(pl.randn()*tmp))]
+        
+        
+        if shownotes:
+            for inst in insts:
+                pitch = 0
+#                for n in range(q):
+                pitch += pl.randn()*0.01
+                mainax.text(0.02+n/51, ypos[inst]+pitch, d.note, fontproperties=prop, fontsize=60)
             
-            for freq,pow in fa.values():
-                y += pl.sin(x*freq)*pow
+    
+        if showwaves:
             
-            newy = sc.dcp(y)
-            newy /= 300
-            newy += ypos[inst]+0.1
-            ydatas[inst] = newy
+            
+            for i,inst in enumerate(insts):
+                y = pl.zeros(npts)
+                
+                for freq,pow in fa[inst].values():
+                    y += pl.sin(x*freq)*pow
+                
+                newy = sc.dcp(y)
+                newy /= 300
+                newy += ypos[inst]+0.1
+                newy = newy.tolist()
+                newy = newy[n*10:] + newy[:n*10]
+                lines[inst].set_ydata(newy)
+        
+        pl.pause(0.01)
+        pl.show()
+    
+#    if showwaves:
+#        
+#        print('Starting waves...')
+#        
+#        npts = int(2e3)
+#        x = pl.linspace(0,20*2*pl.pi,npts)
+#        y = pl.zeros(npts)
+#        lines = sc.odict()
+#        ydatas = sc.odict()
+#        for i,inst in enumerate(insts):
+#            line, = mainax.plot(x,y, c=colors[i])
+#            lines[inst] = line
+#        
+#        for i,inst in enumerate(insts):
+#            y *= 0
+#            fa = sc.odict()
+#            tmp = 1
+#            fa['delta'] = [1, pl.exp(abs(pl.randn()*tmp))]
+#            fa['theta'] = [7, pl.exp(abs(pl.randn()*tmp))]
+#            fa['alpha'] = [12, pl.exp(abs(pl.randn()*tmp))]
+#            fa['beta'] = [20, pl.exp(abs(pl.randn()*tmp))]
+#            fa['gamma'] = [35, pl.exp(abs(pl.randn()*tmp))]
+#            
+#            for freq,pow in fa.values():
+#                y += pl.sin(x*freq)*pow
+#            
+#            newy = sc.dcp(y)
+#            newy /= 300
+#            newy += ypos[inst]+0.1
+#            ydatas[inst] = newy
         
 #        def init():  # only required for blitting to give a clean slate.
 #            for i,inst in enumerate(insts):
@@ -166,14 +221,14 @@ if dobegin:
         
         
 #        for r in range(200):
-#            for i,inst in enumerate(insts):
-#                print(r,i)
+#        for i,inst in enumerate(insts):
+##                print(r,i)
 #                sc.tic()
 #                
 #                sc.toc()
 #                
 #                sc.toc()
-#                lines[i].set_ydata(thisy)
+#                pl.plot(x,ydatas[i])
 #                sc.toc()
 #                pl.pause(0.001)
 #                sc.toc()
