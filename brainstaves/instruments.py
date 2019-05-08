@@ -41,6 +41,7 @@ def char2num(val):
     return output
 
 def num2char(val, which='human'):
+    ''' WARNING, choices other than human might break things! '''
     if isinstance(val, str):
         return val
     if not val>=0:
@@ -89,22 +90,6 @@ def num2char(val, which='human'):
             11:'bn',}
     output = mapping[which][num] + '%i'%octave
     return output
-
-
-def num2lily(num):
-    ch = num2char(num)
-    if ch == '---':
-        return 'r'
-    letter = ch[0]
-    if   ch[1]=='#': acci = 'is'
-    elif ch[1]=='$': acci = 'es'
-    else:            acci = ''
-    octint = int(ch[2]) - 2
-    if   octint > 0: octchar = "'"*octint
-    elif octint < 0: octchar = ","*-octint
-    else:            octchar = ''
-    lily = letter + acci + octchar
-    return lily
 
 
 def char2dia(val):
@@ -196,8 +181,9 @@ class Section(sc.prettyobj):
             npts = int(round(self.nbars*wholenotes*self.mindur))
         self.npts = npts
         self.arr = np.nan+np.zeros(self.npts)
+        self.notearr = []
         if resetscore:
-            self.score = np.zeros(0)
+            self.score = []
         return None
         
     @property
@@ -212,7 +198,7 @@ class Section(sc.prettyobj):
         return None
         
     def cat(self):
-        self.score = np.concatenate([self.score, self.arr])
+        self.score = self.score + self.notearr
         return None
     
     def minmax(self):
@@ -274,36 +260,42 @@ class Section(sc.prettyobj):
         return None
     
     def addrests(self, p=0.5, seed=None):
+        print('WARNING, may not work any more due to changing from arr to notearr!')
         self.resetseed(seed)
         randvals = pl.rand(self.npts)
         addrests = randvals>p
         self.arr[addrests] = -self.arr[addrests] # Set to negative to keep pitch information
         return None
     
-    def diatonic(self):
+    def noteify(self, tonality=None, breakties=False, verbose=True):
+        if tonality is None: tonality = 'atonal'
+        tonalities = sc.promotetolist(tonality)
+        mapping = {'atonal': lambda note: note, # Just the identity function
+                   'dia': char2dia,
+                   'acoustic': char2acoustic,
+                   'octo': char2octo,
+                   'blues': char2blues,}
         for n in range(self.npts):
-            val = num2char(self.arr[n])
-            self.arr[n] = char2num(char2dia(val))
-        return None
-    
-    def acoustic(self):
-        for n in range(self.npts):
-            val = num2char(self.arr[n])
-            self.arr[n] = char2num(char2acoustic(val))
-        return None
-    
-    def octotonic(self):
-        for n in range(self.npts):
-            val = num2char(self.arr[n])
-            self.arr[n] = char2num(char2octo(val))
-        return None
-    
-    def blues(self):
-        for n in range(self.npts):
-            val = num2char(self.arr[n])
-            self.arr[n] = char2num(char2blues(val))
-        return None
+            thisnote = self.arr[n]
+            
+            def mapnote(thisnote):
+                note = num2char(thisnote, which='human')
+                for thistonality in tonalities:
+                    note = mapping[thistonality](note)
+                return note
+            
+            note = mapnote(thisnote)
+            
+            if len(self.notearr) and breakties: # Only start this if it's not the first note, and we're breaking ties
+                lastnote = self.notearr[-1]
+                while note == lastnote: # There is a tie to be broken
+                    thisnote += 1 # Just increment upwards
+                    note = mapnote(thisnote)
+                    if verbose: print('Breaking tie (%s -> %s, %s -> %s)' % (thisnote-1, thisnote, note, lastnote))
+            self.notearr.append(note)
         
+        return None
+    
 
 def getnumbers(inst, npts, usedata, window=10):
     if inst is None or not usedata:
@@ -371,50 +363,4 @@ def plot(insts=None):
     pl.show()
     pl.pause(0.1)
     return fig
-    
-
-def write(insts=None, folder=None, infile=None, outfile=None, export='png'):
-    insts = sc.promotetolist(insts)
-    if folder is None:
-        folder = 'live'
-    if infile is None:
-        infile = 'brainstaves.ly'
-    if outfile is None:
-        outfile = infile
-    infilepath = os.path.join(folder,infile)
-    outfilepath = os.path.join(folder,outfile)
-    lines = open(infilepath).readlines()
-    
-    nextline = False
-    for l,line in enumerate(lines):
-        if line.startswith('%!!!'):
-            nextline = True
-            name = line[4:-1] # Skip starter and newline
-        else:
-            if nextline:
-                nextline = False
-                inst = None
-                for tmp in insts:
-                    if tmp.name == name:
-                        inst = tmp
-                if inst is None:
-                    errormsg = 'Could not match name %s' % name
-                    raise Exception(errormsg)
-                lilynotes = []
-                for note in inst.score:
-                    lilynote = num2lily(note)
-                    lilynote += '%s' % inst.mindur
-                    lilynotes.append(lilynote)
-                lines[l] = ' '.join(lilynotes) + '\n'
-    output = ''.join(lines)
-    with open(outfilepath, 'w') as f:
-        f.write(output)
-    
-    if export=='png':
-        cmd = 'cd %s; lilypond -dresolution=300 --png %s' % (folder, outfile)
-        os.system(cmd)
-    if export=='pdf':
-        cmd = 'cd %s; lilypond %s' % (folder, outfile)
-        os.system(cmd)
-    return output
     
