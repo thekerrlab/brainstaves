@@ -112,7 +112,6 @@ class XML(sc.prettyobj):
         
         for l,line in enumerate(lines):
             if 'copyright' in line.lower():
-                print('Adding timestamp to line %s' % l)
                 lines[l] = '<metaTag name="copyright">Last generated: %s</metaTag>' % sc.getdate()
             elif 'stemdirection' in line.lower():
                 lines[l] = commentline(lines[l])

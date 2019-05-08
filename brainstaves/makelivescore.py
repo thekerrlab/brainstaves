@@ -6,7 +6,6 @@ Run this file to actually generate the score!!
 Version: 2019may08
 '''
 
-import os
 import sciris as sc
 import brainstaves as bs
 
@@ -116,15 +115,16 @@ def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=N
             outputxml = bs.XML(infile=infiles[version])
             outputxml.write(data=nd.notes)
             if makepng:
-                os.system('mscore live/live.mscx -o live/live.png')
+                sc.runcommand('mscore live/live.mscx -o live/live.png', printoutput=True)
             if makepdf:
-                os.system('mscore live/live.mscx -o live/live.pdf')
+                sc.runcommand('mscore live/live.mscx -o live/live.pdf', printoutput=True)
         return None
     
     
     def begin(sec):
-        sc.colorize('blue', '\n'*5+'Creating section %s' % sec)
-        return sc.objdict()
+        sc.colorize('blue', '\n'*3+'Creating section %s' % sec)
+        ndsec = sc.objdict() # This is used for each section
+        return ndsec
     
     
     def process(sec):
@@ -135,7 +135,7 @@ def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=N
         writestatus(sec)
         print('Section %s written' % sec)
         sc.toc()
-        print('\n'*5)
+        print('\n'*3)
         nfiles = len(sc.getfilelist('live', pattern='live-*.png'))
         if dowrite:
             if nfiles != npages:
@@ -163,8 +163,8 @@ def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=N
     writestatus('n/a') # Reset status
     
     if 'load' in torun:
-        print('Resetting')
-        sc.runcommand('./cleanup')
+        sc.colorize('blue', '\n'*3+'Resetting')
+        sc.runcommand('bin/cleanup', printoutput=True)
         print('Loading XML')
         xml = bs.XML(infile=infiles[version])
         nd = sc.objdict() # For storing all the notes
