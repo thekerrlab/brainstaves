@@ -1,5 +1,6 @@
 # Custom additions
 running.tmp
+brainstaves/live/live*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
