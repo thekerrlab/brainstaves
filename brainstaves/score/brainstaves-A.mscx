@@ -8156,6 +8156,7 @@ gliss.</text>
         </Measure>
       <Measure number="139">
         <stretch>0.7</stretch>
+        <vspacerDown>10</vspacerDown>
         <Rest>
           <BeamMode>auto</BeamMode>
           <durationType>eighth</durationType>
@@ -8368,6 +8369,7 @@ gliss.</text>
         </Measure>
       <Measure number="142">
         <stretch>0.7</stretch>
+        <vspacerDown>10</vspacerDown>
         <Chord>
           <durationType>eighth</durationType>
           <StemDirection>up</StemDirection>
@@ -8838,6 +8840,7 @@ gliss.</text>
         </Measure>
       <Measure number="150">
         <stretch>0.7</stretch>
+        <vspacerDown>10</vspacerDown>
         <TimeSig>
           <sigN>12</sigN>
           <sigD>8</sigD>
@@ -16323,6 +16326,7 @@ gliss.</text>
           </Chord>
         </Measure>
       <Measure number="139">
+        <vspacerDown>10</vspacerDown>
         <Beam id="136">
           <StemDirection>down</StemDirection>
           </Beam>
@@ -16571,6 +16575,7 @@ gliss.</text>
           </Chord>
         </Measure>
       <Measure number="142">
+        <vspacerDown>10</vspacerDown>
         <Beam id="140">
           <StemDirection>down</StemDirection>
           </Beam>
@@ -17084,6 +17089,7 @@ gliss.</text>
           </Rest>
         </Measure>
       <Measure number="150">
+        <vspacerDown>10</vspacerDown>
         <TimeSig>
           <sigN>12</sigN>
           <sigD>8</sigD>
@@ -17381,6 +17387,7 @@ gliss.</text>
           </Chord>
         </Measure>
       <Measure number="152">
+        <vspacerDown>9</vspacerDown>
         <Beam id="156">
           <StemDirection>down</StemDirection>
           </Beam>
@@ -17786,6 +17793,7 @@ gliss.</text>
           </Chord>
         </Measure>
       <Measure number="155">
+        <vspacerDown>9</vspacerDown>
         <Beam id="167">
           <StemDirection>up</StemDirection>
           </Beam>
@@ -18139,6 +18147,7 @@ gliss.</text>
           </Chord>
         </Measure>
       <Measure number="158">
+        <vspacerDown>9</vspacerDown>
         <Rest>
           <BeamMode>auto</BeamMode>
           <dots>1</dots>
@@ -27435,6 +27444,7 @@ gliss.</text>
           </Chord>
         </Measure>
       <Measure number="139">
+        <vspacerDown>10</vspacerDown>
         <Chord>
           <durationType>eighth</durationType>
           <StemDirection>down</StemDirection>
@@ -27638,6 +27648,7 @@ gliss.</text>
           </Rest>
         </Measure>
       <Measure number="142">
+        <vspacerDown>10</vspacerDown>
         <Beam id="277">
           <StemDirection>down</StemDirection>
           </Beam>
@@ -28067,6 +28078,7 @@ gliss.</text>
           </Rest>
         </Measure>
       <Measure number="150">
+        <vspacerDown>10</vspacerDown>
         <TimeSig>
           <sigN>12</sigN>
           <sigD>8</sigD>
@@ -28367,6 +28379,7 @@ gliss.</text>
           </Chord>
         </Measure>
       <Measure number="152">
+        <vspacerDown>9</vspacerDown>
         <Beam id="289">
           <StemDirection>up</StemDirection>
           </Beam>
@@ -28793,6 +28806,7 @@ gliss.</text>
           </Chord>
         </Measure>
       <Measure number="155">
+        <vspacerDown>9</vspacerDown>
         <Beam id="301">
           <StemDirection>down</StemDirection>
           </Beam>
@@ -29093,6 +29107,7 @@ gliss.</text>
           </Rest>
         </Measure>
       <Measure number="158">
+        <vspacerDown>9</vspacerDown>
         <Chord>
           <durationType>eighth</durationType>
           <StemDirection>down</StemDirection>
