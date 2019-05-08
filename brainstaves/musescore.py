@@ -127,9 +127,6 @@ class XML(sc.prettyobj):
             mname = 'm%i' % measure
             thismeasure = self.data[part][mname]
             for key,note in thismeasure.items():
-#                print('HIIIII')
-#                print(key)
-#                print(note)
                 if key != 'n': # Skip the measure note counter
                     orignote = sc.objdict()
                     orignote['measure'] = measure

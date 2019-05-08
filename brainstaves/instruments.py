@@ -7,7 +7,6 @@ import re
 import os
 import numpy as np
 import pylab as pl
-import sounddevice as sd
 import sciris as sc
 
 def char2num(val):
@@ -328,6 +327,7 @@ def getnumbers(inst, npts, usedata, seed=None, window=10):
 
 
 def play(insts=None, volume=1.0, tempo=104, blocking=False):
+    import sounddevice as sd
     fs = 44100
     feather = 0.1
     insts = sc.promotetolist(insts)
