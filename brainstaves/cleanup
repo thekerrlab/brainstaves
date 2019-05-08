@@ -1,6 +1,0 @@
-#!/bin/bash
-# Remove generated files.
-# Version: 2019may08
-
-echo 'Removing generated files'
-rm -v status.tmp live/live-*.png
