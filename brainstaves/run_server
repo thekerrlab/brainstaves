@@ -1,2 +1,3 @@
 #!/bin/bash
+cd app/
 sudo python brainstaves.py 80

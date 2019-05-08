@@ -177,6 +177,7 @@
         vm.filenames = []
         for (var p=0; p<vm.npages; p++) {
           let filename = 'live/live-' + ('0' + (p+1)).slice(-2) + '.png?' + Math.random();
+          console.log('HIIII ' + filename)
           vm.filenames.push(filename)
         }
       },
