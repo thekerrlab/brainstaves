@@ -5204,7 +5204,7 @@
         <Symbol>
           <name>stringsUpBow</name>
           <font>Bravura</font>
-          <pos x="-0.122367" y="-0.685763"/>
+          <pos x="-0.122367" y="-2.3123"/>
           </Symbol>
         <endSpanner id="63"/>
         <HairPin id="64">
@@ -5909,7 +5909,7 @@ the strings, and then bow the air for a bit</text>
         </Measure>
       <Measure number="104">
         <stretch>0.7</stretch>
-        <vspacerDown>15</vspacerDown>
+        <vspacerDown>12</vspacerDown>
         <HairPin id="85">
           <subtype>1</subtype>
           <Segment>
@@ -13396,7 +13396,7 @@ gliss.</text>
         <Symbol>
           <name>stringsUpBow</name>
           <font>Bravura</font>
-          <pos x="-0.328587" y="-0.668955"/>
+          <pos x="-0.328587" y="-1.72142"/>
           </Symbol>
         <endSpanner id="183"/>
         <HairPin id="184">
@@ -13675,10 +13675,7 @@ gliss.</text>
         <Dynamic>
           <subtype>mf</subtype>
           <velocity>80</velocity>
-          </Dynamic>
-        <Dynamic>
-          <subtype>mf</subtype>
-          <velocity>80</velocity>
+          <pos x="0.766674" y="9.68641"/>
           </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
@@ -13762,10 +13759,7 @@ gliss.</text>
         <Dynamic>
           <subtype>f</subtype>
           <velocity>96</velocity>
-          </Dynamic>
-        <Dynamic>
-          <subtype>f</subtype>
-          <velocity>96</velocity>
+          <pos x="0.589906" y="9.68641"/>
           </Dynamic>
         <Beam id="114">
           <StemDirection>up</StemDirection>
@@ -14062,7 +14056,7 @@ gliss.</text>
           </Chord>
         </Measure>
       <Measure number="104">
-        <vspacerDown>10</vspacerDown>
+        <vspacerDown>12</vspacerDown>
         <HairPin id="205">
           <subtype>1</subtype>
           <Segment>
@@ -24238,10 +24232,7 @@ gliss.</text>
         <Dynamic>
           <subtype>mf</subtype>
           <velocity>80</velocity>
-          </Dynamic>
-        <Dynamic>
-          <subtype>mf</subtype>
-          <velocity>80</velocity>
+          <pos x="0.562602" y="10.0093"/>
           </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
@@ -24335,10 +24326,7 @@ gliss.</text>
         <Dynamic>
           <subtype>f</subtype>
           <velocity>96</velocity>
-          </Dynamic>
-        <Dynamic>
-          <subtype>f</subtype>
-          <velocity>96</velocity>
+          <pos x="0.329141" y="9.62654"/>
           </Dynamic>
         <Beam id="233">
           <StemDirection>down</StemDirection>
@@ -24640,7 +24628,7 @@ gliss.</text>
           </Chord>
         </Measure>
       <Measure number="104">
-        <vspacerDown>10</vspacerDown>
+        <vspacerDown>12</vspacerDown>
         <HairPin id="304">
           <subtype>1</subtype>
           <Segment>
@@ -34992,10 +34980,7 @@ gliss.</text>
         <Dynamic>
           <subtype>mf</subtype>
           <velocity>80</velocity>
-          </Dynamic>
-        <Dynamic>
-          <subtype>mf</subtype>
-          <velocity>80</velocity>
+          <pos x="0.658281" y="10.4877"/>
           </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
@@ -35081,10 +35066,7 @@ gliss.</text>
         <Dynamic>
           <subtype>f</subtype>
           <velocity>96</velocity>
-          </Dynamic>
-        <Dynamic>
-          <subtype>f</subtype>
-          <velocity>96</velocity>
+          <pos x="0.466924" y="10.1049"/>
           </Dynamic>
         <Beam id="365">
           <StemDirection>up</StemDirection>
