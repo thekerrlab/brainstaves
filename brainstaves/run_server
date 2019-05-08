@@ -1,3 +1,10 @@
 #!/bin/bash
+# Actually run the Brainstaves server!!!
+#
+# Note: to run on Athena, use:
+#   nohup python brainstaves.py > brainstaves.out &
+#
+# Version: 2019may08
+
 cd app/
 sudo python brainstaves.py 80
