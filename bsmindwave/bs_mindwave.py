@@ -31,9 +31,13 @@
 # SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 import serial
-import time
 import sys
 from threading import Thread
+
+# Check version
+if sys.version_info.major != 2:
+    errormsg = 'Unfortunately Mindwave only works on Python 2, not version %s ' % str(sys.version_info[:3])
+    raise Exception(errormsg)
 
 # Byte codes
 CONNECT = '\xc0'
@@ -120,7 +124,7 @@ class Mindwave(object):
         # Try to connect to serial port and start a separate thread
         # for data collection
         if self.__threadRun == True:
-            print "Mindwave has already started!"
+            print("Mindwave has already started!")
             return
 
         if self.__srl == None:
@@ -128,7 +132,7 @@ class Mindwave(object):
                 self.__srl = serial.Serial(
                     self.__serialPort, self.__serialBaudRate)
             except Exception as e:
-                print str(e)
+                print(str(e))
                 return
         else:
             self.__srl.open()
