@@ -1,6 +1,8 @@
 # Copyright (c) 2013, Sahil Singh; (c) 2019, Cliff Kerr
 #
-# Copied from https://github.com/lihas/NeuroPy/NeuroPy/NeuroPy.py
+# Adapted from https://github.com/lihas/NeuroPy/NeuroPy/NeuroPy.py
+
+
 ##
 # All rights reserved.
 ##
@@ -29,7 +31,6 @@
 # SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 import serial
-import time
 import sys
 from threading import Thread
 
@@ -118,7 +119,7 @@ class Mindwave(object):
         # Try to connect to serial port and start a separate thread
         # for data collection
         if self.__threadRun == True:
-            print "Mindwave has already started!"
+            print("Mindwave has already started!")
             return
 
         if self.__srl == None:
@@ -126,7 +127,7 @@ class Mindwave(object):
                 self.__srl = serial.Serial(
                     self.__serialPort, self.__serialBaudRate)
             except Exception as e:
-                print str(e)
+                print(str(e))
                 return
         else:
             self.__srl.open()

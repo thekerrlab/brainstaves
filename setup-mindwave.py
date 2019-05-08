@@ -25,11 +25,11 @@ CLASSIFIERS = [
 ]
 
 setup(
-    name='brainstaves',
+    name='bsmindwave',
     version='2.0.0',
     author='Cliff Kerr',
     author_email='info@cliffkerr.com',
-    description='Composition for string quartet and EEG',
+    description='Mindwave Mobile for Brainstaves',
     url='http://github.com/thekerrlab/brainstaves',
     keywords=['string quartet', 'EEG', 'music', 'MindWave', 'machine learning'],
     platforms=['OS Independent'],
@@ -37,7 +37,9 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     install_requires=[
-        'scirisweb',
-        'sounddevice',
+        'numpy',
+        'scipy',
+        'matplotlib',
+        'pyserial',
     ],
 )

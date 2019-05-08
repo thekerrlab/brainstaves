@@ -4,7 +4,6 @@ parts.
 '''
 
 import re
-import os
 import numpy as np
 import pylab as pl
 import sciris as sc

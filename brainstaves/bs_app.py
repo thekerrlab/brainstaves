@@ -14,7 +14,7 @@ def makeapp():
     import scirisweb as sw
     import sciris as sc
 
-    __version__ = '3.0.0'
+    __version__ = '2.0.0'
     statusfile = 'status.tmp'
 
     # Create the app
