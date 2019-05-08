@@ -24,7 +24,8 @@ import bsmindwave as bsmw
 MAC = '00:81:F9:29:B4:D4'
 
 def spacer():
-    return print('\n'*5)
+    print('\n'*5)
+    return None
 
 # Commands
 

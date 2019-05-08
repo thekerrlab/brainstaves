@@ -1,4 +1,2 @@
 #!/bin/bash
-sudo rfcomm connect hci0 00:81:F9:29:B4:D4
-#!/bin/bash
-sudo python3 test_mindwave.py
+sudo python2 test_mindwave.py

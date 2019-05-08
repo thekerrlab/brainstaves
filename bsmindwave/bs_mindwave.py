@@ -31,9 +31,9 @@
 # SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 import serial
+import time
 import sys
 from threading import Thread
-import binascii
 
 # Byte codes
 CONNECT = '\xc0'
@@ -120,7 +120,7 @@ class Mindwave(object):
         # Try to connect to serial port and start a separate thread
         # for data collection
         if self.__threadRun == True:
-            print("Mindwave has already started!")
+            print "Mindwave has already started!"
             return
 
         if self.__srl == None:
@@ -128,7 +128,7 @@ class Mindwave(object):
                 self.__srl = serial.Serial(
                     self.__serialPort, self.__serialBaudRate)
             except Exception as e:
-                print(str(e))
+                print str(e)
                 return
         else:
             self.__srl.open()
@@ -145,16 +145,12 @@ class Mindwave(object):
 
     def __packetParser(self):
         "packetParser runs continously in a separate thread to parse packets from mindwave and update the corresponding variables"
-        
-        def readhex():
-            return binascii.hexlify(self.__srl.read(1))
-        
         while self.__threadRun:
-            p1 = readhex()  # read first 2 packets
-            p2 = readhex()
+            p1 = self.__srl.read(1).encode("hex")  # read first 2 packets
+            p2 = self.__srl.read(1).encode("hex")
             while (p1 != 'aa' or p2 != 'aa') and self.__threadRun:
                 p1 = p2
-                p2 = readhex()
+                p2 = self.__srl.read(1).encode("hex")
             else:
                 if self.__threadRun == False:
                     break
@@ -162,13 +158,13 @@ class Mindwave(object):
                 self.__packetsReceived += 1
                 payload = []
                 checksum = 0
-                payloadLength = int(readhex(), 16)
+                payloadLength = int(self.__srl.read(1).encode("hex"), 16)
                 for i in range(payloadLength):
-                    tempPacket = readhex()
+                    tempPacket = self.__srl.read(1).encode("hex")
                     payload.append(tempPacket)
                     checksum += int(tempPacket, 16)
                 checksum = ~checksum & 0x000000ff
-                if checksum == int(readhex(), 16):
+                if checksum == int(self.__srl.read(1).encode("hex"), 16):
                     i = 0
 
                     while i < payloadLength:
@@ -189,94 +185,94 @@ class Mindwave(object):
                                 print("Idle, trying to reconnect");
                                 self.connect();
                         elif(code == '02'):  # poorSignal
-                            i += 1
+                            i = i + 1
                             self.poorSignal = int(payload[i], 16)
                         elif(code == '04'):  # attention
-                            i += 1
+                            i = i + 1
                             self.attention = int(payload[i], 16)
                         elif(code == '05'):  # meditation
-                            i += 1
+                            i = i + 1
                             self.meditation = int(payload[i], 16)
                         elif(code == '16'):  # blink strength
-                            i += 1
+                            i = i + 1
                             self.blinkStrength = int(payload[i], 16)
                         elif(code == '80'):  # raw value
-                            i += 1  # for length/it is not used since length =1 byte long and always=2
-                            i += 1
+                            i = i + 1  # for length/it is not used since length =1 byte long and always=2
+                            i = i + 1
                             val0 = int(payload[i], 16)
-                            i += 1
+                            i = i + 1
                             self.rawValue = val0 * 256 + int(payload[i], 16)
                             if self.rawValue > 32768:
                                 self.rawValue = self.rawValue - 65536
                         elif(code == '83'):  # ASIC_EEG_POWER
-                            i += 1  # for length/it is not used since length =1 byte long and always=2
+                            i = i + 1  # for length/it is not used since length =1 byte long and always=2
                             # delta:
-                            i += 1
+                            i = i + 1
                             val0 = int(payload[i], 16)
-                            i += 1
+                            i = i + 1
                             val1 = int(payload[i], 16)
-                            i += 1
+                            i = i + 1
                             self.delta = val0 * 65536 + \
                                 val1 * 256 + int(payload[i], 16)
                             # theta:
-                            i += 1
+                            i = i + 1
                             val0 = int(payload[i], 16)
-                            i += 1
+                            i = i + 1
                             val1 = int(payload[i], 16)
-                            i += 1
+                            i = i + 1
                             self.theta = val0 * 65536 + \
                                 val1 * 256 + int(payload[i], 16)
                             # lowAlpha:
-                            i += 1
+                            i = i + 1
                             val0 = int(payload[i], 16)
-                            i += 1
+                            i = i + 1
                             val1 = int(payload[i], 16)
-                            i += 1
+                            i = i + 1
                             self.lowAlpha = val0 * 65536 + \
                                 val1 * 256 + int(payload[i], 16)
                             # highAlpha:
-                            i += 1
+                            i = i + 1
                             val0 = int(payload[i], 16)
-                            i += 1
+                            i = i + 1
                             val1 = int(payload[i], 16)
-                            i += 1
+                            i = i + 1
                             self.highAlpha = val0 * 65536 + \
                                 val1 * 256 + int(payload[i], 16)
                             # lowBeta:
-                            i += 1
+                            i = i + 1
                             val0 = int(payload[i], 16)
-                            i += 1
+                            i = i + 1
                             val1 = int(payload[i], 16)
-                            i += 1
+                            i = i + 1
                             self.lowBeta = val0 * 65536 + \
                                 val1 * 256 + int(payload[i], 16)
                             # highBeta:
-                            i += 1
+                            i = i + 1
                             val0 = int(payload[i], 16)
-                            i += 1
+                            i = i + 1
                             val1 = int(payload[i], 16)
-                            i += 1
+                            i = i + 1
                             self.highBeta = val0 * 65536 + \
                                 val1 * 256 + int(payload[i], 16)
                             # lowGamma:
-                            i += 1
+                            i = i + 1
                             val0 = int(payload[i], 16)
-                            i += 1
+                            i = i + 1
                             val1 = int(payload[i], 16)
-                            i += 1
+                            i = i + 1
                             self.lowGamma = val0 * 65536 + \
                                 val1 * 256 + int(payload[i], 16)
                             # midGamma:
-                            i += 1
+                            i = i + 1
                             val0 = int(payload[i], 16)
-                            i += 1
+                            i = i + 1
                             val1 = int(payload[i], 16)
-                            i += 1
+                            i = i + 1
                             self.midGamma = val0 * 65536 + \
                                 val1 * 256 + int(payload[i], 16)
                         else:
                             pass
-                        i += 1
+                        i = i + 1
 
     def stop(self):
         # Stops a running parser thread
