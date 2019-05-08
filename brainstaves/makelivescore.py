@@ -1,7 +1,9 @@
 '''
 Generate the live score.
 
-Run this script to actually generate the score.
+Run this file to actually generate the score!!
+
+Version: 2019may08
 '''
 
 import os
@@ -12,11 +14,11 @@ def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=N
     
     sc.tic()
     
-    if version is None: version = 'A'
+    if version is None: version = 'A'   # Which version of the piece to generate -- atonal (A) or blues (B)
     if wait    is None: wait    = False # Whether or not to pause between generating sections
-    if makepng is None: makepng = True
-    if makepdf is None: makepdf = True
-    if usedata is None: usedata = False
+    if makepng is None: makepng = True  # Generate PNG files from MuseScore (needed for the app!)
+    if makepdf is None: makepdf = True  # Generate PDF file from MuseScore
+    if usedata is None: usedata = False # Use headset data
     
     statusfile = 'status.tmp' # WARNING, replace with status.obj
 #    statusfile = 'live/livedata.obj'

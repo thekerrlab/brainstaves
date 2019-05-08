@@ -8,6 +8,8 @@ Created on Sat May  4 23:43:32 2019
 
 #%% Setup
 
+#def animate():
+
 print('Setting up...')
 
 fullscreen = False
