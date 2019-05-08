@@ -2013,7 +2013,7 @@
         </Measure>
       <Measure number="44">
         <stretch>0.7</stretch>
-        <vspacerDown>12</vspacerDown>
+        <vspacerDown>10</vspacerDown>
         <Dynamic>
           <subtype>pp</subtype>
           <velocity>33</velocity>
@@ -3331,7 +3331,7 @@
         <Dynamic>
           <subtype>p</subtype>
           <velocity>49</velocity>
-          <pos x="-4.07209" y="7.52161"/>
+          <pos x="-3.42733" y="6.31268"/>
           </Dynamic>
         <StaffText>
           <pos x="-3.21048" y="-6.87209"/>
@@ -3565,25 +3565,26 @@
       <Measure number="55">
         <stretch>0.3</stretch>
         <vspacerDown>15</vspacerDown>
-        <Dynamic>
-          <subtype>pp</subtype>
-          <velocity>33</velocity>
-          </Dynamic>
         <StaffText>
           <pos x="-93.6503" y="-7.41162"/>
           <style>System</style>
           <text>Big glissandi</text>
           </StaffText>
         <StaffText>
-          <pos x="-1.89428" y="-6.16779"/>
+          <pos x="2.54143" y="7.00804"/>
           <style>System</style>
           <text>Big glissandi</text>
           </StaffText>
         <StaffText>
-          <pos x="-1.89428" y="-6.16779"/>
+          <pos x="3.16296" y="49.0377"/>
           <style>System</style>
           <text>Big glissandi</text>
           </StaffText>
+        <Dynamic>
+          <subtype>pp</subtype>
+          <velocity>33</velocity>
+          <pos x="0.185274" y="9.42842"/>
+          </Dynamic>
         <Rest>
           <BeamMode>auto</BeamMode>
           <durationType>16th</durationType>
@@ -3601,7 +3602,7 @@
           <durationType>16th</durationType>
           </Rest>
         <StaffText>
-          <pos x="-1.51156" y="35.7395"/>
+          <pos x="-2.23692" y="34.6112"/>
           <style>System</style>
           <text>Big glissandi</text>
           </StaffText>
@@ -3742,7 +3743,7 @@
       <Measure number="58">
         <stretch>0.3</stretch>
         <StaffText>
-          <pos x="0.831504" y="37.1886"/>
+          <pos x="-25.4425" y="49.1973"/>
           <text>Short notes should be barely audible under VII</text>
           </StaffText>
         <Rest>
@@ -5044,7 +5045,7 @@
           <Segment>
             <subtype>0</subtype>
             <off2 x="-9.30189" y="0"/>
-            <pos x="97.6422" y="8.35338"/>
+            <pos x="97.7639" y="8.44007"/>
             </Segment>
           <beginText>
             <text>cresc.</text>
@@ -5272,7 +5273,7 @@
             <Symbol>
               <name>stringsUpBow</name>
               <font>Bravura</font>
-              <pos x="0.243052" y="-5.15269"/>
+              <pos x="0.243052" y="-4.20381"/>
               </Symbol>
             <pitch>68</pitch>
             <tpc>22</tpc>
@@ -5343,7 +5344,7 @@
             <Symbol>
               <name>stringsUpBow</name>
               <font>Bravura</font>
-              <pos x="-0.139663" y="-3.90886"/>
+              <pos x="-0.139663" y="-2.09017"/>
               </Symbol>
             <Tie id="71">
               </Tie>
@@ -5382,7 +5383,7 @@
             <Symbol>
               <name>stringsDownBow</name>
               <font>Bravura</font>
-              <pos x="0.230356" y="-3.5952"/>
+              <pos x="0.230356" y="-2.01373"/>
               </Symbol>
             <pitch>81</pitch>
             <tpc>17</tpc>
@@ -5403,7 +5404,7 @@
             <Symbol>
               <name>stringsDownBow</name>
               <font>Bravura</font>
-              <pos x="0.230356" y="-5.03038"/>
+              <pos x="-0.0859377" y="-2.8954"/>
               </Symbol>
             <pitch>76</pitch>
             <tpc>18</tpc>
@@ -5428,7 +5429,7 @@
             <Symbol>
               <name>stringsUpBow</name>
               <font>Bravura</font>
-              <pos x="-0.139663" y="-5.15269"/>
+              <pos x="-0.139663" y="-3.334"/>
               </Symbol>
             <Tie id="73">
               </Tie>
@@ -5795,11 +5796,10 @@
             </Note>
           </Chord>
         <StaffText>
-          <pos x="-0.497544" y="-15.6107"/>
+          <pos x="-2.996" y="-14.8853"/>
           <text>Lift off the bow
 in a theatrically
-exaggerated 
-gesture</text>
+exaggerated gesture</text>
           </StaffText>
         <Chord>
           <BeamMode>no</BeamMode>
@@ -5848,7 +5848,7 @@ gesture</text>
           <durationType>half</durationType>
           </Rest>
         <StaffText>
-          <pos x="-1.22847" y="-13.6093"/>
+          <pos x="-0.825494" y="-15.06"/>
           <text>Bow the air for a bit and gradually 
 lower the bow onto the string until 
 there is a crazy arpeggiato</text>
@@ -7726,15 +7726,15 @@ there is a crazy arpeggiato</text>
         <Dynamic>
           <subtype>f</subtype>
           <velocity>96</velocity>
-          <pos x="-4.53335" y="9.54045"/>
+          <pos x="-3.1054" y="7.94269"/>
           </Dynamic>
         <Rest>
           <BeamMode>auto</BeamMode>
           <durationType>eighth</durationType>
           </Rest>
         <StaffText>
-          <pos x="-10.1718" y="5.70294"/>
-          <text> pizz., 
+          <pos x="-8.23218" y="3.80518"/>
+          <text>pizz., 
 gliss.</text>
           </StaffText>
         <Chord>
@@ -11667,6 +11667,7 @@ let ring</i></text>
         <Dynamic>
           <subtype>ff</subtype>
           <velocity>112</velocity>
+          <pos x="0.416496" y="6.46869"/>
           </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
@@ -11799,7 +11800,7 @@ let ring</i></text>
         <Dynamic>
           <subtype>p</subtype>
           <velocity>49</velocity>
-          <pos x="-3.35803" y="6.65049"/>
+          <pos x="-3.11624" y="6.24751"/>
           </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
@@ -13291,7 +13292,7 @@ let ring</i></text>
             <Symbol>
               <name>stringsUpBow</name>
               <font>Bravura</font>
-              <pos x="0.243052" y="-4.00454"/>
+              <pos x="0.243052" y="-2.81844"/>
               </Symbol>
             <pitch>70</pitch>
             <tpc>12</tpc>
@@ -13328,7 +13329,7 @@ let ring</i></text>
             <Symbol>
               <name>stringsUpBow</name>
               <font>Bravura</font>
-              <pos x="0.243052" y="-4.96133"/>
+              <pos x="0.480272" y="-4.72411"/>
               </Symbol>
             <pitch>66</pitch>
             <tpc>20</tpc>
@@ -13353,7 +13354,7 @@ let ring</i></text>
             <Symbol>
               <name>stringsDownBow</name>
               <font>Bravura</font>
-              <pos x="0.230356" y="-5.60446"/>
+              <pos x="0.230356" y="-4.81373"/>
               </Symbol>
             <Tie id="193">
               </Tie>
@@ -13401,7 +13402,7 @@ let ring</i></text>
             <Symbol>
               <name>stringsUpBow</name>
               <font>Bravura</font>
-              <pos x="0.243052" y="-5.15269"/>
+              <pos x="0.243052" y="-4.59918"/>
               </Symbol>
             <Tie id="195">
               </Tie>
@@ -13443,7 +13444,7 @@ let ring</i></text>
             <Symbol>
               <name>stringsDownBow</name>
               <font>Bravura</font>
-              <pos x="0.230356" y="-4.36063"/>
+              <pos x="0.230356" y="-3.49082"/>
               </Symbol>
             <pitch>74</pitch>
             <tpc>16</tpc>
@@ -13467,7 +13468,7 @@ let ring</i></text>
             <Symbol>
               <name>stringsDownBow</name>
               <font>Bravura</font>
-              <pos x="0.230356" y="-6.7526"/>
+              <pos x="0.388503" y="-5.01298"/>
               </Symbol>
             <pitch>63</pitch>
             <tpc>11</tpc>
@@ -13495,7 +13496,7 @@ let ring</i></text>
             <Symbol>
               <name>stringsUpBow</name>
               <font>Bravura</font>
-              <pos x="-0.139663" y="-7.06626"/>
+              <pos x="-0.0605896" y="-4.29869"/>
               </Symbol>
             <Tie id="197">
               </Tie>
@@ -21144,6 +21145,7 @@ let ring</i></text>
           </Chord>
         </Measure>
       <Measure number="44">
+        <vspacerDown>10</vspacerDown>
         <Dynamic>
           <subtype>pp</subtype>
           <velocity>33</velocity>
@@ -22628,6 +22630,7 @@ let ring</i></text>
         <Dynamic>
           <subtype>pp</subtype>
           <velocity>33</velocity>
+          <pos x="0.668845" y="6.49198"/>
           </Dynamic>
         <Rest>
           <BeamMode>auto</BeamMode>
@@ -23955,7 +23958,7 @@ let ring</i></text>
             <Symbol>
               <name>stringsUpBow</name>
               <font>Bravura</font>
-              <pos x="0.243052" y="-4.00454"/>
+              <pos x="0.243052" y="-2.18585"/>
               </Symbol>
             <pitch>68</pitch>
             <tpc>22</tpc>
@@ -24072,7 +24075,7 @@ let ring</i></text>
             <Symbol>
               <name>stringsUpBow</name>
               <font>Bravura</font>
-              <pos x="0.243052" y="-5.15269"/>
+              <pos x="0.243052" y="-3.96659"/>
               </Symbol>
             <Tie id="294">
               </Tie>
@@ -24134,7 +24137,7 @@ let ring</i></text>
             <Symbol>
               <name>stringsDownBow</name>
               <font>Bravura</font>
-              <pos x="-0.0566806" y="-3.49952"/>
+              <pos x="-0.0566806" y="-2.55064"/>
               </Symbol>
             <pitch>68</pitch>
             <tpc>22</tpc>
@@ -24159,7 +24162,7 @@ let ring</i></text>
             <Symbol>
               <name>stringsUpBow</name>
               <font>Bravura</font>
-              <pos x="-0.139663" y="-2.76071"/>
+              <pos x="-0.218736" y="-2.28627"/>
               </Symbol>
             <Tie id="296">
               </Tie>
@@ -32352,6 +32355,7 @@ let ring</i></text>
         <Dynamic>
           <subtype>ff</subtype>
           <velocity>112</velocity>
+          <pos x="0.416496" y="10.4179"/>
           </Dynamic>
         <Beam id="327">
           <StemDirection>up</StemDirection>
@@ -32529,6 +32533,7 @@ let ring</i></text>
         <Dynamic>
           <subtype>pp</subtype>
           <velocity>33</velocity>
+          <pos x="0.329141" y="9.45071"/>
           </Dynamic>
         <Beam id="331">
           <StemDirection>down</StemDirection>
@@ -32709,6 +32714,7 @@ let ring</i></text>
         <Dynamic>
           <subtype>ff</subtype>
           <velocity>112</velocity>
+          <pos x="0.658281" y="8.88655"/>
           </Dynamic>
         <Beam id="335">
           <StemDirection>up</StemDirection>
@@ -34012,9 +34018,11 @@ let ring</i></text>
           </Rest>
         </Measure>
       <Measure number="55">
+        <vspacerDown>16</vspacerDown>
         <Dynamic>
           <subtype>pp</subtype>
           <velocity>33</velocity>
+          <pos x="0.255305" y="9.28952"/>
           </Dynamic>
         <Chord>
           <durationType>16th</durationType>
@@ -34940,7 +34948,7 @@ let ring</i></text>
           <Segment>
             <subtype>0</subtype>
             <off2 x="-9.30189" y="0"/>
-            <pos x="51.0598" y="8.35338"/>
+            <pos x="51.1816" y="8.44007"/>
             </Segment>
           <beginText>
             <text>cresc.</text>
@@ -34996,26 +35004,12 @@ let ring</i></text>
           <velocity>49</velocity>
           <pos x="0.658281" y="9.19569"/>
           </Dynamic>
-        <HairPin id="369">
-          <subtype>0</subtype>
-          <Segment>
-            <subtype>0</subtype>
-            <off2 x="3.58421" y="0"/>
-            <pos x="89.035" y="9.29353"/>
-            </Segment>
-          <beginText>
-            <text>cresc.</text>
-            </beginText>
-          <continueText>
-            <text>(cresc.)</text>
-            </continueText>
-          </HairPin>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>half</durationType>
           <StemDirection>up</StemDirection>
           <Note>
-            <Tie id="370">
+            <Tie id="369">
               </Tie>
             <pitch>36</pitch>
             <tpc>14</tpc>
@@ -35024,7 +35018,7 @@ let ring</i></text>
             <Accidental>
               <subtype>flat</subtype>
               </Accidental>
-            <Tie id="371">
+            <Tie id="370">
               </Tie>
             <pitch>44</pitch>
             <tpc>10</tpc>
@@ -35035,19 +35029,18 @@ let ring</i></text>
           </Chord>
         </Measure>
       <Measure number="90">
-        <endSpanner id="369"/>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
           <durationType>half</durationType>
           <StemDirection>up</StemDirection>
           <Note>
-            <endSpanner id="370"/>
+            <endSpanner id="369"/>
             <pitch>36</pitch>
             <tpc>14</tpc>
             </Note>
           <Note>
-            <endSpanner id="371"/>
+            <endSpanner id="370"/>
             <pitch>44</pitch>
             <tpc>10</tpc>
             </Note>
@@ -35060,6 +35053,20 @@ let ring</i></text>
           <velocity>96</velocity>
           <pos x="-2.66489" y="9.74422"/>
           </Dynamic>
+        <HairPin id="371">
+          <subtype>0</subtype>
+          <Segment>
+            <subtype>0</subtype>
+            <off2 x="3.58421" y="0"/>
+            <pos x="90.536" y="8.74002"/>
+            </Segment>
+          <beginText>
+            <text>cresc.</text>
+            </beginText>
+          <continueText>
+            <text>(cresc.)</text>
+            </continueText>
+          </HairPin>
         <Rest>
           <durationType>quarter</durationType>
           </Rest>
@@ -35069,6 +35076,7 @@ let ring</i></text>
           <subtype>p</subtype>
           <velocity>49</velocity>
           </Dynamic>
+        <endSpanner id="371"/>
         <HairPin id="372">
           <subtype>0</subtype>
           <Segment>
@@ -35198,7 +35206,7 @@ let ring</i></text>
             <Symbol>
               <name>stringsUpBow</name>
               <font>Bravura</font>
-              <pos x="0.243052" y="-4.00454"/>
+              <pos x="0.322125" y="-2.18585"/>
               </Symbol>
             <pitch>61</pitch>
             <tpc>21</tpc>
@@ -35256,7 +35264,7 @@ let ring</i></text>
             <Symbol>
               <name>stringsDownBow</name>
               <font>Bravura</font>
-              <pos x="0.230356" y="-3.02113"/>
+              <pos x="0.230356" y="-2.2304"/>
               </Symbol>
             <Tie id="380">
               </Tie>
@@ -35308,7 +35316,7 @@ let ring</i></text>
             <Symbol>
               <name>stringsUpBow</name>
               <font>Bravura</font>
-              <pos x="0.243052" y="-3.14343"/>
+              <pos x="0.322125" y="-2.3527"/>
               </Symbol>
             <Tie id="382">
               </Tie>
@@ -35370,7 +35378,7 @@ let ring</i></text>
             <Symbol>
               <name>stringsDownBow</name>
               <font>Bravura</font>
-              <pos x="0.230356" y="-3.40384"/>
+              <pos x="0.230356" y="-2.53403"/>
               </Symbol>
             <pitch>58</pitch>
             <tpc>12</tpc>
@@ -35399,7 +35407,7 @@ let ring</i></text>
             <Symbol>
               <name>stringsUpBow</name>
               <font>Bravura</font>
-              <pos x="-0.139663" y="-3.43047"/>
+              <pos x="-0.139663" y="-2.00715"/>
               </Symbol>
             <Tie id="384">
               </Tie>
@@ -35763,11 +35771,10 @@ let ring</i></text>
             </Note>
           </Chord>
         <StaffText>
-          <pos x="0.554923" y="9.55286"/>
+          <pos x="-3.23305" y="10.8424"/>
           <text>Lift off the bow
 in a theatrically
-exaggerated 
-gesture</text>
+exaggerated gesture</text>
           </StaffText>
         <Chord>
           <BeamMode>no</BeamMode>

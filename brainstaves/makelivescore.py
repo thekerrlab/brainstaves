@@ -24,7 +24,7 @@ torun = [
 'write',
 ]
 
-version = 'A'
+version = 'B'
 wait = False # Whether or not to pause between generating sections
 makepng = False
 makepdf = True
@@ -353,8 +353,6 @@ if 'sectionE' in torun:
         
         tmpscore = sc.dcp(inst.score)
         assert len(tmpscore) == seq[part]
-        
-        print("WARNING FIXXXXXXX")
         
         # Replace sequence numbers with notes
         nmnotes = sc.dcp(nm[part])

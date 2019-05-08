@@ -3584,6 +3584,7 @@
         <Dynamic>
           <subtype>pp</subtype>
           <velocity>33</velocity>
+          <pos x="0.987408" y="8.66982"/>
           </Dynamic>
         <StaffText>
           <pos x="-93.6503" y="-6.36669"/>
@@ -3595,12 +3596,17 @@
           <style>System</style>
           <text>Glissandi should be big by now</text>
           </StaffText>
+        <StaffText>
+          <pos x="3.51996" y="34.6116"/>
+          <style>System</style>
+          <text>Big glissandi</text>
+          </StaffText>
         <Rest>
           <BeamMode>auto</BeamMode>
           <durationType>16th</durationType>
           </Rest>
         <StaffText>
-          <pos x="2.85014" y="36.035"/>
+          <pos x="1.42678" y="49.2639"/>
           <style>System</style>
           <text>Big glissandi</text>
           </StaffText>
@@ -3622,7 +3628,7 @@
           <text>Glissandi should be big by now</text>
           </StaffText>
         <StaffText>
-          <pos x="-7.61562" y="-6.05888"/>
+          <pos x="-2.08963" y="6.16528"/>
           <style>System</style>
           <text>Big glissandi</text>
           </StaffText>
@@ -3763,7 +3769,7 @@
       <Measure number="58">
         <stretch>0.3</stretch>
         <StaffText>
-          <pos x="2.12922" y="35.6821"/>
+          <pos x="-25.0735" y="48.9043"/>
           <text>Short notes should be barely audible under VII</text>
           </StaffText>
         <Rest>
@@ -5197,7 +5203,7 @@
         <Symbol>
           <name>stringsUpBow</name>
           <font>Bravura</font>
-          <pos x="-0.122367" y="-2.3123"/>
+          <pos x="-0.122367" y="-0.505084"/>
           </Symbol>
         <endSpanner id="63"/>
         <HairPin id="64">
@@ -5349,7 +5355,7 @@
         <Symbol>
           <name>stringsDownBow</name>
           <font>Bravura</font>
-          <pos x="-0.0764225" y="-3.25103"/>
+          <pos x="-0.0764225" y="-1.89562"/>
           </Symbol>
         <Chord>
           <BeamMode>no</BeamMode>
@@ -5778,11 +5784,10 @@
           <pos x="6.38234" y="7.70082"/>
           </Dynamic>
         <StaffText>
-          <pos x="-4.99445" y="-15.515"/>
+          <pos x="-8.00863" y="-14.6777"/>
           <text>Lift off the bow
 in a theatrically
-exaggerated 
-gesture</text>
+exaggerated gesture</text>
           </StaffText>
         <Chord>
           <BeamMode>no</BeamMode>
@@ -7921,15 +7926,15 @@ the strings, and then bow the air for a bit</text>
         <Dynamic>
           <subtype>f</subtype>
           <velocity>96</velocity>
-          <pos x="-3.52567" y="8.69024"/>
+          <pos x="-2.32206" y="7.42519"/>
           </Dynamic>
         <Rest>
           <BeamMode>auto</BeamMode>
           <durationType>eighth</durationType>
           </Rest>
         <StaffText>
-          <pos x="-9.28743" y="4.44761"/>
-          <text> pizz., 
+          <pos x="-7.48021" y="3.544"/>
+          <text>pizz., 
 gliss.</text>
           </StaffText>
         <Chord>
@@ -13383,7 +13388,7 @@ gliss.</text>
         <Symbol>
           <name>stringsUpBow</name>
           <font>Bravura</font>
-          <pos x="-0.328587" y="-1.72142"/>
+          <pos x="-0.328587" y="-0.456369"/>
           </Symbol>
         <endSpanner id="182"/>
         <HairPin id="183">
@@ -13420,7 +13425,7 @@ gliss.</text>
         <Symbol>
           <name>stringsDownBow</name>
           <font>Bravura</font>
-          <pos x="0.290921" y="-1.61176"/>
+          <pos x="0.290921" y="-0.708152"/>
           </Symbol>
         <endSpanner id="183"/>
         <Chord>
@@ -13535,7 +13540,7 @@ gliss.</text>
         <Symbol>
           <name>stringsDownBow</name>
           <font>Bravura</font>
-          <pos x="-0.282773" y="-2.42802"/>
+          <pos x="-0.282773" y="-0.982247"/>
           </Symbol>
         <Chord>
           <BeamMode>no</BeamMode>
@@ -13564,7 +13569,7 @@ gliss.</text>
         <Symbol>
           <name>stringsUpBow</name>
           <font>Bravura</font>
-          <pos x="-0.262307" y="-2.62065"/>
+          <pos x="-0.262307" y="0.361257"/>
           </Symbol>
         <Chord>
           <BeamMode>no</BeamMode>
@@ -22673,6 +22678,7 @@ gliss.</text>
         <Dynamic>
           <subtype>pp</subtype>
           <velocity>33</velocity>
+          <pos x="0.75" y="6.07428"/>
           </Dynamic>
         <Rest>
           <BeamMode>auto</BeamMode>
@@ -23883,7 +23889,7 @@ gliss.</text>
         <Symbol>
           <name>stringsUpBow</name>
           <font>Bravura</font>
-          <pos x="0.0690484" y="-2.49079"/>
+          <pos x="0.430492" y="-2.31007"/>
           </Symbol>
         <HairPin id="281">
           <subtype>0</subtype>
@@ -24055,7 +24061,7 @@ gliss.</text>
         <Symbol>
           <name>stringsDownBow</name>
           <font>Bravura</font>
-          <pos x="-0.490881" y="-3.44781"/>
+          <pos x="-0.310159" y="-2.45384"/>
           </Symbol>
         <Chord>
           <BeamMode>no</BeamMode>
@@ -24074,7 +24080,7 @@ gliss.</text>
         <Symbol>
           <name>stringsDownBow</name>
           <font>Bravura</font>
-          <pos x="-0.040775" y="-3.27524"/>
+          <pos x="-0.040775" y="-2.19091"/>
           </Symbol>
         <Chord>
           <BeamMode>no</BeamMode>
@@ -24103,7 +24109,7 @@ gliss.</text>
         <Symbol>
           <name>stringsUpBow</name>
           <font>Bravura</font>
-          <pos x="-0.0634345" y="-3.46224"/>
+          <pos x="-0.0634345" y="-2.73935"/>
           </Symbol>
         <Chord>
           <BeamMode>no</BeamMode>
@@ -31847,7 +31853,7 @@ gliss.</text>
         </Measure>
       <Measure number="43">
         <StaffText>
-          <pos x="-1.57615" y="7.17014"/>
+          <pos x="-1.57615" y="7.83996"/>
           <text><i>sempre</i></text>
           </StaffText>
         <Beam id="335">
@@ -31868,7 +31874,7 @@ gliss.</text>
         <Dynamic>
           <subtype>ff</subtype>
           <velocity>112</velocity>
-          <pos x="2.18873" y="10.1041"/>
+          <pos x="2.18873" y="10.7739"/>
           </Dynamic>
         <Chord>
           <BeamMode>mid</BeamMode>
@@ -33544,9 +33550,11 @@ gliss.</text>
           </Rest>
         </Measure>
       <Measure number="55">
+        <vspacerDown>18</vspacerDown>
         <Dynamic>
           <subtype>pp</subtype>
           <velocity>33</velocity>
+          <pos x="0.432295" y="9.73999"/>
           </Dynamic>
         <Chord>
           <durationType>16th</durationType>
@@ -34666,7 +34674,7 @@ gliss.</text>
             <Symbol>
               <name>stringsUpBow</name>
               <font>Bravura</font>
-              <pos x="0.0690482" y="-2.41347"/>
+              <pos x="0.0690482" y="-1.50986"/>
               </Symbol>
             <pitch>61</pitch>
             <tpc>21</tpc>
@@ -34758,7 +34766,7 @@ gliss.</text>
         <Symbol>
           <name>stringsUpBow</name>
           <font>Bravura</font>
-          <pos x="-0.229129" y="-3.50354"/>
+          <pos x="-0.31949" y="-3.05174"/>
           </Symbol>
         <Chord>
           <BeamMode>no</BeamMode>
@@ -34804,7 +34812,7 @@ gliss.</text>
         <Symbol>
           <name>stringsDownBow</name>
           <font>Bravura</font>
-          <pos x="-0.135592" y="-5.22114"/>
+          <pos x="0.0451296" y="-4.8597"/>
           </Symbol>
         <Chord>
           <BeamMode>no</BeamMode>
@@ -34823,7 +34831,7 @@ gliss.</text>
         <Symbol>
           <name>stringsDownBow</name>
           <font>Bravura</font>
-          <pos x="-0.431011" y="-4.81215"/>
+          <pos x="-0.159929" y="-3.09529"/>
           </Symbol>
         <Chord>
           <BeamMode>no</BeamMode>
@@ -34852,7 +34860,7 @@ gliss.</text>
         <Symbol>
           <name>stringsUpBow</name>
           <font>Bravura</font>
-          <pos x="-0.560617" y="-4.801"/>
+          <pos x="0.16227" y="-3.53595"/>
           </Symbol>
         <Chord>
           <BeamMode>no</BeamMode>
@@ -35194,11 +35202,10 @@ gliss.</text>
         </Measure>
       <Measure number="101">
         <StaffText>
-          <pos x="7.85688" y="8.72552"/>
+          <pos x="5.42879" y="13.0793"/>
           <text>Lift off the bow
 in a theatrically
-exaggerated 
-gesture</text>
+exaggerated gesture</text>
           </StaffText>
         <Chord>
           <BeamMode>no</BeamMode>
