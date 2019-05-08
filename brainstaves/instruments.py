@@ -108,15 +108,20 @@ def num2lily(num):
 
 
 def char2dia(val):
-    acci = val[1]
-    if acci in ['#', '$']:
-        output = val[0]+'n'+val[2]
-    else:
-        output = val
+    output = val[0]+'n'+val[2]
+    return output
+
+
+def char2acoustic(val):
+    dia = char2dia(val)
+    if   dia[0] == 'f': output = 'f#' + val[2] # Map F onto F#
+    elif dia[0] == 'b': output = 'b$' + val[2] # Map B onto Bb
+    else:               output = dia # Otherwise, diatonic
     return output
 
 
 def char2octo(val):
+    ''' WARNING, relies on the human mapping in num2char! '''
     note = val[0:2]
     mapping = {'a#':'b$',
                'bn':'b$',
@@ -279,6 +284,12 @@ class Section(sc.prettyobj):
         for n in range(self.npts):
             val = num2char(self.arr[n])
             self.arr[n] = char2num(char2dia(val))
+        return None
+    
+    def acoustic(self):
+        for n in range(self.npts):
+            val = num2char(self.arr[n])
+            self.arr[n] = char2num(char2acoustic(val))
         return None
     
     def octotonic(self):
