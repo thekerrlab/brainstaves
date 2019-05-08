@@ -50,7 +50,7 @@ stafflines = pl.linspace(0,0.03,5)
 
 
 pl.rcParams['toolbar'] = 'None'
-font_path = 'FreeSerif.ttf'
+font_path = 'assets/FreeSerif.ttf'
 prop = mfm.FontProperties(fname=font_path)
 
 colors = sc.gridcolors(4)
