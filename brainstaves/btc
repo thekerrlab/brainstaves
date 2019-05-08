@@ -1,4 +1,14 @@
 #!/bin/bash
+# Bluetooth connect -- connect each Bluetooth device to a serial port stream
+# Usage:
+#   btc v1
+#   btc v2
+#   btc va
+#   btc vc
+# in each of 4 separate terminal windows.
+#
+# Version: 2019may08
+
 if   [ $1 = "v1" ]; then sudo rfcomm connect hci0 00:81:F9:08:A1:72;
 elif [ $1 = "v2" ]; then sudo rfcomm connect /dev/rfcomm1 00:81:F9:29:BA:98;
 elif [ $1 = "va" ]; then sudo rfcomm connect /dev/rfcomm2 00:81:F9:29:EF:80;

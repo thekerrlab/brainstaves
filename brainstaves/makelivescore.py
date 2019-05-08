@@ -164,7 +164,7 @@ def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=N
     
     if 'load' in torun:
         sc.colorize('blue', '\n'*3+'Resetting')
-        sc.runcommand('bin/cleanup', printoutput=True)
+        sc.runcommand('rm -v live/live-*.png', printoutput=True)
         print('Loading XML')
         xml = bs.XML(infile=infiles[version])
         nd = sc.objdict() # For storing all the notes

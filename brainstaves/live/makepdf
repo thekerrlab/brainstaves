@@ -1,0 +1,7 @@
+#!/bin/bash
+# For turning a MuseScore file into a PDF. Note, this can be done
+# automatically via makelivescore.py.
+# Version: 2019may08
+
+echo 'Making PDF'
+mscore live.mscx -o live.pdf

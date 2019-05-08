@@ -1,3 +1,0 @@
-#!/bin/bash
-echo 'Making PDF'
-mscore live/live.mscx -o live/live.pdf
