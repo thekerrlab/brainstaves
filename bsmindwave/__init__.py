@@ -1,1 +1,1 @@
-from bs_mindwave import Mindwave
+from .bs_mindwave import Mindwave
