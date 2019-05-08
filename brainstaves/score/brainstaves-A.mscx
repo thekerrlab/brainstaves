@@ -1265,10 +1265,7 @@
         <Dynamic>
           <subtype>f</subtype>
           <velocity>96</velocity>
-          </Dynamic>
-        <Dynamic>
-          <subtype>f</subtype>
-          <velocity>96</velocity>
+          <pos x="0.658281" y="6.82782"/>
           </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
@@ -1333,6 +1330,7 @@
         <Dynamic>
           <subtype>ff</subtype>
           <velocity>112</velocity>
+          <pos x="-3.69553" y="7.16273"/>
           </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
@@ -1415,7 +1413,7 @@
         <stretch>0.7</stretch>
         <vspacerDown>12</vspacerDown>
         <StaffText>
-          <pos x="-1.59155" y="8.46992"/>
+          <pos x="-1.67528" y="8.13501"/>
           <text>pizz.</text>
           </StaffText>
         <Beam id="1">
@@ -4076,10 +4074,6 @@
         </Measure>
       <Measure number="70">
         <stretch>0.5</stretch>
-        <Dynamic>
-          <subtype>pp</subtype>
-          <velocity>33</velocity>
-          </Dynamic>
         <Rest>
           <BeamMode>auto</BeamMode>
           <durationType>eighth</durationType>
@@ -4296,6 +4290,7 @@
         </Measure>
       <Measure number="74">
         <stretch>0.5</stretch>
+        <vspacerDown>10</vspacerDown>
         <LayoutBreak>
           <subtype>line</subtype>
           </LayoutBreak>
@@ -4703,6 +4698,7 @@
         <Dynamic>
           <subtype>f</subtype>
           <velocity>96</velocity>
+          <pos x="0.658281" y="8.921"/>
           </Dynamic>
         <Chord>
           <durationType>eighth</durationType>
@@ -5569,10 +5565,7 @@
         <Dynamic>
           <subtype>f</subtype>
           <velocity>96</velocity>
-          </Dynamic>
-        <Dynamic>
-          <subtype>f</subtype>
-          <velocity>96</velocity>
+          <pos x="0.329141" y="10.0932"/>
           </Dynamic>
         <Beam id="40">
           <StemDirection>down</StemDirection>
@@ -8794,12 +8787,12 @@ gliss.</text>
         <Dynamic>
           <subtype>ff</subtype>
           <velocity>112</velocity>
-          <pos x="0.783319" y="6.85321"/>
+          <pos x="0.454178" y="8.44402"/>
           </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
-          <StemDirection>up</StemDirection>
+          <StemDirection>down</StemDirection>
           <Note>
             <pitch>71</pitch>
             <tpc>19</tpc>
@@ -8813,7 +8806,7 @@ gliss.</text>
             </Note>
           </Chord>
         <StaffText>
-          <pos x="-1.94944" y="4.63323"/>
+          <pos x="-1.94944" y="6.14032"/>
           <text><i>let ring</i></text>
           </StaffText>
         <Rest>
@@ -8839,7 +8832,7 @@ gliss.</text>
         <Dynamic>
           <subtype>ff</subtype>
           <velocity>112</velocity>
-          <pos x="-2.32595" y="7.07676"/>
+          <pos x="-4.83776" y="7.07676"/>
           </Dynamic>
         <Tempo>
           <tempo>2.6</tempo>
@@ -8848,7 +8841,7 @@ gliss.</text>
           <text><sym>unicodeNoteQuarterUp</sym><sym>space</sym><sym>unicodeAugmentationDot</sym> = 104 Evolving from insane to sweet (poco a poco diminuendo)</text>
           </Tempo>
         <StaffText>
-          <pos x="-5.63576" y="7.37363"/>
+          <pos x="-7.64521" y="7.37363"/>
           <text>pizz.</text>
           </StaffText>
         <Beam id="73">
@@ -9192,6 +9185,7 @@ gliss.</text>
         <Dynamic>
           <subtype>f</subtype>
           <velocity>96</velocity>
+          <pos x="0.742008" y="6.74409"/>
           </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
@@ -9221,6 +9215,7 @@ gliss.</text>
         <Dynamic>
           <subtype>mf</subtype>
           <velocity>80</velocity>
+          <pos x="0.574554" y="6.40919"/>
           </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
@@ -9267,6 +9262,7 @@ gliss.</text>
         <Dynamic>
           <subtype>mp</subtype>
           <velocity>64</velocity>
+          <pos x="0.658281" y="6.32546"/>
           </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
@@ -10652,6 +10648,7 @@ gliss.</text>
         <Dynamic>
           <subtype>f</subtype>
           <velocity>96</velocity>
+          <pos x="0.329141" y="8.9"/>
           </Dynamic>
         <Beam id="84">
           <StemDirection>down</StemDirection>
@@ -11023,6 +11020,11 @@ gliss.</text>
         </Measure>
       <Measure number="36">
         <vspacerDown>12</vspacerDown>
+        <Dynamic>
+          <subtype>ff</subtype>
+          <velocity>112</velocity>
+          <pos x="-3.70785" y="7.47914"/>
+          </Dynamic>
         <Beam id="94">
           <StemDirection>up</StemDirection>
           </Beam>
@@ -12372,14 +12374,15 @@ gliss.</text>
           </Chord>
         </Measure>
       <Measure number="70">
+        <Dynamic>
+          <subtype>pp</subtype>
+          <velocity>33</velocity>
+          <pos x="-2.60837" y="-3.62156"/>
+          </Dynamic>
         <Rest>
           <BeamMode>auto</BeamMode>
           <durationType>half</durationType>
           </Rest>
-        <Dynamic>
-          <subtype>pp</subtype>
-          <velocity>33</velocity>
-          </Dynamic>
         <Rest>
           <BeamMode>auto</BeamMode>
           <durationType>eighth</durationType>
@@ -12525,6 +12528,7 @@ gliss.</text>
           </Rest>
         </Measure>
       <Measure number="74">
+        <vspacerDown>10</vspacerDown>
         <Dynamic>
           <subtype>p</subtype>
           <velocity>49</velocity>
@@ -12921,6 +12925,7 @@ gliss.</text>
         <Dynamic>
           <subtype>f</subtype>
           <velocity>96</velocity>
+          <pos x="0.505937" y="9.1"/>
           </Dynamic>
         <Rest>
           <BeamMode>auto</BeamMode>
@@ -13735,11 +13740,6 @@ gliss.</text>
           </Chord>
         </Measure>
       <Measure number="99">
-        <Dynamic>
-          <subtype>f</subtype>
-          <velocity>96</velocity>
-          <pos x="0.589906" y="9.68641"/>
-          </Dynamic>
         <Beam id="114">
           <StemDirection>up</StemDirection>
           </Beam>
@@ -17071,10 +17071,10 @@ gliss.</text>
         <Dynamic>
           <subtype>ff</subtype>
           <velocity>112</velocity>
-          <pos x="-2.90002" y="7.43556"/>
+          <pos x="-5.41183" y="7.43556"/>
           </Dynamic>
         <StaffText>
-          <pos x="-5.77837" y="7.51624"/>
+          <pos x="-8.12273" y="7.59997"/>
           <text>pizz.</text>
           </StaffText>
         <Beam id="148">
@@ -20149,12 +20149,7 @@ gliss.</text>
         <Dynamic>
           <subtype>ff</subtype>
           <velocity>112</velocity>
-          <pos x="0.329141" y="9.17024"/>
-          </Dynamic>
-        <Dynamic>
-          <subtype>ff</subtype>
-          <velocity>112</velocity>
-          <pos x="0.376546" y="-5.91197"/>
+          <pos x="-3.94094" y="7.07706"/>
           </Dynamic>
         <Beam id="188">
           <StemDirection>down</StemDirection>
@@ -23067,6 +23062,11 @@ gliss.</text>
           </Rest>
         </Measure>
       <Measure number="70">
+        <Dynamic>
+          <subtype>pp</subtype>
+          <velocity>33</velocity>
+          <pos x="10.7042" y="-3.4835"/>
+          </Dynamic>
         <Rest>
           <BeamMode>auto</BeamMode>
           <durationType>whole</durationType>
@@ -23083,16 +23083,17 @@ gliss.</text>
           <BeamMode>auto</BeamMode>
           <durationType>half</durationType>
           </Rest>
+        <Dynamic>
+          <subtype>pp</subtype>
+          <velocity>33</velocity>
+          <pos x="11.0851" y="7.14984"/>
+          </Dynamic>
         <Rest>
           <BeamMode>auto</BeamMode>
           <durationType>half</durationType>
           </Rest>
         </Measure>
       <Measure number="73">
-        <Dynamic>
-          <subtype>pp</subtype>
-          <velocity>33</velocity>
-          </Dynamic>
         <Rest>
           <BeamMode>auto</BeamMode>
           <durationType>eighth</durationType>
@@ -24302,6 +24303,11 @@ gliss.</text>
           <subtype>f</subtype>
           <velocity>96</velocity>
           <pos x="0.329141" y="9.62654"/>
+          </Dynamic>
+        <Dynamic>
+          <subtype>f</subtype>
+          <velocity>96</velocity>
+          <pos x="0.507237" y="-5.53441"/>
           </Dynamic>
         <Beam id="233">
           <StemDirection>down</StemDirection>
@@ -28048,10 +28054,10 @@ gliss.</text>
         <Dynamic>
           <subtype>ff</subtype>
           <velocity>112</velocity>
-          <pos x="-2.49912" y="7.43556"/>
+          <pos x="-4.92721" y="6.76574"/>
           </Dynamic>
         <StaffText>
-          <pos x="-5.35054" y="7.51624"/>
+          <pos x="-7.6949" y="7.51624"/>
           <text>pizz.</text>
           </StaffText>
         <Beam id="281">
@@ -30698,7 +30704,7 @@ gliss.</text>
         <Dynamic>
           <subtype>f</subtype>
           <velocity>96</velocity>
-          <pos x="0.658281" y="9.26776"/>
+          <pos x="0.658281" y="9.36776"/>
           </Dynamic>
         <Chord>
           <durationType>eighth</durationType>
@@ -31004,7 +31010,7 @@ gliss.</text>
         <Dynamic>
           <subtype>ff</subtype>
           <velocity>112</velocity>
-          <pos x="0.1341" y="9.9504"/>
+          <pos x="-4.47089" y="7.94095"/>
           </Dynamic>
         <Beam id="315">
           <StemDirection>down</StemDirection>
@@ -34251,6 +34257,7 @@ gliss.</text>
         <Dynamic>
           <subtype>f</subtype>
           <velocity>96</velocity>
+          <pos x="0.533281" y="8.75354"/>
           </Dynamic>
         <Dynamic>
           <subtype>f</subtype>
@@ -38687,10 +38694,10 @@ the strings, and then bow the air for a bit</text>
         <Dynamic>
           <subtype>ff</subtype>
           <velocity>112</velocity>
-          <pos x="-2.21208" y="7.43556"/>
+          <pos x="-4.97507" y="7.43556"/>
           </Dynamic>
         <StaffText>
-          <pos x="-4.99402" y="8.08668"/>
+          <pos x="-7.25465" y="7.66804"/>
           <text>pizz.</text>
           </StaffText>
         <Beam id="411">
@@ -39518,6 +39525,7 @@ the strings, and then bow the air for a bit</text>
         <Dynamic>
           <subtype>mf</subtype>
           <velocity>80</velocity>
+          <pos x="0.505937" y="9.25591"/>
           </Dynamic>
         <Rest>
           <BeamMode>auto</BeamMode>
@@ -39776,6 +39784,7 @@ the strings, and then bow the air for a bit</text>
         <Dynamic>
           <subtype>mp</subtype>
           <velocity>64</velocity>
+          <pos x="0.505937" y="9.25591"/>
           </Dynamic>
         <Rest>
           <BeamMode>auto</BeamMode>

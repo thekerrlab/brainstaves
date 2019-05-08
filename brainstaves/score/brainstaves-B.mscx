@@ -1262,10 +1262,7 @@
         <Dynamic>
           <subtype>f</subtype>
           <velocity>96</velocity>
-          </Dynamic>
-        <Dynamic>
-          <subtype>f</subtype>
-          <velocity>96</velocity>
+          <pos x="0.738876" y="6.6881"/>
           </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
@@ -1330,6 +1327,7 @@
         <Dynamic>
           <subtype>ff</subtype>
           <velocity>112</velocity>
+          <pos x="-2.48493" y="7.59702"/>
           </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
@@ -4277,6 +4275,7 @@
         </Measure>
       <Measure number="74">
         <stretch>0.5</stretch>
+        <vspacerDown>10</vspacerDown>
         <LayoutBreak>
           <subtype>line</subtype>
           </LayoutBreak>
@@ -5608,7 +5607,7 @@
         <Dynamic>
           <subtype>f</subtype>
           <velocity>96</velocity>
-          <pos x="0.329141" y="8.95679"/>
+          <pos x="0.329141" y="10.9717"/>
           </Dynamic>
         <Beam id="40">
           <StemDirection>down</StemDirection>
@@ -8549,17 +8548,17 @@ gliss.</text>
         <Dynamic>
           <subtype>ff</subtype>
           <velocity>112</velocity>
-          <pos x="-2.91321" y="7.05117"/>
+          <pos x="-3.24235" y="8.66307"/>
           </Dynamic>
         <StaffText>
-          <pos x="-1.06025" y="4.05384"/>
+          <pos x="-1.06025" y="5.18217"/>
           <text><i>sempre pizz., 
 let ring</i></text>
           </StaffText>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
-          <StemDirection>up</StemDirection>
+          <StemDirection>down</StemDirection>
           <Note>
             <Accidental>
               <subtype>flat</subtype>
@@ -8639,13 +8638,13 @@ let ring</i></text>
           <text><sym>unicodeNoteQuarterUp</sym><sym>space</sym><sym>unicodeAugmentationDot</sym> = 104 Evolving from insane to sweet (poco a poco diminuendo)</text>
           </Tempo>
         <StaffText>
-          <pos x="-6.63969" y="7.54095"/>
+          <pos x="-7.52624" y="7.54095"/>
           <text>pizz.</text>
           </StaffText>
         <Dynamic>
           <subtype>pp</subtype>
           <velocity>33</velocity>
-          <pos x="-4.32419" y="7.16344"/>
+          <pos x="-5.21074" y="7.16344"/>
           </Dynamic>
         <HairPin id="117">
           <subtype>0</subtype>
@@ -8976,7 +8975,7 @@ let ring</i></text>
           <text><sym>dynamicForte</sym><sym>dynamicForte</sym></text>
           </Dynamic>
         <StaffText>
-          <pos x="2.27962" y="4.72769"/>
+          <pos x="1.95724" y="3.84114"/>
           <style>System</style>
           <text><i>arco</i></text>
           </StaffText>
@@ -9000,6 +8999,7 @@ let ring</i></text>
         <Dynamic>
           <subtype>f</subtype>
           <velocity>96</velocity>
+          <pos x="0.269735" y="6.57906"/>
           </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
@@ -9029,6 +9029,7 @@ let ring</i></text>
         <Dynamic>
           <subtype>mf</subtype>
           <velocity>80</velocity>
+          <pos x="0.658281" y="6.62988"/>
           </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
@@ -9078,6 +9079,7 @@ let ring</i></text>
         <Dynamic>
           <subtype>mp</subtype>
           <velocity>64</velocity>
+          <pos x="0.658281" y="6.54929"/>
           </Dynamic>
         <Chord>
           <BeamMode>no</BeamMode>
@@ -10472,7 +10474,7 @@ let ring</i></text>
         <Dynamic>
           <subtype>f</subtype>
           <velocity>96</velocity>
-          <pos x="0.329141" y="8.7"/>
+          <pos x="0.329141" y="9.3"/>
           </Dynamic>
         <Beam id="81">
           <StemDirection>down</StemDirection>
@@ -10844,6 +10846,11 @@ let ring</i></text>
         </Measure>
       <Measure number="36">
         <vspacerDown>12</vspacerDown>
+        <Dynamic>
+          <subtype>ff</subtype>
+          <velocity>112</velocity>
+          <pos x="-2.87734" y="7.77096"/>
+          </Dynamic>
         <Beam id="91">
           <StemDirection>up</StemDirection>
           </Beam>
@@ -12366,6 +12373,7 @@ let ring</i></text>
           </Rest>
         </Measure>
       <Measure number="74">
+        <vspacerDown>10</vspacerDown>
         <Dynamic>
           <subtype>p</subtype>
           <velocity>49</velocity>
@@ -12765,11 +12773,6 @@ let ring</i></text>
           </Chord>
         </Measure>
       <Measure number="80">
-        <Dynamic>
-          <subtype>f</subtype>
-          <velocity>96</velocity>
-          <pos x="0.505937" y="9"/>
-          </Dynamic>
         <Rest>
           <BeamMode>auto</BeamMode>
           <durationType>eighth</durationType>
@@ -13657,7 +13660,7 @@ let ring</i></text>
         <Dynamic>
           <subtype>f</subtype>
           <velocity>96</velocity>
-          <pos x="0.658281" y="9.24383"/>
+          <pos x="0.658281" y="9.44383"/>
           </Dynamic>
         <Beam id="111">
           <StemDirection>up</StemDirection>
@@ -17056,10 +17059,10 @@ let ring</i></text>
         <Dynamic>
           <subtype>pp</subtype>
           <velocity>33</velocity>
-          <pos x="-3.9267" y="8"/>
+          <pos x="-5.69979" y="8"/>
           </Dynamic>
         <StaffText>
-          <pos x="-6.05406" y="8.54488"/>
+          <pos x="-7.58537" y="8.30309"/>
           <text>pizz.</text>
           </StaffText>
         <HairPin id="239">
@@ -17364,6 +17367,7 @@ let ring</i></text>
         <Dynamic>
           <subtype>ff</subtype>
           <velocity>112</velocity>
+          <pos x="-2.65288" y="8"/>
           </Dynamic>
         <Beam id="153">
           <StemDirection>down</StemDirection>
@@ -20119,12 +20123,7 @@ let ring</i></text>
         <Dynamic>
           <subtype>ff</subtype>
           <velocity>112</velocity>
-          <pos x="0.155106" y="9.61994"/>
-          </Dynamic>
-        <Dynamic>
-          <subtype>ff</subtype>
-          <velocity>112</velocity>
-          <pos x="0.560345" y="-5.37392"/>
+          <pos x="-2.74632" y="7.92744"/>
           </Dynamic>
         <Beam id="185">
           <StemDirection>down</StemDirection>
@@ -23411,7 +23410,12 @@ let ring</i></text>
         <Dynamic>
           <subtype>f</subtype>
           <velocity>96</velocity>
-          <pos x="0.329141" y="9.5"/>
+          <pos x="0.329141" y="10.6"/>
+          </Dynamic>
+        <Dynamic>
+          <subtype>f</subtype>
+          <velocity>96</velocity>
+          <pos x="0.505937" y="-4.19405"/>
           </Dynamic>
         <Chord>
           <durationType>eighth</durationType>
@@ -28485,10 +28489,10 @@ let ring</i></text>
         <Dynamic>
           <subtype>pp</subtype>
           <velocity>33</velocity>
-          <pos x="-3.9267" y="8"/>
+          <pos x="-5.6192" y="8"/>
           </Dynamic>
         <StaffText>
-          <pos x="-6.05406" y="8.04292"/>
+          <pos x="-7.90775" y="8.04292"/>
           <text>pizz.</text>
           </StaffText>
         <HairPin id="326">
@@ -28796,6 +28800,7 @@ let ring</i></text>
         <Dynamic>
           <subtype>ff</subtype>
           <velocity>112</velocity>
+          <pos x="-2.72672" y="7.9194"/>
           </Dynamic>
         <Beam id="281">
           <StemDirection>up</StemDirection>
@@ -31213,7 +31218,7 @@ let ring</i></text>
         <Dynamic>
           <subtype>f</subtype>
           <velocity>96</velocity>
-          <pos x="0.658281" y="9.4"/>
+          <pos x="0.658281" y="9.7"/>
           </Dynamic>
         <Chord>
           <durationType>eighth</durationType>
@@ -31519,7 +31524,7 @@ let ring</i></text>
         <Dynamic>
           <subtype>ff</subtype>
           <velocity>112</velocity>
-          <pos x="0.329141" y="9.82358"/>
+          <pos x="-3.29764" y="7.8893"/>
           </Dynamic>
         <Beam id="307">
           <StemDirection>down</StemDirection>
@@ -34720,6 +34725,7 @@ let ring</i></text>
         <Dynamic>
           <subtype>f</subtype>
           <velocity>96</velocity>
+          <pos x="0.533281" y="8.48357"/>
           </Dynamic>
         <Rest>
           <BeamMode>auto</BeamMode>
@@ -39222,10 +39228,10 @@ let ring</i></text>
         <Dynamic>
           <subtype>pp</subtype>
           <velocity>33</velocity>
-          <pos x="-3.9267" y="8"/>
+          <pos x="-5.45801" y="8"/>
           </Dynamic>
         <StaffText>
-          <pos x="-5.9704" y="8.46122"/>
+          <pos x="-7.90468" y="8.46122"/>
           <text>pizz.</text>
           </StaffText>
         <HairPin id="427">
@@ -39543,6 +39549,7 @@ let ring</i></text>
         <Dynamic>
           <subtype>ff</subtype>
           <velocity>112</velocity>
+          <pos x="-2.89467" y="8"/>
           </Dynamic>
         <Beam id="411">
           <StemDirection>down</StemDirection>
@@ -40331,6 +40338,7 @@ let ring</i></text>
         <Dynamic>
           <subtype>mp</subtype>
           <velocity>64</velocity>
+          <pos x="0.505937" y="9.12833"/>
           </Dynamic>
         <Rest>
           <BeamMode>auto</BeamMode>
