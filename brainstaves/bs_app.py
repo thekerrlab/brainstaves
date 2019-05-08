@@ -5,11 +5,8 @@ Webserver that runs and refreshes Brainstaves. Some functions are deprecated.
 '''
 
 
-##################################
-# Housekeeping
-##################################
-
 def makeapp():
+    ''' Make the Sciris app and define the RPCs '''
 
     # Imports
     print('Importing modules...')
@@ -26,6 +23,7 @@ def makeapp():
     else:               port = 8185
     app = sw.ScirisApp(__name__, name="Brainstaves", server_port=port) # Set to a nonstandard port to avoid collisions
     app.data = None # Initialize the results
+
 
     ##################################
     # Define the RPCs
@@ -49,11 +47,19 @@ def makeapp():
     return app
 
 
+
+def run():
+    ''' Actually run the app!!! '''
+    app = makeapp()
+    app.run()
+    return None
+
+
+
 # Run the server
 if __name__ == "__main__":
     try: # WARNING -- this try-catch doesn't work
-        app = makeapp()
-        app.run()
+        run()
     except Exception as E:
         print('Shutting down server and removing status file and live files...')
         sc.runcommand('rm %s live/live-*.png' % statusfile) # rm status.tmp live/live-*.png

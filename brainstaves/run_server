@@ -2,9 +2,8 @@
 # Actually run the Brainstaves server!!!
 #
 # Note: to run on Athena, use:
-#   nohup python brainstaves.py > brainstaves.out &
+#   nohup python bs_app.py > brainstaves.out &
 #
 # Version: 2019may08
 
-cd app/
-sudo python brainstaves.py 80
+sudo python bs_app.py 80 # Need sudo to run on port 80

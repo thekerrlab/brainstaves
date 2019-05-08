@@ -1,2 +1,0 @@
-#!/bin/bash
-nohup python brainstaves.py > brainstaves.out &

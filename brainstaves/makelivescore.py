@@ -19,8 +19,8 @@ def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=N
     if makepdf is None: makepdf = True  # Generate PDF file from MuseScore
     if usedata is None: usedata = False # Use headset data
     
-    statusfile = 'app/status.tmp' # WARNING, replace with status.obj
-#    statusfile = 'app/livedata.obj'
+    statusfile = 'status.tmp' # WARNING, replace with status.obj
+#    statusfile = 'live/livedata.obj'
     npages = 13
     midioffset = 24
 
