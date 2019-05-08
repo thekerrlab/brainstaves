@@ -1,0 +1,1 @@
+This folder is used to store live versions of the score. Running makelivescore.py creates `live/live.mscx` from `score/brainstaves-A.mscx`, and then creates PNG files or a PDF from it.
