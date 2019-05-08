@@ -7665,11 +7665,12 @@ the strings, and then bow the air for a bit</text>
       <Measure number="125">
         <stretch>0.7</stretch>
         <RehearsalMark>
+          <pos x="-2.06519" y="-4.6897"/>
           <placement>above</placement>
           <text><font size="14.284"></font><font face="Times New Roman"></font><b>G</b></text>
           </RehearsalMark>
         <StaffText>
-          <pos x="2.84446" y="-4.36257"/>
+          <pos x="1.62412" y="-5.20742"/>
           <style>Tempo</style>
           <text>Still lyrical, but with the wide-eyed wonder of having just discovered the top of your head</text>
           </StaffText>
@@ -26226,7 +26227,7 @@ gliss.</text>
         <Dynamic>
           <subtype>p</subtype>
           <velocity>49</velocity>
-          <pos x="0.329141" y="5.75645"/>
+          <pos x="-3.33188" y="6.6013"/>
           </Dynamic>
         <Beam id="251">
           <StemDirection>down</StemDirection>
@@ -37137,10 +37138,10 @@ the strings, and then bow the air for a bit</text>
         <Dynamic>
           <subtype>f</subtype>
           <velocity>96</velocity>
-          <pos x="0.343292" y="8.61677"/>
+          <pos x="-2.66062" y="9.64937"/>
           </Dynamic>
         <StaffText>
-          <pos x="1.79398" y="5.59074"/>
+          <pos x="-1.77317" y="7.65593"/>
           <text> pizz., gliss., articulate each note</text>
           </StaffText>
         <Beam id="397">

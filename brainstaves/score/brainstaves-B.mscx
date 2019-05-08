@@ -7746,8 +7746,9 @@ there is a crazy arpeggiato</text>
           <durationType>eighth</durationType>
           </Rest>
         <StaffText>
-          <pos x="-9.81319" y="6.18506"/>
-          <text> pizz., gliss.</text>
+          <pos x="-9.04346" y="4.49402"/>
+          <text> pizz., 
+gliss.</text>
           </StaffText>
         <Chord>
           <durationType>eighth</durationType>
@@ -15773,6 +15774,7 @@ there is a crazy arpeggiato</text>
           </Chord>
         </Measure>
       <Measure number="129">
+        <vspacerDown>10</vspacerDown>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>half</durationType>
@@ -15877,6 +15879,7 @@ there is a crazy arpeggiato</text>
           </Chord>
         </Measure>
       <Measure number="133">
+        <vspacerDown>10</vspacerDown>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>whole</durationType>
@@ -26625,10 +26628,11 @@ gliss.</text>
           </Chord>
         </Measure>
       <Measure number="125">
+        <vspacerDown>10</vspacerDown>
         <Dynamic>
           <subtype>p</subtype>
           <velocity>49</velocity>
-          <pos x="0.329141" y="5.75645"/>
+          <pos x="-3.42873" y="6.13224"/>
           </Dynamic>
         <Beam id="243">
           <StemDirection>down</StemDirection>
@@ -26994,6 +26998,7 @@ gliss.</text>
           </Chord>
         </Measure>
       <Measure number="129">
+        <vspacerDown>10</vspacerDown>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
@@ -27334,6 +27339,7 @@ gliss.</text>
           </Chord>
         </Measure>
       <Measure number="133">
+        <vspacerDown>10</vspacerDown>
         <Beam id="257">
           <StemDirection>down</StemDirection>
           </Beam>
@@ -27631,17 +27637,17 @@ gliss.</text>
         </Measure>
       <Measure number="136">
         <vspacerDown>12</vspacerDown>
+        <Dynamic>
+          <subtype>f</subtype>
+          <velocity>96</velocity>
+          <pos x="-3.98023" y="7.45903"/>
+          </Dynamic>
         <Rest>
           <BeamMode>auto</BeamMode>
           <durationType>quarter</durationType>
           </Rest>
-        <Dynamic>
-          <subtype>f</subtype>
-          <velocity>96</velocity>
-          <pos x="0.658281" y="7.43556"/>
-          </Dynamic>
         <StaffText>
-          <pos x="1.36342" y="5.37547"/>
+          <pos x="-14.9833" y="4.71784"/>
           <text> pizz., gliss.</text>
           </StaffText>
         <Beam id="264">
@@ -37627,10 +37633,10 @@ there is a crazy arpeggiato</text>
         <Dynamic>
           <subtype>f</subtype>
           <velocity>96</velocity>
-          <pos x="0.658281" y="7.43556"/>
+          <pos x="-2.9117" y="8.93871"/>
           </Dynamic>
         <StaffText>
-          <pos x="1.79398" y="5.59074"/>
+          <pos x="-1.9639" y="6.81205"/>
           <text> pizz., gliss., articulate each note</text>
           </StaffText>
         <Beam id="389">
