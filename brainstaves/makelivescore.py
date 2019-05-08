@@ -8,10 +8,21 @@ import os
 import sciris as sc
 import brainstaves as bs
 
-def makelivescore():
-
+def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=None):
+    
     sc.tic()
     
+    if version is None: version = 'A'
+    if wait    is None: wait    = False # Whether or not to pause between generating sections
+    if makepng is None: makepng = True
+    if makepdf is None: makepdf = True
+    if usedata is None: usedata = False
+    
+    statusfile = 'status.tmp' # WARNING, replace with status.obj
+#    statusfile = 'live/livedata.obj'
+    npages = 13
+    midioffset = 24
+
     torun = [
     'load',
     'sectionA',
@@ -24,11 +35,6 @@ def makelivescore():
     'sectionH',
     'write',
     ]
-    
-    version = 'A'
-    wait = False # Whether or not to pause between generating sections
-    makepng = False
-    makepdf = True
     
     pauses = sc.odict([
             ('A',20), # 0:20
@@ -44,11 +50,6 @@ def makelivescore():
     infiles = {'A':'score/brainstaves-A.mscx',
                'B':'score/brainstaves-B.mscx',
               }
-    
-    statusfile = 'status.tmp' # WARNING, replace with status.obj
-    npages = 13
-    midioffset = 24
-    usedata = False
     
     #%% Function definitions
     
