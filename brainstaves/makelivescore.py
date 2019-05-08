@@ -153,6 +153,14 @@ def process(sec):
     return None
     
 
+def getstart(inst, default=None):
+    if inst.scorepts:
+        startval = instruments.char2num(inst.score[-1])
+    else:
+        startval = default
+    return startval
+    
+
 #%% Main body
     
 writestatus('n/a') # Reset status
@@ -184,7 +192,7 @@ if 'sectionB' in torun:
         nd[sec][part] = xml.loadnotes(part=part, measurerange=ss)
         for repeat in repeats(ss):
             inst.seed += 1
-            startval = inst.score[-1] if inst.scorepts else 'min'
+            startval = getstart(inst, 'min')
             inst.brownian(maxstep=2, startval=startval, skipstart=True, inst=part, usedata=usedata)
             if version == 'A': inst.noteify('atonal')
             if version == 'B': inst.noteify('blues')
@@ -207,10 +215,9 @@ if 'sectionC' in torun:
             
             for repeat in repeats(ss):
                 inst.seed += 1
-                if inst.scorepts:  startval = inst.score[-1]
-                elif part == 'v1': startval = 'max'
-                elif part == 'vc': startval = 'min'
-                else:              startval = None
+                if   part == 'v1': startval = getstart(inst, 'max')
+                elif part == 'vc': startval = getstart(inst, 'min')
+                else:              startval = getstart(inst)
                 inst.brownian(maxstep=3, startval=startval, skipstart=True, inst=part, usedata=usedata)
                 if version == 'A': inst.noteify('octo')
                 if version == 'B': inst.noteify('blues')
@@ -235,7 +242,7 @@ if 'sectionD' in torun:
         nd[sec][part] = xml.loadnotes(part=part, measurerange=ss)
         for repeat in repeats(ss):
             inst.seed += 1
-            if inst.scorepts:  startval = inst.score[-1]
+            startval = getstart(inst)
             inst.brownian(maxstep=5, startval=startval, skipstart=True, inst=part, usedata=usedata)
             if version == 'A': inst.noteify('atonal', breakties=True)
             if version == 'B': inst.noteify('blues', breakties=True)
@@ -391,7 +398,7 @@ if 'sectionF' in torun:
             nd[sec][part] = xml.loadnotes(part=part, measurerange=ss)
             for repeat in repeats(ss):
                 inst.seed += 1
-                if inst.scorepts: startval = inst.score[-1]
+                startval = getstart(inst, startval)
                 inst.brownian(maxstep=3, startval=startval, skipstart=True, inst=part, usedata=usedata)
                 if version == 'A': inst.noteify('atonal', breakties=True)
                 if version == 'B': inst.noteify('blues', breakties=True)
@@ -412,7 +419,7 @@ if 'sectionF' in torun:
             nd[sec][part] = xml.loadnotes(part=part, measurerange=ss)
             for repeat in repeats(ss):
                 inst.seed += 1
-                if inst.scorepts: startval = inst.score[-1]
+                startval = getstart(inst, startval)
                 inst.brownian(maxstep=3, startval=startval, skipstart=True, inst=part, usedata=usedata)
                 if version == 'A': inst.noteify('atonal') # WARNING, not used
                 if version == 'B': inst.noteify('blues')
@@ -436,7 +443,7 @@ if 'sectionG' in torun:
         nd[sec][part] = xml.loadnotes(part=part, measurerange=ss)
         for repeat in repeats(ss):
             inst.seed += 1
-            if inst.scorepts: startval = inst.score[-1]
+            startval = getstart(inst, startval)
             inst.brownian(maxstep=5, startval=startval, skipstart=True, inst=part, usedata=usedata)
             if version == 'A': inst.noteify('atonal', breakties=True)
             if version == 'B': inst.noteify('blues', breakties=True)
@@ -456,7 +463,7 @@ if 'sectionG' in torun:
                 nd[sec][part] = xml.loadnotes(part=part, measurerange=ss)
                 for repeat in repeats(ss):
                     inst.seed += 1
-                    if inst.scorepts: startval = inst.score[-1]
+                    startval = getstart(inst, startval)
                     inst.brownian(maxstep=3, startval=startval, skipstart=True, inst=part, usedata=usedata)
                     if version == 'A': inst.noteify('atonal') # WARNING, not used
                     if version == 'B': inst.noteify('blues')
@@ -478,9 +485,8 @@ if 'sectionH' in torun:
         nd[sec][part] = xml.loadnotes(part=part, measurerange=ss)
         for repeat in repeats(ss):
             inst.seed += 1
-            if inst.scorepts:         startval = inst.score[-1]
-            elif part in ['v1','v2']: startval = 'max'
-            elif part in ['va','vc']: startval = 'min'
+            elif part in ['v1','v2']: startval = getstart(inst, 'max')
+            elif part in ['va','vc']: startval = getstart(inst, 'min')
             inst.brownian(maxstep=2, startval=startval, skipstart=True, inst=part, usedata=usedata)
             if version == 'A': inst.noteify(['dia','octo']) # Or inst.noteify('acoustic')
             if version == 'B': inst.noteify('blues')
