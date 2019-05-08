@@ -38,8 +38,8 @@ for i in range(maxcount):
    reading = []
    for attr in attrs:
        reading.append(str(getattr(mw, attr)))
-   with open(filename,'a') as f:
-       f.write(', '.join(reading) + '\n')
+   # with open(filename,'a') as f:
+   #     f.write(', '.join(reading) + '\n')
    count = '%i/%i: ' % (i+1,maxcount)
    print(count),
    print(reading)
