@@ -1,4 +1,6 @@
 '''
+Class for reading and writing the uncompressed MuseScore .mscx XML files.
+
 Structure:
     
     data
@@ -9,20 +11,23 @@ Structure:
             tpc
             accidental (may be missing)
             tie (may be missing)
+
+Version: 2019may08
 '''
 
 import sciris as sc
 
+correctversion = 'MuseScore2 2.1.0'
+
 try:
-    correctversion = 'MuseScore2 2.1.0'
     mscoreversion = sc.runcommand('mscore --version').lstrip().rstrip()
     assert mscoreversion == correctversion
 except Exception as E:
-    errormsg = 'WARNING: incorrect version of MuseScore, proceed at your own risk! (%s vs. %s; %s)' % (correctversion, mscoreversion, str(E))
+    errormsg = 'WARNING: could not run MuseScore or incorrect version, proceed at your own risk! (%s vs. %s; %s)' % (correctversion, mscoreversion, str(E))
     raise Exception(errormsg)
 
 
-def comment(line):
+def commentline(line):
     output = '<!-- ' + line[:-1] + ' -->\n'
     return output
 
@@ -94,7 +99,7 @@ class XML(sc.prettyobj):
                     l = orignote.accidental.n+count
                     if '</accidental>' in lines[l].lower():
                         insideblock = False
-                    lines[l] = comment(lines[l])
+                    lines[l] = commentline(lines[l])
             for attr in ['pitch', 'tpc']:
                 val = newnote[attr]
                 lineno = orignote[attr].n
@@ -110,7 +115,7 @@ class XML(sc.prettyobj):
                 print('Adding timestamp to line %s' % l)
                 lines[l] = '<metaTag name="copyright">Last generated: %s</metaTag>' % sc.getdate()
             elif 'stemdirection' in line.lower():
-                lines[l] = comment(lines[l])
+                lines[l] = commentline(lines[l])
                 
         print('Writing %s notes, %s lines, removing %s accidentals' % (len(data), len(lines), accisremoved))
         output = ''.join(lines)
