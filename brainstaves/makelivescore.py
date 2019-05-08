@@ -24,7 +24,7 @@ torun = [
 'write',
 ]
 
-version = 'B'
+version = 'A'
 wait = False # Whether or not to pause between generating sections
 makepng = False
 makepdf = True
