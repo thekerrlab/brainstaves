@@ -56,7 +56,8 @@ def writestatus(sec):
         f.write(sec)
     return None
 
-def xmlnote(orignote, num):
+
+def xmlnote(orignote, string):
     mapping = {'c$': 7,
                 'cn': 14,
                 'c#': 21,
@@ -79,7 +80,7 @@ def xmlnote(orignote, num):
                 'bn': 19,
                 'b#': 26,}
     out = sc.objdict()
-    string = instruments.num2char(num)
+    num = instruments.char2num(string)
     out['pname'] = orignote.part
     out['mname'] = orignote.mname
     out['nname'] = orignote.nname
@@ -366,7 +367,13 @@ if 'sectionE' in torun:
             elif key.startswith('double'): # Add a 6th higher
                 if unisonsec: interval = 9 # 7
                 else:         interval = 9
-                nmnotes[key] = nmnotes[val] + interval
+                origchar = nmnotes[val]
+                orignum = instruments.char2num(origchar)
+                newnum = orignum + interval
+                newchar = instruments.num2char(newnum)
+                if version == 'A': newchar = instruments.char2octo(newchar) # WARNING, should match noteify() calls above!
+                if version == 'B': newchar = instruments.char2blues(newchar)
+                nmnotes[key] = newchar
             elif key.startswith('tied'):
                 nmnotes[key] = nmnotes[val] # e.g. nmnotes['tied0_root_m98_n5'] = nmnotes['root_m98_n5'] = 36
             else:
@@ -485,7 +492,7 @@ if 'sectionH' in torun:
         nd[sec][part] = xml.loadnotes(part=part, measurerange=ss)
         for repeat in repeats(ss):
             inst.seed += 1
-            elif part in ['v1','v2']: startval = getstart(inst, 'max')
+            if   part in ['v1','v2']: startval = getstart(inst, 'max')
             elif part in ['va','vc']: startval = getstart(inst, 'min')
             inst.brownian(maxstep=2, startval=startval, skipstart=True, inst=part, usedata=usedata)
             if version == 'A': inst.noteify(['dia','octo']) # Or inst.noteify('acoustic')
