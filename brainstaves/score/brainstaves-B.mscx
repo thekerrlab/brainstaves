@@ -6193,6 +6193,7 @@ there is a crazy arpeggiato</text>
         </Measure>
       <Measure number="108">
         <stretch>0.7</stretch>
+        <vspacerDown>9</vspacerDown>
         <Rest>
           <BeamMode>auto</BeamMode>
           <durationType>16th</durationType>
@@ -6625,6 +6626,7 @@ there is a crazy arpeggiato</text>
         </Measure>
       <Measure number="114">
         <stretch>0.7</stretch>
+        <vspacerDown>9</vspacerDown>
         <Beam id="46">
           <StemDirection>down</StemDirection>
           </Beam>
@@ -14043,6 +14045,7 @@ there is a crazy arpeggiato</text>
           </Rest>
         </Measure>
       <Measure number="106">
+        <vspacerDown>9</vspacerDown>
         <Dynamic>
           <subtype>pp</subtype>
           <velocity>33</velocity>
@@ -14221,6 +14224,7 @@ there is a crazy arpeggiato</text>
           </Rest>
         </Measure>
       <Measure number="108">
+        <vspacerDown>9</vspacerDown>
         <Chord>
           <durationType>16th</durationType>
           <StemDirection>up</StemDirection>
@@ -14547,6 +14551,7 @@ there is a crazy arpeggiato</text>
           </Chord>
         </Measure>
       <Measure number="111">
+        <vspacerDown>9</vspacerDown>
         <Rest>
           <BeamMode>auto</BeamMode>
           <durationType>16th</durationType>
@@ -14881,6 +14886,7 @@ there is a crazy arpeggiato</text>
           </Rest>
         </Measure>
       <Measure number="114">
+        <vspacerDown>9</vspacerDown>
         <Chord>
           <durationType>16th</durationType>
           <StemDirection>up</StemDirection>
@@ -24729,6 +24735,7 @@ gliss.</text>
           </Rest>
         </Measure>
       <Measure number="106">
+        <vspacerDown>9</vspacerDown>
         <Dynamic>
           <subtype>pp</subtype>
           <velocity>33</velocity>
@@ -24933,6 +24940,7 @@ gliss.</text>
           </Rest>
         </Measure>
       <Measure number="108">
+        <vspacerDown>9</vspacerDown>
         <Rest>
           <BeamMode>auto</BeamMode>
           <durationType>16th</durationType>
@@ -25275,6 +25283,7 @@ gliss.</text>
           </Chord>
         </Measure>
       <Measure number="111">
+        <vspacerDown>9</vspacerDown>
         <Chord>
           <durationType>16th</durationType>
           <StemDirection>up</StemDirection>
@@ -25585,6 +25594,7 @@ gliss.</text>
           </Rest>
         </Measure>
       <Measure number="114">
+        <vspacerDown>9</vspacerDown>
         <Rest>
           <BeamMode>auto</BeamMode>
           <durationType>quarter</durationType>

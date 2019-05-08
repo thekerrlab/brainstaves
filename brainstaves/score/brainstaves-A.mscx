@@ -6577,6 +6577,7 @@ the strings, and then bow the air for a bit</text>
         </Measure>
       <Measure number="111">
         <stretch>0.6</stretch>
+        <vspacerDown>9</vspacerDown>
         <Dynamic>
           <subtype>mf</subtype>
           <velocity>80</velocity>
@@ -6824,6 +6825,7 @@ the strings, and then bow the air for a bit</text>
         </Measure>
       <Measure number="114">
         <stretch>0.7</stretch>
+        <vspacerDown>9</vspacerDown>
         <Beam id="49">
           <StemDirection>down</StemDirection>
           </Beam>
@@ -14620,6 +14622,7 @@ gliss.</text>
           </Chord>
         </Measure>
       <Measure number="111">
+        <vspacerDown>9</vspacerDown>
         <Rest>
           <BeamMode>auto</BeamMode>
           <durationType>16th</durationType>
@@ -14945,6 +14948,7 @@ gliss.</text>
           </Rest>
         </Measure>
       <Measure number="114">
+        <vspacerDown>9</vspacerDown>
         <Chord>
           <durationType>16th</durationType>
           <StemDirection>up</StemDirection>
@@ -25034,6 +25038,7 @@ gliss.</text>
           </Rest>
         </Measure>
       <Measure number="111">
+        <vspacerDown>9</vspacerDown>
         <Chord>
           <durationType>16th</durationType>
           <StemDirection>up</StemDirection>
@@ -25286,6 +25291,7 @@ gliss.</text>
           </Rest>
         </Measure>
       <Measure number="114">
+        <vspacerDown>9</vspacerDown>
         <Rest>
           <BeamMode>auto</BeamMode>
           <durationType>quarter</durationType>
