@@ -148,17 +148,19 @@ def process(sec):
             print('WARNING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
             print('The number of files is not correct!! %s vs %s' % (nfiles, npages))
         else:
-            print('Done and all tests passed!')
+            print('Done and all tests passed! (i.e. correct number of files)')
     if wait:
         sc.fixedpause(pauses[sec], verbose=True)
     return None
     
 
-def getstart(inst, default=None):
+def getstart(inst, default=None, verbose=False):
     if inst.scorepts:
         startval = instruments.char2num(inst.score[-1])
     else:
         startval = default
+    if verbose:
+        print('For %s, seed=%s, scorepts=%s, using startval = %s' % (inst.name, inst.seed, inst.scorepts, startval))
     return startval
     
 
@@ -194,7 +196,7 @@ if 'sectionB' in torun:
         for repeat in repeats(ss):
             inst.seed += 1
             startval = getstart(inst, 'min')
-            inst.brownian(maxstep=2, startval=startval, skipstart=True, inst=part, usedata=usedata)
+            inst.brownian(maxstep=2, startval=startval, skipstart=True, usedata=usedata)
             if version == 'A': inst.noteify('atonal')
             if version == 'B': inst.noteify('blues')
             inst.seed += 1
@@ -219,7 +221,7 @@ if 'sectionC' in torun:
                 if   part == 'v1': startval = getstart(inst, 'max')
                 elif part == 'vc': startval = getstart(inst, 'min')
                 else:              startval = getstart(inst)
-                inst.brownian(maxstep=3, startval=startval, skipstart=True, inst=part, usedata=usedata)
+                inst.brownian(maxstep=3, startval=startval, skipstart=True, usedata=usedata)
                 if version == 'A': inst.noteify('octo')
                 if version == 'B': inst.noteify('blues')
                 inst.seed += 1
@@ -244,7 +246,7 @@ if 'sectionD' in torun:
         for repeat in repeats(ss):
             inst.seed += 1
             startval = getstart(inst)
-            inst.brownian(maxstep=5, startval=startval, skipstart=True, inst=part, usedata=usedata)
+            inst.brownian(maxstep=5, startval=startval, skipstart=True, usedata=usedata)
             if version == 'A': inst.noteify('atonal', breakties=True)
             if version == 'B': inst.noteify('blues', breakties=True)
             inst.seed += 1
@@ -339,13 +341,13 @@ if 'sectionE' in torun:
         nd[sec][part] = xml.loadnotes(part=part, measurerange=ss)
         assert len(nd[sec][part]) == len(nm[part])
         
-        inst.brownian(maxstep=5, startval=startvals1[part], forcestep=True, skipstart=True, npts=3)
+        inst.brownian(maxstep=5, startval=startvals1[part], forcestep=True, skipstart=True, npts=3, usedata=usedata)
         if version == 'A': inst.noteify('atonal')
         if version == 'B': inst.noteify('blues')
         inst.seed += 1
         inst.cat()
         
-        inst.brownian(maxstep=3, startval=startvals2[part], forcestep=True, skipstart=True, npts=25)
+        inst.brownian(maxstep=3, startval=startvals2[part], forcestep=True, skipstart=True, npts=25, usedata=usedata)
         if version == 'A': inst.noteify('octo')
         if version == 'B': inst.noteify('blues')
         inst.seed += 1
@@ -404,7 +406,7 @@ if 'sectionF' in torun:
             for repeat in repeats(ss):
                 inst.seed += 1
                 startval = getstart(inst, startval)
-                inst.brownian(maxstep=3, startval=startval, skipstart=True, inst=part, usedata=usedata)
+                inst.brownian(maxstep=3, startval=startval, skipstart=True, usedata=usedata)
                 if version == 'A': inst.noteify('atonal', breakties=True)
                 if version == 'B': inst.noteify('blues', breakties=True)
                 inst.seed += 1
@@ -425,7 +427,7 @@ if 'sectionF' in torun:
             for repeat in repeats(ss):
                 inst.seed += 1
                 startval = getstart(inst, startval)
-                inst.brownian(maxstep=3, startval=startval, skipstart=True, inst=part, usedata=usedata)
+                inst.brownian(maxstep=3, startval=startval, skipstart=True, usedata=usedata)
                 if version == 'A': inst.noteify('atonal') # WARNING, not used
                 if version == 'B': inst.noteify('blues')
                 inst.seed += 1
@@ -449,7 +451,7 @@ if 'sectionG' in torun:
         for repeat in repeats(ss):
             inst.seed += 1
             startval = getstart(inst, startval)
-            inst.brownian(maxstep=5, startval=startval, skipstart=True, inst=part, usedata=usedata)
+            inst.brownian(maxstep=5, startval=startval, skipstart=True, usedata=usedata)
             if version == 'A': inst.noteify('atonal', breakties=True)
             if version == 'B': inst.noteify('blues', breakties=True)
             inst.seed += 1
@@ -469,7 +471,7 @@ if 'sectionG' in torun:
                 for repeat in repeats(ss):
                     inst.seed += 1
                     startval = getstart(inst, startval)
-                    inst.brownian(maxstep=3, startval=startval, skipstart=True, inst=part, usedata=usedata)
+                    inst.brownian(maxstep=3, startval=startval, skipstart=True, usedata=usedata)
                     if version == 'A': inst.noteify('atonal') # WARNING, not used
                     if version == 'B': inst.noteify('blues')
                     inst.seed += 1
@@ -492,8 +494,8 @@ if 'sectionH' in torun:
             inst.seed += 1
             if   part in ['v1','v2']: startval = getstart(inst, 'max')
             elif part in ['va','vc']: startval = getstart(inst, 'min')
-            inst.brownian(maxstep=2, startval=startval, skipstart=True, inst=part, usedata=usedata)
-            if version == 'A': inst.noteify(['dia','octo']) # Or inst.noteify('acoustic')
+            inst.brownian(maxstep=2, startval=startval, skipstart=True, usedata=usedata)
+            if version == 'A': inst.noteify('acoustic') # Or inst.noteify('acoustic') # inst.noteify(['dia','octo'])
             if version == 'B': inst.noteify('blues')
             inst.seed += 1
             inst.cat()

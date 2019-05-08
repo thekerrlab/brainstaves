@@ -211,10 +211,9 @@ class Section(sc.prettyobj):
             self.arr[n] = np.random.randint(low=minval, high=maxval)
         return None
     
-    def brownian(self, startval=None, maxstep=None, seed=None, forcestep=True, skipstart=True, verbose=False, inst=None, usedata=True, npts=None):
+    def brownian(self, startval=None, maxstep=None, seed=None, forcestep=True, skipstart=True, verbose=False, usedata=True, npts=None):
         if not skipstart:
             raise Exception('Sorry, not skipstart is not working!')
-        self.resetseed(seed)
         if maxstep is None: maxstep = 1
         minval,maxval = self.minmax()
         if   startval is None:  startval = (minval+maxval)//2
@@ -225,9 +224,11 @@ class Section(sc.prettyobj):
         
         if npts is not None: # Manually reset npts
             self.refresh(npts=npts, resetscore=False)
+        else:
+            self.notearr = [] # WARNING, could do this more elegantly!
             
         npts = self.npts-1+skipstart
-        data = getnumbers(inst, 2*npts, usedata)
+        data = getnumbers(self.name, 2*npts, usedata, seed)
         for n in range(npts): # If not skipping the start, 1 less point
             if n==0: current = abs(startval)
             else:    current = abs(self.arr[n-1])
@@ -267,7 +268,7 @@ class Section(sc.prettyobj):
         self.arr[addrests] = -self.arr[addrests] # Set to negative to keep pitch information
         return None
     
-    def noteify(self, tonality=None, breakties=False, verbose=True):
+    def noteify(self, tonality=None, breakties=False, verbose=False):
         if tonality is None: tonality = 'atonal'
         tonalities = sc.promotetolist(tonality)
         mapping = {'atonal': lambda note: note, # Just the identity function
@@ -288,18 +289,22 @@ class Section(sc.prettyobj):
             
             if len(self.notearr) and breakties: # Only start this if it's not the first note, and we're breaking ties
                 lastnote = self.notearr[-1]
+                tiecount = 0
                 while note == lastnote: # There is a tie to be broken
+                    tiecount += 1
                     thisnote += 1 # Just increment upwards
                     note = mapnote(thisnote)
-                    if verbose: print('Breaking tie (%s -> %s, %s -> %s)' % (thisnote-1, thisnote, note, lastnote))
+                    if verbose: print('Breaking tie (try %s): (%s -> %s, %s -> %s)' % (tiecount, thisnote-1, thisnote, note, lastnote))
             self.notearr.append(note)
         
         return None
     
 
-def getnumbers(inst, npts, usedata, window=10):
+def getnumbers(inst, npts, usedata, seed=None, window=10):
+    if seed:
+        inst.resetseed(seed)
     if inst is None or not usedata:
-        if usedata: print('Not using EEG')
+        if usedata: print('Not using EEG because inst is None')
         return np.random.randn(npts)
     infile = 'live/data-'+inst+'.csv'
     string = open(infile).read()

@@ -38629,10 +38629,10 @@ the strings, and then bow the air for a bit</text>
         <Dynamic>
           <subtype>p</subtype>
           <velocity>49</velocity>
-          <pos x="0.658282" y="6.36287"/>
+          <pos x="0.329141" y="7.62792"/>
           </Dynamic>
         <StaffText>
-          <pos x="2.35519" y="4.20027"/>
+          <pos x="2.35519" y="5.19424"/>
           <text><i>sempre pizz.</i></text>
           </StaffText>
         <StaffText>
@@ -38642,7 +38642,7 @@ the strings, and then bow the air for a bit</text>
         <Chord>
           <BeamMode>no</BeamMode>
           <durationType>eighth</durationType>
-          <StemDirection>up</StemDirection>
+          <StemDirection>down</StemDirection>
           <Note>
             <pitch>48</pitch>
             <tpc>14</tpc>

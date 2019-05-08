@@ -5201,7 +5201,7 @@
           <pos x="-3.24253" y="8"/>
           </Dynamic>
         <StaffText>
-          <pos x="-1.99706" y="-8.45265"/>
+          <pos x="-1.99706" y="-9.24338"/>
           <text>Legatissimo</text>
           </StaffText>
         <HairPin id="66">
@@ -5383,7 +5383,7 @@
             <Symbol>
               <name>stringsDownBow</name>
               <font>Bravura</font>
-              <pos x="0.230356" y="-2.01373"/>
+              <pos x="0.230356" y="-3.51613"/>
               </Symbol>
             <pitch>81</pitch>
             <tpc>17</tpc>
@@ -13468,7 +13468,7 @@ let ring</i></text>
             <Symbol>
               <name>stringsDownBow</name>
               <font>Bravura</font>
-              <pos x="0.388503" y="-5.01298"/>
+              <pos x="0.388503" y="-4.14318"/>
               </Symbol>
             <pitch>63</pitch>
             <tpc>11</tpc>
@@ -13496,7 +13496,7 @@ let ring</i></text>
             <Symbol>
               <name>stringsUpBow</name>
               <font>Bravura</font>
-              <pos x="-0.0605896" y="-4.29869"/>
+              <pos x="-0.0605896" y="-3.82425"/>
               </Symbol>
             <Tie id="197">
               </Tie>
@@ -21345,6 +21345,7 @@ let ring</i></text>
         <Dynamic>
           <subtype>ff</subtype>
           <velocity>112</velocity>
+          <pos x="0.658281" y="8.5"/>
           </Dynamic>
         <Beam id="213">
           <StemDirection>up</StemDirection>
@@ -32714,7 +32715,7 @@ let ring</i></text>
         <Dynamic>
           <subtype>ff</subtype>
           <velocity>112</velocity>
-          <pos x="0.658281" y="8.88655"/>
+          <pos x="0.658281" y="9.88655"/>
           </Dynamic>
         <Beam id="335">
           <StemDirection>up</StemDirection>
@@ -34948,7 +34949,7 @@ let ring</i></text>
           <Segment>
             <subtype>0</subtype>
             <off2 x="-9.30189" y="0"/>
-            <pos x="51.1816" y="8.44007"/>
+            <pos x="51.5769" y="8.44007"/>
             </Segment>
           <beginText>
             <text>cresc.</text>
@@ -35264,7 +35265,7 @@ let ring</i></text>
             <Symbol>
               <name>stringsDownBow</name>
               <font>Bravura</font>
-              <pos x="0.230356" y="-2.2304"/>
+              <pos x="0.0722091" y="-3.1002"/>
               </Symbol>
             <Tie id="380">
               </Tie>
@@ -39246,7 +39247,7 @@ let ring</i></text>
           <Segment>
             <subtype>0</subtype>
             <off2 x="74.4155" y="0"/>
-            <pos x="12.9479" y="7.86523"/>
+            <pos x="12.9479" y="8.18152"/>
             </Segment>
           <beginText>
             <text>cresc.</text>
