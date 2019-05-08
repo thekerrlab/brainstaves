@@ -26053,8 +26053,12 @@ gliss.</text>
         <Dynamic>
           <subtype>p</subtype>
           <velocity>49</velocity>
-          <pos x="0.329141" y="5.92903"/>
+          <pos x="0.329141" y="6.41677"/>
           </Dynamic>
+        <StaffText>
+          <pos x="2.62842" y="3.97914"/>
+          <text><i>dolce e lirico</i></text>
+          </StaffText>
         <Chord>
           <BeamMode>no</BeamMode>
           <dots>1</dots>
