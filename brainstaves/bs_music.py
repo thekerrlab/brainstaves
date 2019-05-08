@@ -139,13 +139,35 @@ def char2blues(val):
     else:               raise Exception('Note %s not found in blues scale!' % note)
     return output
 
-def hertz(val):
-    val = char2num(val)
-    a0 = 27.5 # Pitch of the lowest note on the piano
-    hz = a0 * 2**(val/12.)
-    return hz
 
-class Section(sc.prettyobj):
+def getnumbers(inst, npts, usedata, seed=None, window=10):
+    if seed:
+        inst.resetseed(seed)
+    if inst is None or not usedata:
+        if usedata: print('Not using EEG because inst is None')
+        return np.random.randn(npts)
+    infile = 'live/data-'+inst+'.csv'
+    string = open(infile).read()
+    numbers = re.sub("[^0-9]", "", string)
+    rev = numbers[::-1]
+    try:
+        rev = rev[:npts*window]
+        raw = [float(r)/10. for r in rev] # Will be uniform
+        data = np.zeros(npts)
+        for pt in range(npts):
+            thesum = sum(raw[pt*window:(pt+1)*window])
+            if thesum == 0:
+                print('Warning, sum was 0')
+                data[pt] = np.random.randn() # Give up
+            else:
+                data[pt] = thesum-window/2.
+    except Exception as E:
+        print('Problem: %s' % str(E))
+        data = np.random.rand(npts)
+    return data
+
+
+class Instrument(sc.prettyobj):
     def __init__(self, name=None, instrument=None, nbars=None, mindur=None, timesig=None, seed=None):
         if name       is None: name = 'v'
         if instrument is None: instrument = 'violin'
@@ -299,35 +321,30 @@ class Section(sc.prettyobj):
         return None
     
 
-def getnumbers(inst, npts, usedata, seed=None, window=10):
-    if seed:
-        inst.resetseed(seed)
-    if inst is None or not usedata:
-        if usedata: print('Not using EEG because inst is None')
-        return np.random.randn(npts)
-    infile = 'live/data-'+inst+'.csv'
-    string = open(infile).read()
-    numbers = re.sub("[^0-9]", "", string)
-    rev = numbers[::-1]
-    try:
-        rev = rev[:npts*window]
-        raw = [float(r)/10. for r in rev] # Will be uniform
-        data = np.zeros(npts)
-        for pt in range(npts):
-            thesum = sum(raw[pt*window:(pt+1)*window])
-            if thesum == 0:
-                print('Warning, sum was 0')
-                data[pt] = np.random.randn() # Give up
-            else:
-                data[pt] = thesum-window/2.
-    except Exception as E:
-        print('Problem: %s' % str(E))
-        data = np.random.rand(npts)
-    return data
+
+def makequartet(mindur=8, timesig='4/4', nbars=1):
+    v1 = Instrument(name='v1', instrument='violin', mindur=mindur, timesig=timesig, nbars=nbars)
+    v2 = Instrument(name='v2', instrument='violin', mindur=mindur, timesig=timesig, nbars=nbars)
+    va = Instrument(name='va', instrument='viola', mindur=mindur, timesig=timesig, nbars=nbars)
+    vc = Instrument(name='vc', instrument='cello', mindur=mindur, timesig=timesig, nbars=nbars)
+    quartet = [v1,v2,va,vc]
+    qd = sc.objdict([(inst.name,inst) for inst in quartet])
+    return quartet,qd
+
+
+
+
 
 
 def play(insts=None, volume=1.0, tempo=104, blocking=False):
     import sounddevice as sd
+    
+    def hertz(val):
+        val = char2num(val)
+        a0 = 27.5 # Pitch of the lowest note on the piano
+        hz = a0 * 2**(val/12.)
+        return hz
+    
     fs = 44100
     feather = 0.1
     insts = sc.promotetolist(insts)
