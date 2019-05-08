@@ -1,6 +1,7 @@
 # Custom additions
 running.tmp
 brainstaves/live/live*
+*.mscx,
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
