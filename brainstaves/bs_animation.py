@@ -12,22 +12,30 @@ Created on Sat May  4 23:43:32 2019
 
 print('Setting up...')
 
+import pylab as pl
+import sciris as sc
+import matplotlib.font_manager as mfm
+import matplotlib.animation as animation
+
+
 fullscreen = False
 dobegin = True
 showfaces = True
 shownotes = True
-showwaves = True
+showwaves = False
 
-import pylab as pl
-import matplotlib.font_manager as mfm
-import sciris as sc
-import matplotlib.animation as animation
+livedatafile = 'live/livedata.obj'
+
+livedata = sc.loadobj(livedatafile)
+
+thesenotes = livedata.notes[livedata.sec]
+
 
 files = sc.odict([
-        ('v1','mandhi.png'),
-        ('v2','pat.png'),
-        ('va','rich.png'),
-        ('vc','val.png'),
+        ('v1','assets/mandhi.png'),
+        ('v2','assets/pat.png'),
+        ('va','assets/rich.png'),
+        ('vc','assets/val.png'),
         ])
 
 imyoff = 0.05
@@ -78,7 +86,7 @@ if fullscreen:
     pl.get_current_fig_manager().full_screen_toggle()
 
 if dobegin:
-    pl.pause(1)
+    pl.pause(0.3)
     fig.set_facecolor((1,1,1))
     mainax = pl.axes(position=mainaxpos)
     mainax.axis('off')
@@ -107,7 +115,7 @@ if dobegin:
             imaxes[inst].axis('off')
         
         for inst,f in files.items():
-            im = pl.imread('visualization/'+f)
+            im = pl.imread(f)
             imaxes[inst].imshow(im)
     
     
@@ -148,10 +156,11 @@ if dobegin:
         
         if shownotes:
             for inst in insts:
-                pitch = 0
-#                for n in range(q):
-                pitch += pl.randn()*0.01
-                mainax.text(0.02+n/51, ypos[inst]+pitch, d.note, fontproperties=prop, fontsize=60)
+                if ind<len(thesenotes[inst]):
+                    minpitch = {'v1':64, 'v2':64, 'va':55, 'vc':45}
+                    pitch = thesenotes[inst][ind] - minpitch[inst]
+                    pitch *= 0.002
+                    mainax.text(0.02+ind/1.1/len(thesenotes[inst]), ypos[inst]+pitch, d.note, fontproperties=prop, fontsize=60)
             
     
         if showwaves:
