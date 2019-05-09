@@ -18,7 +18,7 @@ import matplotlib.font_manager as mfm
 import matplotlib.animation as animation
 
 
-fullscreen = False
+fullscreen = True
 dobegin = True
 showfaces = True
 shownotes = True
@@ -146,6 +146,8 @@ if dobegin:
     for ind in range(200):
         txtartist = mainax.text(0, 0, d.note, fontproperties=prop, fontsize=60)
         txtartists.append(txtartist)
+    
+    maxnotes = max([len(notes) for notes in thesenotes.values()])
                 
     for ind in range(200):
         
@@ -156,7 +158,7 @@ if dobegin:
                     pitch = thesenotes[inst][ind] - minpitch[inst]
                     pitch *= 0.002
                     ta = txtartists[ind]
-                    ta.set_x(0.02+ind/1.03/len(thesenotes[inst]))
+                    ta.set_x(0.02+ind/1.03/maxnotes)
                     ta.set_y(ypos[inst]+pitch)
                     mainax.draw_artist(ta)
         
@@ -176,7 +178,6 @@ if dobegin:
         
         fig.canvas.update()
         fig.canvas.flush_events()
-        print(ind)
     
 
 
