@@ -15,37 +15,25 @@ livedatafile = 'live/livedata.obj'
 datasecs = ['A','B','C','D','E','F','G','H'] # Not A but...? WARNING, must match bs_makelivescore.py
 allparts = ['v1','v2','va','vc']
 
-
 def loadlivedata():
-    livedata = None
-    try:
-        livedata = sc.loadobj(livedatafile)
-    except Exception as E:
-        print('Live data file file not found: %s' % str(E))
-    return livedata
+    return bs.loadlivedata(livedatafile=livedatafile)
 
 def savelivedata(livedata):
-    sc.saveobj(livedatafile, livedata)
-    return None
+    return bs.savelivedata(livedatafile=livedatafile, livedata=livedata)
 
-def checkstatus(which, livedata, fulloutput=False):
-    tmp = []
-    vals = []
-    for key,val in getattr(livedata,which).items(): # Should've made it an objdict...
-        tmp.append('%s: %s' % (key,val))
-        vals.append(val)
-    string = '; '.join(tmp)
-    if fulloutput: return string,vals
-    else:          return string
-
-def generate_live_score(started):
-    if all(started):
-        print('GENERATING SCORE!')
-        bs.makelivescore()
+def generate_live_score(livedata):
+    if livedata.isrunning:
+        print('Score is already being generated')
     else:
-        print('Not starting since only %s of %s are started' % (sum(started), len(started)))
+        if bs.allstarted(livedata):
+            print('STARTING SCORE GENERATION!')
+            livedata.isrunning = True
+            savelivedata(livedata)
+            bs.makelivescore()
+        else:
+            started = livedata.started[:].tolist()
+            print('Not starting since only %s of %s are started' % (sum(started), len(started)))
     return None
-
 
 def makeapp():
     ''' Make the Sciris app and define the RPCs '''
@@ -83,10 +71,10 @@ def makeapp():
             livedata = loadlivedata()
             livedata.started[thisinst] = True
             savelivedata(livedata)
-            status,started = checkstatus('started', livedata, fulloutput=True)
+            status = bs.checkstatus('started', livedata)
             output = '  Started %s; status: %s' % (thisinst, status)
             print(output)
-            generate_live_score(started)
+            generate_live_score(livedata)
         except Exception as E:
             output = 'APP WARNING!!!!! Something went wrong: %s' % str(E)
             print(output)
@@ -98,8 +86,9 @@ def makeapp():
         try:
             livedata = loadlivedata()
             livedata.started[thisinst] = False
+            livedata.isrunning = False
             savelivedata(livedata)
-            status = checkstatus('started', livedata)
+            status = bs.checkstatus('started', livedata)
             output = '  Stopped %s; status: %s' % (thisinst, status)
             print(output)
         except Exception as E:
@@ -114,7 +103,7 @@ def makeapp():
             livedata = loadlivedata()
             livedata.page[thisinst] = thispage
             savelivedata(livedata)
-            status = checkstatus('page', livedata)
+            status = bs.checkstatus('page', livedata)
             output = '  Changed %s -> %s; status: %s' % (thisinst, thispage, status)
             print(output)
         except Exception as E:

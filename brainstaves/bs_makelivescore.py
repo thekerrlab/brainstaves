@@ -10,37 +10,8 @@ import pylab as pl
 import sciris as sc
 import brainstaves as bs
 
-def initlivedata(livedatafile=None, datasecs=None, allparts=None, overwrite=False, verbose=True):
-    couldload = False
-    try:
-        livedata = sc.loadobj(livedatafile)
-        couldload = True
-    except:
-        couldload = False
-    if not couldload or overwrite:
-        livedata = sc.prettyobj()
-        livedata.sec = 'n/a'
-        livedata.animate = False # Whether or not to run the animation
-        livedata.notes = sc.objdict()
-        livedata.data = sc.objdict()
-        for sec in datasecs:
-            livedata.notes[sec] = sc.objdict()
-            livedata.data[sec] = sc.objdict()
-            for part in allparts:
-                livedata.notes[sec][part] = []
-                livedata.data[sec][part] = []
-        
-        livedata.started = sc.objdict()
-        livedata.page = sc.objdict()
-        for part in allparts:
-            livedata.started[part] = False
-            livedata.page[part] = 0
-        sc.saveobj(livedatafile, livedata)
-    if verbose: print(livedata)
-    return livedata
 
-
-def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=None):
+def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=None, docleanup=None):
     
     sc.tic()
     
@@ -49,6 +20,7 @@ def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=N
     if makepng is None: makepng = True  # Generate PNG files from MuseScore (needed for the app!)
     if makepdf is None: makepdf = False  # Generate PDF file from MuseScore
     if usedata is None: usedata = True # Use headset data
+    if docleanup is None: docleanup = False
     
     datadir = '../data/run0' # WARNING make more robust!
     livedatafile = 'live/livedata.obj'
@@ -103,9 +75,10 @@ def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=N
     
     def writestatus(sec):
         try:
-            livedata = sc.loadobj(livedatafile)
+            livedata = bs.loadlovedata(livedatafile)
         except:
-            livedata = initlivedata() # Create it if it doesn't exist
+            livedata = bs.initlivedata() # Create it if it doesn't exist
+        livedata.isrunning = True # WARNING, should this be in or out?
         livedata.sec = sec
         if sec != 'A':
             livedata.animate = True
@@ -192,6 +165,14 @@ def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=N
     
     
     def process(sec):
+        try:
+            livedata = bs.loadlovedata(livedatafile)
+        except:
+            livedata = None
+        if livedata:
+            if not livedata.isrunning:
+                print('WARNING, livedata is no longer running')
+#                raise Exception('Livedata is no longer running, stopping')
         sc.fixedpause()
         dowrite = (wait or sec == 'H')
         writestatus(sec)
@@ -226,13 +207,14 @@ def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=N
         
     if 'load' in torun:
         sc.colorize('blue', '\n'*3+'Resetting')
-        sc.runcommand('rm -v live/live-*.png', printoutput=True)
+        if docleanup:
+            sc.runcommand('rm -v live/live-*.png', printoutput=True)
         print('Loading XML')
         xml = bs.XML(infile=infiles[version])
         nd = sc.objdict() # For storing all the notes
         nd.notes = []
         print('Creating livedata object')
-        initlivedata(livedatafile=livedatafile, datasecs=datasecs, allparts=allparts, overwrite=False)
+        bs.initlivedata(livedatafile=livedatafile, datasecs=datasecs, allparts=allparts, overwrite=False)
         secnotes = sc.objdict() # WARNING, could tidy up!
         for sec in datasecs:
             secnotes[sec] = sc.objdict()

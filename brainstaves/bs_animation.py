@@ -8,21 +8,6 @@ Created on Sat May  4 23:43:32 2019
 
 #%% Setup
 
-def pagestosec(livedata, verbose=True):
-    pages = livedata.pages[:]
-    minpage = min(pages)
-    livesec = ''
-    if minpage>=1:  livesec = 'A'
-    if minpage>=2:  livesec = 'B'
-    if minpage>=4:  livesec = 'C'
-    if minpage>=6:  livesec = 'D'
-    if minpage>=7:  livesec = 'E'
-    if minpage>=8:  livesec = 'F'
-    if minpage>=10: livesec = 'G'
-    if minpage>=12: livesec = 'H'
-    if verbose: print('Pages %s, minpage %s, livesec %s' % (pages, minpage, livesec))
-    return livesec
-
 def animate():
 
     print('Setting up...')
@@ -31,6 +16,7 @@ def animate():
     import pylab as pl
     import sciris as sc
     import matplotlib.font_manager as mfm
+    import brainstaves as bs
     
     pl.ion()
     
@@ -185,7 +171,7 @@ def animate():
         else:
             print('Animating step %s' % ind)
             
-            livesec = pagestosec(livedata)
+            livesec = bs.pagestosec(livedata)
             if currentsec != livesec:
                 print('Updating section: %s -> %s' % (currentsec, livesec))
                 ind = 0
