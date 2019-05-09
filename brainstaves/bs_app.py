@@ -21,13 +21,14 @@ def loadlivedata():
 def savelivedata(livedata):
     return bs.savelivedata(livedatafile=livedatafile, livedata=livedata)
 
-def generate_live_score(livedata):
-    if livedata.isrunning:
-        print('Score is already being generated')
+def generate_live_score(app, livedata):
+    if livedata.isrunning or app.isrunning:
+        print('Score is already being generated (%s, %s)' % (livedata.isrunning, app.isrunning))
     else:
         if bs.allstarted(livedata):
             print('STARTING SCORE GENERATION!')
             livedata.isrunning = True
+            app.isrunning = True
             savelivedata(livedata)
             bs.makelivescore()
         else:
@@ -46,7 +47,7 @@ def makeapp():
     if len(sys.argv)>1: port = sys.argv[1]
     else:               port = 8185
     app = sw.ScirisApp(__name__, name="Brainstaves", server_port=port) # Set to a nonstandard port to avoid collisions
-    app.data = None # Initialize the results
+    app.isrunning = False # Initialize whether or not it's running
 
 
     ##################################

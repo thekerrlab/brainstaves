@@ -200,17 +200,6 @@ def animate():
             thesedata = livedata.data[currentsec]
             
             maxnotes = max([len(notes) for notes in thesenotes.values()])
-                       
-            # Plot notes
-            for inst in insts:
-                if ind<len(thesenotes[inst]):
-                    minpitch = {'v1':64, 'v2':64, 'va':55, 'vc':45}
-                    pitch = thesenotes[inst][ind] - minpitch[inst]
-                    pitch *= 0.002
-                    ta = txtartists[inst][ind]
-                    ta.set_x(0.02+ind/1.03/maxnotes)
-                    ta.set_y(ypos[inst]+pitch)
-                    mainax.draw_artist(ta)
             
             # Plot waves
             for i,inst in enumerate(insts):
@@ -230,6 +219,17 @@ def animate():
                 lines[inst].set_ydata(newy[:plotpts])
                 mainax.draw_artist(patches[inst])
                 mainax.draw_artist(lines[inst])
+                       
+            # Plot notes
+            for inst in insts:
+                if ind<len(thesenotes[inst]):
+                    minpitch = {'v1':64, 'v2':64, 'va':55, 'vc':45}
+                    pitch = thesenotes[inst][ind] - minpitch[inst]
+                    pitch *= 0.002
+                    ta = txtartists[inst][ind]
+                    ta.set_x(0.02+ind/1.03/maxnotes)
+                    ta.set_y(ypos[inst]+pitch)
+                    mainax.draw_artist(ta)
             
             fig.canvas.update() # time.sleep(0.02)
             fig.canvas.flush_events()
