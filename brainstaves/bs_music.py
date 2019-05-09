@@ -140,19 +140,21 @@ def char2blues(val):
 
 
 class Instrument(sc.prettyobj):
-    def __init__(self, name=None, instrument=None, nbars=None, mindur=None, timesig=None, seed=None):
+    def __init__(self, name=None, instrument=None, nbars=None, mindur=None, timesig=None, seed=None, datadir=None):
         if name       is None: name = 'v'
         if instrument is None: instrument = 'violin'
         if nbars      is None: nbars = 4
         if mindur     is None: mindur = 8
         if timesig    is None: timesig = '4/4'
         if seed       is None: seed = np.nan
+        if datadir    is None: datadir = '../data/run0'
         self.name = name
         self.instrument = instrument
         self.nbars = nbars
         self.mindur = mindur
         self.timesig = timesig
         self.seed = seed
+        self.datadir = datadir
         
         if instrument == 'violin':
             self.low = 'gn2'
@@ -205,34 +207,30 @@ class Instrument(sc.prettyobj):
         return None
     
     def getnumbers(self, npts, usedata=True, seed=None, sec=None):
+        maxrand = 3
+        minrand = -3
+        if usedata:
+            try:
+                print('WARNING, change file dir')
+                infile = '%s/rawdata-%s-%s.dat' % (self.datadir, sec, self.name)
+                lines = open(infile).readlines()
+                raw = pl.array([float(l.rstrip()) for l in lines])
+                raw -= raw.mean()
+                raw /= pl.sqrt(0.5)*raw.std() # Not sure why this scaling factor is required to have it resemble a normal distribution, but...
+                raw[raw>maxrand] = maxrand # Reset limits
+                raw[raw<minrand] = minrand
+                indices = pl.linspace(0,len(raw)-1,npts).round().astype(int)
+                output = raw[indices]
+            except Exception as E:
+                print('Could not use data, reverting to random: %s' % str(E))
+                usedata = False
         if not usedata:
             if seed:
                 self.resetseed(seed)
-            print('ADDING %s, NEW COUNT: %s' % (npts, COUNT))
             output = np.random.randn(npts)
-            return output
-        else:
-        infile = 'live/data-'+inst+'.csv'
-        string = open(infile).read()
-        numbers = re.sub("[^0-9]", "", string)
-        rev = numbers[::-1]
-        try:
-            rev = rev[:npts*window]
-            raw = [float(r)/10. for r in rev] # Will be uniform
-            data = np.zeros(npts)
-            for pt in range(npts):
-                thesum = sum(raw[pt*window:(pt+1)*window])
-                if thesum == 0:
-                    print('Warning, sum was 0')
-                    data[pt] = np.random.randn() # Give up
-                else:
-                    data[pt] = thesum-window/2.
-        except Exception as E:
-            print('Problem: %s' % str(E))
-            data = np.random.rand(npts)
-        return data
+        return output
     
-    def brownian(self, startval=None, maxstep=None, seed=None, forcestep=True, skipstart=True, verbose=False, usedata=True, npts=None):
+    def brownian(self, startval=None, maxstep=None, seed=None, forcestep=True, skipstart=True, verbose=False, usedata=True, npts=None, sec=None):
         if not skipstart:
             raise Exception('Sorry, not skipstart is not working!')
         if maxstep is None: maxstep = 1
@@ -249,18 +247,20 @@ class Instrument(sc.prettyobj):
             self.notearr = [] # WARNING, could do this more elegantly!
             
         npts = self.npts-1+skipstart
-        data = getnumbers(self.name, 2*npts, usedata, seed)
+        data = self.getnumbers(2*npts, usedata=usedata, seed=seed, sec=sec)
+        dataind = 0
         for n in range(npts): # If not skipping the start, 1 less point
             if n==0: current = abs(startval)
             else:    current = abs(self.arr[n-1])
             step = np.nan
-            count = 0
+            stepcount = -1
             if np.isnan(current):
                 import traceback; traceback.print_exc(); import pdb; pdb.set_trace()
             while np.isnan(step) or (forcestep and not step):
-                count += 1
-                if count<10:
-                    step = int(round((data[n])*maxstep))
+                stepcount += 1
+                dataind += 1 # Increment which data point we're using
+                if stepcount<10:
+                    step = int(round((data[dataind])*maxstep))
                     if verbose: print('Using step %s (%s)' % (step, data[n]))
                 else:
                     if maxstep == 1: step = np.random.randint(-1,2)
