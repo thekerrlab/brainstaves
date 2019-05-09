@@ -73,6 +73,7 @@ def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=N
     
     def writestatus(sec):
         livedata = sc.loadobj(livedatafile)
+        livedata.animate = True
         livedata.sec = sec
         if sec != 'A':
             for part in allparts:

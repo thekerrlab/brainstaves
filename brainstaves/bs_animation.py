@@ -12,25 +12,14 @@ def animate():
 
     print('Setting up...')
     
+    import time
     import pylab as pl
     import sciris as sc
     import matplotlib.font_manager as mfm
     
-    fullscreen = True
-    dobegin = True
-    showfaces = True
-    shownotes = True
-    showwaves = True
+    fullscreen = False
     black = True
     livedatafile = 'live/livedata.obj'
-    
-    livedata = sc.loadobj(livedatafile)
-    
-    print('Animate? %s' % livedata.animate)
-    
-    thesenotes = livedata.notes[livedata.sec]
-    thesedata = livedata.data[livedata.sec]
-    
     
     files = sc.odict([
             ('v1','assets/mandhi.png'),
@@ -72,17 +61,16 @@ def animate():
     colors = sc.gridcolors(4)
     
     d = sc.objdict({
-         'note':'𝅘',
-         'whole':'𝅝',
+         'note':   '𝅘',
+         'whole':  '𝅝',
          'quarter':'♩',
-         'sharp':'♯',
-         'flat':'♭',
+         'sharp':  '♯',
+         'flat':   '♭',
          'natural':'♮',
-         'treble':'𝄞',
-         'alto':'𝄡',
-         'bass':'𝄢',
+         'treble': '𝄞',
+         'alto':   '𝄡',
+         'bass':   '𝄢',
          })
-    
     
     
     print('Creating black figure...')
@@ -91,9 +79,10 @@ def animate():
     if fullscreen:
         pl.get_current_fig_manager().full_screen_toggle()
     
-    print('NOte: control dobegin with livedata.dobegin orsomething')
-    if dobegin:
-        pl.pause(0.3)
+    
+    currentsec = ''
+    
+    if 1: # TEMPPPPP
         if not black:
             fig.set_facecolor((1,1,1))
         mainax = pl.axes(position=mainaxpos)
@@ -101,7 +90,7 @@ def animate():
         mainax.set_xlim([0,1])
         mainax.set_ylim([0,1])
         imaxes = sc.odict()
-        mainax.text(0.48, 0.96, '§%s' % livedata.sec, fontproperties=prop, fontsize=60, color=fontcolor)
+        mainax.text(0.48, 0.96, '§%s' % currentsec, fontproperties=prop, fontsize=60, color=fontcolor)
         
         print('Rendering manuscript...')
         for i,inst in enumerate(insts):
@@ -138,19 +127,48 @@ def animate():
         pl.pause(0.01)
         pl.show()
         
+        maxartists = 200 # Should actually be 128
         txtartists = sc.odict()
         for i,inst in enumerate(insts):
             txtartists[inst] = []
-            for ind in range(len(thesenotes[inst])):
+            for ind in range(maxartists):
                 txtartist = mainax.text(0, 0, d.note, fontproperties=prop, fontsize=60, color=colors[i])
                 txtartists[inst].append(txtartist)
         
-        maxnotes = max([len(notes) for notes in thesenotes.values()])
-                   
-        print('Looping...')
-        sc.tic()
-        for ind in range(maxnotes*2):
+    def getlivedata():
+        try:
+            livedata = sc.loadobj(livedatafile)
+            doanimate = livedata.animate
+        except Exception as E:
+            print('Could not load live data: %s' % str(E))
+            livedata = None
+            doanimate = False
+        return livedata, doanimate
+    
+    loopcount = 0
+    currentsec = None
+    while True:
+        loopcount += 1
+        livedata,doanimate = getlivedata()
+        print('Loop step %s, animating? %s' % (loopcount, doanimate))
+        if doanimate and livedata.sec != currentsec:
+#        pl.pause(1)
+            pl.clf()
+        
+        
+        if doanimate:
             
+            currentsec = livedata.sec
+            
+            thesenotes = livedata.notes[livedata.sec]
+            thesedata = livedata.data[livedata.sec]
+            
+            maxnotes = max([len(notes) for notes in thesenotes.values()])
+                       
+            print('Looping...')
+            sc.tic()
+            ind = loopcount
+                
             # Plot notes
             for inst in insts:
                 if ind<len(thesenotes[inst]):
@@ -164,12 +182,13 @@ def animate():
             
             # Plot waves
             for i,inst in enumerate(insts):
-                eegscale = 0.012
+                eegscale = 0.04
                 rate = 1# int(pl.ceil(npts/maxnotes))
                 roll = True
                 eegyoff = ypos[inst] + 0.1
                 origeeg = thesedata[inst] # pl.cumsum(thesedata[inst])
                 smoothdata = sc.smooth(origeeg, 1)
+                smoothdata /= abs(smoothdata).max()
                 if roll:
                     origy = pl.roll(smoothdata, -rate*ind)
                 else:
@@ -182,10 +201,8 @@ def animate():
             
             fig.canvas.update() # time.sleep(0.02)
             fig.canvas.flush_events()
-        sc.toc()
-    
-    
-    print('Done.')
+        
+        print('Done.')
 
 if __name__ == '__main__':
     animate()
