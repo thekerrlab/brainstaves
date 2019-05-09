@@ -214,8 +214,24 @@
         console.log('Waiting ' + initial_delay + ' ms to start on the dot of the next second')
         setTimeout(function() {
           console.log('Launched')
+          sciris.rpc('start', [vm.thisinst])
+            .then(function (response) {
+                console.log('Sciris start says:')
+                console.log(response.data)
+            })
           vm.timer = setInterval(vm.reload_pages, vm.interval);
         }, initial_delay);
+      },
+
+      stop() {
+        console.log('Stopping refresh')
+        vm.isrunning = '×'
+        clearInterval(vm.timer);
+        sciris.rpc('stop', [vm.thisinst])
+            .then(function (response) {
+                console.log('Sciris stop says:')
+                console.log(response.data)
+            })
       },
 
       getdivs() {
@@ -265,12 +281,6 @@
           vm.filenumber = 1
         }
         vm.showhidediv()
-      },
-
-      stop() {
-        console.log('Stopping refresh')
-        vm.isrunning = '×'
-        clearInterval(vm.timer);
       },
 
     }

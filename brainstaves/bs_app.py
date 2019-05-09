@@ -24,6 +24,17 @@ def loadlivedata():
         print('Live data file file not found: %s' % str(E))
     return livedata
 
+def savelivedata(livedata):
+    sc.saveobj(livedata, livedatafile)
+    return None
+
+def getstartstop(livedata):
+    tmp = []
+    for key,val in livedata.started.items():
+        tmp.append('%s: %s' % (key,val))
+    string = '; '.join(tmp)
+    return string
+
 def makeapp():
     ''' Make the Sciris app and define the RPCs '''
     
@@ -53,6 +64,34 @@ def makeapp():
     def get_version():
         return __version__
 
+    @app.register_RPC()
+    def start(thisinst):
+        print('Handling start...')
+        try:
+            livedata = loadlivedata()
+            livedata.started[thisinst] = True
+            status = getstartstop(livedata)
+            output = '  Started %s; status: %s' % (thisinst, status)
+            print(output)
+        except Exception as E:
+            output = 'APP WARNING!!!!! Something went wrong: %s' % str(E)
+            print(output)
+        return output
+    
+    @app.register_RPC()
+    def stop(thisinst):
+        print('Handling stop...')
+        try:
+            livedata = loadlivedata()
+            livedata.started[thisinst] = False
+            status = getstartstop(livedata)
+            output = '  Stopped %s; status: %s' % (thisinst, status)
+            print(output)
+        except Exception as E:
+            output = 'APP WARNING!!!!! Something went wrong: %s' % str(E)
+            print(output)
+        return output
+    
     return app
 
 
