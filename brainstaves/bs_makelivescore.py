@@ -39,6 +39,7 @@ def initlivedata(livedatafile=None, datasecs=None, allparts=None, overwrite=Fals
     if verbose: print(livedata)
     return livedata
 
+
 def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=None):
     
     sc.tic()
@@ -46,7 +47,7 @@ def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=N
     if version is None: version = 'A'   # Which version of the piece to generate -- atonal (A) or blues (B)
     if wait    is None: wait    = True # Whether or not to pause between generating sections
     if makepng is None: makepng = True  # Generate PNG files from MuseScore (needed for the app!)
-    if makepdf is None: makepdf = True  # Generate PDF file from MuseScore
+    if makepdf is None: makepdf = False  # Generate PDF file from MuseScore
     if usedata is None: usedata = True # Use headset data
     
     datadir = '../data/run0' # WARNING make more robust!

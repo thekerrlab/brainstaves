@@ -8,6 +8,21 @@ Created on Sat May  4 23:43:32 2019
 
 #%% Setup
 
+def pagestosec(livedata, verbose=True):
+    pages = livedata.pages[:]
+    minpage = min(pages)
+    livesec = ''
+    if minpage>=1:  livesec = 'A'
+    if minpage>=2:  livesec = 'B'
+    if minpage>=4:  livesec = 'C'
+    if minpage>=6:  livesec = 'D'
+    if minpage>=7:  livesec = 'E'
+    if minpage>=8:  livesec = 'F'
+    if minpage>=10: livesec = 'G'
+    if minpage>=12: livesec = 'H'
+    if verbose: print('Pages %s, minpage %s, livesec %s' % (pages, minpage, livesec))
+    return livesec
+
 def animate():
 
     print('Setting up...')
@@ -170,10 +185,11 @@ def animate():
         else:
             print('Animating step %s' % ind)
             
-            if currentsec != livedata.sec:
-                print('Updating section: %s -> %s' % (currentsec, livedata.sec))
+            livesec = pagestosec(livedata)
+            if currentsec != livesec:
+                print('Updating section: %s -> %s' % (currentsec, livesec))
                 ind = 0
-                currentsec = livedata.sec
+                currentsec = livesec
                 refreshfig(mainax)
             
             thesenotes = livedata.notes[livedata.sec]

@@ -25,15 +25,27 @@ def loadlivedata():
     return livedata
 
 def savelivedata(livedata):
-    sc.saveobj(livedata, livedatafile)
+    sc.saveobj(livedatafile, livedata)
     return None
 
-def checkstatus(which, livedata):
+def checkstatus(which, livedata, fulloutput=False):
     tmp = []
+    vals = []
     for key,val in getattr(livedata,which).items(): # Should've made it an objdict...
         tmp.append('%s: %s' % (key,val))
+        vals.append(val)
     string = '; '.join(tmp)
-    return string
+    if fulloutput: return string,vals
+    else:          return string
+
+def generate_live_score(started):
+    if all(started):
+        print('GENERATING SCORE!')
+        bs.makelivescore()
+    else:
+        print('Not starting since only %s of %s are started' % (sum(started), len(started)))
+    return None
+
 
 def makeapp():
     ''' Make the Sciris app and define the RPCs '''
@@ -70,9 +82,11 @@ def makeapp():
         try:
             livedata = loadlivedata()
             livedata.started[thisinst] = True
-            status = checkstatus('started', livedata)
+            savelivedata(livedata)
+            status,started = checkstatus('started', livedata, fulloutput=True)
             output = '  Started %s; status: %s' % (thisinst, status)
             print(output)
+            generate_live_score(started)
         except Exception as E:
             output = 'APP WARNING!!!!! Something went wrong: %s' % str(E)
             print(output)
@@ -84,6 +98,7 @@ def makeapp():
         try:
             livedata = loadlivedata()
             livedata.started[thisinst] = False
+            savelivedata(livedata)
             status = checkstatus('started', livedata)
             output = '  Stopped %s; status: %s' % (thisinst, status)
             print(output)
@@ -98,6 +113,7 @@ def makeapp():
         try:
             livedata = loadlivedata()
             livedata.page[thisinst] = thispage
+            savelivedata(livedata)
             status = checkstatus('page', livedata)
             output = '  Changed %s -> %s; status: %s' % (thisinst, thispage, status)
             print(output)
