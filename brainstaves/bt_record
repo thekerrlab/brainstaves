@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo python recordlive.py $1
+sudo python2 bs_recordmindwave.py $1

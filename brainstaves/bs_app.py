@@ -75,7 +75,7 @@ def makeapp():
             status = bs.checkstatus('started', livedata)
             output = '  Started %s; status: %s' % (thisinst, status)
             print(output)
-            generate_live_score(livedata)
+            generate_live_score(app, livedata)
         except:
             exception = traceback.format_exc() # Grab the trackback stack
             output = 'START WARNING!!!!! Something went wrong: %s' % exception

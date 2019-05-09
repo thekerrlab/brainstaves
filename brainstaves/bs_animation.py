@@ -16,6 +16,8 @@ ppl.switch_backend('Qt5Agg') # WARNING, this is because ScirisWeb resets it
 
 animatedsecs = ['B','C','D','E','F','G','H']
 
+fontsize=30
+
 def animate():
 
     print('Setting up...')
@@ -23,8 +25,10 @@ def animate():
     pl.ion()
     fullscreen = False
     black = True
-    showsec = True # WARNING, does not re-render properly!
+    showsec = False # WARNING, does not re-render properly!
     livedatafile = 'live/livedata.obj'
+
+    backupdatafile = 'live/example_livedata.obj'
     
     files = sc.odict([
             ('v1','assets/mandhi.png'),
@@ -91,7 +95,7 @@ def animate():
     plotpts = 500
     maxartists = 200 # Should actually be 128
     mainax = None
-    
+
     def refreshfig(mainax, renderitems=True):
         if mainax is not None:
             mainax.clear()
@@ -112,16 +116,16 @@ def animate():
         
         if renderitems:
             if showsec:
-                mainax.text(0.48, 0.96, '§%s' % currentsec, fontproperties=prop, fontsize=60, color=fontcolor)
+                mainax.text(0.48, 0.96, '§%s' % currentsec, fontproperties=prop, fontsize=fontsize, color=fontcolor)
             
             print('Rendering manuscript...')
             for i,inst in enumerate(insts):
                 for staffline in stafflines:
                     y = staffline+ypos[inst]
                     mainax.plot([0,1], pl.zeros(2)+y, lw=2, c=colors[i])
-                if   inst in ['v1','v2']: mainax.text(0.0, ypos[inst], d.treble, fontproperties=prop, fontsize=60, color=colors[i])
-                elif inst in ['va']:      mainax.text(0.0, ypos[inst], d.alto,   fontproperties=prop, fontsize=60, color=colors[i])
-                elif inst in ['vc']:      mainax.text(0.0, ypos[inst], d.bass,   fontproperties=prop, fontsize=60, color=colors[i])
+                if   inst in ['v1','v2']: mainax.text(0.0, ypos[inst], d.treble, fontproperties=prop, fontsize=fontsize, color=colors[i])
+                elif inst in ['va']:      mainax.text(0.0, ypos[inst], d.alto,   fontproperties=prop, fontsize=fontsize, color=colors[i])
+                elif inst in ['vc']:      mainax.text(0.0, ypos[inst], d.bass,   fontproperties=prop, fontsize=fontsize, color=colors[i])
         
             print('Rendering faces...')
             for inst,f in files.items():
@@ -146,12 +150,12 @@ def animate():
             for i,inst in enumerate(insts):
                 txtartists[inst] = []
                 for ind in range(maxartists):
-                    txtartist = mainax.text(0, 0, d.note, fontproperties=prop, fontsize=60, color=colors[i])
+                    txtartist = mainax.text(0, 0, d.note, fontproperties=prop, fontsize=fontsize, color=colors[i])
                     txtartists[inst].append(txtartist)
         
         return mainax, imaxes, lines, patches, txtartists
         
-    def getlivedata():
+    def getlivedata(livedatafile):
         livedata = None
         while livedata is None:
             try:
@@ -168,25 +172,27 @@ def animate():
     loopcheck = 20
     livedata = None
     doanimate = False
-    livedata,doanimate = getlivedata()
+    livedata,doanimate = getlivedata(livedatafile)
     mainax, imaxes, lines, patches, txtartists = refreshfig(mainax, renderitems=False)
     while True:
         time.sleep(0.01)
         ind += 1
         if not doanimate or not ind%loopcheck:
-            livedata,doanimate = getlivedata()
+            livedata,doanimate = getlivedata(livedatafile)
             print('Loop step %s, animating? %s %s' % (ind, doanimate,  currentsec))
+            if currentsec in animatedsecs:
+                doanimate = True
         
-        if not doanimate or (currentsec not in animatedsecs):
+        # if not (currentsec not in animatedsecs):
 #            print('Not animating: %s %s' % (doanimate, currentsec))
-            livesec = bs.pagestosec(livedata)
-            if currentsec != livesec:
-                print('Updating section location 1: %s -> %s' % (currentsec, livesec))
-                ind = 0
-                currentsec = livesec
-                mainax, imaxes, lines, patches, txtartists = refreshfig(mainax)
+        livesec = bs.pagestosec(livedata)
+        if currentsec != livesec:
+            print('Updating section location 1: %s -> %s' % (currentsec, livesec))
+            ind = 0
+            currentsec = livesec
+            mainax, imaxes, lines, patches, txtartists = refreshfig(mainax)
             time.sleep(1)
-        else:
+        if (currentsec not in animatedsecs):
             print('Animating step %s' % ind)
             
             livesec = bs.pagestosec(livedata)
@@ -195,9 +201,11 @@ def animate():
                 ind = 0
                 currentsec = livesec
                 mainax, imaxes, lines, patches, txtartists = refreshfig(mainax)
+
+            backupdata,tmp = getlivedata(backupdatafile)
             
-            thesenotes = livedata.notes[currentsec]
-            thesedata = livedata.data[currentsec]
+            thesenotes = backupdata.notes[currentsec]
+            thesedata = backupdata.data[currentsec]
             
             maxnotes = max([len(notes) for notes in thesenotes.values()])
             
@@ -208,8 +216,11 @@ def animate():
                 roll = True
                 eegyoff = ypos[inst] + 0.1
                 origeeg = thesedata[inst] # pl.cumsum(thesedata[inst])
-                smoothdata = sc.smooth(origeeg, 1)
-                smoothdata /= abs(smoothdata).max()
+                try:
+                    smoothdata = sc.smooth(origeeg, 1)
+                    smoothdata /= abs(smoothdata).max()
+                except:
+                    smoothdata = pl.zeros(npts)
                 if roll:
                     origy = pl.roll(smoothdata, -rate*ind)
                 else:

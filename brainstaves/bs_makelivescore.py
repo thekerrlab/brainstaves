@@ -16,11 +16,15 @@ def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=N
     sc.tic()
     
     if version is None: version = 'A'   # Which version of the piece to generate -- atonal (A) or blues (B)
-    if wait    is None: wait    = True # Whether or not to pause between generating sections
+    if wait    is None: wait    = False # Whether or not to pause between generating sections
     if makepng is None: makepng = True  # Generate PNG files from MuseScore (needed for the app!)
     if makepdf is None: makepdf = False  # Generate PDF file from MuseScore
     if usedata is None: usedata = True # Use headset data
     if docleanup is None: docleanup = False
+
+    print('STARTING!')
+
+    print('Creating version %s' % version)
     
     datadir = '../data/run0'
     backupdir = '../data/run1'
