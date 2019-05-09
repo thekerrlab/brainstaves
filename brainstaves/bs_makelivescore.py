@@ -209,7 +209,7 @@ def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=N
             for part in allparts:
                 secnotes[sec][part] = []
                 livedata.notes[sec][part] = []
-                livedata.data[sec][part] = None
+                livedata.data[sec][part] = []
         sc.saveobj(livedatafile, livedata)
     
     
