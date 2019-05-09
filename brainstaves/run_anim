@@ -1,0 +1,5 @@
+#!/bin/bash
+# Run the animation.
+# Version: 2019may09
+
+ipython bs_animation.py
