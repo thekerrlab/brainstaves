@@ -30,7 +30,7 @@ def savelivedata(livedata):
 
 def checkstatus(which, livedata):
     tmp = []
-    for key,val in livedata[which].items():
+    for key,val in getattr(livedata,which).items(): # Should've made it an objdict...
         tmp.append('%s: %s' % (key,val))
     string = '; '.join(tmp)
     return string
@@ -70,7 +70,7 @@ def makeapp():
         try:
             livedata = loadlivedata()
             livedata.started[thisinst] = True
-            status = getstartstop(livedata)
+            status = checkstatus('started', livedata)
             output = '  Started %s; status: %s' % (thisinst, status)
             print(output)
         except Exception as E:
