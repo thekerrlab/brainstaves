@@ -126,7 +126,7 @@ if dobegin:
     lines = sc.odict()
     patches = sc.odict()
     npts = 1000
-    plotpts = 500
+    plotpts = 1000
     newx = pl.linspace(0,npts/plotpts,npts)
     for i,inst in enumerate(insts):
         line, = mainax.plot(newx[:plotpts],newx[:plotpts]*0, c=colors[i], lw=3)
@@ -154,22 +154,28 @@ if dobegin:
     for ind in range(maxnotes):
         
         for inst in insts:
-            if ind<len(thesenotes[inst]):
+            thislen = len(thesenotes[inst])
+            if ind<thislen:
                 minpitch = {'v1':64, 'v2':64, 'va':55, 'vc':45}
                 pitch = thesenotes[inst][ind] - minpitch[inst]
                 pitch *= 0.002
                 ta = txtartists[inst][ind]
-                ta.set_x(0.02+ind/1.03/maxnotes)
+                ta.set_x(0.02+ind/1.03/thislen)
                 ta.set_y(ypos[inst]+pitch)
                 mainax.draw_artist(ta)
         
         for i,inst in enumerate(insts):
             eegscale = 0.012
-            rate = 2
+            rate = int(pl.ceil(npts/maxnotes))
+            roll = False
             eegyoff = ypos[inst] + 0.1
             origeeg = thesedata[inst]
             smoothdata = sc.smooth(origeeg, 1)
-            origy = pl.roll(smoothdata, -rate*ind)
+            if roll:
+                origy = pl.roll(smoothdata, -rate*ind)
+            else:
+                origy = sc.dcp(smoothdata)
+                origy[rate*ind:] = pl.nan
             newy = eegyoff+origy*eegscale
             lines[inst].set_ydata(newy[:plotpts])
             mainax.draw_artist(patches[inst])
