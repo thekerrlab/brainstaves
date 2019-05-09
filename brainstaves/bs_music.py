@@ -206,7 +206,7 @@ class Instrument(sc.prettyobj):
             self.arr[n] = np.random.randint(low=minval, high=maxval)
         return None
     
-    def getnumbers(self, npts, usedata=True, seed=None, sec=None, verbose=True):
+    def getnumbers(self, npts, usedata=True, seed=None, sec=None, repeat=None, ss=None, verbose=True):
         maxrand = 3
         minrand = -3
         if usedata:
@@ -219,7 +219,9 @@ class Instrument(sc.prettyobj):
                 raw /= pl.sqrt(0.5)*raw.std() # Not sure why this scaling factor is required to have it resemble a normal distribution, but...
                 raw[raw>maxrand] = maxrand # Reset limits
                 raw[raw<minrand] = minrand
-                indices = pl.linspace(0,len(raw)-1,npts).round().astype(int)
+                nrepeats = ss[1] - ss[0] + 1
+                allindices = pl.linspace(0,len(raw)-1,npts*nrepeats).round().astype(int)
+                indices = allindices[repeat*npts:(repeat+1)*npts]
                 output = raw[indices]
                 if verbose: print('For %s, using %s numbers:\n%s\n%s' % (infile, npts, indices, output))
             except Exception as E:
@@ -231,7 +233,7 @@ class Instrument(sc.prettyobj):
             output = np.random.randn(npts)
         return output
     
-    def brownian(self, startval=None, maxstep=None, seed=None, forcestep=True, skipstart=True, verbose=False, usedata=True, npts=None, sec=None):
+    def brownian(self, startval=None, maxstep=None, seed=None, forcestep=True, skipstart=True, verbose=False, usedata=True, npts=None, sec=None, repeat=None, ss=None):
         if not skipstart:
             raise Exception('Sorry, not skipstart is not working!')
         if maxstep is None: maxstep = 1
@@ -248,20 +250,18 @@ class Instrument(sc.prettyobj):
             self.notearr = [] # WARNING, could do this more elegantly!
             
         npts = self.npts-1+skipstart
-        data = self.getnumbers(2*npts, usedata=usedata, seed=seed, sec=sec)
-        dataind = 0
+        data = self.getnumbers(npts, usedata=usedata, seed=seed, sec=sec, repeat=repeat, ss=ss)
         for n in range(npts): # If not skipping the start, 1 less point
             if n==0: current = abs(startval)
             else:    current = abs(self.arr[n-1])
             step = np.nan
-            stepcount = -1
+            didstep = 0
             if np.isnan(current):
                 import traceback; traceback.print_exc(); import pdb; pdb.set_trace()
             while np.isnan(step) or (forcestep and not step):
-                stepcount += 1
-                dataind += 1 # Increment which data point we're using
-                if stepcount<10:
-                    step = int(round((data[dataind])*maxstep))
+                if not didstep:
+                    didstep += 1
+                    step = int(round((data[n])*maxstep))
                     if verbose: print('Using step %s (%s)' % (step, data[n]))
                 else:
                     if maxstep == 1: step = np.random.randint(-1,2)

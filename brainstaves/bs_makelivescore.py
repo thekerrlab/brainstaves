@@ -190,7 +190,7 @@ def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=N
             for repeat in repeats(ss):
                 inst.seed += 1
                 startval = getstart(inst, 'min')
-                inst.brownian(maxstep=2, startval=startval, skipstart=True, usedata=usedata, sec=sec)
+                inst.brownian(maxstep=2, startval=startval, skipstart=True, usedata=usedata, sec=sec, repeat=repeat, ss=ss)
                 if version == 'A': inst.noteify('atonal')
                 if version == 'B': inst.noteify('blues')
                 inst.seed += 1
@@ -215,7 +215,7 @@ def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=N
                     if   part == 'v1': startval = getstart(inst, 'max')
                     elif part == 'vc': startval = getstart(inst, 'min')
                     else:              startval = getstart(inst)
-                    inst.brownian(maxstep=3, startval=startval, skipstart=True, usedata=usedata, sec=sec)
+                    inst.brownian(maxstep=3, startval=startval, skipstart=True, usedata=usedata, sec=sec, repeat=repeat, ss=ss)
                     if version == 'A': inst.noteify('octo')
                     if version == 'B': inst.noteify('blues')
                     inst.seed += 1
@@ -240,7 +240,7 @@ def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=N
             for repeat in repeats(ss):
                 inst.seed += 1
                 startval = getstart(inst)
-                inst.brownian(maxstep=5, startval=startval, skipstart=True, usedata=usedata, sec=sec)
+                inst.brownian(maxstep=5, startval=startval, skipstart=True, usedata=usedata, sec=sec, repeat=repeat, ss=ss)
                 if version == 'A': inst.noteify('atonal', breakties=True)
                 if version == 'B': inst.noteify('blues', breakties=True)
                 inst.seed += 1
@@ -335,13 +335,13 @@ def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=N
             nd[sec][part] = xml.loadnotes(part=part, measurerange=ss)
             assert len(nd[sec][part]) == len(nm[part])
             
-            inst.brownian(maxstep=5, startval=startvals1[part], forcestep=True, skipstart=True, npts=3, usedata=usedata, sec=sec)
+            inst.brownian(maxstep=5, startval=startvals1[part], forcestep=True, skipstart=True, npts=3, usedata=usedata, sec=sec, repeat=0, ss=[0,1])
             if version == 'A': inst.noteify('atonal')
             if version == 'B': inst.noteify('blues')
             inst.seed += 1
             inst.cat()
             
-            inst.brownian(maxstep=3, startval=startvals2[part], forcestep=True, skipstart=True, npts=25, usedata=usedata, sec=sec)
+            inst.brownian(maxstep=3, startval=startvals2[part], forcestep=True, skipstart=True, npts=25, usedata=usedata, sec=sec, repeat=1, ss=[0,1])
             if version == 'A': inst.noteify('octo')
             if version == 'B': inst.noteify('blues')
             inst.seed += 1
@@ -400,7 +400,7 @@ def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=N
                 for repeat in repeats(ss):
                     inst.seed += 1
                     startval = getstart(inst, startval)
-                    inst.brownian(maxstep=3, startval=startval, skipstart=True, usedata=usedata, sec=sec)
+                    inst.brownian(maxstep=3, startval=startval, skipstart=True, usedata=usedata, sec=sec, repeat=repeat, ss=ss)
                     if version == 'A': inst.noteify('atonal', breakties=True)
                     if version == 'B': inst.noteify('blues', breakties=True)
                     inst.seed += 1
@@ -421,7 +421,7 @@ def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=N
                 for repeat in repeats(ss):
                     inst.seed += 1
                     startval = getstart(inst, startval)
-                    inst.brownian(maxstep=3, startval=startval, skipstart=True, usedata=usedata, sec=sec)
+                    inst.brownian(maxstep=3, startval=startval, skipstart=True, usedata=usedata, sec=sec, repeat=repeat, ss=ss)
                     if version == 'A': inst.noteify('atonal') # WARNING, not used
                     if version == 'B': inst.noteify('blues')
                     inst.seed += 1
@@ -445,7 +445,7 @@ def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=N
             for repeat in repeats(ss):
                 inst.seed += 1
                 startval = getstart(inst, startval)
-                inst.brownian(maxstep=5, startval=startval, skipstart=True, usedata=usedata, sec=sec)
+                inst.brownian(maxstep=5, startval=startval, skipstart=True, usedata=usedata, sec=sec, repeat=repeat, ss=ss)
                 if version == 'A': inst.noteify('atonal', breakties=True)
                 if version == 'B': inst.noteify('blues', breakties=True)
                 inst.seed += 1
@@ -465,7 +465,7 @@ def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=N
                     for repeat in repeats(ss):
                         inst.seed += 1
                         startval = getstart(inst, startval)
-                        inst.brownian(maxstep=3, startval=startval, skipstart=True, usedata=usedata, sec=sec)
+                        inst.brownian(maxstep=3, startval=startval, skipstart=True, usedata=usedata, sec=sec, repeat=repeat, ss=ss)
                         if version == 'A': inst.noteify('atonal') # WARNING, not used
                         if version == 'B': inst.noteify('blues')
                         inst.seed += 1
@@ -488,7 +488,7 @@ def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=N
                 inst.seed += 1
                 if   part in ['v1','v2']: startval = getstart(inst, 'max')
                 elif part in ['va','vc']: startval = getstart(inst, 'min')
-                inst.brownian(maxstep=2, startval=startval, skipstart=True, usedata=usedata, sec=sec)
+                inst.brownian(maxstep=2, startval=startval, skipstart=True, usedata=usedata, sec=sec, repeat=repeat, ss=ss)
                 if version == 'A': inst.noteify('acoustic') # Or inst.noteify('acoustic') # inst.noteify(['dia','octo'])
                 if version == 'B': inst.noteify('blues')
                 inst.seed += 1
