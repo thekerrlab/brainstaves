@@ -19,7 +19,7 @@ def animate():
     
     pl.ion()
     
-    fullscreen = False
+    fullscreen = True
     black = True
     showsec = True # WARNING, does not re-render properly!
     livedatafile = 'live/livedata.obj'
