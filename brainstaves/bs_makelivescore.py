@@ -26,6 +26,7 @@ def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=N
     livedatafile = 'live/livedata.obj'
     npages = 13
     midioffset = 24
+    shortpauses = True
 
     torun = [
     'load',
@@ -42,16 +43,28 @@ def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=N
     
     datasecs = ['A','B','C','D','E','F','G','H'] # Not A but...?
     allparts = ['v1','v2','va','vc']
-    pauses = sc.odict([
-            ('A',20), # 0:20
-            ('B',40), # 1:00
-            ('C',30), # 1:30
-            ('D',30), # 2:00
-            ('E',30), # 2:30
-            ('F',30), # 3:00
-            ('G',30), # 3:30
-            ('H',0),  # 4:00
-            ])
+    if shortpauses:
+        pauses = sc.odict([
+                ('A',10), # 0:20
+                ('B',10), # 1:00
+                ('C',10), # 1:30
+                ('D',10), # 2:00
+                ('E',10), # 2:30
+                ('F',10), # 3:00
+                ('G',10), # 3:30
+                ('H',0),  # 4:00
+                ])
+    else:
+        pauses = sc.odict([
+                ('A',20), # 0:20
+                ('B',40), # 1:00
+                ('C',30), # 1:30
+                ('D',30), # 2:00
+                ('E',30), # 2:30
+                ('F',30), # 3:00
+                ('G',30), # 3:30
+                ('H',0),  # 4:00
+                ])
     
     infiles = {'A':'score/brainstaves-A.mscx',
                'B':'score/brainstaves-B.mscx',

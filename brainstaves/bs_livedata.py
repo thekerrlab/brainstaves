@@ -18,7 +18,6 @@ def initlivedata(livedatafile=None, datasecs=None, allparts=None, overwrite=Fals
     if not couldload or overwrite:
         livedata = sc.prettyobj()
         livedata.sec = 'n/a'
-        livedata.animate = False # Whether or not to run the animation
         livedata.notes = sc.objdict()
         livedata.data = sc.objdict()
         for sec in datasecs:

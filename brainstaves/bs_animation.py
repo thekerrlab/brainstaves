@@ -147,7 +147,7 @@ def animate():
     def getlivedata():
         try:
             livedata = sc.loadobj(livedatafile)
-            doanimate = livedata.animate
+            doanimate = livedata.isrunning
         except:
             print('Could not load live data')
             livedata = None

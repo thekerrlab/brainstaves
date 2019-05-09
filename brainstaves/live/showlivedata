@@ -1,0 +1,7 @@
+#!/usr/bin/env python
+# Show contents of live data file
+# Version: 2019may09
+
+import sciris as sc
+livedata = sc.loadobj('livedata.obj')
+print(livedata)
