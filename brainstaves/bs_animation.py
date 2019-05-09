@@ -118,7 +118,7 @@ if dobegin:
     print('Creating lines...')
     lines = sc.odict()
     npts = 1000
-    newx = pl.arange(npts)
+    newx = pl.linspace(0,1,npts)
     for i,inst in enumerate(insts):
         line, = mainax.plot(newx,newx*0, c=colors[i])
         lines[inst] = line
@@ -138,23 +138,24 @@ if dobegin:
     print('Looping...')
     for ind in range(maxnotes):
         
-        if shownotes:
-            for inst in insts:
-                if ind<len(thesenotes[inst]):
-                    minpitch = {'v1':64, 'v2':64, 'va':55, 'vc':45}
-                    pitch = thesenotes[inst][ind] - minpitch[inst]
-                    pitch *= 0.002
-                    ta = txtartists[inst][ind]
-                    ta.set_x(0.02+ind/1.03/maxnotes)
-                    ta.set_y(ypos[inst]+pitch)
-                    mainax.draw_artist(ta)
+        for inst in insts:
+            if ind<len(thesenotes[inst]):
+                minpitch = {'v1':64, 'v2':64, 'va':55, 'vc':45}
+                pitch = thesenotes[inst][ind] - minpitch[inst]
+                pitch *= 0.002
+                ta = txtartists[inst][ind]
+                ta.set_x(0.02+ind/1.03/maxnotes)
+                ta.set_y(ypos[inst]+pitch)
+                mainax.draw_artist(ta)
         
-        if showwaves:
-            for i,inst in enumerate(insts):
-                newy = thesedata[inst]*0.01
-                lines[inst].set_ydata(newy)
-                mainax.draw_artist(lines[inst])
+        for i,inst in enumerate(insts):
+            eegyoff = ypos[inst] + 0.1
+            origy = pl.roll(thesedata[inst], -5*ind)
+            newy = eegyoff+origy*0.01
+            lines[inst].set_ydata(newy)
+            mainax.draw_artist(lines[inst])
         
+        fig.canvas.draw_idle()
         fig.canvas.update()
         fig.canvas.flush_events()
     

@@ -57,7 +57,8 @@ def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=N
     
     #%% Function definitions
     
-    def loaddata(sec, part):
+    def loaddata(sec, part, trim=False):
+        # WARNING, duplicate of bs_music! Here only used for the visualization
         maxrand = 3
         minrand = -3
         infile = '%s/rawdata-%s-%s.dat' % (datadir, sec, part)
@@ -65,8 +66,9 @@ def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=N
         raw = pl.array([float(l.rstrip()) for l in lines])
         raw -= raw.mean()
         raw /= pl.sqrt(0.5)*raw.std() # Not sure why this scaling factor is required to have it resemble a normal distribution, but...
-        raw[raw>maxrand] = maxrand # Reset limits
-        raw[raw<minrand] = minrand
+        if trim:
+            raw[raw>maxrand] = maxrand # Reset limits
+            raw[raw<minrand] = minrand
         return raw
     
     def writestatus(sec):
