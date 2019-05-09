@@ -151,9 +151,9 @@ def animate():
         loopcount += 1
         livedata,doanimate = getlivedata()
         print('Loop step %s, animating? %s' % (loopcount, doanimate))
-        if doanimate and livedata.sec != currentsec:
+#        if doanimate and livedata.sec != currentsec:
 #        pl.pause(1)
-            pl.clf()
+#            pl.clf()
         
         
         if doanimate:
@@ -201,7 +201,7 @@ def animate():
             
             fig.canvas.update() # time.sleep(0.02)
             fig.canvas.flush_events()
-            pl.pause(0.1)
+#            pl.pause(1)
         
         print('Done.')
 
