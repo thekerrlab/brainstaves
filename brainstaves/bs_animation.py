@@ -6,21 +6,21 @@ Created on Sat May  4 23:43:32 2019
 @author: cliffk
 """
 
-#%% Setup
+import time
+import pylab as pl
+import sciris as sc
+import matplotlib.font_manager as mfm
+import brainstaves as bs
+import matplotlib.pyplot as ppl
+ppl.switch_backend('Qt5Agg') # WARNING, this is because ScirisWeb resets it
+
 
 def animate():
 
     print('Setting up...')
-    
-    import time
-    import pylab as pl
-    import sciris as sc
-    import matplotlib.font_manager as mfm
-    import brainstaves as bs
-    
+
     pl.ion()
-    
-    fullscreen = True
+    fullscreen = False
     black = True
     showsec = True # WARNING, does not re-render properly!
     livedatafile = 'live/livedata.obj'
@@ -158,13 +158,18 @@ def animate():
     loopcheck = 20
     livedata = None
     doanimate = False
-    mainax, imaxes, lines, patches, txtartists = refreshfig(mainax)
+    livedata,doanimate = getlivedata()
+    neverrun = True
     while True:
         time.sleep(0.01)
         ind += 1
         if not doanimate or not ind%loopcheck:
             livedata,doanimate = getlivedata()
             print('Loop step %s, animating? %s' % (ind, doanimate))
+            if doanimate and neverrun:
+                print('Setting up figure...')
+                neverrun = False
+                mainax, imaxes, lines, patches, txtartists = refreshfig(mainax)
         
         if not doanimate:
             time.sleep(1)
