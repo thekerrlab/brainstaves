@@ -201,6 +201,7 @@ def animate():
             
             fig.canvas.update() # time.sleep(0.02)
             fig.canvas.flush_events()
+            pl.pause(0.1)
         
         print('Done.')
 
