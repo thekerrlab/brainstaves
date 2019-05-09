@@ -172,9 +172,16 @@ def animate():
         ind += 1
         if not doanimate or not ind%loopcheck:
             livedata,doanimate = getlivedata()
-            print('Loop step %s, animating? %s' % (ind, doanimate))
+            print('Loop step %s, animating? %s %s' % (ind, doanimate,  currentsec))
         
         if not doanimate or (currentsec not in animatedsecs):
+            print('Not animating: %s %s' % (doanimate, currentsec))
+            livesec = bs.pagestosec(livedata)
+            if currentsec != livesec:
+                print('Updating section: %s -> %s' % (currentsec, livesec))
+                ind = 0
+                currentsec = livesec
+                refreshfig(mainax)
             time.sleep(1)
         else:
             print('Animating step %s' % ind)
