@@ -8,6 +8,41 @@ import pylab as pl
 import sciris as sc
 
 
+def loadrawdata(datadir, backupdir, sec, name, trim=True):
+    maxrand = 3
+    minrand = -3
+    
+    def loadfromfile(folder, sec, name):
+        infile = '%s/rawdata-%s-%s.dat' % (folder, sec, name)
+        lines = open(infile).readlines()
+        raw = pl.array([float(l.rstrip()) for l in lines])
+        return raw
+    
+    try:
+        raw = loadfromfile(datadir, sec, name)
+        zerotest = sum(raw==0)>20
+        bigtest = any(abs(raw)>2000)
+        loadtest = False
+    except:
+        zerotest = None
+        bigtest = None
+        loadtest = True
+    
+    if loadtest or zerotest or bigtest:
+        print('Loading backup data since failed loadtest %s, zerotest %s, or bigtest %s' % (loadtest, zerotest, bigtest))
+        raw = loadfromfile(backupdir, sec, name)
+        zerotest = sum(raw==0)>10
+        bigtest = any(abs(raw)>2000)
+        if zerotest or bigtest:
+            print('WARNING, even for backup data the zerotest or bigtest failed')
+    raw -= raw.mean()
+    raw /= pl.sqrt(0.5)*raw.std() # Not sure why this scaling factor is required to have it resemble a normal distribution, but...
+    if trim:
+        raw[raw>maxrand] = maxrand # Reset limits
+        raw[raw<minrand] = minrand
+    return raw
+
+
 def char2num(val):
     if sc.isnumber(val):
         return val
@@ -140,7 +175,7 @@ def char2blues(val):
 
 
 class Instrument(sc.prettyobj):
-    def __init__(self, name=None, instrument=None, nbars=None, mindur=None, timesig=None, seed=None, datadir=None):
+    def __init__(self, name=None, instrument=None, nbars=None, mindur=None, timesig=None, seed=None, datadir=None, backupdir=None):
         if name       is None: name = 'v'
         if instrument is None: instrument = 'violin'
         if nbars      is None: nbars = 4
@@ -148,6 +183,7 @@ class Instrument(sc.prettyobj):
         if timesig    is None: timesig = '4/4'
         if seed       is None: seed = np.nan
         if datadir    is None: datadir = '../data/run0'
+        if backupdir  is None: backupdir = '../data/run1'
         self.name = name
         self.instrument = instrument
         self.nbars = nbars
@@ -155,6 +191,7 @@ class Instrument(sc.prettyobj):
         self.timesig = timesig
         self.seed = seed
         self.datadir = datadir
+        self.backupdir = backupdir
         
         if instrument == 'violin':
             self.low = 'gn2'
@@ -207,22 +244,14 @@ class Instrument(sc.prettyobj):
         return None
     
     def getnumbers(self, npts, usedata=True, seed=None, sec=None, repeat=None, ss=None, verbose=False):
-        maxrand = 3
-        minrand = -3
         if usedata:
             try:
-                infile = '%s/rawdata-%s-%s.dat' % (self.datadir, sec, self.name)
-                lines = open(infile).readlines()
-                raw = pl.array([float(l.rstrip()) for l in lines])
-                raw -= raw.mean()
-                raw /= pl.sqrt(0.5)*raw.std() # Not sure why this scaling factor is required to have it resemble a normal distribution, but...
-                raw[raw>maxrand] = maxrand # Reset limits
-                raw[raw<minrand] = minrand
+                raw = loadrawdata(datadir=self.datadir, backupdir=self.backupdir, sec=sec, name=self.name)
                 nrepeats = ss[1] - ss[0] + 1
                 allindices = pl.linspace(0,len(raw)-1,npts*nrepeats).round().astype(int)
                 indices = allindices[repeat*npts:(repeat+1)*npts]
                 output = raw[indices]
-                if verbose: print('For %s, using %s numbers:\n%s\n%s' % (infile, npts, indices, output))
+                if verbose: print('For %s, using %s numbers:\n%s\n%s' % (self.datadir, npts, indices, output))
             except Exception as E:
                 print('Could not use data, reverting to random: %s' % str(E))
                 usedata = False
@@ -322,11 +351,11 @@ class Instrument(sc.prettyobj):
     
 
 
-def makequartet(mindur=8, timesig='4/4', nbars=1):
-    v1 = Instrument(name='v1', instrument='violin', mindur=mindur, timesig=timesig, nbars=nbars)
-    v2 = Instrument(name='v2', instrument='violin', mindur=mindur, timesig=timesig, nbars=nbars)
-    va = Instrument(name='va', instrument='viola', mindur=mindur, timesig=timesig, nbars=nbars)
-    vc = Instrument(name='vc', instrument='cello', mindur=mindur, timesig=timesig, nbars=nbars)
+def makequartet(mindur=8, timesig='4/4', nbars=1, datadir=None, backupdir=None):
+    v1 = Instrument(name='v1', instrument='violin', mindur=mindur, timesig=timesig, nbars=nbars, datadir=datadir, backupdir=backupdir)
+    v2 = Instrument(name='v2', instrument='violin', mindur=mindur, timesig=timesig, nbars=nbars, datadir=datadir, backupdir=backupdir)
+    va = Instrument(name='va', instrument='viola', mindur=mindur, timesig=timesig, nbars=nbars, datadir=datadir, backupdir=backupdir)
+    vc = Instrument(name='vc', instrument='cello', mindur=mindur, timesig=timesig, nbars=nbars, datadir=datadir, backupdir=backupdir)
     quartet = [v1,v2,va,vc]
     qd = sc.objdict([(inst.name,inst) for inst in quartet])
     return quartet,qd

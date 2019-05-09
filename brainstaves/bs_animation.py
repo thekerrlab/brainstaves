@@ -152,13 +152,16 @@ def animate():
         return mainax, imaxes, lines, patches, txtartists
         
     def getlivedata():
-        try:
-            livedata = sc.loadobj(livedatafile)
-            doanimate = livedata.isrunning and (livedata.sec in animatedsecs)
-        except:
-            print('Could not load live data')
-            livedata = None
-            doanimate = False
+        livedata = None
+        while livedata is None:
+            try:
+                livedata = sc.loadobj(livedatafile)
+                doanimate = livedata.isrunning and (livedata.sec in animatedsecs)
+            except Exception as E:
+                print('Could not load live data: %s' % str(E))
+                livedata = None
+                doanimate = False
+                time.sleep(1)
         return livedata, doanimate
     
     ind = 0
@@ -175,7 +178,7 @@ def animate():
             print('Loop step %s, animating? %s %s' % (ind, doanimate,  currentsec))
         
         if not doanimate or (currentsec not in animatedsecs):
-            print('Not animating: %s %s' % (doanimate, currentsec))
+#            print('Not animating: %s %s' % (doanimate, currentsec))
             livesec = bs.pagestosec(livedata)
             if currentsec != livesec:
                 print('Updating section location 1: %s -> %s' % (currentsec, livesec))

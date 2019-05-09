@@ -22,7 +22,8 @@ def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=N
     if usedata is None: usedata = True # Use headset data
     if docleanup is None: docleanup = False
     
-    datadir = '../data/run0' # WARNING make more robust!
+    datadir = '../data/run0'
+    backupdir = '../data/run1'
     livedatafile = 'live/livedata.obj'
     npages = 13
     midioffset = 24
@@ -73,19 +74,8 @@ def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=N
     #%% Function definitions
     
     def loaddata(sec, part, trim=False):
-        # WARNING, duplicate of bs_music! Here only used for the visualization
-        maxrand = 3
-        minrand = -3
-        infile = '%s/rawdata-%s-%s.dat' % (datadir, sec, part)
-        lines = open(infile).readlines()
-        raw = pl.array([float(l.rstrip()) for l in lines])
-        raw -= raw.mean()
-        raw /= pl.sqrt(0.5)*raw.std() # Not sure why this scaling factor is required to have it resemble a normal distribution, but...
-        if trim:
-            raw[raw>maxrand] = maxrand # Reset limits
-            raw[raw<minrand] = minrand
-        return raw
-    
+        return bs.loadrawdata(datadir=datadir, backupdir=backupdir, sec=sec, name=part, trim=trim)
+
     def writestatus(sec):
         try:
             livedata = bs.loadlivedata(livedatafile)
@@ -103,7 +93,10 @@ def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=N
                 # Save data
                 raw = loaddata(sec, part)
                 livedata.data[sec][part] = raw
-        sc.saveobj(livedatafile, livedata)
+        try:
+            sc.saveobj(livedatafile, livedata)
+        except Exception as E:
+            print('Warning, could not write status file -- not running as sudo? %s' % str(E))
         return None
     
     
@@ -178,14 +171,6 @@ def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=N
     
     
     def process(sec):
-#        try:
-#            livedata = bs.loadlovedata(livedatafile)
-#        except:
-#            livedata = None
-#        if livedata:
-#            if not livedata.isrunning:
-#                print('WARNING, livedata is no longer running')
-#                raise Exception('Livedata is no longer running, stopping')
         sc.fixedpause()
         dowrite = (wait or sec == 'H')
         if dowrite:
@@ -246,7 +231,7 @@ def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=N
     if 'sectionB' in torun:
         sec = 'B'
         nd[sec] = begin(sec)
-        quartet,qd = bs.makequartet(mindur=8, timesig='12/8', nbars=1)
+        quartet,qd = bs.makequartet(mindur=8, timesig='12/8', nbars=1, datadir=datadir, backupdir=backupdir)
         
         for part,inst in qd.items():      
             if part == 'v1': ss = [39,40]
@@ -268,7 +253,7 @@ def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=N
     if 'sectionC' in torun:
         sec = 'C'
         nd[sec] = begin(sec)
-        quartet,qd = bs.makequartet(mindur=16, timesig='4/4', nbars=1)
+        quartet,qd = bs.makequartet(mindur=16, timesig='4/4', nbars=1, datadir=datadir, backupdir=backupdir)
         
         for part,inst in qd.items():
             if part != 'v2':
@@ -293,7 +278,7 @@ def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=N
     if 'sectionD' in torun:
         sec = 'D'
         nd[sec] = begin(sec)
-        quartet,qd = bs.makequartet(mindur=8, timesig='4/4', nbars=1)
+        quartet,qd = bs.makequartet(mindur=8, timesig='4/4', nbars=1, datadir=datadir, backupdir=backupdir)
         
         for part,inst in qd.items():
             ss = [63,83]
@@ -325,7 +310,7 @@ def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=N
         for part in qd.keys():
             nm[part] = sc.objdict()
             seq[part] = 0
-        quartet,qd = bs.makequartet(mindur=8, timesig='4/4', nbars=1)
+        quartet,qd = bs.makequartet(mindur=8, timesig='4/4', nbars=1, datadir=datadir, backupdir=backupdir)
     
         def generate(seq, nm, p, m, n, t, verbose=False):
             if verbose: print('Input: %s, %s, %s, %s, %s' % (seq[:], p, m, n, t))
@@ -448,7 +433,7 @@ def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=N
     if 'sectionF' in torun:
         sec = 'F'
         nd[sec] = begin(sec)
-        quartet,qd = bs.makequartet(mindur=8, timesig='4/4', nbars=1)
+        quartet,qd = bs.makequartet(mindur=8, timesig='4/4', nbars=1, datadir=datadir, backupdir=backupdir)
         
         parttosub = {
                 'A':'va', 
@@ -499,7 +484,7 @@ def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=N
     if 'sectionG' in torun:
         sec = 'G'
         nd[sec] = begin(sec)
-        quartet,qd = bs.makequartet(mindur=8, timesig='4/4', nbars=1)
+        quartet,qd = bs.makequartet(mindur=8, timesig='4/4', nbars=1, datadir=datadir, backupdir=backupdir)
         
         # Glissando part
         for part,inst in qd.items():
@@ -543,7 +528,7 @@ def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=N
     if 'sectionH' in torun:
         sec = 'H'
         nd[sec] = begin(sec)
-        quartet,qd = bs.makequartet(mindur=8, timesig='12/8', nbars=1)
+        quartet,qd = bs.makequartet(mindur=8, timesig='12/8', nbars=1, datadir=datadir, backupdir=backupdir)
         
         for part,inst in qd.items():      
             if part == 'v1': ss = [150,151]

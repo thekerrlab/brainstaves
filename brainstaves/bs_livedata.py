@@ -38,7 +38,7 @@ def initlivedata(livedatafile=None, datasecs=None, allparts=None, overwrite=Fals
     return livedata
 
 
-def pagestosec(livedata, verbose=True):
+def pagestosec(livedata, verbose=False):
     pages = livedata.pages[:]
     minpage = min(pages)
     livesec = ''
