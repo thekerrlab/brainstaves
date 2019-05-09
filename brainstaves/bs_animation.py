@@ -15,6 +15,7 @@ print('Setting up...')
 import pylab as pl
 import sciris as sc
 import matplotlib.font_manager as mfm
+import time
 #import matplotlib.animation as animation
 
 
@@ -103,7 +104,7 @@ if dobegin:
     mainax.set_xlim([0,1])
     mainax.set_ylim([0,1])
     imaxes = sc.odict()
-    mainax.text(0.48, 0.97, '§%s' % livedata.sec, fontproperties=prop, fontsize=60, color=fontcolor)
+    mainax.text(0.48, 0.96, '§%s' % livedata.sec, fontproperties=prop, fontsize=60, color=fontcolor)
     
     print('Rendering manuscript...')
     for i,inst in enumerate(insts):
@@ -126,7 +127,7 @@ if dobegin:
     lines = sc.odict()
     patches = sc.odict()
     npts = 1000
-    plotpts = 1000
+    plotpts = 500
     newx = pl.linspace(0,npts/plotpts,npts)
     for i,inst in enumerate(insts):
         line, = mainax.plot(newx[:plotpts],newx[:plotpts]*0, c=colors[i], lw=3)
@@ -151,25 +152,26 @@ if dobegin:
                
     print('Looping...')
     sc.tic()
-    for ind in range(maxnotes):
+    for ind in range(maxnotes*2):
         
+        # Plot notes
         for inst in insts:
-            thislen = len(thesenotes[inst])
-            if ind<thislen:
+            if ind<len(thesenotes[inst]):
                 minpitch = {'v1':64, 'v2':64, 'va':55, 'vc':45}
                 pitch = thesenotes[inst][ind] - minpitch[inst]
                 pitch *= 0.002
                 ta = txtartists[inst][ind]
-                ta.set_x(0.02+ind/1.03/thislen)
+                ta.set_x(0.02+ind/1.03/maxnotes)
                 ta.set_y(ypos[inst]+pitch)
                 mainax.draw_artist(ta)
         
+        # Plot waves
         for i,inst in enumerate(insts):
             eegscale = 0.012
-            rate = int(pl.ceil(npts/maxnotes))
-            roll = False
+            rate = 1# int(pl.ceil(npts/maxnotes))
+            roll = True
             eegyoff = ypos[inst] + 0.1
-            origeeg = thesedata[inst]
+            origeeg = thesedata[inst] # pl.cumsum(thesedata[inst])
             smoothdata = sc.smooth(origeeg, 1)
             if roll:
                 origy = pl.roll(smoothdata, -rate*ind)
@@ -181,7 +183,7 @@ if dobegin:
             mainax.draw_artist(patches[inst])
             mainax.draw_artist(lines[inst])
         
-        fig.canvas.update()
+        fig.canvas.update() # time.sleep(0.02)
         fig.canvas.flush_events()
     sc.toc()
     
