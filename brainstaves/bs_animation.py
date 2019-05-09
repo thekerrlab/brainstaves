@@ -183,7 +183,7 @@ def animate():
             if currentsec in animatedsecs:
                 doanimate = True
         
-        # if not (currentsec not in animatedsecs):
+        # if not doanimate or (currentsec not in animatedsecs):
 #            print('Not animating: %s %s' % (doanimate, currentsec))
         livesec = bs.pagestosec(livedata)
         if currentsec != livesec:
@@ -192,8 +192,8 @@ def animate():
             currentsec = livesec
             mainax, imaxes, lines, patches, txtartists = refreshfig(mainax)
             time.sleep(1)
-        if (currentsec not in animatedsecs):
-            print('Animating step %s' % ind)
+        elif currentsec in animatedsecs:
+            print('Animating step %s for %s' % (ind, currentsec))
             
             livesec = bs.pagestosec(livedata)
             if currentsec != livesec:
@@ -202,7 +202,7 @@ def animate():
                 currentsec = livesec
                 mainax, imaxes, lines, patches, txtartists = refreshfig(mainax)
 
-            backupdata,tmp = getlivedata(backupdatafile)
+            backupdata,doanimate = getlivedata(backupdatafile)
             
             thesenotes = backupdata.notes[currentsec]
             thesedata = backupdata.data[currentsec]
@@ -219,8 +219,10 @@ def animate():
                 try:
                     smoothdata = sc.smooth(origeeg, 1)
                     smoothdata /= abs(smoothdata).max()
-                except:
+                except Exception as E:
                     smoothdata = pl.zeros(npts)
+                    print('Failed: %s' % str(E))
+                    import traceback; traceback.print_exc(); import pdb; pdb.set_trace()
                 if roll:
                     origy = pl.roll(smoothdata, -rate*ind)
                 else:
