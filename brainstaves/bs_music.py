@@ -206,12 +206,11 @@ class Instrument(sc.prettyobj):
             self.arr[n] = np.random.randint(low=minval, high=maxval)
         return None
     
-    def getnumbers(self, npts, usedata=True, seed=None, sec=None, repeat=None, ss=None, verbose=True):
+    def getnumbers(self, npts, usedata=True, seed=None, sec=None, repeat=None, ss=None, verbose=False):
         maxrand = 3
         minrand = -3
         if usedata:
             try:
-                print('WARNING, change file dir')
                 infile = '%s/rawdata-%s-%s.dat' % (self.datadir, sec, self.name)
                 lines = open(infile).readlines()
                 raw = pl.array([float(l.rstrip()) for l in lines])
@@ -265,16 +264,16 @@ class Instrument(sc.prettyobj):
                     if verbose: print('Using step %s (%s)' % (step, data[n]))
                 else:
                     if maxstep == 1: step = np.random.randint(-1,2)
-                    else:            step = int(round(np.random.randn()*maxstep)) # REPLACE WITH EEG
+                    else:            step = int(round(np.random.randn()*maxstep))
             if (current+step) < minval or (current+step) > maxval: # Bounce off the ends
                 step = -step
             
             proposed = current + step
             if proposed < minval:
-                print('Warning, note tried to go too low (%s vs. %s), resetting' % (proposed, minval))
+                print('Warning, note tried to go too low (%s + %s = %s vs. %s), resetting' % (current, step, proposed, minval))
                 proposed = minval
             if proposed > maxval:
-                print('Warning, note tried to go too high (%s vs. %s), resetting' % (proposed, maxval))
+                print('Warning, note tried to go too high (%s + %s %s vs. %s), resetting' % (current, step, proposed, maxval))
                 proposed = maxval
             self.arr[n+1-skipstart] = proposed
             if verbose:

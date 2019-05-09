@@ -19,8 +19,7 @@ def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=N
     if makepdf is None: makepdf = True  # Generate PDF file from MuseScore
     if usedata is None: usedata = True # Use headset data
     
-    statusfile = 'status.tmp' # WARNING, replace with status.obj
-#    statusfile = 'live/livedata.obj'
+    livedatafile = 'live/livedata.obj'
     npages = 13
     midioffset = 24
 
@@ -37,6 +36,8 @@ def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=N
     'write',
     ]
     
+    datasecs = ['A','B','C','D','E','F','G','H'] # Not A but...?
+    allparts = ['v1','v2','va','vc']
     pauses = sc.odict([
             ('A',20), # 0:20
             ('B',40), # 1:00
@@ -55,8 +56,13 @@ def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=N
     #%% Function definitions
     
     def writestatus(sec):
-        with open(statusfile,'w') as f:
-            f.write(sec)
+        livedata = sc.loadobj(livedatafile)
+        livedata.sec = sec
+        for part in allparts:
+            for note in secnotes[sec][part]:
+                thispitch = float(note['pitch'])
+                livedata.notes[sec][part].append(thispitch)
+        sc.saveobj(livedatafile, livedata)
         return None
     
     
@@ -94,6 +100,7 @@ def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=N
     
     def appendnotes(nd, sec, part, useties=False, verbose=False):
         nextnotetied = False
+        thesenotes = []
         for n,orignote in enumerate(nd[sec][part]):
             if nextnotetied and useties: notetouse = n-1
             else:                        notetouse = n
@@ -101,7 +108,9 @@ def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=N
             else:                            nextnotetied = False
             if verbose: print('%s. %s' % (n, bs.num2char(qd[part].score[notetouse])))
             note = xmlnote(orignote, qd[part].score[notetouse])
-            nd.notes.append(note)
+            thesenotes.append(note)
+        nd.notes.extend(thesenotes)
+        secnotes[sec][part].extend(thesenotes)
         return None
     
     
@@ -160,8 +169,6 @@ def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=N
     
     #%% Main body
         
-    writestatus('n/a') # Reset status
-    
     if 'load' in torun:
         sc.colorize('blue', '\n'*3+'Resetting')
         sc.runcommand('rm -v live/live-*.png', printoutput=True)
@@ -169,6 +176,21 @@ def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=N
         xml = bs.XML(infile=infiles[version])
         nd = sc.objdict() # For storing all the notes
         nd.notes = []
+        print('Creating livedata object')
+        livedata = sc.prettyobj()
+        livedata.sec = 'n/a'
+        secnotes = sc.objdict() # WARNING, could tidy up!
+        livedata.notes = sc.objdict()
+        livedata.data = sc.objdict()
+        for sec in datasecs:
+            secnotes[sec] = sc.objdict()
+            livedata.notes[sec] = sc.objdict()
+            livedata.data[sec] = sc.objdict()
+            for part in allparts:
+                secnotes[sec][part] = []
+                livedata.notes[sec][part] = []
+                livedata.data[sec][part] = None
+        sc.saveobj(livedatafile, livedata)
     
     
     if 'sectionA' in torun:
@@ -399,7 +421,7 @@ def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=N
                 nd[sec][part] = xml.loadnotes(part=part, measurerange=ss)
                 for repeat in repeats(ss):
                     inst.seed += 1
-                    startval = getstart(inst, startval)
+                    startval = getstart(inst, startval) # WARNING, default should probably be used here, think it's picking up the cello part?
                     inst.brownian(maxstep=3, startval=startval, skipstart=True, usedata=usedata, sec=sec, repeat=repeat, ss=ss)
                     if version == 'A': inst.noteify('atonal', breakties=True)
                     if version == 'B': inst.noteify('blues', breakties=True)
