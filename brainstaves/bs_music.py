@@ -8,6 +8,10 @@ import numpy as np
 import pylab as pl
 import sciris as sc
 
+
+global COUNT
+COUNT = 0
+
 def char2num(val):
     if sc.isnumber(val):
         return val
@@ -140,11 +144,15 @@ def char2blues(val):
 
 
 def getnumbers(inst, npts, usedata, seed=None, window=10):
+    global COUNT
     if seed:
         inst.resetseed(seed)
     if inst is None or not usedata:
         if usedata: print('Not using EEG because inst is None')
-        return np.random.randn(npts)
+        COUNT += npts
+        print('ADDING %s, NEW COUNT: %s' % (npts, COUNT))
+        output = np.random.randn(npts)
+        return output
     infile = 'live/data-'+inst+'.csv'
     string = open(infile).read()
     numbers = re.sub("[^0-9]", "", string)
