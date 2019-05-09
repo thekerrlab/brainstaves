@@ -23,7 +23,7 @@ def animate():
     print('Setting up...')
 
     pl.ion()
-    fullscreen = False
+    fullscreen = True
     black = True
     showsec = False # WARNING, does not re-render properly!
     livedatafile = 'live/livedata.obj'
@@ -31,7 +31,7 @@ def animate():
     backupdatafile = 'live/example_livedata.obj'
     
     files = sc.odict([
-            ('v1','assets/mandhi.png'),
+            ('v1','assets/mandhi2.png'), # Is dinosaur
             ('v2','assets/pat.png'),
             ('va','assets/rich.png'),
             ('vc','assets/val.png'),
