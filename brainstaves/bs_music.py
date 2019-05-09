@@ -3,14 +3,10 @@ The crux of Brainstaves -- Python representation of the different instrumental
 parts.
 '''
 
-import re
 import numpy as np
 import pylab as pl
 import sciris as sc
 
-
-global COUNT
-COUNT = 0
 
 def char2num(val):
     if sc.isnumber(val):
@@ -143,37 +139,6 @@ def char2blues(val):
     return output
 
 
-def getnumbers(inst, npts, usedata, seed=None, window=10):
-    global COUNT
-    if seed:
-        inst.resetseed(seed)
-    if inst is None or not usedata:
-        if usedata: print('Not using EEG because inst is None')
-        COUNT += npts
-        print('ADDING %s, NEW COUNT: %s' % (npts, COUNT))
-        output = np.random.randn(npts)
-        return output
-    infile = 'live/data-'+inst+'.csv'
-    string = open(infile).read()
-    numbers = re.sub("[^0-9]", "", string)
-    rev = numbers[::-1]
-    try:
-        rev = rev[:npts*window]
-        raw = [float(r)/10. for r in rev] # Will be uniform
-        data = np.zeros(npts)
-        for pt in range(npts):
-            thesum = sum(raw[pt*window:(pt+1)*window])
-            if thesum == 0:
-                print('Warning, sum was 0')
-                data[pt] = np.random.randn() # Give up
-            else:
-                data[pt] = thesum-window/2.
-    except Exception as E:
-        print('Problem: %s' % str(E))
-        data = np.random.rand(npts)
-    return data
-
-
 class Instrument(sc.prettyobj):
     def __init__(self, name=None, instrument=None, nbars=None, mindur=None, timesig=None, seed=None):
         if name       is None: name = 'v'
@@ -238,6 +203,34 @@ class Instrument(sc.prettyobj):
         for n in range(self.npts):
             self.arr[n] = np.random.randint(low=minval, high=maxval)
         return None
+    
+    def getnumbers(self, npts, usedata=True, seed=None, sec=None):
+        if not usedata:
+            if seed:
+                self.resetseed(seed)
+            print('ADDING %s, NEW COUNT: %s' % (npts, COUNT))
+            output = np.random.randn(npts)
+            return output
+        else:
+        infile = 'live/data-'+inst+'.csv'
+        string = open(infile).read()
+        numbers = re.sub("[^0-9]", "", string)
+        rev = numbers[::-1]
+        try:
+            rev = rev[:npts*window]
+            raw = [float(r)/10. for r in rev] # Will be uniform
+            data = np.zeros(npts)
+            for pt in range(npts):
+                thesum = sum(raw[pt*window:(pt+1)*window])
+                if thesum == 0:
+                    print('Warning, sum was 0')
+                    data[pt] = np.random.randn() # Give up
+                else:
+                    data[pt] = thesum-window/2.
+        except Exception as E:
+            print('Problem: %s' % str(E))
+            data = np.random.rand(npts)
+        return data
     
     def brownian(self, startval=None, maxstep=None, seed=None, forcestep=True, skipstart=True, verbose=False, usedata=True, npts=None):
         if not skipstart:
