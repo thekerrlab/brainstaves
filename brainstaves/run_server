@@ -6,4 +6,5 @@
 #
 # Version: 2019may08
 
-sudo python bs_app.py 80 # Need sudo to run on port 80
+echo 'Note: use system python in future'
+sudo /software/anaconda3/bin/python bs_app.py 80 # Need sudo to run on port 80

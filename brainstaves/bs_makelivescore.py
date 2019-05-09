@@ -10,6 +10,35 @@ import pylab as pl
 import sciris as sc
 import brainstaves as bs
 
+def initlivedata(livedatafile=None, datasecs=None, allparts=None, overwrite=False, verbose=True):
+    couldload = False
+    try:
+        livedata = sc.loadobj(livedatafile)
+        couldload = True
+    except:
+        couldload = False
+    if not couldload or overwrite:
+        livedata = sc.prettyobj()
+        livedata.sec = 'n/a'
+        livedata.animate = False # Whether or not to run the animation
+        livedata.notes = sc.objdict()
+        livedata.data = sc.objdict()
+        for sec in datasecs:
+            livedata.notes[sec] = sc.objdict()
+            livedata.data[sec] = sc.objdict()
+            for part in allparts:
+                livedata.notes[sec][part] = []
+                livedata.data[sec][part] = []
+        
+        livedata.started = sc.objdict()
+        livedata.page = sc.objdict()
+        for part in allparts:
+            livedata.started[part] = False
+            livedata.page[part] = 0
+        sc.saveobj(livedatafile, livedata)
+    if verbose: print(livedata)
+    return livedata
+
 def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=None):
     
     sc.tic()
@@ -72,7 +101,10 @@ def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=N
         return raw
     
     def writestatus(sec):
-        livedata = sc.loadobj(livedatafile)
+        try:
+            livedata = sc.loadobj(livedatafile)
+        except:
+            livedata = initlivedata() # Create it if it doesn't exist
         livedata.sec = sec
         if sec != 'A':
             livedata.animate = True
@@ -199,21 +231,12 @@ def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=N
         nd = sc.objdict() # For storing all the notes
         nd.notes = []
         print('Creating livedata object')
-        livedata = sc.prettyobj()
-        livedata.sec = 'n/a'
-        livedata.animate = False # Whether or not to run the animation
+        initlivedata(livedatafile=livedatafile, datasecs=datasecs, allparts=allparts, overwrite=False)
         secnotes = sc.objdict() # WARNING, could tidy up!
-        livedata.notes = sc.objdict()
-        livedata.data = sc.objdict()
         for sec in datasecs:
             secnotes[sec] = sc.objdict()
-            livedata.notes[sec] = sc.objdict()
-            livedata.data[sec] = sc.objdict()
             for part in allparts:
                 secnotes[sec][part] = []
-                livedata.notes[sec][part] = []
-                livedata.data[sec][part] = []
-        sc.saveobj(livedatafile, livedata)
     
     
     if 'sectionA' in torun:
