@@ -15,7 +15,7 @@ print('Setting up...')
 import pylab as pl
 import sciris as sc
 import matplotlib.font_manager as mfm
-import matplotlib.animation as animation
+#import matplotlib.animation as animation
 
 
 fullscreen = True

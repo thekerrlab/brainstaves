@@ -6,6 +6,7 @@ Run this file to actually generate the score!!
 Version: 2019may08
 '''
 
+import pylab as pl
 import sciris as sc
 import brainstaves as bs
 
@@ -19,6 +20,7 @@ def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=N
     if makepdf is None: makepdf = True  # Generate PDF file from MuseScore
     if usedata is None: usedata = True # Use headset data
     
+    datadir = '../data/run0' # WARNING make more robust!
     livedatafile = 'live/livedata.obj'
     npages = 13
     midioffset = 24
@@ -55,13 +57,30 @@ def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=N
     
     #%% Function definitions
     
+    def loaddata(sec, part):
+        maxrand = 3
+        minrand = -3
+        infile = '%s/rawdata-%s-%s.dat' % (datadir, sec, part)
+        lines = open(infile).readlines()
+        raw = pl.array([float(l.rstrip()) for l in lines])
+        raw -= raw.mean()
+        raw /= pl.sqrt(0.5)*raw.std() # Not sure why this scaling factor is required to have it resemble a normal distribution, but...
+        raw[raw>maxrand] = maxrand # Reset limits
+        raw[raw<minrand] = minrand
+        return raw
+    
     def writestatus(sec):
         livedata = sc.loadobj(livedatafile)
         livedata.sec = sec
-        for part in allparts:
-            for note in secnotes[sec][part]:
-                thispitch = float(note['pitch'])
-                livedata.notes[sec][part].append(thispitch)
+        if sec != 'A':
+            for part in allparts:
+                # Save notes
+                for note in secnotes[sec][part]:
+                    thispitch = float(note['pitch'])
+                    livedata.notes[sec][part].append(thispitch)
+                # Save data
+                raw = loaddata(sec, part)
+                livedata.data[sec][part] = raw
         sc.saveobj(livedatafile, livedata)
         return None
     
