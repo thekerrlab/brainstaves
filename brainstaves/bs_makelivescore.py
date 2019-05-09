@@ -75,10 +75,10 @@ def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=N
     
     def writestatus(sec):
         try:
-            livedata = bs.loadlovedata(livedatafile)
+            livedata = bs.loadlivedata(livedatafile)
         except:
             livedata = bs.initlivedata() # Create it if it doesn't exist
-        livedata.isrunning = True # WARNING, should this be in or out?
+#        livedata.isrunning = True # WARNING, should this be in or out?
         livedata.sec = sec
         if sec != 'A':
             livedata.animate = True
@@ -165,19 +165,20 @@ def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=N
     
     
     def process(sec):
-        try:
-            livedata = bs.loadlovedata(livedatafile)
-        except:
-            livedata = None
-        if livedata:
-            if not livedata.isrunning:
-                print('WARNING, livedata is no longer running')
+#        try:
+#            livedata = bs.loadlovedata(livedatafile)
+#        except:
+#            livedata = None
+#        if livedata:
+#            if not livedata.isrunning:
+#                print('WARNING, livedata is no longer running')
 #                raise Exception('Livedata is no longer running, stopping')
         sc.fixedpause()
         dowrite = (wait or sec == 'H')
-        writestatus(sec)
         if dowrite:
             write()
+        pl.pause(0.1) # So the image has time to load
+        writestatus(sec)
         print('Section %s written' % sec)
         sc.toc()
         print('\n'*3)

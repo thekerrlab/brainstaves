@@ -1,0 +1,6 @@
+#!/bin/bash
+# Clean up generated files
+# Version: 2019may09
+
+echo 'Cleaning up'
+sudo rm ./livedata.obj ./live-*.png

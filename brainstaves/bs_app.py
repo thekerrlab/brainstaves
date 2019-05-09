@@ -6,7 +6,7 @@ Webserver that runs and refreshes Brainstaves. Some functions are deprecated.
 
 # Imports
 import sys
-import sciris as sc
+import traceback
 import scirisweb as sw
 import brainstaves as bs
 
@@ -39,7 +39,7 @@ def makeapp():
     ''' Make the Sciris app and define the RPCs '''
     
     print('Initializing live data...')
-    bs.initlivedata(livedatafile=livedatafile, datasecs=datasecs, allparts=allparts, overwrite=False)
+    bs.initlivedata(livedatafile=livedatafile, datasecs=datasecs, allparts=allparts, overwrite=True)
 
     # Create the app
     print('Setting defaults...')
@@ -76,7 +76,8 @@ def makeapp():
             print(output)
             generate_live_score(livedata)
         except Exception as E:
-            output = 'APP WARNING!!!!! Something went wrong: %s' % str(E)
+            exception = traceback.format_exc() # Grab the trackback stack
+            output = 'APP WARNING!!!!! Something went wrong: %s' % exception
             print(output)
         return output
     
@@ -130,7 +131,7 @@ if __name__ == "__main__":
     except Exception as E:
         print(str(E))
         print('Shutting down server and removing status file and live files...')
-    finally:
-        sc.runcommand('rm %s live/live-*.png' % livedatafile) # rm status.tmp live/live-*.png
+#    finally:
+#        sc.runcommand('rm %s live/live-*.png' % livedatafile) # rm status.tmp live/live-*.png
         
         
