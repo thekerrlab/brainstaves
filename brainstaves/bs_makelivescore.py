@@ -15,7 +15,7 @@ def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=N
     sc.tic()
     
     if version is None: version = 'A'   # Which version of the piece to generate -- atonal (A) or blues (B)
-    if wait    is None: wait    = False # Whether or not to pause between generating sections
+    if wait    is None: wait    = True # Whether or not to pause between generating sections
     if makepng is None: makepng = True  # Generate PNG files from MuseScore (needed for the app!)
     if makepdf is None: makepdf = True  # Generate PDF file from MuseScore
     if usedata is None: usedata = True # Use headset data
@@ -73,9 +73,9 @@ def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=N
     
     def writestatus(sec):
         livedata = sc.loadobj(livedatafile)
-        livedata.animate = True
         livedata.sec = sec
         if sec != 'A':
+            livedata.animate = True
             for part in allparts:
                 # Save notes
                 for note in secnotes[sec][part]:
@@ -161,9 +161,9 @@ def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=N
     def process(sec):
         sc.fixedpause()
         dowrite = (wait or sec == 'H')
+        writestatus(sec)
         if dowrite:
             write()
-        writestatus(sec)
         print('Section %s written' % sec)
         sc.toc()
         print('\n'*3)

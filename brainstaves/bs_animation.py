@@ -17,8 +17,11 @@ def animate():
     import sciris as sc
     import matplotlib.font_manager as mfm
     
+    pl.ion()
+    
     fullscreen = False
     black = True
+    showsec = True # WARNING, does not re-render properly!
     livedatafile = 'live/livedata.obj'
     
     files = sc.odict([
@@ -82,7 +85,14 @@ def animate():
     
     currentsec = ''
     
-    if 1: # TEMPPPPP
+    npts = 1000
+    plotpts = 500
+    maxartists = 200 # Should actually be 128
+    mainax = None
+    
+    def refreshfig(mainax):
+        if mainax is not None:
+            mainax.clear()
         if not black:
             fig.set_facecolor((1,1,1))
         mainax = pl.axes(position=mainaxpos)
@@ -90,7 +100,8 @@ def animate():
         mainax.set_xlim([0,1])
         mainax.set_ylim([0,1])
         imaxes = sc.odict()
-        mainax.text(0.48, 0.96, '§%s' % currentsec, fontproperties=prop, fontsize=60, color=fontcolor)
+        if showsec:
+            mainax.text(0.48, 0.96, '§%s' % currentsec, fontproperties=prop, fontsize=60, color=fontcolor)
         
         print('Rendering manuscript...')
         for i,inst in enumerate(insts):
@@ -103,7 +114,6 @@ def animate():
     
         print('Rendering faces...')
         for inst,f in files.items():
-            print([imxpos[0],ypos[inst],imwidth,imheight])
             imaxes[inst] = fig.add_axes((imxpos[0],ypos[inst],imwidth,imheight), label='im_'+inst)
             imaxes[inst].axis('off')
             im = pl.imread(f)
@@ -112,22 +122,18 @@ def animate():
         print('Creating lines...')
         lines = sc.odict()
         patches = sc.odict()
-        npts = 1000
-        plotpts = 500
         newx = pl.linspace(0,npts/plotpts,npts)
         for i,inst in enumerate(insts):
             line, = mainax.plot(newx[:plotpts],newx[:plotpts]*0, c=colors[i], lw=3)
             lines[inst] = line
             rect = pl.Rectangle((0, ypos[inst]+0.06), 1.0, 0.09, color=bgcolor)
-            print(rect)
             tmp = mainax.add_patch(rect)
-            print(tmp)
             patches[inst] = tmp
         
         pl.pause(0.01)
         pl.show()
         
-        maxartists = 200 # Should actually be 128
+        
         txtartists = sc.odict()
         for i,inst in enumerate(insts):
             txtartists[inst] = []
@@ -135,40 +141,46 @@ def animate():
                 txtartist = mainax.text(0, 0, d.note, fontproperties=prop, fontsize=60, color=colors[i])
                 txtartists[inst].append(txtartist)
         
+        return mainax, imaxes, lines, patches, txtartists
+        
     def getlivedata():
         try:
             livedata = sc.loadobj(livedatafile)
             doanimate = livedata.animate
-        except Exception as E:
-            print('Could not load live data: %s' % str(E))
+        except:
+            print('Could not load live data')
             livedata = None
             doanimate = False
         return livedata, doanimate
     
-    loopcount = 0
-    currentsec = None
+    ind = 0
+    loopcheck = 20
+    livedata = None
+    doanimate = False
+    mainax, imaxes, lines, patches, txtartists = refreshfig(mainax)
     while True:
-        loopcount += 1
-        livedata,doanimate = getlivedata()
-        print('Loop step %s, animating? %s' % (loopcount, doanimate))
-#        if doanimate and livedata.sec != currentsec:
-#        pl.pause(1)
-#            pl.clf()
+        time.sleep(0.01)
+        ind += 1
+        if not doanimate or not ind%loopcheck:
+            livedata,doanimate = getlivedata()
+            print('Loop step %s, animating? %s' % (ind, doanimate))
         
-        
-        if doanimate:
+        if not doanimate:
+            time.sleep(1)
+        else:
+            print('Animating step %s' % ind)
             
-            currentsec = livedata.sec
+            if currentsec != livedata.sec:
+                print('Updating section: %s -> %s' % (currentsec, livedata.sec))
+                ind = 0
+                currentsec = livedata.sec
+                refreshfig(mainax)
             
             thesenotes = livedata.notes[livedata.sec]
             thesedata = livedata.data[livedata.sec]
             
             maxnotes = max([len(notes) for notes in thesenotes.values()])
                        
-            print('Looping...')
-            sc.tic()
-            ind = loopcount
-                
             # Plot notes
             for inst in insts:
                 if ind<len(thesenotes[inst]):
@@ -201,9 +213,6 @@ def animate():
             
             fig.canvas.update() # time.sleep(0.02)
             fig.canvas.flush_events()
-#            pl.pause(1)
-        
-        print('Done.')
 
 if __name__ == '__main__':
     animate()
