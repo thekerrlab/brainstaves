@@ -15,7 +15,7 @@ def initlivedata(livedatafile=None, datasecs=None, allparts=None, overwrite=Fals
         couldload = True
     except:
         couldload = False
-    if not couldload or overwrite:
+    if overwrite or (not couldload):
         livedata = sc.prettyobj()
         livedata.sec = 'n/a'
         livedata.notes = sc.objdict()
@@ -29,10 +29,10 @@ def initlivedata(livedatafile=None, datasecs=None, allparts=None, overwrite=Fals
         
         livedata.isrunning = False
         livedata.started = sc.objdict()
-        livedata.page = sc.objdict()
+        livedata.pages = sc.objdict()
         for part in allparts:
             livedata.started[part] = False
-            livedata.page[part] = 0
+            livedata.pages[part] = 0
         sc.saveobj(livedatafile, livedata)
     if verbose: print(livedata)
     return livedata

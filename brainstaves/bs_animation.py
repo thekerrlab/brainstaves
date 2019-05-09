@@ -14,6 +14,7 @@ import brainstaves as bs
 import matplotlib.pyplot as ppl
 ppl.switch_backend('Qt5Agg') # WARNING, this is because ScirisWeb resets it
 
+animatedsecs = ['B','C','D','E','F','G','H']
 
 def animate():
 
@@ -91,7 +92,7 @@ def animate():
     maxartists = 200 # Should actually be 128
     mainax = None
     
-    def refreshfig(mainax):
+    def refreshfig(mainax, renderitems=True):
         if mainax is not None:
             mainax.clear()
         if not black:
@@ -101,53 +102,59 @@ def animate():
         mainax.set_xlim([0,1])
         mainax.set_ylim([0,1])
         imaxes = sc.odict()
-        if showsec:
-            mainax.text(0.48, 0.96, '§%s' % currentsec, fontproperties=prop, fontsize=60, color=fontcolor)
-        
-        print('Rendering manuscript...')
-        for i,inst in enumerate(insts):
-            for staffline in stafflines:
-                y = staffline+ypos[inst]
-                mainax.plot([0,1], pl.zeros(2)+y, lw=2, c=colors[i])
-            if   inst in ['v1','v2']: mainax.text(0.0, ypos[inst], d.treble, fontproperties=prop, fontsize=60, color=colors[i])
-            elif inst in ['va']:      mainax.text(0.0, ypos[inst], d.alto,   fontproperties=prop, fontsize=60, color=colors[i])
-            elif inst in ['vc']:      mainax.text(0.0, ypos[inst], d.bass,   fontproperties=prop, fontsize=60, color=colors[i])
-    
-        print('Rendering faces...')
-        for inst,f in files.items():
-            imaxes[inst] = fig.add_axes((imxpos[0],ypos[inst],imwidth,imheight), label='im_'+inst)
-            imaxes[inst].axis('off')
-            im = pl.imread(f)
-            imaxes[inst].imshow(im)
-        
-        print('Creating lines...')
         lines = sc.odict()
         patches = sc.odict()
-        newx = pl.linspace(0,npts/plotpts,npts)
-        for i,inst in enumerate(insts):
-            line, = mainax.plot(newx[:plotpts],newx[:plotpts]*0, c=colors[i], lw=3)
-            lines[inst] = line
-            rect = pl.Rectangle((0, ypos[inst]+0.06), 1.0, 0.09, color=bgcolor)
-            tmp = mainax.add_patch(rect)
-            patches[inst] = tmp
-        
-        pl.pause(0.01)
-        pl.show()
-        
-        
         txtartists = sc.odict()
-        for i,inst in enumerate(insts):
-            txtartists[inst] = []
-            for ind in range(maxartists):
-                txtartist = mainax.text(0, 0, d.note, fontproperties=prop, fontsize=60, color=colors[i])
-                txtartists[inst].append(txtartist)
+        
+        if not renderitems:
+            pl.pause(0.1)
+            pl.show()
+        
+        if renderitems:
+            if showsec:
+                mainax.text(0.48, 0.96, '§%s' % currentsec, fontproperties=prop, fontsize=60, color=fontcolor)
+            
+            print('Rendering manuscript...')
+            for i,inst in enumerate(insts):
+                for staffline in stafflines:
+                    y = staffline+ypos[inst]
+                    mainax.plot([0,1], pl.zeros(2)+y, lw=2, c=colors[i])
+                if   inst in ['v1','v2']: mainax.text(0.0, ypos[inst], d.treble, fontproperties=prop, fontsize=60, color=colors[i])
+                elif inst in ['va']:      mainax.text(0.0, ypos[inst], d.alto,   fontproperties=prop, fontsize=60, color=colors[i])
+                elif inst in ['vc']:      mainax.text(0.0, ypos[inst], d.bass,   fontproperties=prop, fontsize=60, color=colors[i])
+        
+            print('Rendering faces...')
+            for inst,f in files.items():
+                imaxes[inst] = fig.add_axes((imxpos[0],ypos[inst],imwidth,imheight), label='im_'+inst)
+                imaxes[inst].axis('off')
+                im = pl.imread(f)
+                imaxes[inst].imshow(im)
+            
+            print('Creating lines...')
+            
+            newx = pl.linspace(0,npts/plotpts,npts)
+            for i,inst in enumerate(insts):
+                line, = mainax.plot(newx[:plotpts],newx[:plotpts]*0, c=colors[i], lw=3)
+                lines[inst] = line
+                rect = pl.Rectangle((0, ypos[inst]+0.06), 1.0, 0.09, color=bgcolor)
+                tmp = mainax.add_patch(rect)
+                patches[inst] = tmp
+            
+            pl.pause(0.01)
+            pl.show()
+            
+            for i,inst in enumerate(insts):
+                txtartists[inst] = []
+                for ind in range(maxartists):
+                    txtartist = mainax.text(0, 0, d.note, fontproperties=prop, fontsize=60, color=colors[i])
+                    txtartists[inst].append(txtartist)
         
         return mainax, imaxes, lines, patches, txtartists
         
     def getlivedata():
         try:
             livedata = sc.loadobj(livedatafile)
-            doanimate = livedata.isrunning
+            doanimate = livedata.isrunning and (livedata.sec in animatedsecs)
         except:
             print('Could not load live data')
             livedata = None
@@ -159,19 +166,15 @@ def animate():
     livedata = None
     doanimate = False
     livedata,doanimate = getlivedata()
-    neverrun = True
+    mainax, imaxes, lines, patches, txtartists = refreshfig(mainax, renderitems=False)
     while True:
         time.sleep(0.01)
         ind += 1
         if not doanimate or not ind%loopcheck:
             livedata,doanimate = getlivedata()
             print('Loop step %s, animating? %s' % (ind, doanimate))
-            if doanimate and neverrun:
-                print('Setting up figure...')
-                neverrun = False
-                mainax, imaxes, lines, patches, txtartists = refreshfig(mainax)
         
-        if not doanimate:
+        if not doanimate or (currentsec not in animatedsecs):
             time.sleep(1)
         else:
             print('Animating step %s' % ind)
@@ -183,8 +186,8 @@ def animate():
                 currentsec = livesec
                 refreshfig(mainax)
             
-            thesenotes = livedata.notes[livedata.sec]
-            thesedata = livedata.data[livedata.sec]
+            thesenotes = livedata.notes[currentsec]
+            thesedata = livedata.data[currentsec]
             
             maxnotes = max([len(notes) for notes in thesenotes.values()])
                        

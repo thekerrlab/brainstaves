@@ -2,4 +2,4 @@
 # Run the animation.
 # Version: 2019may09
 
-python -i bs_animation.py
+ipython bs_animation.py

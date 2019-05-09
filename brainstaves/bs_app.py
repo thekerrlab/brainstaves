@@ -75,9 +75,9 @@ def makeapp():
             output = '  Started %s; status: %s' % (thisinst, status)
             print(output)
             generate_live_score(livedata)
-        except Exception as E:
+        except:
             exception = traceback.format_exc() # Grab the trackback stack
-            output = 'APP WARNING!!!!! Something went wrong: %s' % exception
+            output = 'START WARNING!!!!! Something went wrong: %s' % exception
             print(output)
         return output
     
@@ -92,8 +92,9 @@ def makeapp():
             status = bs.checkstatus('started', livedata)
             output = '  Stopped %s; status: %s' % (thisinst, status)
             print(output)
-        except Exception as E:
-            output = 'APP WARNING!!!!! Something went wrong: %s' % str(E)
+        except Exception:
+            exception = traceback.format_exc() # Grab the trackback stack
+            output = 'STOP WARNING!!!!! Something went wrong: %s' % exception
             print(output)
         return output
     
@@ -102,13 +103,14 @@ def makeapp():
         print('Handling update page...')
         try:
             livedata = loadlivedata()
-            livedata.page[thisinst] = thispage
+            livedata.pages[thisinst] = thispage
             savelivedata(livedata)
-            status = bs.checkstatus('page', livedata)
+            status = bs.checkstatus('pages', livedata)
             output = '  Changed %s -> %s; status: %s' % (thisinst, thispage, status)
             print(output)
-        except Exception as E:
-            output = 'APP WARNING!!!!! Something went wrong: %s' % str(E)
+        except Exception:
+            exception = traceback.format_exc() # Grab the trackback stack
+            output = 'UPDATE PAGE WARNING!!!!! Something went wrong: %s' % exception
             print(output)
         return output
     
