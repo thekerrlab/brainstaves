@@ -206,7 +206,7 @@ class Instrument(sc.prettyobj):
             self.arr[n] = np.random.randint(low=minval, high=maxval)
         return None
     
-    def getnumbers(self, npts, usedata=True, seed=None, sec=None):
+    def getnumbers(self, npts, usedata=True, seed=None, sec=None, verbose=True):
         maxrand = 3
         minrand = -3
         if usedata:
@@ -221,6 +221,7 @@ class Instrument(sc.prettyobj):
                 raw[raw<minrand] = minrand
                 indices = pl.linspace(0,len(raw)-1,npts).round().astype(int)
                 output = raw[indices]
+                if verbose: print('For %s, using %s numbers:\n%s\n%s' % (infile, npts, indices, output))
             except Exception as E:
                 print('Could not use data, reverting to random: %s' % str(E))
                 usedata = False

@@ -17,7 +17,7 @@ def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=N
     if wait    is None: wait    = False # Whether or not to pause between generating sections
     if makepng is None: makepng = True  # Generate PNG files from MuseScore (needed for the app!)
     if makepdf is None: makepdf = True  # Generate PDF file from MuseScore
-    if usedata is None: usedata = False # Use headset data
+    if usedata is None: usedata = True # Use headset data
     
     statusfile = 'status.tmp' # WARNING, replace with status.obj
 #    statusfile = 'live/livedata.obj'
