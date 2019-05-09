@@ -97,6 +97,7 @@ if dobegin:
     mainax.set_xlim([0,1])
     mainax.set_ylim([0,1])
     imaxes = sc.odict()
+    mainax.text(0.48, 0.95, '§%s' % livedata.sec, fontproperties=prop, fontsize=60)
     
     print('Rendering manuscript...')
     for i,inst in enumerate(insts):
@@ -117,11 +118,17 @@ if dobegin:
     
     print('Creating lines...')
     lines = sc.odict()
+    patches = sc.odict()
     npts = 1000
     newx = pl.linspace(0,1,npts)
     for i,inst in enumerate(insts):
         line, = mainax.plot(newx,newx*0, c=colors[i])
         lines[inst] = line
+        rect = pl.Rectangle((0, ypos[inst]+0.06), 1.0, 0.08, color='w')
+        print(rect)
+        tmp = mainax.add_patch(rect)
+        print(tmp)
+        patches[inst] = tmp
     
     pl.pause(0.01)
     pl.show()
@@ -137,7 +144,7 @@ if dobegin:
                
     print('Looping...')
     sc.tic()
-    for ind in range(maxnotes):
+    for ind in range(maxnotes*2):
         
         for inst in insts:
             if ind<len(thesenotes[inst]):
@@ -150,13 +157,14 @@ if dobegin:
                 mainax.draw_artist(ta)
         
         for i,inst in enumerate(insts):
+            rate = 2
             eegyoff = ypos[inst] + 0.1
-            origy = pl.roll(thesedata[inst], -5*ind)
+            origy = pl.roll(thesedata[inst], -rate*ind)
             newy = eegyoff+origy*0.01
             lines[inst].set_ydata(newy)
+            mainax.draw_artist(patches[inst])
             mainax.draw_artist(lines[inst])
         
-#        fig.canvas.draw_idle()
         fig.canvas.update()
         fig.canvas.flush_events()
     sc.toc()
