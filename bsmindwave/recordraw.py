@@ -24,7 +24,7 @@ for sec in secs:
         MAC = '00:81:F9:29:B4:D4'
         maxtime = 20
         delay = 0.02
-        filename = '../data/run7/rawdata-%s-%s.dat' % (sec, name)
+        filename = '../data/run8/rawdata-%s-%s.dat' % (sec, name)
         maxcount = int(maxtime/delay)
 
         mw = bsmw.Mindwave(port='/dev/rfcomm0')
