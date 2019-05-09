@@ -23,7 +23,7 @@ dobegin = True
 showfaces = True
 shownotes = True
 showwaves = True
-
+black = True
 livedatafile = 'live/livedata.obj'
 
 livedata = sc.loadobj(livedatafile)
@@ -60,7 +60,12 @@ imheight = 0.10*screenratio
 stafflines = pl.linspace(0,0.03,5)
 
 
-
+if black: 
+    fontcolor = (1,1,1)
+    bgcolor = (0,0,0)
+else:
+    fontcolor = (0,0,0)
+    bgcolor = (1,1,1)
 
 pl.rcParams['toolbar'] = 'None'
 font_path = 'assets/FreeSerif.ttf'
@@ -91,13 +96,14 @@ if fullscreen:
 print('NOte: control dobegin with livedata.dobegin orsomething')
 if dobegin:
     pl.pause(0.3)
-    fig.set_facecolor((1,1,1))
+    if not black:
+        fig.set_facecolor((1,1,1))
     mainax = pl.axes(position=mainaxpos)
     mainax.axis('off')
     mainax.set_xlim([0,1])
     mainax.set_ylim([0,1])
     imaxes = sc.odict()
-    mainax.text(0.48, 0.95, '§%s' % livedata.sec, fontproperties=prop, fontsize=60)
+    mainax.text(0.48, 0.97, '§%s' % livedata.sec, fontproperties=prop, fontsize=60, color=fontcolor)
     
     print('Rendering manuscript...')
     for i,inst in enumerate(insts):
@@ -120,11 +126,12 @@ if dobegin:
     lines = sc.odict()
     patches = sc.odict()
     npts = 1000
-    newx = pl.linspace(0,1,npts)
+    plotpts = 500
+    newx = pl.linspace(0,npts/plotpts,npts)
     for i,inst in enumerate(insts):
-        line, = mainax.plot(newx,newx*0, c=colors[i])
+        line, = mainax.plot(newx[:plotpts],newx[:plotpts]*0, c=colors[i], lw=3)
         lines[inst] = line
-        rect = pl.Rectangle((0, ypos[inst]+0.06), 1.0, 0.08, color='w')
+        rect = pl.Rectangle((0, ypos[inst]+0.06), 1.0, 0.09, color=bgcolor)
         print(rect)
         tmp = mainax.add_patch(rect)
         print(tmp)
@@ -134,17 +141,17 @@ if dobegin:
     pl.show()
     
     txtartists = sc.odict()
-    for inst in insts:
+    for i,inst in enumerate(insts):
         txtartists[inst] = []
         for ind in range(len(thesenotes[inst])):
-            txtartist = mainax.text(0, 0, d.note, fontproperties=prop, fontsize=60)
+            txtartist = mainax.text(0, 0, d.note, fontproperties=prop, fontsize=60, color=colors[i])
             txtartists[inst].append(txtartist)
     
     maxnotes = max([len(notes) for notes in thesenotes.values()])
                
     print('Looping...')
     sc.tic()
-    for ind in range(maxnotes*2):
+    for ind in range(maxnotes):
         
         for inst in insts:
             if ind<len(thesenotes[inst]):
@@ -157,11 +164,14 @@ if dobegin:
                 mainax.draw_artist(ta)
         
         for i,inst in enumerate(insts):
+            eegscale = 0.012
             rate = 2
             eegyoff = ypos[inst] + 0.1
-            origy = pl.roll(thesedata[inst], -rate*ind)
-            newy = eegyoff+origy*0.01
-            lines[inst].set_ydata(newy)
+            origeeg = thesedata[inst]
+            smoothdata = sc.smooth(origeeg, 1)
+            origy = pl.roll(smoothdata, -rate*ind)
+            newy = eegyoff+origy*eegscale
+            lines[inst].set_ydata(newy[:plotpts])
             mainax.draw_artist(patches[inst])
             mainax.draw_artist(lines[inst])
         
