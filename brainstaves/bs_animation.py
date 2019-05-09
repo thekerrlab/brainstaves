@@ -178,20 +178,20 @@ def animate():
             print('Not animating: %s %s' % (doanimate, currentsec))
             livesec = bs.pagestosec(livedata)
             if currentsec != livesec:
-                print('Updating section: %s -> %s' % (currentsec, livesec))
+                print('Updating section location 1: %s -> %s' % (currentsec, livesec))
                 ind = 0
                 currentsec = livesec
-                refreshfig(mainax)
+                mainax, imaxes, lines, patches, txtartists = refreshfig(mainax)
             time.sleep(1)
         else:
             print('Animating step %s' % ind)
             
             livesec = bs.pagestosec(livedata)
             if currentsec != livesec:
-                print('Updating section: %s -> %s' % (currentsec, livesec))
+                print('Updating section location 2: %s -> %s' % (currentsec, livesec))
                 ind = 0
                 currentsec = livesec
-                refreshfig(mainax)
+                mainax, imaxes, lines, patches, txtartists = refreshfig(mainax)
             
             thesenotes = livedata.notes[currentsec]
             thesedata = livedata.data[currentsec]
