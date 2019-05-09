@@ -28,9 +28,9 @@ def savelivedata(livedata):
     sc.saveobj(livedata, livedatafile)
     return None
 
-def getstartstop(livedata):
+def checkstatus(which, livedata):
     tmp = []
-    for key,val in livedata.started.items():
+    for key,val in livedata[which].items():
         tmp.append('%s: %s' % (key,val))
     string = '; '.join(tmp)
     return string
@@ -84,8 +84,22 @@ def makeapp():
         try:
             livedata = loadlivedata()
             livedata.started[thisinst] = False
-            status = getstartstop(livedata)
+            status = checkstatus('started', livedata)
             output = '  Stopped %s; status: %s' % (thisinst, status)
+            print(output)
+        except Exception as E:
+            output = 'APP WARNING!!!!! Something went wrong: %s' % str(E)
+            print(output)
+        return output
+    
+    @app.register_RPC()
+    def updatepage(thisinst, thispage):
+        print('Handling update page...')
+        try:
+            livedata = loadlivedata()
+            livedata.page[thisinst] = thispage
+            status = checkstatus('page', livedata)
+            output = '  Changed %s -> %s; status: %s' % (thisinst, thispage, status)
             print(output)
         except Exception as E:
             output = 'APP WARNING!!!!! Something went wrong: %s' % str(E)

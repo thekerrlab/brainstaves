@@ -267,12 +267,21 @@
         }
       },
 
+      updatepage() {
+        sciris.rpc('updatepage', [vm.thisinst, vm.filenumber])
+            .then(function (response) {
+                console.log('Sciris update page says:')
+                console.log(response.data)
+            })
+      },
+
       forward() {
         vm.filenumber += 1
         if (vm.filenumber>vm.npages) {
           vm.filenumber = vm.npages
         }
         vm.showhidediv()
+        vm.updatepage()
       },
 
       backward() {
@@ -281,6 +290,7 @@
           vm.filenumber = 1
         }
         vm.showhidediv()
+        vm.updatepage()
       },
 
     }
