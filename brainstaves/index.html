@@ -81,6 +81,12 @@
 
       <!-- THE SCORE -->
       <div style="position: fixed; top: 5px; left: 5px; z-index: 100">
+        <select v-model="thisinst">
+            <option v-for='inst in allinsts'>
+              {{ inst }}
+            </option>
+          </select>
+        <br><br>
         <span><button v-on:click="start()">▶</button></span>
         <br><br>
         <span><button v-on:click="forward()">→</button></span>
@@ -127,6 +133,8 @@
         filenumber: 1,
         keypress: 'n/a',
         loaded: 'n/a',
+        allinsts: ['v1','v2','va','vc'],
+        thisinst: 'v1',
         npages: 14, // +1 buffer, be careful!
       }
     },
