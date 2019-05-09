@@ -18,7 +18,7 @@ import matplotlib.font_manager as mfm
 #import matplotlib.animation as animation
 
 
-fullscreen = False
+fullscreen = True
 dobegin = True
 showfaces = True
 shownotes = True
@@ -136,6 +136,7 @@ if dobegin:
     maxnotes = max([len(notes) for notes in thesenotes.values()])
                
     print('Looping...')
+    sc.tic()
     for ind in range(maxnotes):
         
         for inst in insts:
@@ -155,9 +156,10 @@ if dobegin:
             lines[inst].set_ydata(newy)
             mainax.draw_artist(lines[inst])
         
-        fig.canvas.draw_idle()
+#        fig.canvas.draw_idle()
         fig.canvas.update()
         fig.canvas.flush_events()
+    sc.toc()
     
 
 
