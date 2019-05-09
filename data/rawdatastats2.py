@@ -9,7 +9,7 @@ Created on Wed May  8 23:41:34 2019
 import pylab as pl
 import sciris as sc
 
-infile = 'run1/rawdata-G-va.dat'
+infile = 'run1/rawdata-E-vc.dat'
 lines = open(infile).readlines()
 raw = pl.array([float(l.rstrip()) for l in lines])
 
