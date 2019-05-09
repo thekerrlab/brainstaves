@@ -179,6 +179,7 @@ def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=N
         print('Creating livedata object')
         livedata = sc.prettyobj()
         livedata.sec = 'n/a'
+        livedata.animate = False # Whether or not to run the animation
         secnotes = sc.objdict() # WARNING, could tidy up!
         livedata.notes = sc.objdict()
         livedata.data = sc.objdict()

@@ -138,21 +138,16 @@ if dobegin:
     for i,inst in enumerate(insts):
         line, = mainax.plot(newx,newx*0, c=colors[i])
         lines[inst] = line
+    
+    pl.pause(0.01)
+    pl.show()
+    
+    txtartists = []
+    for ind in range(200):
+        txtartist = mainax.text(0, 0, d.note, fontproperties=prop, fontsize=60)
+        txtartists.append(txtartist)
                 
     for ind in range(200):
-        n = ind % 50
-        
-        if n==0:
-            fa = sc.odict()
-            tmp = 1
-            for i,inst in enumerate(insts):
-                fa[inst] = sc.odict()
-                fa[inst]['delta'] = [1, pl.exp(abs(pl.randn()*tmp))]
-                fa[inst]['theta'] = [7, pl.exp(abs(pl.randn()*tmp))]
-                fa[inst]['alpha'] = [12, pl.exp(abs(pl.randn()*tmp))]
-                fa[inst]['beta'] = [20, pl.exp(abs(pl.randn()*tmp))]
-                fa[inst]['gamma'] = [35, pl.exp(abs(pl.randn()*tmp))]
-        
         
         if shownotes:
             for inst in insts:
@@ -160,90 +155,29 @@ if dobegin:
                     minpitch = {'v1':64, 'v2':64, 'va':55, 'vc':45}
                     pitch = thesenotes[inst][ind] - minpitch[inst]
                     pitch *= 0.002
-                    mainax.text(0.02+ind/1.1/len(thesenotes[inst]), ypos[inst]+pitch, d.note, fontproperties=prop, fontsize=60)
-            
-    
+                    ta = txtartists[ind]
+                    ta.set_x(0.02+ind/1.03/len(thesenotes[inst]))
+                    ta.set_y(ypos[inst]+pitch)
+                    mainax.draw_artist(ta)
+        
         if showwaves:
-            
-            
             for i,inst in enumerate(insts):
                 y = pl.zeros(npts)
                 
-                for freq,pow in fa[inst].values():
-                    y += pl.sin(x*freq)*pow
-                
-                newy = sc.dcp(y)
-                newy /= 300
-                newy += ypos[inst]+0.1
-                newy = newy.tolist()
-                newy = newy[n*10:] + newy[:n*10]
-                lines[inst].set_ydata(newy)
+#                for freq,pow in fa[inst].values():
+#                    y += pl.sin(x*freq)*pow
+#                
+#                newy = sc.dcp(y)
+#                newy /= 300
+#                newy += ypos[inst]+0.1
+#                newy = newy.tolist()
+#                newy = newy[n*10:] + newy[:n*10]
+#                lines[inst].set_ydata(newy)
         
-        pl.pause(0.01)
-        pl.show()
+        fig.canvas.update()
+        fig.canvas.flush_events()
+        print(ind)
     
-#    if showwaves:
-#        
-#        print('Starting waves...')
-#        
-#        npts = int(2e3)
-#        x = pl.linspace(0,20*2*pl.pi,npts)
-#        y = pl.zeros(npts)
-#        lines = sc.odict()
-#        ydatas = sc.odict()
-#        for i,inst in enumerate(insts):
-#            line, = mainax.plot(x,y, c=colors[i])
-#            lines[inst] = line
-#        
-#        for i,inst in enumerate(insts):
-#            y *= 0
-#            fa = sc.odict()
-#            tmp = 1
-#            fa['delta'] = [1, pl.exp(abs(pl.randn()*tmp))]
-#            fa['theta'] = [7, pl.exp(abs(pl.randn()*tmp))]
-#            fa['alpha'] = [12, pl.exp(abs(pl.randn()*tmp))]
-#            fa['beta'] = [20, pl.exp(abs(pl.randn()*tmp))]
-#            fa['gamma'] = [35, pl.exp(abs(pl.randn()*tmp))]
-#            
-#            for freq,pow in fa.values():
-#                y += pl.sin(x*freq)*pow
-#            
-#            newy = sc.dcp(y)
-#            newy /= 300
-#            newy += ypos[inst]+0.1
-#            ydatas[inst] = newy
-        
-#        def init():  # only required for blitting to give a clean slate.
-#            for i,inst in enumerate(insts):
-#                line = lines[inst]
-#                line.set_ydata([pl.nan] * len(x))
-#            return line,
-#        
-#        
-#        def animate(r):
-#            for i,inst in enumerate(insts):
-#                line = lines[inst]
-#                thisy = sc.dcp(ydatas[inst]).tolist()
-#                thisy = thisy[r*1:] + thisy[:1*r]
-#                line.set_ydata(thisy)  # update the data.
-#            return line,
-#        
-#        ani = animation.FuncAnimation(fig, animate, init_func=init, interval=50, blit=True, save_count=500)
-        
-        
-#        for r in range(200):
-#        for i,inst in enumerate(insts):
-##                print(r,i)
-#                sc.tic()
-#                
-#                sc.toc()
-#                
-#                sc.toc()
-#                pl.plot(x,ydatas[i])
-#                sc.toc()
-#                pl.pause(0.001)
-#                sc.toc()
-        
 
 
 print('Done.')
