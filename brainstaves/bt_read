@@ -1,16 +1,20 @@
 #!/bin/bash
 # Bluetooth connect -- connect each Bluetooth device to a serial port stream
 # Usage:
-#   btc v1
-#   btc v2
-#   btc va
-#   btc vc
+#   bt_read v1
+#   bt_read v2
+#   bt_read va
+#   bt_read vc
 # in each of 4 separate terminal windows.
 #
 # Version: 2019may08
 
-if   [ $1 = "v1" ]; then sudo rfcomm connect hci0 00:81:F9:08:A1:72;
-elif [ $1 = "v2" ]; then sudo rfcomm connect /dev/rfcomm1 00:81:F9:29:BA:98;
-elif [ $1 = "va" ]; then sudo rfcomm connect /dev/rfcomm2 00:81:F9:29:EF:80;
-elif [ $1 = "vc" ]; then sudo rfcomm connect /dev/rfcomm3 C4:64:E3:EA:75:6D;
+if [ $# -ne 1 ]; then
+    echo "Headset not specified; example usage: bt_read v1"
+else
+    if   [ $1 = "v1" ]; then sudo rfcomm connect hci0 00:81:F9:08:A1:72;
+    elif [ $1 = "v2" ]; then sudo rfcomm connect /dev/rfcomm1 00:81:F9:29:BA:98;
+    elif [ $1 = "va" ]; then sudo rfcomm connect /dev/rfcomm2 00:81:F9:29:EF:80;
+    elif [ $1 = "vc" ]; then sudo rfcomm connect /dev/rfcomm3 C4:64:E3:EA:75:6D;
+    fi
 fi

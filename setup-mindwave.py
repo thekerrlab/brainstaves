@@ -21,7 +21,7 @@ CLASSIFIERS = [
     'Programming Language :: Python',
     'Topic :: Software Development :: Libraries :: Python Modules',
     'Development Status :: 1',
-    'Programming Language :: Python :: 3.7',
+    'Programming Language :: Python :: 2.7',
 ]
 
 setup(
@@ -37,9 +37,7 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     install_requires=[
-        'numpy',
-        'scipy',
-        'matplotlib',
-        'pyserial',
+        'matplotlib==2.2.4',
+        'scipy==1.2.1', # Note: also need package serial, but should be pre-installed for Python 2
     ],
 )

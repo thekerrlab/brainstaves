@@ -1,0 +1,2 @@
+#!/bin/bash
+sudo python2 test_mindwave.py

@@ -26,7 +26,7 @@ CLASSIFIERS = [
 
 setup(
     name='brainstaves',
-    version='2.0.0',
+    version='2.0.1',
     author='Cliff Kerr',
     author_email='info@cliffkerr.com',
     description='Composition for string quartet and EEG',

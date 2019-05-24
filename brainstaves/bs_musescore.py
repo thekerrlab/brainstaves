@@ -12,16 +12,17 @@ Structure:
             accidental (may be missing)
             tie (may be missing)
 
-Version: 2019may08
+Version: 2019may24
 '''
 
 import sciris as sc
 
+mscorecmd = 'mscore' # Set the command used to call MuseScore
 correctversion = 'MuseScore2 2.1.0'
 die = False # Running as root, might get XDG_RUNTIME_DIR not set, can safely ignore
 
 try:
-    mscoreversion = sc.runcommand('mscore --version').lstrip().rstrip()
+    mscoreversion = sc.runcommand('%s --version' % mscorecmd).lstrip().rstrip()
     assert mscoreversion == correctversion
 except Exception as E:
     errormsg = 'Warning: could not run MuseScore or incorrect version, proceed at your own risk! (%s vs. %s; %s)' % (correctversion, mscoreversion, str(E))
