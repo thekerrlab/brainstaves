@@ -37,7 +37,7 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     install_requires=[
-        'matplotlib==3.0.3',
+        'matplotlib==2.2.4',
         'scipy==1.2.1', # Note: also need package serial, but should be pre-installed for Python 2
     ],
 )
