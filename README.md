@@ -20,9 +20,22 @@ Install the Mindwave Mobile reading code, which unfortunately only works with Py
 
 You will also need MuseScore (http://musescore.org/) to generate the scores.
 
-### Testing the backend
+### Creating the score
 
 If you run `python brainstaves/bs_makelivescore.py`, it should generate PNG files in the folder `brainstaves/live`.
+
+#### Options
+
+The key options to set are:
+
+* `version`: you can choose 'A' or 'B'. Version 'A' is atonal (mostly), version 'B' uses the blues scale.
+
+* `wait`: whether or not to wait for one section to finish before generating the next. Note, this is necessary if you're using live data!
+
+* `datadir`, `backupdir`: this sets the folders from which the data will be read. Normal usage would be to set `datadir = ../data/live`, but you can use a backup folder if you are scared. The backup folder should contain pre-recorded data that doesn't suck, in the event that the headsets fail to record live.
+
+* `makepdf`: pretty self explanatory, also renders a PDF version of the score along with the PNG version.
+
 
 ### Running the web server
 

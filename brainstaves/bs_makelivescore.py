@@ -31,7 +31,7 @@ def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=N
     livedatafile = 'live/livedata.obj'
     npages = 13
     midioffset = 24
-    shortpauses = True
+    shortpauses = False
 
     torun = [
     'load',

@@ -35,6 +35,10 @@ import bsmindwave as bsmw
 
 secs = ['B','C','D','E','F','G','H']
 count = 0
+
+mw = bsmw.Mindwave(port='/dev/%s' % mapping2[name])
+mw.start()
+
 for sec in secs:
     count += 1
     print('\n'*10)
@@ -45,9 +49,6 @@ for sec in secs:
     delay = 0.02
     filename = '../data/live/rawdata-%s-%s.dat' % (sec, name)
     maxcount = int(maxtime/delay)
-
-    mw = bsmw.Mindwave(port='/dev/%s' % mapping2[name])
-    mw.start()
 
     print('Recording for %s s...' % maxtime)
     data = []
@@ -67,5 +68,5 @@ for sec in secs:
     with open(filename,'w') as f:
         f.write('\n'.join(data))
 
-    mw.stop()
-    print('Done.')
+mw.stop()
+print('Done.')
