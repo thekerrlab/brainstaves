@@ -72,3 +72,17 @@ If it says "Disconnected", then simply reconnect. This will, unfortunately, prob
 
 #### Record the data from the serial port
 
+Open four terminal windows and run e.g. `bt_record v1`. If it worked, you should see:
+
+```
+finzi:~/music/brainstaves/brainstaves> ./bt_record v1
+
+STARTING B v1 (1/7)
+Recording for 20 s...
+...1/1000
+...51/1000
+...101/1000
+...151/1000
+```
+
+This means it is recording data for section B, violin 1 part. The folder is currently hard-coded (`../data/live`).
