@@ -68,5 +68,6 @@ for sec in secs:
     with open(filename,'w') as f:
         f.write('\n'.join(data))
 
+print('Stopping...')
 mw.stop()
 print('Done.')
