@@ -18,11 +18,11 @@ This repository contains a hodgepodge of different things: scores; scripts for r
 
 Brainstaves is designed to work in Python 3. It may also work in Python 2. But probably not.
 
-You will also need LilyPond (http://lilypond.org/) to generate the scores.
+You will also need MuseScore (http://musescore.org/) to generate the scores.
 
 ### Web server usage
 
-Pretty straightforward: `python brainstaves/app.py`. This will start serving `index.html` on port 8185 (all the JavaScript junk is in `assets`). This serves the image at `brainstaves/live/brainstaves.png`. If this does not exist, you won't see anything (if it exists and is a picture of a cat, you will, of course, see a cat). All browsers running this page should be synchronized on the second (via `var initial_delay = 1*(1000 - new Date().getTime() % 1000);`) and should refresh every second (via `setInterval(vm.redraw_score, vm.interval);`).
+Pretty straightforward: `python brainstaves/bs_app.py`. This will start serving `index.html` on port 8185 (all the JavaScript stuff is in `assets`). This serves the image at `brainstaves/live/brainstaves.png`. If this does not exist, you won't see anything (if it exists and is a picture of a cat, you will, of course, see a cat).
 
 ### Score generation
 
