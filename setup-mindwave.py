@@ -39,7 +39,6 @@ setup(
     install_requires=[
         'matplotlib==3.0.3',
         'numpy',
-        'scipy',
-        'pyserial',
+        'scipy', # Note: also need package serial, but should be pre-installed for Python 2
     ],
 )
