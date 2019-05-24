@@ -1,0 +1,2 @@
+#!/bin/bash
+bluetoothctl pair 00:81:F9:29:B4:D4
