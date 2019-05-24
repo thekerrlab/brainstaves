@@ -162,9 +162,9 @@ def makelivescore(version=None, wait=None, makepng=None, makepdf=None, usedata=N
             outputxml = bs.XML(infile=infiles[version])
             outputxml.write(data=nd.notes)
             if makepng:
-                sc.runcommand('mscore live/live.mscx -o live/live.png', printoutput=True)
+                sc.runcommand('%s live/live.mscx -o live/live.png' % bs.mscorecmd, printoutput=True)
             if makepdf:
-                sc.runcommand('mscore live/live.mscx -o live/live.pdf', printoutput=True)
+                sc.runcommand('%s live/live.mscx -o live/live.pdf' % bs.mscorecmd, printoutput=True)
         return None
     
     
