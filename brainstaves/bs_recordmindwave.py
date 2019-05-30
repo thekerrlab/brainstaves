@@ -1,13 +1,14 @@
 '''
 Record data from headset. Protocol:
 
-./mindwave_pair
-./mindwave_read
-./mindwave_record # calls this file
+./bt_pair
+./bt_read
+./bt_record # calls this file
 '''
 
 import os
 import sys
+import time
 import pylab as pl
 import bsmindwave as bsmw
 
@@ -23,15 +24,9 @@ mapping = {'v1': '00:81:F9:08:A1:72',
            'vc': 'C4:64:E3:EA:75:6D',}
 
 mapping2 = {'v1': 'rfcomm0',
-           'v2': 'rfcomm1',
-           'va': 'rfcomm2',
-           'vc': 'rfcomm3',}
-
-import os
-import sys
-import time
-import pylab as pl
-import bsmindwave as bsmw
+            'v2': 'rfcomm1',
+            'va': 'rfcomm2',
+            'vc': 'rfcomm3',}
 
 secs = ['B','C','D','E','F','G','H']
 count = 0
